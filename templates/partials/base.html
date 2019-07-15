@@ -1,26 +1,27 @@
-{% import "macros.html" as macros %}
+{% import "partials/macros.html" as macros %}
 <!DOCTYPE html>
 <html lang="en">
     <head>
       {% block head %}
         <meta http-equiv="X-UA-Compatible" content="IE=edge" >
         <meta http-equiv="content-type" content="text/html; charset=utf-8">
-        <title> {{ config.title }} </title>
+        <title> {{ config.title }} BETA </title>
 
         <!-- Enable responsiveness on mobile devices-->
         <meta name="viewport"  content="width=device-width, initial-scale=1.0, maximum-scale=1" >
 
+        <link rel="alternate" type="application/rss+xml" title="RSS" href="{{ get_url(path="rss.xml", trailing_slash=false) }}">
         <!--  css -->
         <link rel="stylesheet"  href="{{ config.base_url }}/hoodie.css" >
-        <link rel="stylesheet" href="{{ config.base_url }}/font-awesome/all.min.css">
-
+        <link rel="stylesheet" href="{{ config.base_url }}/font-awesome/all.css">
+        <script src="{{ config.base_url }}/search_index.en.js"></script>
       {% endblock head %}
     </head>
 
     <body>
       <header
         {%if page.extra.header_img%}
-        style="background-image: url({{page.extra.header_img}});" />
+        style="background-image: url({{page.extra.header_img}});" >
         {% endif %} >
         {% block header %}
         <h1>
@@ -39,27 +40,12 @@
                 <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                     <ul class="nav navbar-nav navbar-right">
                     {% if page %}
-                        <li>
-                          <a href="/">
-                         Home 
-                          </a>
-                        </li>
+                        <li> <a href="/"> Home </a> </li>
                     {% endif %}
-                        <li>
-                          <a href="">
-                          Bio
-                          </a>
-                        </li>
-                        <li>
-                          <a href="">
-                          Archive
-                          </a>
-                        </li>
-                        <li>
-                          <a href="">
-                          Projects
-                          </a>
-                        </li>  
+                        <li> <a href="/blog"> Blog </a> </li>
+                        <li> <a href="/bio"> Bio </a> </li>
+                        <li> <a href="/archive"> Archive </a> </li>
+                        <li> <a href="/projects"> Projects </a> </li>  
                         {{ macros::social_list(extra=config.extra, siteurl=config.base_url, rss=config.generate_rss) }}
                     </ul>
                 </div>

@@ -8,8 +8,10 @@ layout = "post"
 <p>Zumindest sind beide Versionen inkompatibel zueinander. Wer immer noch nicht weiß wovon ich rede, Unison ist ein eigentlich recht komfortables Werkzeug um Verzeichnisse (besonders zwischen mehreren Rechnern) zu synchronisieren und das in beide Richtungen. Ich hatte es mir bis lang so eingerichtet, dass ich gewisse Verzeichnisse, u.A. gnote-profile, workspace, Kalender und Adressbuch, auf meinen Lieblings-Uniserver <em>ganymed</em> hoch geladen habe. Somit konnte ich meinen Laptop und meinen PC jederzeit Synchronisieren, ohne zwangsläufig beide gleichzeitig anhaben zu müssen. Dazu muss allerdings auf auf dem Server ein Unison laufen, und da fängt das Problem an und hört schon wieder auf.</p>
 <p>Intern arbeitet Unison mit Rsync, welches an sich ja schon sehr mächtig ist, jedoch nur zum synchronisieren in eine Richtung gedacht ist, also mit einer festen Quelle und einem festen Ziel. Dateien die nicht in der Quelle vorkommen werden aus dem Ziel gelöscht. Unison hat in diesem Falle vermittelt und dabei die Aktualität der Dateien in mit einbezogen. Dieses Feature vermisse ich besonders bei meiner 3 Punkte Synchronisierung.</p>
 <p>Da ich allerdings in den letzten Wochen auch mehr mit dem source code management tool <a href="http://git-scm.com/">git</a> zu tun hatte kam ich auf die Idee, wenn ich schon nicht hin und her Synchronisieren kann, dann muss ich halt vorher mein lokales System updaten, wie man das bei jedem guten Softwareprojekt auch macht. Dazu hab ich mir ein kleines Bash Skript gebaut, welches genau das mittels rsync macht.<br />
-<code></p>
-<pre class="brush:shell">#!/bin/bash
+</p>
+
+```bash
+#!/bin/bash
 
 root1=/home/username/pfad
 root2=username@server:/pfad
@@ -92,6 +94,6 @@ f)
 	
 *)
 	echo "Ohhh Nooo!!!";;
-esac</pre>
-<p></code></p>
+esac
+```
 <p>Probiert&#8217;s mal aus. Hat noch wer Vorschläge?</p>

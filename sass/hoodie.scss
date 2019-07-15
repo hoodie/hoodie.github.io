@@ -26,7 +26,10 @@ h1,h2,h3,h4,h5,h6 {
 }
 
 h1 { font-size: 2.4em; } 
-h2 { font-size: 2em; } 
+h2 { font-size: 2em; 
+    font-family: Vollkorn;
+    font-weight: 300;
+} 
 h3 { font-size: 1.4em; } 
 h4, h5, h6 { font-size: 1.2em; } 
 
@@ -34,6 +37,11 @@ p, li, ul {
     font-size: 1em;
     color: $text;
     line-height: 1.7;
+}
+
+p {
+    // font-family: Vollkorn;
+    font-size: 1em;
 }
 
 pre {
@@ -44,6 +52,13 @@ pre {
     white-space: -pre-wrap;
     white-space: -o-pre-wrap;
     word-wrap: break-word;
+}
+
+code {
+    color: $code;
+    font-size: 1.2em;
+    font-weight: bold;
+    font-family: Menlo,Monaco,Consolas,"Courier New",monospace;
 }
 
 blockquote {
@@ -63,6 +78,7 @@ hr {
 }
 
 article {
+    outline: 2px dashed red;
     a {
         border-bottom: 2px solid $outline;
         color: $text;
@@ -94,26 +110,15 @@ tr {
     vertical-align: middle;
 }
 
-.overlord {
-    outline: 2px dashed yellow;
-    display: block;
-    position: absolute;
-    z-index: 100;
-    top: 0;
-    left: 0;
-    right: 0;
-    z-index: 90;
-}
-
 header {
-    postion: relative;
+    position: relative;
     top: 0;
     padding-top: 0px;
     display: block;
     margin: auto;
     padding-top: 140px;
     padding-bottom: 70px;
-    margin-bottom: 50px;
+    margin-bottom: 30px;
     border-bottom: 0px solid #f0f0f0;
     text-align: center;
     background:  no-repeat center center;
@@ -153,17 +158,6 @@ header {
     }
 }
 
-.article_split {
-    width: auto;
-    max-width: 100%;
-    height: 1px;
-    background-color: $background;
-    margin-top: 70px;
-    margin-bottom: 50px;
-    display: block;
-    clear: both;
-}
-
 .frontmatter {
     display: block;
     font-size: 1em;
@@ -175,7 +169,7 @@ header {
     margin-top: -3px;
     margin-bottom: 10px;
     font-size: 14px;
-    font-weight: 700;
+    font-weight: 400;
     > li {
         display: inline;
     }
@@ -208,7 +202,7 @@ a#article_link, a#article_link:visited {
 }
 
 a#article_link:hover {
-    border-width: 0.5em;
+    // border-width: 0.5em;
     transition: all 0.15s ease-in;
 }
 
@@ -307,20 +301,6 @@ nav.pagination {
 }
 
 
-nav.navbar-custom {
-    color: $header;
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    z-index: 3;
-    // font-family: $title-font-family;
-}
-
-nav.navbar-custom .nav li a {
-   letter-spacing: 1px;
-   color: $header;
-}
 
 .post_container {
     margin: 0 auto;
@@ -356,8 +336,6 @@ nav.navbar-custom .nav li a {
     padding: 0px;
     display: inline-block;
     line-height: 25px;
-    padding-left: 15px;
-    padding-right: 15px;
 }
 
 .medium {

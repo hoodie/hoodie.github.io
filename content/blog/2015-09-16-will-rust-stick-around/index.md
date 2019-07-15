@@ -23,7 +23,7 @@ Many of them haven't even disappeared, they just lead the lives of hermits, with
 Is is worth maintaining a compiler and stdlib for a unpopular languages? Their are security concerns as well. The resources to maintain the environment, find and eliminate bugs and vulnerabilities ought to be small compared to the amount of expertise in the field.
 For the same reasons as I do not want to use a linux distro, that is developed and used only by a handful of enthusiasts I do not want to use a language that is unpopular.
 
-![Rust logo]({{%20root_url%20}}/images/rust-logo-256x256.png)
+![Rust logo](rust-logo-256x256.png)
 
 ## What is it about Rust that will keep history from repeating?
 

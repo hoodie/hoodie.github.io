@@ -56,9 +56,11 @@
 }
     .navbar-nav > li {
         float: left;
-        margin-left: 15px;
+        margin-top: 15px;
+        margin-right: 11px;
     }
     .navbar-nav > li > a {
+        font-weight: normal;
         padding-top: 15px;
         padding-bottom: 15px;
     }
@@ -74,4 +76,20 @@
     .navbar-right ~ .navbar-right {
         margin-right: 0;
     }
+}
+
+
+nav.navbar-custom {
+    color: $header;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 3;
+    // font-family: $title-font-family;
+}
+
+nav.navbar-custom .nav li a {
+   letter-spacing: 1px;
+   color: $header;
 }

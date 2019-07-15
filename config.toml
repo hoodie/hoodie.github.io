@@ -1,5 +1,7 @@
 # The URL the site will be built for
-base_url = "https://blog.hoodie.de"
+# base_url = "https://blog.hoodie.de"
+#base_url = "http://dean:1111"
+base_url = "http://localhost:1111"
 title = "hoodie blog"
 description = "where hendrik occationaly drops some articles"
 
@@ -14,13 +16,12 @@ highlight_theme = "Tomorrow"
 # Whether to build a search index to be used later on by a JavaScript library
 build_search_index = true
 
-# theme = "hoodie"
-
 taxonomies = [
     {name = "categories", rss = true},
     {name = "tags", rss = true},
 ]
 
+generate_rss=true
 generate_tags_pages = true
 [extra]
 # Put all your custom variables here

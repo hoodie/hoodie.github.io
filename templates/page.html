@@ -1,5 +1,5 @@
-{% extends "base.html" %}
-{% import "macros.html" as macros %}
+{% extends "partials/base.html" %}
+{% import "partials/macros.html" as macros %}
 
 {% block header %}
     <h1>
@@ -15,6 +15,7 @@
 {% endblock header %}
 
 {% block content %}
+<code> PAGE </code>
 <section class="post_container">
 
   <article>
@@ -27,7 +28,9 @@
       <h4>
         {{ page.description}}
       </h4>
+      {% if page.date %}
       {{ macros::frontmatter(classes="frontmatter_page", date=page.date, word_count=page.word_count, read_time=page.reading_time) }}
+      {% endif %}
       {{ page.content | safe }}
       {% endblock post %}
   </article>
