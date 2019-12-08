@@ -30,4 +30,4 @@ github = "hoodie"
 podcast_url= "http://akronymisier.bar"
 podcast_name= "akronymisier.bar"
 
-debug=false
+debug=true

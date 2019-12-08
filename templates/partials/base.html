@@ -5,13 +5,16 @@
       {% block head %}
         <meta http-equiv="X-UA-Compatible" content="IE=edge" >
         <meta http-equiv="content-type" content="text/html; charset=utf-8">
-        <title> {{ config.title }} BETA </title>
-
+        <meta name="author" content="Hendrik Sollich"/>
         <!-- Enable responsiveness on mobile devices-->
         <meta name="viewport"  content="width=device-width, initial-scale=1.0, maximum-scale=1" >
 
+        <title> {{ config.title }} BETA </title>
+
+
         <link rel="alternate" type="application/rss+xml" title="RSS" href="{{ get_url(path="rss.xml", trailing_slash=false) }}">
         <!--  css -->
+        <link rel="stylesheet"  href="{{ config.base_url }}/fonts.css" >
         <link rel="stylesheet"  href="{{ config.base_url }}/hoodie.css" >
         <link rel="stylesheet" href="{{ config.base_url }}/font-awesome/all.css">
         <script src="{{ config.base_url }}/search_index.en.js"></script>

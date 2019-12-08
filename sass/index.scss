@@ -1,0 +1,92 @@
+body {
+    background-color: #efffef;
+    font-family: Arial, Helvetica, Sans-serif;
+    padding: 0px;
+    margin: 0px;
+
+    section {
+        background-color: #d0f0d0;
+        border: 1px #c0e0c0 solid;
+        color: #546354;
+        height: 360px;
+        margin: 0 auto;
+
+        header h1 {
+            text-align: center;
+            font-size: 5rem;
+            font-weight: normal;
+            font-family: Vollkorn, serif;
+
+            text-shadow: #686 0px 3px 3px;
+
+            padding: 10px;
+            margin: 0px;
+            margin-top: 17px;
+            width: 100%;
+        }
+        a {
+            color: #6f806f;
+            text-decoration: none;
+        }
+
+        article {
+            text-align: right;
+            margin: 3em;
+
+            table {
+                float: right;
+                border: #6f806f 0px solid;
+                border: 1px #8fa88f solid;
+                background-color: #d3f3d3;
+                font-family: Helvetica, Vera;
+                text-shadow: #686 0px 3px 3px;
+
+                td.url {
+                    font-style: italic;
+                    text-align: right;
+
+                    a {
+                        color: #000000;
+                        font-size: 14px;
+                    }
+                }
+            }
+        }
+    }
+}
+/* Mobile first queries */
+
+/* Larger than mobile */
+@media (max-width: 400px) {
+    section {
+        width: 100%;
+    }
+    header h1 {
+        font-size: 2em;
+    }
+}
+
+/* Larger than phablet */
+@media (min-width: 550px) {
+    body {
+        padding-top: 100px;
+    }
+    section {
+        width: 90%;
+    }
+}
+
+/* Larger than tablet */
+@media (min-width: 770px) {
+    section {
+        width: 560px;
+    }
+}
+
+/* Larger than desktop */
+@media (min-width: 1000px) {
+}
+
+/* Larger than Desktop HD */
+@media (min-width: 1200px) {
+}
