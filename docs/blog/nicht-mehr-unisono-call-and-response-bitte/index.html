@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+      
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" >
+        <meta http-equiv="content-type" content="text/html; charset=utf-8">
+        <meta name="author" content="Hendrik Sollich"/>
+        <!-- Enable responsiveness on mobile devices-->
+        <meta name="viewport"  content="width=device-width, initial-scale=1.0, maximum-scale=1" >
+
+        <title> hoodie blog BETA </title>
+
+
+        <link rel="alternate" type="application/rss+xml" title="RSS" href="https:&#x2F;&#x2F;www.hoodie.de&#x2F;rss.xml">
+        <!--  css -->
+        <link rel="stylesheet"  href="https:&#x2F;&#x2F;www.hoodie.de/fonts.css" >
+        <link rel="stylesheet"  href="https:&#x2F;&#x2F;www.hoodie.de/hoodie.css" >
+        <link rel="stylesheet" href="https:&#x2F;&#x2F;www.hoodie.de/font-awesome/all.css">
+        <script src="https:&#x2F;&#x2F;www.hoodie.de/search_index.en.js"></script>
+      
+    </head>
+
+    <body>
+      <header
+         >
+        
+    <h1>
+      <a href="https:&#x2F;&#x2F;www.hoodie.de&#x2F;blog&#x2F;nicht-mehr-unisono-call-and-response-bitte&#x2F;">
+       nicht mehr unisono – call and response bitte
+      </a>
+    </h1>
+    <h3>
+      <a href="https:&#x2F;&#x2F;www.hoodie.de&#x2F;blog&#x2F;nicht-mehr-unisono-call-and-response-bitte&#x2F;">
+      
+    </a>
+  </h3>
+
+      </header>
+
+        <nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+        
+            <div class="container-fluid">
+        
+                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                    <ul class="nav navbar-nav navbar-right">
+                    
+                    
+                        <li> <a href="/"> Home </a> </li>
+                        <li> <a href="/blog"> Blog </a> </li>
+                        <li> <a href="/bio"> Bio </a> </li>
+                        <li> <a href="/archive"> Archive </a> </li>
+                        
+    
+    
+    <li>
+        <a href="https://github.com/hoodie" target="_blank" title="github/hoodie">
+            <i class="fab fa-github"></i>
+            <span> hoodie </span>
+        </a>
+    </li>
+    
+    
+    <li>
+        <a href="https://twitter.com/hoodie_de" target="_blank" title="twitter/hoodie_de">
+            <i class="fab fa-twitter" ></i>
+            <span> @hoodie_de </span>
+        </a>
+    </li>
+    
+    
+    <li>
+        <a href="akronymisier.bar" target="_blank" title="akronymisier.bar">
+            <i class="fas fa-microphone-alt" ></i>
+            <span> akronymisier.bar </span>
+        </a>
+    </li>
+    
+    
+    <li>
+        <a href="https:&#x2F;&#x2F;www.hoodie.de/rss.xml" target ="_blank" title="RSS">
+            <i class="fas fa-rss" ></i>
+            <span> RSS </span>
+        </a>
+    </li>
+    
+
+                    </ul>
+                </div>
+                <!-- /.navbar-collapse -->
+            </div>
+            <!-- /.container -->
+        
+        </nav>
+
+      
+
+<section class="post_container">
+
+  <article>
+    
+      <header>
+      <h2 class="article_title">
+        <a href="https:&#x2F;&#x2F;www.hoodie.de&#x2F;blog&#x2F;nicht-mehr-unisono-call-and-response-bitte&#x2F;" id="article_link">
+          nicht mehr unisono – call and response bitte
+        </a>
+      </h2>
+      <h4>
+        
+      </h4>
+      
+      
+<ul class="frontmatter frontmatter_page" id="frontmatter">
+    <li> 566 words → 3 min </li>
+    <span class="dotDivider"></span>
+    <li> <time class="article_time"  datetime="2010-05-11">11. May 2010</time> </li>
+</ul>
+
+
+      
+      | 
+
+
+      </header>
+      <p>Angefangen hat alles mit meinem Umstieg auf <a href="http://www.archlinux.org">Archlinux</a> vor einigen Wochen. Wenn einer <a title="unison" href="http://www.cis.upenn.edu/~bcpierce/unison/">Unison</a> 2.32.52 auf Hardy Heron zum laufen kriegen sollte, oder unison 2.27.57 für Arch kompiliert kriegt, freu ich mich über jede Zuschrift.</p>
+<p>Zumindest sind beide Versionen inkompatibel zueinander. Wer immer noch nicht weiß wovon ich rede, Unison ist ein eigentlich recht komfortables Werkzeug um Verzeichnisse (besonders zwischen mehreren Rechnern) zu synchronisieren und das in beide Richtungen. Ich hatte es mir bis lang so eingerichtet, dass ich gewisse Verzeichnisse, u.A. gnote-profile, workspace, Kalender und Adressbuch, auf meinen Lieblings-Uniserver <em>ganymed</em> hoch geladen habe. Somit konnte ich meinen Laptop und meinen PC jederzeit Synchronisieren, ohne zwangsläufig beide gleichzeitig anhaben zu müssen. Dazu muss allerdings auf auf dem Server ein Unison laufen, und da fängt das Problem an und hört schon wieder auf.</p>
+<p>Intern arbeitet Unison mit Rsync, welches an sich ja schon sehr mächtig ist, jedoch nur zum synchronisieren in eine Richtung gedacht ist, also mit einer festen Quelle und einem festen Ziel. Dateien die nicht in der Quelle vorkommen werden aus dem Ziel gelöscht. Unison hat in diesem Falle vermittelt und dabei die Aktualität der Dateien in mit einbezogen. Dieses Feature vermisse ich besonders bei meiner 3 Punkte Synchronisierung.</p>
+<p>Da ich allerdings in den letzten Wochen auch mehr mit dem source code management tool <a href="http://git-scm.com/">git</a> zu tun hatte kam ich auf die Idee, wenn ich schon nicht hin und her Synchronisieren kann, dann muss ich halt vorher mein lokales System updaten, wie man das bei jedem guten Softwareprojekt auch macht. Dazu hab ich mir ein kleines Bash Skript gebaut, welches genau das mittels rsync macht.<br />
+</p>
+<pre style="background-color:#ffffff;">
+<span style="color:#999999;">#!/bin/bash
+
+</span><span style="color:#c82829;">root1</span><span style="color:#3e999f;">=</span><span style="color:#718c00;">/home/username/pfad
+</span><span style="color:#c82829;">root2</span><span style="color:#3e999f;">=</span><span style="color:#718c00;">username@server:/pfad
+
+</span><span style="color:#c82829;">paths[</span><span style="color:#f5871f;">0</span><span style="color:#c82829;">]</span><span style="color:#3e999f;">=</span><span style="color:#718c00;">&#39;.mozilla/&#39;
+</span><span style="color:#c82829;">paths[</span><span style="color:#f5871f;">1</span><span style="color:#c82829;">]</span><span style="color:#3e999f;">=</span><span style="color:#718c00;">&#39;Bilder/&#39;
+
+</span><span style="color:#c82829;">attributes</span><span style="color:#3e999f;">=</span><span style="color:#718c00;">&#39;acvzpue ssh --delete&#39;
+</span><span style="color:#4271ae;">checkpush</span><span style="color:#4d4d4c;">(){
+	</span><span style="color:#8959a8;">for</span><span style="color:#4d4d4c;"> path </span><span style="color:#8959a8;">in </span><span style="color:#4d4d4c;">${</span><span style="color:#c82829;">paths[*]</span><span style="color:#4d4d4c;">} </span><span style="color:#3e999f;">;
+	</span><span style="color:#8959a8;">do </span><span style="color:#c82829;">rsync</span><span style="color:#f5871f;"> -n${</span><span style="color:#c82829;">attributes</span><span style="color:#f5871f;">} </span><span style="color:#4271ae;">${</span><span style="color:#c82829;">root1</span><span style="color:#4271ae;">}${</span><span style="color:#c82829;">path</span><span style="color:#4271ae;">} ${</span><span style="color:#c82829;">root2</span><span style="color:#4271ae;">}/${</span><span style="color:#c82829;">path</span><span style="color:#4271ae;">} </span><span style="color:#3e999f;">| </span><span style="color:#c82829;">grep</span><span style="color:#4271ae;"> delet
+	</span><span style="color:#8959a8;">done</span><span style="color:#3e999f;">;
+</span><span style="color:#4d4d4c;">}
+</span><span style="color:#4271ae;">checkpull</span><span style="color:#4d4d4c;">(){
+	</span><span style="color:#8959a8;">for</span><span style="color:#4d4d4c;"> path </span><span style="color:#8959a8;">in </span><span style="color:#4d4d4c;">${</span><span style="color:#c82829;">paths[*]</span><span style="color:#4d4d4c;">} </span><span style="color:#3e999f;">;
+	</span><span style="color:#8959a8;">do </span><span style="color:#c82829;">rsync</span><span style="color:#f5871f;"> -n${</span><span style="color:#c82829;">attributes</span><span style="color:#f5871f;">} </span><span style="color:#4271ae;">${</span><span style="color:#c82829;">root2</span><span style="color:#4271ae;">}${</span><span style="color:#c82829;">path</span><span style="color:#4271ae;">} ${</span><span style="color:#c82829;">root1</span><span style="color:#4271ae;">}/${</span><span style="color:#c82829;">path</span><span style="color:#4271ae;">} </span><span style="color:#3e999f;">| </span><span style="color:#c82829;">grep</span><span style="color:#4271ae;"> delet
+	</span><span style="color:#8959a8;">done</span><span style="color:#3e999f;">;
+</span><span style="color:#4d4d4c;">}
+</span><span style="color:#4271ae;">pull</span><span style="color:#4d4d4c;">(){
+	</span><span style="color:#8959a8;">for</span><span style="color:#4d4d4c;"> path </span><span style="color:#8959a8;">in </span><span style="color:#4d4d4c;">${</span><span style="color:#c82829;">paths[*]</span><span style="color:#4d4d4c;">} </span><span style="color:#3e999f;">;
+	</span><span style="color:#8959a8;">do
+		if </span><span style="color:#4271ae;">[ </span><span style="color:#f5871f;">-d </span><span style="color:#4271ae;">${</span><span style="color:#c82829;">root1</span><span style="color:#4271ae;">}${</span><span style="color:#c82829;">path</span><span style="color:#4271ae;">} ] </span><span style="color:#3e999f;">|| </span><span style="color:#4271ae;">[ </span><span style="color:#f5871f;">-f </span><span style="color:#4271ae;">${</span><span style="color:#c82829;">root1</span><span style="color:#4271ae;">}${</span><span style="color:#c82829;">path</span><span style="color:#4271ae;">} ]</span><span style="color:#3e999f;">;
+		</span><span style="color:#8959a8;">then
+			</span><span style="color:#4271ae;">echo </span><span style="color:#f5871f;">-en </span><span style="color:#718c00;">&quot;\e[1;32mpull\t\t\e[00;37m${</span><span style="color:#c82829;">root1</span><span style="color:#718c00;">}\e[01;37m${</span><span style="color:#c82829;">path</span><span style="color:#718c00;">}\t\e[01;31m&lt; - \e[00;37m${</span><span style="color:#c82829;">root2</span><span style="color:#718c00;">}\e[01;37m${</span><span style="color:#c82829;">path</span><span style="color:#718c00;">}\n\e[00;37m&quot;</span><span style="color:#3e999f;">;
+			</span><span style="color:#c82829;">rsync</span><span style="color:#f5871f;"> -${</span><span style="color:#c82829;">attributes</span><span style="color:#f5871f;">} </span><span style="color:#4271ae;">${</span><span style="color:#c82829;">root2</span><span style="color:#4271ae;">}${</span><span style="color:#c82829;">path</span><span style="color:#4271ae;">} ${</span><span style="color:#c82829;">root1</span><span style="color:#4271ae;">}/${</span><span style="color:#c82829;">path</span><span style="color:#4271ae;">}</span><span style="color:#3e999f;">;
+		</span><span style="color:#8959a8;">else
+			</span><span style="color:#4271ae;">echo </span><span style="color:#f5871f;">-en </span><span style="color:#718c00;">&quot;\e[1;41m${</span><span style="color:#c82829;">root1</span><span style="color:#718c00;">}${</span><span style="color:#c82829;">path</span><span style="color:#718c00;">} existiert nicht\n\e[00;37m\e[00;40m&quot;
+		</span><span style="color:#8959a8;">fi
+	done</span><span style="color:#3e999f;">;
+</span><span style="color:#4d4d4c;">}
+</span><span style="color:#4271ae;">push</span><span style="color:#4d4d4c;">(){
+	</span><span style="color:#8959a8;">for</span><span style="color:#4d4d4c;"> path </span><span style="color:#8959a8;">in </span><span style="color:#4d4d4c;">${</span><span style="color:#c82829;">paths[*]</span><span style="color:#4d4d4c;">} </span><span style="color:#3e999f;">;
+	</span><span style="color:#8959a8;">do
+		if </span><span style="color:#4271ae;">[ </span><span style="color:#f5871f;">-d </span><span style="color:#4271ae;">${</span><span style="color:#c82829;">root1</span><span style="color:#4271ae;">}${</span><span style="color:#c82829;">path</span><span style="color:#4271ae;">} ] </span><span style="color:#3e999f;">|| </span><span style="color:#4271ae;">[ </span><span style="color:#f5871f;">-f </span><span style="color:#4271ae;">${</span><span style="color:#c82829;">root1</span><span style="color:#4271ae;">}${</span><span style="color:#c82829;">path</span><span style="color:#4271ae;">} ]</span><span style="color:#3e999f;">;
+		</span><span style="color:#8959a8;">then
+			</span><span style="color:#4271ae;">echo </span><span style="color:#f5871f;">-en </span><span style="color:#718c00;">&quot;\e[1;32mpush\t\t\e[00;37m${</span><span style="color:#c82829;">root1</span><span style="color:#718c00;">}\e[01;37m${</span><span style="color:#c82829;">path</span><span style="color:#718c00;">}\t\e[01;31m-&gt; \e[00;37m${</span><span style="color:#c82829;">root2</span><span style="color:#718c00;">}\e[01;37m${</span><span style="color:#c82829;">path</span><span style="color:#718c00;">}\n\e[00;37m&quot;</span><span style="color:#3e999f;">;
+			</span><span style="color:#c82829;">rsync</span><span style="color:#f5871f;"> -${</span><span style="color:#c82829;">attributes</span><span style="color:#f5871f;">} </span><span style="color:#4271ae;">${</span><span style="color:#c82829;">root1</span><span style="color:#4271ae;">}${</span><span style="color:#c82829;">path</span><span style="color:#4271ae;">} ${</span><span style="color:#c82829;">root2</span><span style="color:#4271ae;">}/${</span><span style="color:#c82829;">path</span><span style="color:#4271ae;">}</span><span style="color:#3e999f;">;
+		</span><span style="color:#8959a8;">else
+			</span><span style="color:#4271ae;">echo </span><span style="color:#f5871f;">-en </span><span style="color:#718c00;">&quot;\e[1;41m${</span><span style="color:#c82829;">root1</span><span style="color:#718c00;">}${</span><span style="color:#c82829;">path</span><span style="color:#718c00;">} existiert nicht\n\e[00;37m\e[00;40m&quot;
+		</span><span style="color:#8959a8;">fi
+	done</span><span style="color:#3e999f;">;
+</span><span style="color:#4d4d4c;">}
+
+</span><span style="color:#8959a8;">case </span><span style="color:#4d4d4c;">$</span><span style="color:#c82829;">1 </span><span style="color:#8959a8;">in</span><span style="color:#4d4d4c;">
+pull</span><span style="color:#8959a8;">)
+	</span><span style="color:#c82829;">checkpull
+	</span><span style="color:#4271ae;">echo </span><span style="color:#f5871f;">-n </span><span style="color:#718c00;">&quot;Proceed with pulling?  [Y/n]&quot;
+	</span><span style="color:#4271ae;">read descision
+
+	</span><span style="color:#8959a8;">case </span><span style="color:#718c00;">&quot;$</span><span style="color:#c82829;">descision</span><span style="color:#718c00;">&quot; </span><span style="color:#8959a8;">in</span><span style="color:#4d4d4c;">
+		Yes</span><span style="color:#3e999f;">|</span><span style="color:#4d4d4c;">yes</span><span style="color:#3e999f;">|</span><span style="color:#4d4d4c;">Y</span><span style="color:#3e999f;">|</span><span style="color:#4d4d4c;">y</span><span style="color:#3e999f;">|</span><span style="color:#718c00;">&quot;&quot;</span><span style="color:#8959a8;">)
+		</span><span style="color:#c82829;">pull</span><span style="color:#4d4d4c;">;;
+		No</span><span style="color:#3e999f;">|</span><span style="color:#4d4d4c;">no</span><span style="color:#3e999f;">|</span><span style="color:#4d4d4c;">N</span><span style="color:#3e999f;">|</span><span style="color:#4d4d4c;">n</span><span style="color:#8959a8;">) </span><span style="color:#4271ae;">echo </span><span style="color:#718c00;">&quot;Cancel.&quot;
+		           </span><span style="color:#4271ae;">exit 1  </span><span style="color:#4d4d4c;">;;
+		</span><span style="color:#3e999f;">*</span><span style="color:#8959a8;">) </span><span style="color:#4271ae;">echo </span><span style="color:#718c00;">&quot;Unknown Parameter&quot; </span><span style="color:#4d4d4c;">;;
+	</span><span style="color:#8959a8;">esac</span><span style="color:#4d4d4c;">;;
+
+push</span><span style="color:#8959a8;">)
+	</span><span style="color:#c82829;">checkpush
+	</span><span style="color:#4271ae;">echo </span><span style="color:#f5871f;">-n </span><span style="color:#718c00;">&quot;Proceed with pushing? [Y/n]&quot;
+	</span><span style="color:#4271ae;">read descision
+
+	</span><span style="color:#8959a8;">case </span><span style="color:#718c00;">&quot;$</span><span style="color:#c82829;">descision</span><span style="color:#718c00;">&quot; </span><span style="color:#8959a8;">in</span><span style="color:#4d4d4c;">
+		Yes</span><span style="color:#3e999f;">|</span><span style="color:#4d4d4c;">yes</span><span style="color:#3e999f;">|</span><span style="color:#4d4d4c;">Y</span><span style="color:#3e999f;">|</span><span style="color:#4d4d4c;">y</span><span style="color:#3e999f;">|</span><span style="color:#718c00;">&quot;&quot;</span><span style="color:#8959a8;">)
+		</span><span style="color:#c82829;">push</span><span style="color:#4d4d4c;">;;
+		No</span><span style="color:#3e999f;">|</span><span style="color:#4d4d4c;">no</span><span style="color:#3e999f;">|</span><span style="color:#4d4d4c;">N</span><span style="color:#3e999f;">|</span><span style="color:#4d4d4c;">n</span><span style="color:#8959a8;">) </span><span style="color:#4271ae;">echo </span><span style="color:#718c00;">&quot;Cancel.&quot;
+		           </span><span style="color:#4271ae;">exit 1  </span><span style="color:#4d4d4c;">;;
+		</span><span style="color:#3e999f;">*</span><span style="color:#8959a8;">) </span><span style="color:#4271ae;">echo </span><span style="color:#718c00;">&quot;Unknown Parameter&quot; </span><span style="color:#4d4d4c;">;;
+	</span><span style="color:#8959a8;">esac</span><span style="color:#4d4d4c;">;;
+spush</span><span style="color:#8959a8;">)
+	</span><span style="color:#c82829;">push</span><span style="color:#4d4d4c;">;;
+spull</span><span style="color:#8959a8;">)
+	</span><span style="color:#c82829;">pull</span><span style="color:#4d4d4c;">;;
+f</span><span style="color:#8959a8;">)
+	</span><span style="color:#c82829;">check</span><span style="color:#3e999f;">= </span><span style="color:#c82829;">checkpush
+	</span><span style="color:#8959a8;">if </span><span style="color:#4271ae;">[ check </span><span style="color:#3e999f;">==</span><span style="color:#4271ae;"> 1 ] </span><span style="color:#3e999f;">;
+		</span><span style="color:#8959a8;">then </span><span style="color:#4271ae;">echo </span><span style="color:#718c00;">&quot;ja&quot;
+	</span><span style="color:#8959a8;">fi
+</span><span style="color:#4d4d4c;">;;
+	
+</span><span style="color:#3e999f;">*</span><span style="color:#8959a8;">)
+	</span><span style="color:#4271ae;">echo </span><span style="color:#718c00;">&quot;Ohhh Nooo!!!&quot;</span><span style="color:#4d4d4c;">;;
+</span><span style="color:#8959a8;">esac
+</span></pre><p>Probiert&#8217;s mal aus. Hat noch wer Vorschläge?</p>
+
+      
+  </article>
+</section>
+
+
+      
+    </body>
+</html>

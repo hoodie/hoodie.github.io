@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+      
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" >
+        <meta http-equiv="content-type" content="text/html; charset=utf-8">
+        <meta name="author" content="Hendrik Sollich"/>
+        <!-- Enable responsiveness on mobile devices-->
+        <meta name="viewport"  content="width=device-width, initial-scale=1.0, maximum-scale=1" >
+
+        <title> hoodie blog BETA </title>
+
+
+        <link rel="alternate" type="application/rss+xml" title="RSS" href="https:&#x2F;&#x2F;www.hoodie.de&#x2F;rss.xml">
+        <!--  css -->
+        <link rel="stylesheet"  href="https:&#x2F;&#x2F;www.hoodie.de/fonts.css" >
+        <link rel="stylesheet"  href="https:&#x2F;&#x2F;www.hoodie.de/hoodie.css" >
+        <link rel="stylesheet" href="https:&#x2F;&#x2F;www.hoodie.de/font-awesome/all.css">
+        <script src="https:&#x2F;&#x2F;www.hoodie.de/search_index.en.js"></script>
+      
+    </head>
+
+    <body>
+      <header
+        
+        style="background-image: url(header.jpg);" 
+         >
+        
+    <h1>
+      <a href="https:&#x2F;&#x2F;www.hoodie.de&#x2F;blog&#x2F;handpicked-rusty-crates&#x2F;">
+       Handpicked Rusty Crates
+      </a>
+    </h1>
+    <h3>
+      <a href="https:&#x2F;&#x2F;www.hoodie.de&#x2F;blog&#x2F;handpicked-rusty-crates&#x2F;">
+      crates to make your coding worthwhile
+    </a>
+  </h3>
+
+      </header>
+
+        <nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+        
+            <div class="container-fluid">
+        
+                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                    <ul class="nav navbar-nav navbar-right">
+                    
+                    
+                        <li> <a href="/"> Home </a> </li>
+                        <li> <a href="/blog"> Blog </a> </li>
+                        <li> <a href="/bio"> Bio </a> </li>
+                        <li> <a href="/archive"> Archive </a> </li>
+                        
+    
+    
+    <li>
+        <a href="https://github.com/hoodie" target="_blank" title="github/hoodie">
+            <i class="fab fa-github"></i>
+            <span> hoodie </span>
+        </a>
+    </li>
+    
+    
+    <li>
+        <a href="https://twitter.com/hoodie_de" target="_blank" title="twitter/hoodie_de">
+            <i class="fab fa-twitter" ></i>
+            <span> @hoodie_de </span>
+        </a>
+    </li>
+    
+    
+    <li>
+        <a href="akronymisier.bar" target="_blank" title="akronymisier.bar">
+            <i class="fas fa-microphone-alt" ></i>
+            <span> akronymisier.bar </span>
+        </a>
+    </li>
+    
+    
+    <li>
+        <a href="https:&#x2F;&#x2F;www.hoodie.de/rss.xml" target ="_blank" title="RSS">
+            <i class="fas fa-rss" ></i>
+            <span> RSS </span>
+        </a>
+    </li>
+    
+
+                    </ul>
+                </div>
+                <!-- /.navbar-collapse -->
+            </div>
+            <!-- /.container -->
+        
+        </nav>
+
+      
+
+<section class="post_container">
+
+  <article>
+    
+      <header>
+      <h2 class="article_title">
+        <a href="https:&#x2F;&#x2F;www.hoodie.de&#x2F;blog&#x2F;handpicked-rusty-crates&#x2F;" id="article_link">
+          Handpicked Rusty Crates
+        </a>
+      </h2>
+      <h4>
+        crates to make your coding worthwhile
+      </h4>
+      
+      
+<ul class="frontmatter frontmatter_page" id="frontmatter">
+    <li> 1157 words → 6 min </li>
+    <span class="dotDivider"></span>
+    <li> <time class="article_time"  datetime="2016-04-30T01:49:23+02:00">30. April 2016</time> </li>
+</ul>
+
+
+      
+      | 
+
+
+      </header>
+      <p>I've been leaning Rust for a year now.
+Yes, I'm <a href="https://twitter.com/hoodie_de/status/725838737146535936">still learning</a>, but I have in this time released<sup class="footnote-reference"><a href="#notify-rust">1</a></sup> and contributed<sup class="footnote-reference"><a href="#contributions">2</a></sup> to a number of crates.</p>
+<p>But it is only because of some amazing crates that I was able to write the code that I wanted. And if they hadn't been there, I might have rage-quit Rust very early, because I would have had to write the myself.</p>
+<p>If you are still learning Rust, like me, here are some crates that I enjoyed using or that have inspired me to try something new.</p>
+<h2 id="maplit-or-collect-mac"><a href="https://crates.io/crates/maplit">maplit</a> or <a href="https://crates.io/crates/collect-mac">collect-mac</a></h2>
+<p>Rust lacks a few syntactic features that other languages have.
+One of which is built-in dictionary literals.
+While languages like <a href="https://swift.org/">swift</a> <a href="http://www.tuicool.com/articles/yA7v6rA">have</a> these, in Rust you can help yourself with either <a href="https://crates.io/crates/maplit">maplit</a> or <a href="https://crates.io/crates/collect-mac">collect-mac</a>.</p>
+<p><a href="https://crates.io/crates/maplit">Maplit</a> offers a set of macros similar to Rust's built-in <code>vec![]</code> so you can write stuff like this:</p>
+<pre style="background-color:#ffffff;">
+<span style="color:#8959a8;">let</span><span style="color:#4d4d4c;"> employees </span><span style="color:#3e999f;">= </span><span style="color:#4d4d4c;">hashmap!{
+    </span><span style="color:#718c00;">&quot;employees&quot; </span><span style="color:#3e999f;">=&gt; </span><span style="color:#4d4d4c;">hashmap! {
+        </span><span style="color:#718c00;">&quot;employee  1&quot; </span><span style="color:#3e999f;">=&gt; </span><span style="color:#4d4d4c;">hashmap![</span><span style="color:#718c00;">&quot;attribute&quot; </span><span style="color:#3e999f;">=&gt; </span><span style="color:#718c00;">&quot;value&quot;</span><span style="color:#4d4d4c;">],
+        </span><span style="color:#718c00;">&quot;employee  2&quot; </span><span style="color:#3e999f;">=&gt; </span><span style="color:#4d4d4c;">hashmap![</span><span style="color:#718c00;">&quot;attribute&quot; </span><span style="color:#3e999f;">=&gt; </span><span style="color:#718c00;">&quot;value&quot;</span><span style="color:#4d4d4c;">],
+        </span><span style="color:#718c00;">&quot;employee  3&quot; </span><span style="color:#3e999f;">=&gt; </span><span style="color:#4d4d4c;">hashmap![</span><span style="color:#718c00;">&quot;attribute&quot; </span><span style="color:#3e999f;">=&gt; </span><span style="color:#718c00;">&quot;value&quot;</span><span style="color:#4d4d4c;">],
+        </span><span style="color:#718c00;">&quot;employee  4&quot; </span><span style="color:#3e999f;">=&gt; </span><span style="color:#4d4d4c;">hashmap![</span><span style="color:#718c00;">&quot;attribute&quot; </span><span style="color:#3e999f;">=&gt; </span><span style="color:#718c00;">&quot;value&quot;</span><span style="color:#4d4d4c;">],
+        </span><span style="color:#718c00;">&quot;employee  5&quot; </span><span style="color:#3e999f;">=&gt; </span><span style="color:#4d4d4c;">hashmap![</span><span style="color:#718c00;">&quot;attribute&quot; </span><span style="color:#3e999f;">=&gt; </span><span style="color:#718c00;">&quot;value&quot;</span><span style="color:#4d4d4c;">],
+        </span><span style="color:#718c00;">&quot;employee  6&quot; </span><span style="color:#3e999f;">=&gt; </span><span style="color:#4d4d4c;">hashmap![</span><span style="color:#718c00;">&quot;attribute&quot; </span><span style="color:#3e999f;">=&gt; </span><span style="color:#718c00;">&quot;value&quot;</span><span style="color:#4d4d4c;">],
+        </span><span style="color:#718c00;">&quot;employee  7&quot; </span><span style="color:#3e999f;">=&gt; </span><span style="color:#4d4d4c;">hashmap![</span><span style="color:#718c00;">&quot;attribute&quot; </span><span style="color:#3e999f;">=&gt; </span><span style="color:#718c00;">&quot;value&quot;</span><span style="color:#4d4d4c;">],
+        </span><span style="color:#718c00;">&quot;employee  8&quot; </span><span style="color:#3e999f;">=&gt; </span><span style="color:#4d4d4c;">hashmap![</span><span style="color:#718c00;">&quot;attribute&quot; </span><span style="color:#3e999f;">=&gt; </span><span style="color:#718c00;">&quot;value&quot;</span><span style="color:#4d4d4c;">],
+        </span><span style="color:#718c00;">&quot;employee  9&quot; </span><span style="color:#3e999f;">=&gt; </span><span style="color:#4d4d4c;">hashmap![</span><span style="color:#718c00;">&quot;attribute&quot; </span><span style="color:#3e999f;">=&gt; </span><span style="color:#718c00;">&quot;value&quot;</span><span style="color:#4d4d4c;">],
+        </span><span style="color:#718c00;">&quot;employee 10&quot; </span><span style="color:#3e999f;">=&gt; </span><span style="color:#4d4d4c;">hashmap![</span><span style="color:#718c00;">&quot;attribute&quot; </span><span style="color:#3e999f;">=&gt; </span><span style="color:#718c00;">&quot;value&quot;</span><span style="color:#4d4d4c;">],
+        </span><span style="color:#718c00;">&quot;employee 11&quot; </span><span style="color:#3e999f;">=&gt; </span><span style="color:#4d4d4c;">hashmap![</span><span style="color:#718c00;">&quot;attribute&quot; </span><span style="color:#3e999f;">=&gt; </span><span style="color:#718c00;">&quot;value&quot;</span><span style="color:#4d4d4c;">],
+        </span><span style="color:#718c00;">&quot;employee 12&quot; </span><span style="color:#3e999f;">=&gt; </span><span style="color:#4d4d4c;">hashmap![</span><span style="color:#718c00;">&quot;attribute&quot; </span><span style="color:#3e999f;">=&gt; </span><span style="color:#718c00;">&quot;value&quot;</span><span style="color:#4d4d4c;">],
+        </span><span style="color:#718c00;">&quot;employee 13&quot; </span><span style="color:#3e999f;">=&gt; </span><span style="color:#4d4d4c;">hashmap![</span><span style="color:#718c00;">&quot;attribute&quot; </span><span style="color:#3e999f;">=&gt; </span><span style="color:#718c00;">&quot;value&quot;</span><span style="color:#4d4d4c;">],
+        </span><span style="color:#718c00;">&quot;employee 14&quot; </span><span style="color:#3e999f;">=&gt; </span><span style="color:#4d4d4c;">hashmap![</span><span style="color:#718c00;">&quot;attribute&quot; </span><span style="color:#3e999f;">=&gt; </span><span style="color:#718c00;">&quot;value&quot;</span><span style="color:#4d4d4c;">],
+        </span><span style="color:#718c00;">&quot;employee 15&quot; </span><span style="color:#3e999f;">=&gt; </span><span style="color:#4d4d4c;">hashmap![</span><span style="color:#718c00;">&quot;attribute&quot; </span><span style="color:#3e999f;">=&gt; </span><span style="color:#718c00;">&quot;value&quot;</span><span style="color:#4d4d4c;">],
+        </span><span style="color:#718c00;">&quot;employee 16&quot; </span><span style="color:#3e999f;">=&gt; </span><span style="color:#4d4d4c;">hashmap![</span><span style="color:#718c00;">&quot;attribute&quot; </span><span style="color:#3e999f;">=&gt; </span><span style="color:#718c00;">&quot;value&quot;</span><span style="color:#4d4d4c;">],
+        </span><span style="color:#718c00;">&quot;employee 17&quot; </span><span style="color:#3e999f;">=&gt; </span><span style="color:#4d4d4c;">hashmap![</span><span style="color:#718c00;">&quot;attribute&quot; </span><span style="color:#3e999f;">=&gt; </span><span style="color:#718c00;">&quot;value&quot;</span><span style="color:#4d4d4c;">],
+        </span><span style="color:#718c00;">&quot;employee 18&quot; </span><span style="color:#3e999f;">=&gt; </span><span style="color:#4d4d4c;">hashmap![</span><span style="color:#718c00;">&quot;attribute&quot; </span><span style="color:#3e999f;">=&gt; </span><span style="color:#718c00;">&quot;value&quot;</span><span style="color:#4d4d4c;">],
+        </span><span style="color:#718c00;">&quot;employee 19&quot; </span><span style="color:#3e999f;">=&gt; </span><span style="color:#4d4d4c;">hashmap![</span><span style="color:#718c00;">&quot;attribute&quot; </span><span style="color:#3e999f;">=&gt; </span><span style="color:#718c00;">&quot;value&quot;</span><span style="color:#4d4d4c;">],
+        </span><span style="color:#718c00;">&quot;employee 20&quot; </span><span style="color:#3e999f;">=&gt; </span><span style="color:#4d4d4c;">hashmap![</span><span style="color:#718c00;">&quot;attribute&quot; </span><span style="color:#3e999f;">=&gt; </span><span style="color:#718c00;">&quot;value&quot;</span><span style="color:#4d4d4c;">],
+    }
+};
+</span></pre>
+<p>These little macros let you almost forget, they are not part of the stdlib.</p>
+<h2 id="multimap"><a href="https://crates.io/crates/multimap">multimap</a></h2>
+<p>Another crate that provides functionality,
+which should actually be built-in.
+Brian Anderson compiled a <a href="https://github.com/brson/stdx">list of crates</a> that feel like they should have been part of the std.</p>
+<pre style="background-color:#ffffff;">
+<span style="color:#8959a8;">let mut</span><span style="color:#4d4d4c;"> map </span><span style="color:#3e999f;">= </span><span style="color:#4d4d4c;">MultiMap::new();
+
+map.</span><span style="color:#4271ae;">insert</span><span style="color:#4d4d4c;">(</span><span style="color:#718c00;">&quot;key1&quot;</span><span style="color:#4d4d4c;">, </span><span style="color:#f5871f;">42</span><span style="color:#4d4d4c;">);
+map.</span><span style="color:#4271ae;">insert</span><span style="color:#4d4d4c;">(</span><span style="color:#718c00;">&quot;key1&quot;</span><span style="color:#4d4d4c;">, </span><span style="color:#f5871f;">1337</span><span style="color:#4d4d4c;">);
+map.</span><span style="color:#4271ae;">insert</span><span style="color:#4d4d4c;">(</span><span style="color:#718c00;">&quot;key2&quot;</span><span style="color:#4d4d4c;">, </span><span style="color:#f5871f;">2332</span><span style="color:#4d4d4c;">);
+
+assert_eq!(map[</span><span style="color:#718c00;">&quot;key1&quot;</span><span style="color:#4d4d4c;">], </span><span style="color:#f5871f;">42</span><span style="color:#4d4d4c;">);
+assert_eq!(map.</span><span style="color:#4271ae;">get</span><span style="color:#4d4d4c;">(</span><span style="color:#718c00;">&quot;key1&quot;</span><span style="color:#4d4d4c;">), </span><span style="color:#c99e00;">Some</span><span style="color:#4d4d4c;">(</span><span style="color:#3e999f;">&amp;</span><span style="color:#f5871f;">42</span><span style="color:#4d4d4c;">));
+assert_eq!(map.</span><span style="color:#4271ae;">get_vec</span><span style="color:#4d4d4c;">(</span><span style="color:#718c00;">&quot;key1&quot;</span><span style="color:#4d4d4c;">), </span><span style="color:#c99e00;">Some</span><span style="color:#4d4d4c;">(</span><span style="color:#3e999f;">&amp;</span><span style="color:#4d4d4c;">vec![</span><span style="color:#f5871f;">42</span><span style="color:#4d4d4c;">, </span><span style="color:#f5871f;">1337</span><span style="color:#4d4d4c;">]));
+</span></pre><h2 id="command-line-argument-parser">command line argument parser</h2>
+<p>Aka: <a href="https://crates.io/crates/clap">clap</a>.
+I started rewriting a command line application I had originally written in Ruby.
+There I had used <a href="http://whatisthor.com/">Thor</a> to configure the commands.
+Clap is very different but not less cool,
+for instance it lets you describe your interface in yaml,
+which is then compiled into your binary.
+Is also happens to be one of the best documented crates, with currently 19 elaborate examples.
+This is I wanna see libraries documented.</p>
+<h2 id="anything-that-starts-with-cargo">anything that starts with cargo-*</h2>
+<p>Cargo is already great itself, but it is also quite extensible and there are a number of tools that integrate with it.</p>
+<ol>
+<li><a href="https://crates.io/crates/cargo-check">cargo-check</a> quickly checks your code without compiling. This combines well with...</li>
+<li><a href="https://crates.io/crates/cargo-watch">cargo-watch</a>, which repeats a command when you save a source file.</li>
+<li><a href="https://crates.io/crates/cargo-add">cargo-add</a> adds new dependencies to your project while</li>
+<li><a href="https://crates.io/crates/cargo-graph">cargo-graph</a> produces a graph of all your dependencies.</li>
+<li><a href="https://crates.io/crates/cargo-clone">cargo-clone</a> clones the source repo of a crate.</li>
+<li><a href="https://crates.io/crates/cargo-fmt">cargo-fmt</a> formats your code project
+and by now there are many more, like <a href="https://crates.io/crates/cargo-apk">cargo-apk</a>, <a href="https://crates.io/crates/cargo-brew">cargo-brew</a>, <a href="https://crates.io/crates/cargo-lipo">cargo-lipo</a>, <a href="https://crates.io/crates/cargo-at">cargo-at</a>, <a href="https://crates.io/crates/cargo-count">cargo-count</a>, <a href="https://crates.io/crates/cargo-open">cargo-open</a>, <a href="https://crates.io/crates/cargo-outdated">cargo-outdated</a>, ... I'm gonna stop here.</li>
+</ol>
+<h2 id="clippy"><a href="https://crates.io/crates/clippy">clippy</a></h2>
+<p>This is named after the cute little cartoon paper clip from Word.
+It is much more sophisticated than that.
+Clippy is a growing set of lints that will tell you that you are writing bad Rust.
+Amazingly though it most of the time also tells you how to write better rust.
+Btw: there is a cargo command that will make it easier to use clippy called, you guessed correctly <a href="https://crates.io/crates/cargo-clippy">cargo-clippy</a> .</p>
+<h2 id="itertools"><a href="https://crates.io/crates/itertools">itertools</a></h2>
+<p>What I already loved about Ruby and now love about Rust is iterators and iterator-adapters.The standard <code>Interator</code>-trait already has a lot of functionality,
+but itertools adds <code>Chunks</code>, <code>Flatten</code>, <code>Group</code>, <code>Unique</code>, <code>Zip</code> and so on.</p>
+<h2 id="boolinator"><a href="https://crates.io/crates/boolinator">boolinator</a></h2>
+<p>If you've gotten addicted to functional mapping of <code>Option&lt;T&gt;</code>s or <code>Result&lt;T,E&gt;</code>s,
+then you sometimes course at the fact that you have to handle <code>boolean</code>s with icky <code>if</code> blocks.
+<code>boolinator</code> lets you convert booleans into <code>Option&lt;()&gt;</code> and other nicities.</p>
+<h2 id="chrono-or-datetime"><a href="https://crates.io/crates/chrono">chrono</a> or <a href="https://crates.io/crates/datetime">datetime</a></h2>
+<p>Pick one, they are both pretty good.
+Chrono seems a bit more complete, while it sometimes lacks a complete rustacious feeling.
+Datetime has the faster string parser :D</p>
+<h2 id="prettytable"><a href="https://crates.io/crates/prettytable">prettytable</a></h2>
+<p>When you wanna print complex data onto the terminal, use this.
+It is quite fast and its API is really nice.</p>
+<pre style="background-color:#ffffff;">
+<span style="color:#8959a8;">let</span><span style="color:#4d4d4c;"> table </span><span style="color:#3e999f;">= </span><span style="color:#4d4d4c;">table!([</span><span style="color:#718c00;">&quot;ABC&quot;</span><span style="color:#4d4d4c;">,     </span><span style="color:#718c00;">&quot;DEFG&quot;</span><span style="color:#4d4d4c;">, </span><span style="color:#718c00;">&quot;HIJKLMN&quot;</span><span style="color:#4d4d4c;">],
+                   [</span><span style="color:#718c00;">&quot;foobar&quot;</span><span style="color:#4d4d4c;">,  </span><span style="color:#718c00;">&quot;bar&quot;</span><span style="color:#4d4d4c;">,  </span><span style="color:#718c00;">&quot;foo&quot;</span><span style="color:#4d4d4c;">],
+                   [</span><span style="color:#718c00;">&quot;foobar2&quot;</span><span style="color:#4d4d4c;">, </span><span style="color:#718c00;">&quot;bar2&quot;</span><span style="color:#4d4d4c;">, </span><span style="color:#718c00;">&quot;foo2&quot;</span><span style="color:#4d4d4c;">]
+                  );
+table.</span><span style="color:#4271ae;">printstd</span><span style="color:#4d4d4c;">();
+</span></pre><h2 id="simple-parallel-or-rayon"><a href="https://crates.io/crates/simple_parallel">simple_parallel</a> or <a href="https://crates.io/crates/rayon">rayon</a></h2>
+<p>While I haven't played around with either of these yet, I so want to.
+Essentially either of them is capable of turning an ordinary iterator into a multithreaded parallel iterator.</p>
+<p>Rayon:</p>
+<pre style="background-color:#ffffff;">
+<span style="color:#8959a8;">use </span><span style="color:#4d4d4c;">rayon::prelude::</span><span style="color:#3e999f;">*</span><span style="color:#4d4d4c;">;
+</span><span style="color:#8959a8;">fn </span><span style="color:#4271ae;">sum_of_squares</span><span style="color:#4d4d4c;">(</span><span style="color:#f5871f;">input</span><span style="color:#4d4d4c;">: </span><span style="color:#3e999f;">&amp;</span><span style="color:#4d4d4c;">[</span><span style="color:#8959a8;">i32</span><span style="color:#4d4d4c;">]) -&gt; </span><span style="color:#8959a8;">i32 </span><span style="color:#4d4d4c;">{
+    input.</span><span style="color:#4271ae;">par_iter</span><span style="color:#4d4d4c;">()
+         .</span><span style="color:#4271ae;">map</span><span style="color:#4d4d4c;">(|</span><span style="color:#3e999f;">&amp;</span><span style="color:#f5871f;">i</span><span style="color:#4d4d4c;">| i </span><span style="color:#3e999f;">*</span><span style="color:#4d4d4c;"> i)
+         .</span><span style="color:#4271ae;">sum</span><span style="color:#4d4d4c;">()
+}
+</span></pre>
+<p>AMAZING</p>
+<h2 id="image"><a href="https://crates.io/crates/image">image</a></h2>
+<p>Images is a nice collection of native Rust libraries to encode and decode bmp, gif, ico, jpeg, png, ppm, tga, tiff and webp.
+Last time I checked that list was a lot shorter.
+These are mostly maintained by the people behind <a href="http://piston.rs/">piston</a> and also used in <a href="http://servo.org/">servo</a>, so expect some high quality code here.
+I personally used this to do a little stenography <a href="http://github.com/hoodie/lsb-rs">experiment</a>.</p>
+<h2 id="honorable-mentions">Honorable Mentions</h2>
+<ul>
+<li><a href="https://crates.io/crates/quick-error">quick-error</a></li>
+<li><a href="https://crates.io/crates/env_logger">env_logger</a></li>
+<li><a href="https://crates.io/crates/log">log</a></li>
+<li><a href="https://crates.io/crates/cargo-bake">cargo-bake</a></li>
+<li><a href="https://crates.io/crates/strsim">strsim</a></li>
+<li><a href="https://crates.io/crates/iso8601">iso8601</a></li>
+<li><a href="https://crates.io/crates/git2">git2</a></li>
+<li><a href="https://crates.io/crates/open">open</a></li>
+<li><a href="https://crates.io/crates/mpd">mpd</a></li>
+<li><a href="https://crates.io/crates/leftpad">leftpad</a></li>
+<li><a href="https://crates.io/crates/yolo">yolo</a></li>
+<li><a href="https://crates.io/crates/cool_faces">cool_faces</a></li>
+</ul>
+<p>This posts title image is called &quot;crates&quot; and is by <a href="https://www.flickr.com/photos/hvc/7412773976/">Helen Cook</a>.</p>
+<hr />
+<div class="footnote-definition" id="notify-rust"><sup class="footnote-definition-label">1</sup>
+<p><a href="https://crates.io/crates/notify-rust/">notify-rust</a></p>
+</div>
+<div class="footnote-definition" id="contributions"><sup class="footnote-definition-label">2</sup>
+<p><a href="https://crates.io/crates/datetime/">datetime</a>,
+<a href="https://crates.io/crates/iso8601">iso8601</a>,
+<a href="https://crates.io/crates/currency">currency</a>,
+<a href="https://crates.io/crates/yaml-rust">yaml-rust</a>,
+<a href="https://crates.io/crates/multimap">multimap</a>,
+<a href="https://crates.io/crates/open">open</a>,
+<a href="https://crates.io/crates/dbus">dbus</a></p>
+</div>
+
+      
+  </article>
+</section>
+
+
+      
+    </body>
+</html>

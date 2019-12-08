@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+      
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" >
+        <meta http-equiv="content-type" content="text/html; charset=utf-8">
+        <meta name="author" content="Hendrik Sollich"/>
+        <!-- Enable responsiveness on mobile devices-->
+        <meta name="viewport"  content="width=device-width, initial-scale=1.0, maximum-scale=1" >
+
+        <title> hoodie blog BETA </title>
+
+
+        <link rel="alternate" type="application/rss+xml" title="RSS" href="https:&#x2F;&#x2F;www.hoodie.de&#x2F;rss.xml">
+        <!--  css -->
+        <link rel="stylesheet"  href="https:&#x2F;&#x2F;www.hoodie.de/fonts.css" >
+        <link rel="stylesheet"  href="https:&#x2F;&#x2F;www.hoodie.de/hoodie.css" >
+        <link rel="stylesheet" href="https:&#x2F;&#x2F;www.hoodie.de/font-awesome/all.css">
+        <script src="https:&#x2F;&#x2F;www.hoodie.de/search_index.en.js"></script>
+      
+    </head>
+
+    <body>
+      <header
+         >
+        
+    <h1>
+      <a href="https:&#x2F;&#x2F;www.hoodie.de&#x2F;blog&#x2F;hendriks-singalong-git&#x2F;">
+       Hendriks Singalong Book
+      </a>
+    </h1>
+    <h3>
+      <a href="https:&#x2F;&#x2F;www.hoodie.de&#x2F;blog&#x2F;hendriks-singalong-git&#x2F;">
+      no original music here, sorry
+    </a>
+  </h3>
+
+      </header>
+
+        <nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+        
+            <div class="container-fluid">
+        
+                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                    <ul class="nav navbar-nav navbar-right">
+                    
+                    
+                        <li> <a href="/"> Home </a> </li>
+                        <li> <a href="/blog"> Blog </a> </li>
+                        <li> <a href="/bio"> Bio </a> </li>
+                        <li> <a href="/archive"> Archive </a> </li>
+                        
+    
+    
+    <li>
+        <a href="https://github.com/hoodie" target="_blank" title="github/hoodie">
+            <i class="fab fa-github"></i>
+            <span> hoodie </span>
+        </a>
+    </li>
+    
+    
+    <li>
+        <a href="https://twitter.com/hoodie_de" target="_blank" title="twitter/hoodie_de">
+            <i class="fab fa-twitter" ></i>
+            <span> @hoodie_de </span>
+        </a>
+    </li>
+    
+    
+    <li>
+        <a href="akronymisier.bar" target="_blank" title="akronymisier.bar">
+            <i class="fas fa-microphone-alt" ></i>
+            <span> akronymisier.bar </span>
+        </a>
+    </li>
+    
+    
+    <li>
+        <a href="https:&#x2F;&#x2F;www.hoodie.de/rss.xml" target ="_blank" title="RSS">
+            <i class="fas fa-rss" ></i>
+            <span> RSS </span>
+        </a>
+    </li>
+    
+
+                    </ul>
+                </div>
+                <!-- /.navbar-collapse -->
+            </div>
+            <!-- /.container -->
+        
+        </nav>
+
+      
+
+<section class="post_container">
+
+  <article>
+    
+      <header>
+      <h2 class="article_title">
+        <a href="https:&#x2F;&#x2F;www.hoodie.de&#x2F;blog&#x2F;hendriks-singalong-git&#x2F;" id="article_link">
+          Hendriks Singalong Book
+        </a>
+      </h2>
+      <h4>
+        no original music here, sorry
+      </h4>
+      
+      
+<ul class="frontmatter frontmatter_page" id="frontmatter">
+    <li> 683 words → 4 min </li>
+    <span class="dotDivider"></span>
+    <li> <time class="article_time"  datetime="2015-09-30T21:42:59+02:00">30. September 2015</time> </li>
+</ul>
+
+
+      
+      | 
+
+
+      </header>
+      <h2 id="the-problem">The Problem</h2>
+<p>When I'm asked to accompany somebody on the guitar, no big deal,
+I can usually come up with the right chords to a song.
+When it comes to actually singing along, now that is more of a problem.
+I just have a better memory for chords and melodies than for actual lyrics.</p>
+<p>Now some people tend to maintain a huge binder of songs they once learned and carry it around anywhere.
+Others might just search for the lyrics on their phone.
+Both solutions have their downsides:</p>
+<ol>
+<li>I haven't connected my printer since two moves ago, so no printing for me</li>
+<li>sometimes you are a place where there's instruments, but you forgot your huge binder, <em>dang</em></li>
+<li>unless you have a tablet a phone is not very practical, too small</li>
+<li>you probably want to maintain a collection of songs you can play, because when you're asked you need a list of things you know, otherwise <strong>I</strong> know anything to play, on top of my head</li>
+</ol>
+<div class="well">
+<p><em>We can solve this with software!</em></p>
+</div>
+<p>I usually carry an old <code>[EBOOKREADER]</code> with me.
+So why not make an ebook-songbook?</p>
+<h2 id="how-to-create-a-songbook">How to create a Songbook?</h2>
+<h3 id="how-to-get-the-lyrics">How to get the lyrics?</h3>
+<p>Well I most certainly don't want to google™ everything by hand and copy and paste the lyrics into some document file.
+Word and it's competitors are way to have and complicated for this task, which was my original motivation for building the <a href="https://github.com/ascii-dresden/ascii-invoicer">ascii invoicer</a>.
+I don't want to have to do anything more than just type in the song name and artist and be done with it.
+Fortunately there are scrapers for this.
+<a href="https://github.com/yeexel/nodycs">nodycs</a> for example.</p>
+<p>So something like this will fetch the lyrics and write them in a nice little markdown file, even with a heading ☺</p>
+<pre style="background-color:#ffffff;">
+<span style="color:#999999;">#!/bin/bash
+</span><span style="color:#4271ae;">echo </span><span style="color:#718c00;">&quot;## $</span><span style="color:#c82829;">2</span><span style="color:#718c00;">&quot; </span><span style="color:#3e999f;">&gt; </span><span style="color:#718c00;">&quot;songs/$</span><span style="color:#c82829;">1</span><span style="color:#718c00;"> - $</span><span style="color:#c82829;">2</span><span style="color:#718c00;">.md&quot;
+</span><span style="color:#c82829;">./nodycs/nodycs.js</span><span style="color:#4271ae;"> show </span><span style="color:#718c00;">&quot;$</span><span style="color:#c82829;">1</span><span style="color:#718c00;">&quot; &quot;$</span><span style="color:#c82829;">2</span><span style="color:#718c00;">&quot; </span><span style="color:#3e999f;">&gt;&gt; </span><span style="color:#718c00;">&quot;songs/$</span><span style="color:#c82829;">1</span><span style="color:#718c00;"> - $</span><span style="color:#c82829;">2</span><span style="color:#718c00;">.md&quot;
+</span><span style="color:#4271ae;">echo </span><span style="color:#718c00;">&quot;# $</span><span style="color:#c82829;">1</span><span style="color:#718c00;">&quot; </span><span style="color:#3e999f;">&gt; </span><span style="color:#718c00;">&quot;songs/$</span><span style="color:#c82829;">1</span><span style="color:#718c00;"> - 00header.md&quot;
+</span><span style="color:#c82829;">head </span><span style="color:#718c00;">&quot;songs/$</span><span style="color:#c82829;">1</span><span style="color:#718c00;"> - $</span><span style="color:#c82829;">2</span><span style="color:#718c00;">.md&quot;
+</span></pre>
+<p>Naming the file the same way also assures that the list of files will always be orderly.
+It also creates (overwrites) a file called <code>Artist - 00header.md</code>, I will get to that.
+The <code>head</code> at the end is just a quick manual check.</p>
+<p>Calling this script &quot;get&quot; allows us to <kbd>./get &quot;Flogging Molly&quot; &quot;Rare Ould Times&quot;</kbd> and it will happily create a <samp> Flogging Molly - Rare Ould Times.md </samp></p>
+<p>High Five!</p>
+<h3 id="how-to-make-an-e-book">How to make an (e)book?</h3>
+<p>Now we can gather a nice orderly collection of markdown files,
+what do we do with them?
+I recently heard about something like gitbook, I haven't tried that yet.
+My favorite swiss-army-sledge-hammer for anything textdocument related is still <a href="http://pandoc.org/">pandoc</a>.</p>
+<p><code>pandoc songs/*.md -f markdown+hard_line_breaks -s -o songbook.epub</code></p>
+<p>or better: write a <strong>Makefile</strong></p>
+<pre style="background-color:#ffffff;">
+<span style="color:#c82829;">SRC </span><span style="color:#3e999f;">= </span><span style="color:#718c00;">songs/*.md</span><span style="color:#c82829;">
+NAME</span><span style="color:#3e999f;">= </span><span style="color:#718c00;">&quot;songbook&quot;</span><span style="color:#c82829;">
+HTML</span><span style="color:#3e999f;">= </span><span style="color:#8959a8;">$(</span><span style="color:#f5871f;">NAME</span><span style="color:#8959a8;">)</span><span style="color:#718c00;">.html</span><span style="color:#c82829;">
+EPUB</span><span style="color:#3e999f;">= </span><span style="color:#8959a8;">$(</span><span style="color:#f5871f;">NAME</span><span style="color:#8959a8;">)</span><span style="color:#718c00;">.epub</span><span style="color:#c82829;">
+MOBI</span><span style="color:#3e999f;">= </span><span style="color:#8959a8;">$(</span><span style="color:#f5871f;">NAME</span><span style="color:#8959a8;">)</span><span style="color:#718c00;">.mobi</span><span style="color:#4271ae;">
+PDF = </span><span style="color:#8959a8;">$(</span><span style="color:#f5871f;">NAME</span><span style="color:#8959a8;">)</span><span style="color:#4271ae;">.pdf
+
+default</span><span style="color:#3e999f;">:  </span><span style="color:#8959a8;">$(</span><span style="color:#f5871f;">MOBI</span><span style="color:#8959a8;">)
+
+$(</span><span style="color:#f5871f;">HTML</span><span style="color:#8959a8;">)</span><span style="color:#3e999f;">: </span><span style="color:#8959a8;">$(</span><span style="color:#f5871f;">SRC</span><span style="color:#8959a8;">)
+	</span><span style="color:#c82829;">pandoc </span><span style="color:#8959a8;">$(</span><span style="color:#f5871f;">SRC</span><span style="color:#8959a8;">)</span><span style="color:#4271ae;">\
+		-f markdown+hard_line_breaks\
+		-s</span><span style="color:#f5871f;"> -t</span><span style="color:#4271ae;"> html5</span><span style="color:#f5871f;"> -o </span><span style="color:#8959a8;">$(</span><span style="color:#f5871f;">HTML</span><span style="color:#8959a8;">)</span><span style="color:#4271ae;">\
+		--section-divs
+
+</span><span style="color:#8959a8;">$(</span><span style="color:#f5871f;">EPUB</span><span style="color:#8959a8;">)</span><span style="color:#3e999f;">: </span><span style="color:#8959a8;">$(</span><span style="color:#f5871f;">HTML</span><span style="color:#8959a8;">)
+	</span><span style="color:#c82829;">pandoc </span><span style="color:#8959a8;">$(</span><span style="color:#f5871f;">HTML</span><span style="color:#8959a8;">)</span><span style="color:#f5871f;"> -o </span><span style="color:#8959a8;">$(</span><span style="color:#f5871f;">EPUB</span><span style="color:#8959a8;">)
+
+</span><span style="color:#4271ae;">songbook.pdf</span><span style="color:#8959a8;">$(</span><span style="color:#f5871f;">PDF</span><span style="color:#8959a8;">)</span><span style="color:#3e999f;">: </span><span style="color:#8959a8;">$(</span><span style="color:#f5871f;">HTML</span><span style="color:#8959a8;">)
+	</span><span style="color:#c82829;">pandoc </span><span style="color:#8959a8;">$(</span><span style="color:#f5871f;">HTML</span><span style="color:#8959a8;">)</span><span style="color:#f5871f;"> --chapters --toc -o </span><span style="color:#8959a8;">$(</span><span style="color:#f5871f;">PDF</span><span style="color:#8959a8;">)
+
+$(</span><span style="color:#f5871f;">MOBI</span><span style="color:#8959a8;">)</span><span style="color:#3e999f;">: </span><span style="color:#8959a8;">$(</span><span style="color:#f5871f;">EPUB</span><span style="color:#8959a8;">)
+	</span><span style="color:#c82829;">ebook-convert </span><span style="color:#8959a8;">$(</span><span style="color:#f5871f;">EPUB</span><span style="color:#8959a8;">) $(</span><span style="color:#f5871f;">MOBI</span><span style="color:#8959a8;">)
+
+</span><span style="color:#4271ae;">.PHONY</span><span style="color:#3e999f;">: </span><span style="color:#718c00;">clean
+</span><span style="color:#4271ae;">clean</span><span style="color:#3e999f;">:
+	</span><span style="color:#718c00;">rm -f </span><span style="color:#8959a8;">$(</span><span style="color:#f5871f;">EPUB</span><span style="color:#8959a8;">) $(</span><span style="color:#f5871f;">MOBI</span><span style="color:#8959a8;">) $(</span><span style="color:#f5871f;">HTML</span><span style="color:#8959a8;">) $(</span><span style="color:#f5871f;">PDF</span><span style="color:#8959a8;">)
+</span><span style="color:#4271ae;">
+mobi</span><span style="color:#3e999f;">:  </span><span style="color:#8959a8;">$(</span><span style="color:#f5871f;">MOBI</span><span style="color:#8959a8;">)
+</span><span style="color:#4271ae;">pdf</span><span style="color:#3e999f;">:  </span><span style="color:#8959a8;">$(</span><span style="color:#f5871f;">PDF</span><span style="color:#8959a8;">)
+</span><span style="color:#4271ae;">html</span><span style="color:#3e999f;">: </span><span style="color:#8959a8;">$(</span><span style="color:#f5871f;">HTML</span><span style="color:#8959a8;">)
+</span><span style="color:#4271ae;">epub</span><span style="color:#3e999f;">: </span><span style="color:#8959a8;">$(</span><span style="color:#f5871f;">EPUB</span><span style="color:#8959a8;">)
+
+
+</span></pre>
+<p>The ebook-convert comes with <a href="http://calibre-ebook.com/">calibre</a> and comes in handy since kindle<sup class="footnote-reference"><a href="#kindle">1</a></sup> does not support ePub.
+Toss this on you reader and be done with.</p>
+<div class="footnote-definition" id="kindle"><sup class="footnote-definition-label">1</sup>
+<p>at least my old one</p>
+</div>
+<h3 id="how-maintain-save-share-everything">How maintain, save, share everything?</h3>
+<p>Just run <kbd>git</kbd> already stupid!
+<span class="glyphicon glyphicon-thumbs-up" aria-hidden="true"> </span></p>
+<h2 id="conclusion">Conclusion</h2>
+<ul class="list-unstyled">
+<li><span class="glyphicon glyphicon-check" aria-hidden="true"> finding lyrics </span></li>
+<li><span class="glyphicon glyphicon-check" aria-hidden="true"> saving and organizing lyrics collection </span></li>
+<li><span class="glyphicon glyphicon-check" aria-hidden="true"> creating documents </span></li>
+<li><span class="glyphicon glyphicon-check" aria-hidden="true"> store, sync, version control </span></li>
+<li><span class="glyphicon glyphicon-unchecked" aria-hidden="true"> learn to sing </span></li>
+</ul>
+
+      
+  </article>
+</section>
+
+
+      
+    </body>
+</html>

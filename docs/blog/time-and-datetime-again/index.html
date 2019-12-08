@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+      
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" >
+        <meta http-equiv="content-type" content="text/html; charset=utf-8">
+        <meta name="author" content="Hendrik Sollich"/>
+        <!-- Enable responsiveness on mobile devices-->
+        <meta name="viewport"  content="width=device-width, initial-scale=1.0, maximum-scale=1" >
+
+        <title> hoodie blog BETA </title>
+
+
+        <link rel="alternate" type="application/rss+xml" title="RSS" href="https:&#x2F;&#x2F;www.hoodie.de&#x2F;rss.xml">
+        <!--  css -->
+        <link rel="stylesheet"  href="https:&#x2F;&#x2F;www.hoodie.de/fonts.css" >
+        <link rel="stylesheet"  href="https:&#x2F;&#x2F;www.hoodie.de/hoodie.css" >
+        <link rel="stylesheet" href="https:&#x2F;&#x2F;www.hoodie.de/font-awesome/all.css">
+        <script src="https:&#x2F;&#x2F;www.hoodie.de/search_index.en.js"></script>
+      
+    </head>
+
+    <body>
+      <header
+         >
+        
+    <h1>
+      <a href="https:&#x2F;&#x2F;www.hoodie.de&#x2F;blog&#x2F;time-and-datetime-again&#x2F;">
+       Time and Datetime Again
+      </a>
+    </h1>
+    <h3>
+      <a href="https:&#x2F;&#x2F;www.hoodie.de&#x2F;blog&#x2F;time-and-datetime-again&#x2F;">
+      how I did the same thing twice - adding iso8601 to rust-datetime
+    </a>
+  </h3>
+
+      </header>
+
+        <nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+        
+            <div class="container-fluid">
+        
+                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                    <ul class="nav navbar-nav navbar-right">
+                    
+                    
+                        <li> <a href="/"> Home </a> </li>
+                        <li> <a href="/blog"> Blog </a> </li>
+                        <li> <a href="/bio"> Bio </a> </li>
+                        <li> <a href="/archive"> Archive </a> </li>
+                        
+    
+    
+    <li>
+        <a href="https://github.com/hoodie" target="_blank" title="github/hoodie">
+            <i class="fab fa-github"></i>
+            <span> hoodie </span>
+        </a>
+    </li>
+    
+    
+    <li>
+        <a href="https://twitter.com/hoodie_de" target="_blank" title="twitter/hoodie_de">
+            <i class="fab fa-twitter" ></i>
+            <span> @hoodie_de </span>
+        </a>
+    </li>
+    
+    
+    <li>
+        <a href="akronymisier.bar" target="_blank" title="akronymisier.bar">
+            <i class="fas fa-microphone-alt" ></i>
+            <span> akronymisier.bar </span>
+        </a>
+    </li>
+    
+    
+    <li>
+        <a href="https:&#x2F;&#x2F;www.hoodie.de/rss.xml" target ="_blank" title="RSS">
+            <i class="fas fa-rss" ></i>
+            <span> RSS </span>
+        </a>
+    </li>
+    
+
+                    </ul>
+                </div>
+                <!-- /.navbar-collapse -->
+            </div>
+            <!-- /.container -->
+        
+        </nav>
+
+      
+
+<section class="post_container">
+
+  <article>
+    
+      <header>
+      <h2 class="article_title">
+        <a href="https:&#x2F;&#x2F;www.hoodie.de&#x2F;blog&#x2F;time-and-datetime-again&#x2F;" id="article_link">
+          Time and Datetime Again
+        </a>
+      </h2>
+      <h4>
+        how I did the same thing twice - adding iso8601 to rust-datetime
+      </h4>
+      
+      
+<ul class="frontmatter frontmatter_page" id="frontmatter">
+    <li> 800 words → 4 min </li>
+    <span class="dotDivider"></span>
+    <li> <time class="article_time"  datetime="2015-11-04T00:02:58+01:00">04. November 2015</time> </li>
+</ul>
+
+
+      
+      | 
+
+
+        <a href="https:&#x2F;&#x2F;www.hoodie.de&#x2F;tags&#x2F;rust&#x2F;">#rust</a>
+    
+
+
+      </header>
+      <h2 id="prerequisite">Prerequisite</h2>
+<p>Last July I was looking around for some Rust projects to contribute to in order to sharpen my teeth on an existing codebase.
+I ran into a Rust crate called <strong><a href="https://github.com/rust-datetime/datetime/">datetime</a></strong>.
+After I heard that Rust's Regex was supposedly very fast - I though - <em>a crate with such a prominent name<sup class="footnote-reference"><a href="#1">1</a></sup> and it does not yet support parsing dates?</em></p>
+<div class="footnote-definition" id="1"><sup class="footnote-definition-label">1</sup>
+<p>eg &quot;<a href="http://ruby-doc.org/stdlib-2.2.2/libdoc/date/rdoc/DateTime.html">Datetime</a>&quot; is a part of the Ruby standard library</p>
+</div>
+<p>So I went ahead and added the functionality to parse <a href="https://en.wikipedia.org/wiki/ISO_8601">iso8601</a> with regular expressions.
+With a little help of http://regexr.com/ I got it done.
+While I dug around in the internals of <em>datetime</em> I also found and fixed a few minor issues, hence it's original maintainer already had good experiences excepting my pull requests :D</p>
+<h3 id="coda">Coda</h3>
+<p>After my Regex parser was accepted I read about yet <a href="http://fnordig.de/2015/07/16/omnomnom-parsing-iso8601-dates-using-nom/">another implementation of iso8601</a> in Rust, using a parser combinator called <a href="https://github.com/Geal/nom">nom</a> instead of regular expressions.
+At the time I just though &quot;Oh well - but I just got done, and Rust's <a href="http://doc.rust-lang.org/regex/">Regex</a> is fast.&quot;</p>
+<h2 id="the-backlash">The backlash</h2>
+<p>2 months later I played around with Rust's benchmarking.
+Because I heard many good things about <a href="https://github.com/Geal/nom">nom</a> I decided to compare <a href="https://crates.io/crates/chrono">chrono</a>'s<sup class="footnote-reference"><a href="#2">2</a></sup> and <em>datetimes</em> parsing performance with the implementation presented by Jan-Erik Rediger's <a href="https://github.com/badboy/iso8601/commit/72cc6a0d257dd0fbac38ce120a8e32e35868b8bf">implementation</a> using nom. The <a href="https://github.com/hoodie/dateparser_benchmarks/tree/2aa390ad2b8750c9dd606100e66b51b461d22b0d">Results</a> were devastating:</p>
+<div class="footnote-definition" id="2"><sup class="footnote-definition-label">2</sup>
+<p>currently the most popular date/time crate</p>
+</div>
+<pre style="background-color:#ffffff;">
+<span style="color:#4d4d4c;">     </span><span style="color:#c82829;">Running</span><span style="color:#4271ae;"> target/release/dateparser_benchmarks-71747040d4b5a03b
+
+</span><span style="color:#c82829;">running</span><span style="color:#4271ae;"> 4 tests
+</span><span style="color:#c82829;">test</span><span style="color:#4271ae;"> chrono_bench::parse_iso8601              ... bench:         866 ns/iter (+/- 3</span><span style="color:#4d4d4c;">)
+</span><span style="color:#c82829;">test</span><span style="color:#4271ae;"> datetime_bench::parse_iso8601            ... bench:      82,033 ns/iter (+/- 847</span><span style="color:#4d4d4c;">)
+</span><span style="color:#c82829;">test</span><span style="color:#4271ae;"> nomdate_bench::parse_iso8601             ... bench:         260 ns/iter (+/- 2</span><span style="color:#4d4d4c;">)
+
+</span><span style="color:#c82829;">test</span><span style="color:#4271ae;"> result: ok. 0 passed</span><span style="color:#3e999f;">; </span><span style="color:#c82829;">0</span><span style="color:#4271ae;"> failed</span><span style="color:#3e999f;">; </span><span style="color:#c82829;">0</span><span style="color:#4271ae;"> ignored</span><span style="color:#3e999f;">; </span><span style="color:#c82829;">4</span><span style="color:#4271ae;"> measured
+</span></pre>
+<p>Too my defense: I hadn't spent a second on optimizations, and the datetime implementation was still the most standard conform out of the three.</p>
+<p>A little later, without my participation, this benchmark got a little bit of <a href="https://www.reddit.com/r/rust/comments/3pwxqw/benchmarking_datetime_libs_in_rust/">attention on reddit</a>.
+With help of <a href="https://github.com/pczarn">Piotr Czarnecki</a> it was possible to deduce that the instantiation of Regex objects is the most expensive part:</p>
+<pre style="background-color:#ffffff;">
+<span style="color:#c82829;">...
+test</span><span style="color:#4271ae;"> datetime_regex_pure_bench::create_regex ... bench:      41,473 ns/iter (+/- 1,217</span><span style="color:#4d4d4c;">)
+</span><span style="color:#c82829;">test</span><span style="color:#4271ae;"> datetime_regex_pure_bench::apply_regex  ... bench:       1,484 ns/iter (+/- 137</span><span style="color:#4d4d4c;">)
+</span><span style="color:#c82829;">...
+</span></pre>
+<p>That doesn't help much though, because when you parse a single string you still have to instantiate the Regex each time, and pulling it out of the implementation like Piotr did would just not make for a neat API.
+And even then, the nom version was still twice 3x as fast.</p>
+<h2 id="rolling-up-the-sleeves">Rolling up the sleeves</h2>
+<p>So the next time when I had a little time on my hands, I though I'd give it a try and put in Jan-Erik's nom parser into datetime instead of mine.<sup class="footnote-reference"><a href="#3">3</a></sup> 
+After all, I kinda owed ogham as much, after leaving him with such a slow implementation :D</p>
+<p>Turns out, the nom parser was still a bit incomplete since it was never meant for release as a crate.
+So I decided to contribute to both crates:</p>
+<ol>
+<li>make iso8601 a releasable general purpose library that exposes a simple API</li>
+<li>remove regex parsing from datetime all together</li>
+</ol>
+<p>The important differentiation is that iso8601 is no datetime library, it only knows how to parse those darn strings, while datetime itself does not care about iso standards, but understands what a valid date is. There is preliminary validity checking in iso8601, but that may even be dropped later on, if it has a performance advantage.
+Though the nom version became slightly slower through this <sup class="footnote-reference"><a href="#4">4</a></sup>. </p>
+<div class="footnote-definition" id="3"><sup class="footnote-definition-label">3</sup>
+<p>Meanwhile Datetime's maintainer <a href="https://github.com/ogham/">Benjamin Sago</a> decided to tackle the same issue by using <a href="https://crates.io/crates/lazy_static">lazy static</a>, At this point, sorry Ben for missing this, you had to <a href="https://github.com/rust-datetime/datetime/pull/9">pay the price</a>. Ogham: &quot;This merge sucks :p&quot;</p>
+</div>
+<div class="footnote-definition" id="4"><sup class="footnote-definition-label">4</sup>
+<p>I was never able to reproduce those 260ns numbers, even without modifications.</p>
+</div>
+<p>After sending pull requests to two separate crate owners I am glad to announce, <a href="https://github.com/rust-datetime/datetime">datetime</a> now has a faster and more complete parsing date-string-parsing implementation than chrono, thanks to <a href="https://github.com/badboy/">@badboy</a> and <a href="https://github.com/ogham/">@ogham</a>.</p>
+<h2 id="conclusion">Conclusion</h2>
+<p>This may be a very small contribution to the Rust crates ecosystem,
+but I had the chance to improve my Regex skills, could play around with Rusts benchmarking features, got a good look at how fast and safe parsers are really build and got a little bit of github-cred along the way. Let's call that a day.</p>
+
+      
+  </article>
+</section>
+
+
+      
+    </body>
+</html>

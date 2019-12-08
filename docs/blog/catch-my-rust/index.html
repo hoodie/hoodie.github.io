@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+      
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" >
+        <meta http-equiv="content-type" content="text/html; charset=utf-8">
+        <meta name="author" content="Hendrik Sollich"/>
+        <!-- Enable responsiveness on mobile devices-->
+        <meta name="viewport"  content="width=device-width, initial-scale=1.0, maximum-scale=1" >
+
+        <title> hoodie blog BETA </title>
+
+
+        <link rel="alternate" type="application/rss+xml" title="RSS" href="https:&#x2F;&#x2F;www.hoodie.de&#x2F;rss.xml">
+        <!--  css -->
+        <link rel="stylesheet"  href="https:&#x2F;&#x2F;www.hoodie.de/fonts.css" >
+        <link rel="stylesheet"  href="https:&#x2F;&#x2F;www.hoodie.de/hoodie.css" >
+        <link rel="stylesheet" href="https:&#x2F;&#x2F;www.hoodie.de/font-awesome/all.css">
+        <script src="https:&#x2F;&#x2F;www.hoodie.de/search_index.en.js"></script>
+      
+    </head>
+
+    <body>
+      <header
+         >
+        
+    <h1>
+      <a href="https:&#x2F;&#x2F;www.hoodie.de&#x2F;blog&#x2F;catch-my-rust&#x2F;">
+       Catch my Rust!
+      </a>
+    </h1>
+    <h3>
+      <a href="https:&#x2F;&#x2F;www.hoodie.de&#x2F;blog&#x2F;catch-my-rust&#x2F;">
+      
+    </a>
+  </h3>
+
+      </header>
+
+        <nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+        
+            <div class="container-fluid">
+        
+                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                    <ul class="nav navbar-nav navbar-right">
+                    
+                    
+                        <li> <a href="/"> Home </a> </li>
+                        <li> <a href="/blog"> Blog </a> </li>
+                        <li> <a href="/bio"> Bio </a> </li>
+                        <li> <a href="/archive"> Archive </a> </li>
+                        
+    
+    
+    <li>
+        <a href="https://github.com/hoodie" target="_blank" title="github/hoodie">
+            <i class="fab fa-github"></i>
+            <span> hoodie </span>
+        </a>
+    </li>
+    
+    
+    <li>
+        <a href="https://twitter.com/hoodie_de" target="_blank" title="twitter/hoodie_de">
+            <i class="fab fa-twitter" ></i>
+            <span> @hoodie_de </span>
+        </a>
+    </li>
+    
+    
+    <li>
+        <a href="akronymisier.bar" target="_blank" title="akronymisier.bar">
+            <i class="fas fa-microphone-alt" ></i>
+            <span> akronymisier.bar </span>
+        </a>
+    </li>
+    
+    
+    <li>
+        <a href="https:&#x2F;&#x2F;www.hoodie.de/rss.xml" target ="_blank" title="RSS">
+            <i class="fas fa-rss" ></i>
+            <span> RSS </span>
+        </a>
+    </li>
+    
+
+                    </ul>
+                </div>
+                <!-- /.navbar-collapse -->
+            </div>
+            <!-- /.container -->
+        
+        </nav>
+
+      
+
+<section class="post_container">
+
+  <article>
+    
+      <header>
+      <h2 class="article_title">
+        <a href="https:&#x2F;&#x2F;www.hoodie.de&#x2F;blog&#x2F;catch-my-rust&#x2F;" id="article_link">
+          Catch my Rust!
+        </a>
+      </h2>
+      <h4>
+        
+      </h4>
+      
+      
+<ul class="frontmatter frontmatter_page" id="frontmatter">
+    <li> 591 words → 3 min </li>
+    <span class="dotDivider"></span>
+    <li> <time class="article_time"  datetime="2015-06-20">20. June 2015</time> </li>
+</ul>
+
+
+      
+      | 
+
+
+      </header>
+      <p>After JavaScript, Ruby, C++ and Python I had to try out a new
+programming language again.
+I’ve been wanting to play around with Mozilla’s Rust for quite a while
+but when I looked into it a year ago the language seem too weird to get
+a hold of its concepts. Rust felt like basically every syntactical
+concept was done differently than I would have expected, knowing other
+languages. Also, it was pretty inconvenient to get it to install on
+archlinux.
+Especially after hearing about several major changes in the
+architecture of the language and its objectives (moving away from
+garbage collection and dropping of green threads) it seemed like there
+was too much changing to get in now, so I waited.</p>
+<p>With the launch of Rust 1.0, I had to give it another chance, the
+language was being discussed all over the place. Some people claimed
+rust would look and feel like ruby, I beg to differ. It was tremendously
+harder to write a simple piece of software in rust than in ruby. At
+least to me in the beginning. My objective was to reproduce my <a href="https://github.com/hoodie/catch-my-bus">catch my
+bus</a> script in rust. The cool
+thing about rust was that it comes with a packagemanager/buildsystem
+called cargo. It feels like a mix of cmake and ruby gems. Since there
+were several high profile projects already on the move I could already
+profit from a repository of crates (like gems in ruby) to help me in the
+process.</p>
+<p>Catch-my-bus is a bit like an advanced Hello World to me. It’s not meant
+to be a full fletched tool, even though it has been turned
+<a href="http://catchmybus.kilian.io/">into</a>
+<a href="https://github.com/devmeepo/catch-my-bus-python">one</a>.
+It calls a webservice, parses some json and produces regular reminders.
+This can be done quite simply in ruby, using the right gems.
+In rust, the webservice and parsing part was relatively easy too, since
+there are already libs like <a href="https://hyper.rs/">hyper</a> and
+<a href="https://crates.io/crates/rustc-serialize">rustc-serialize</a>. Since
+Mozilla is developing Servo in Rust you can expect to find excellent
+implementations for what ever a browser uses too. The missing component
+was the notification part.</p>
+<p>I researched into what had been done in that area and it seemed
+unsatisfactory. Though some people already implemented
+<a href="https://github.com/nykac/rust-notify">bindings</a>
+<a href="https://crates.io/crates/libnotify-sys">to</a>
+<a href="https://crates.io/crates/libnotify">libnotify</a>. So I decided to invest
+some time and do <a href="https://crates.io/crates/notify-rust">my own</a>. Now
+<a href="https://xkcd.com/927/">there are 3 crates</a> on
+<a href="https://crates.io/">crates.io</a> that offer this functionality, however I
+can savely say, mine is the best documented and also the only one that
+does not rely on ffi bindings to C \0/.</p>
+<p>Since I released my crate it has become my main rust project for a
+while, so my <a href="https://github.com/hoodie/catch-my-rust">catch-my-bus in
+rust</a> is still not where I
+wanted it to be originally, but since the compeeding implementations by
+<a href="http://github.com/kiliankoe/catchmybus">Kilian Koeltzsch</a> and
+<a href="https://github.com/devmeepo/catch-my-bus-python">Ian</a> extended the
+original functionality a little I am currently looking into system tray
+icons in rust. This however is strictly a side-side-project, so don’t be
+surprised if I drop that and stick with a clone of my original
+catch-my-bus ᐛ</p>
+<p>This was supposed to become a post about rust itself and what I think
+about it, but, why not make it a series.</p>
+<p>Later!</p>
+
+      
+  </article>
+</section>
+
+
+      
+    </body>
+</html>

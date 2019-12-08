@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+      
+        <meta http-equiv="content-type" content="text/html; charset=utf-8">
+        <meta name="author" content="Hendrik Sollich"/>
+        <!-- Enable responsiveness on mobile devices-->
+        <meta name="viewport"  content="width=device-width, initial-scale=1.0, maximum-scale=1" >
+
+        <title>hoodie.de</title>
+        
+        <script src="stripes.js"></script>
+        <!--  css -->
+        <link rel="stylesheet"  href="https:&#x2F;&#x2F;www.hoodie.de/fonts.css" >
+        <link rel="stylesheet"  href="https:&#x2F;&#x2F;www.hoodie.de/index.css" >
+      
+    </head>
+
+    <body>
+
+      <section class="content">
+
+            <header>
+                  <h1>hoodie.de</h1>
+            </header>
+            <article>
+
+                  <table width="300" cellspacing="0">
+                        <tr> <td class="url"><a href="/blog">hoodie blog</a> </td> </tr>
+                        <tr> <td class="url"><a href="https://github.com/hoodie/">hoodie on github</a> </td> </tr>
+                        <tr> <td class="url"><a href="https://twitter.com/hoodie_de/">... on twitter</a> </td> </tr>
+                        <tr> <td class="url"><a href="https://keybase.io/hoodie/">... on keybase.io</a> </td> </tr>
+                        <tr> <td class="url"><a href="https://getpocket.com/@hoodie_de">... on pocket</a> </td> </tr>
+                  </table>
+
+            </article>
+            <footer></footer>
+
+      </section>
+
+    <canvas style="display:none" width="1000" height="600" id="stripe_canvas"></canvas>
+
+    <script>
+        let canvas = document.querySelector("#stripe_canvas");
+        if (canvas.getContext){
+            let ctx = canvas.getContext('2d');
+            render(ctx);
+            console.log(
+            document.querySelector(".content").style.height
+            );
+            document.querySelector(".content").style.background = "url(" + canvas.toDataURL() + ")";
+        } else {
+            console.warn("no canvas support");
+        }
+    </script>
+      
+    </body>
+</html>

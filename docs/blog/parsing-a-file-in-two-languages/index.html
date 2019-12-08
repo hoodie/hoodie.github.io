@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+      
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" >
+        <meta http-equiv="content-type" content="text/html; charset=utf-8">
+        <meta name="author" content="Hendrik Sollich"/>
+        <!-- Enable responsiveness on mobile devices-->
+        <meta name="viewport"  content="width=device-width, initial-scale=1.0, maximum-scale=1" >
+
+        <title> hoodie blog BETA </title>
+
+
+        <link rel="alternate" type="application/rss+xml" title="RSS" href="https:&#x2F;&#x2F;www.hoodie.de&#x2F;rss.xml">
+        <!--  css -->
+        <link rel="stylesheet"  href="https:&#x2F;&#x2F;www.hoodie.de/fonts.css" >
+        <link rel="stylesheet"  href="https:&#x2F;&#x2F;www.hoodie.de/hoodie.css" >
+        <link rel="stylesheet" href="https:&#x2F;&#x2F;www.hoodie.de/font-awesome/all.css">
+        <script src="https:&#x2F;&#x2F;www.hoodie.de/search_index.en.js"></script>
+      
+    </head>
+
+    <body>
+      <header
+         >
+        
+    <h1>
+      <a href="https:&#x2F;&#x2F;www.hoodie.de&#x2F;blog&#x2F;parsing-a-file-in-two-languages&#x2F;">
+       Parsing a File in Two Languages
+      </a>
+    </h1>
+    <h3>
+      <a href="https:&#x2F;&#x2F;www.hoodie.de&#x2F;blog&#x2F;parsing-a-file-in-two-languages&#x2F;">
+      In which I take a Ruby one-liner and inflate it, until it is valid Rust
+    </a>
+  </h3>
+
+      </header>
+
+        <nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+        
+            <div class="container-fluid">
+        
+                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                    <ul class="nav navbar-nav navbar-right">
+                    
+                    
+                        <li> <a href="/"> Home </a> </li>
+                        <li> <a href="/blog"> Blog </a> </li>
+                        <li> <a href="/bio"> Bio </a> </li>
+                        <li> <a href="/archive"> Archive </a> </li>
+                        
+    
+    
+    <li>
+        <a href="https://github.com/hoodie" target="_blank" title="github/hoodie">
+            <i class="fab fa-github"></i>
+            <span> hoodie </span>
+        </a>
+    </li>
+    
+    
+    <li>
+        <a href="https://twitter.com/hoodie_de" target="_blank" title="twitter/hoodie_de">
+            <i class="fab fa-twitter" ></i>
+            <span> @hoodie_de </span>
+        </a>
+    </li>
+    
+    
+    <li>
+        <a href="akronymisier.bar" target="_blank" title="akronymisier.bar">
+            <i class="fas fa-microphone-alt" ></i>
+            <span> akronymisier.bar </span>
+        </a>
+    </li>
+    
+    
+    <li>
+        <a href="https:&#x2F;&#x2F;www.hoodie.de/rss.xml" target ="_blank" title="RSS">
+            <i class="fas fa-rss" ></i>
+            <span> RSS </span>
+        </a>
+    </li>
+    
+
+                    </ul>
+                </div>
+                <!-- /.navbar-collapse -->
+            </div>
+            <!-- /.container -->
+        
+        </nav>
+
+      
+
+<section class="post_container">
+
+  <article>
+    
+      <header>
+      <h2 class="article_title">
+        <a href="https:&#x2F;&#x2F;www.hoodie.de&#x2F;blog&#x2F;parsing-a-file-in-two-languages&#x2F;" id="article_link">
+          Parsing a File in Two Languages
+        </a>
+      </h2>
+      <h4>
+        In which I take a Ruby one-liner and inflate it, until it is valid Rust
+      </h4>
+      
+      
+<ul class="frontmatter frontmatter_page" id="frontmatter">
+    <li> 1272 words → 7 min </li>
+    <span class="dotDivider"></span>
+    <li> <time class="article_time"  datetime="2015-09-23T13:52:13+02:00">23. September 2015</time> </li>
+</ul>
+
+
+      
+      | 
+
+
+      </header>
+      <h2 id="introduction">Introduction</h2>
+<p>A friend asked me today to write him a little script to filter a file in ruby.
+The objective was odd but simple, the file looked like this:</p>
+<pre style="background-color:#ffffff;">
+<span style="color:#4d4d4c;">this file contains lines that start with quotes
+like this, not but
+&quot;like&quot; this
+and another one for
+&quot;your&quot; entertainment
+this is not a particularly good
+&quot;style&quot; but it serves the purpose
+</span></pre>
+<p>What the script needed to do was get all the words in quotes, but only those at the beginning of a line.
+You could waste some time and write a REGEX<sup class="footnote-reference"><a href="#r">1</a></sup>, but Ruby was our weapon of choice. <sup class="footnote-reference"><a href="#1">2</a></sup>
+My personal requirement was: <em>do it in one line</em> but keep it legible.
+So this came out of it.</p>
+<div class="footnote-definition" id="1"><sup class="footnote-definition-label">2</sup>
+<p>Please leave me be, I know it could have been even shorter than this and more readable :D <sup class="footnote-reference"><a href="#2">3</a></sup>
+<sup class="footnote-reference"><a href="#2">3</a></sup>: Infact, please send me your implementations :P
+<sup class="footnote-reference"><a href="#r">1</a></sup>: <code>sed -n 's/^&quot;\([^&quot;]*\)&quot;.*/\1/p' file.txt</code></p>
+</div>
+<pre style="background-color:#ffffff;">
+<span style="color:#4271ae;">puts </span><span style="color:#c99e00;">File</span><span style="color:#4d4d4c;">.</span><span style="color:#4271ae;">open</span><span style="color:#4d4d4c;">(</span><span style="color:#c82829;">$FILENAME</span><span style="color:#4d4d4c;">).read().lines().</span><span style="color:#4271ae;">select</span><span style="color:#4d4d4c;">{|</span><span style="color:#f5871f;">l</span><span style="color:#4d4d4c;">|l.start_with? </span><span style="color:#f5871f;">?&quot;</span><span style="color:#4d4d4c;">}.map{|</span><span style="color:#f5871f;">l</span><span style="color:#4d4d4c;">|l.split()[</span><span style="color:#f5871f;">0</span><span style="color:#4d4d4c;">][</span><span style="color:#f5871f;">1</span><span style="color:#3e999f;">..-</span><span style="color:#f5871f;">2</span><span style="color:#4d4d4c;">]}
+</span></pre><pre style="background-color:#ffffff;">
+<span style="color:#4d4d4c;">&quot;like&quot;
+&quot;your&quot;
+&quot;style&quot;
+</span></pre><h2 id="ruby-in-detail">Ruby in Detail</h2>
+<p>I admire the functional simplicity of a piece of code like this.
+You might say, this is cryptic?
+<strong>Did you look at the Regex?</strong>
+So let's write it down in a more legible fashion:</p>
+<pre style="background-color:#ffffff;">
+<span style="color:#c99e00;">File</span><span style="color:#4d4d4c;">.</span><span style="color:#4271ae;">open</span><span style="color:#4d4d4c;">(</span><span style="color:#c82829;">$FILENAME</span><span style="color:#4d4d4c;">)             </span><span style="color:#999999;"># opens the file, $FILENAME is a convenience
+    </span><span style="color:#4d4d4c;">.read()                      </span><span style="color:#999999;"># turns it into a string
+    </span><span style="color:#4d4d4c;">.lines()                     </span><span style="color:#999999;"># an Array of lines
+    </span><span style="color:#4d4d4c;">.</span><span style="color:#4271ae;">select</span><span style="color:#4d4d4c;">{|</span><span style="color:#f5871f;">l</span><span style="color:#4d4d4c;">|l.start_with? </span><span style="color:#f5871f;">?&quot;</span><span style="color:#4d4d4c;">} </span><span style="color:#999999;"># drops all the lines that don&#39;t start with the character &quot;
+    </span><span style="color:#4d4d4c;">.map{|</span><span style="color:#f5871f;">l</span><span style="color:#4d4d4c;">|                     </span><span style="color:#999999;"># modify the Array
+</span><span style="color:#4d4d4c;">      l.split()[</span><span style="color:#f5871f;">0</span><span style="color:#4d4d4c;">]               </span><span style="color:#999999;"># first block before a SPACE
+      </span><span style="color:#4d4d4c;">[</span><span style="color:#f5871f;">1</span><span style="color:#3e999f;">..-</span><span style="color:#f5871f;">2</span><span style="color:#4d4d4c;">]                    </span><span style="color:#999999;"># use only the second till next to last character
+    </span><span style="color:#4d4d4c;">}
+</span></pre>
+<p>Now my idea was to take a look at how much more code I would have to write to get this done in <strong>Rust</strong>, a language I sometimes compare to Ruby<sup class="footnote-reference"><a href="#3">4</a></sup>.
+I've written a bunch of Rust so far, but never tried to produce a program that ought to look like a Ruby script.
+<sup class="footnote-reference"><a href="#3">4</a></sup>: I take that back now</p>
+<h2 id="reading-the-file">Reading the File</h2>
+<p>First we want to open a file, let's leave out the argv part for now and open a static path.</p>
+<pre style="background-color:#ffffff;">
+<span style="color:#8959a8;">fn </span><span style="color:#4271ae;">main</span><span style="color:#4d4d4c;">() {
+    </span><span style="color:#8959a8;">let</span><span style="color:#4d4d4c;"> file_content </span><span style="color:#3e999f;">= </span><span style="color:#4d4d4c;">File::open(Path::new(</span><span style="color:#718c00;">&quot;./file.txt&quot;</span><span style="color:#4d4d4c;">)).</span><span style="color:#4271ae;">read_to_string</span><span style="color:#4d4d4c;">();
+    file.content.</span><span style="color:#4271ae;">lines</span><span style="color:#4d4d4c;">().</span><span style="color:#4271ae;">filter</span><span style="color:#4d4d4c;">().</span><span style="color:#4271ae;">map</span><span style="color:#4d4d4c;">( </span><span style="color:#3e999f;">...
+</span></pre>
+<p>This looks reasonable doesn't it?
+Unfortunately this is no working Rust code ☹.
+I did a whole lot of things that Rust wont let me get away with.
+First of all, I need to include
+<code>use std::path::Path;</code> to specify a <code>Path</code>,
+<code>use std::fs::File;</code> to open the file and finally
+<code>use std::io::Read;</code> to then read it into a <code>String</code>.</p>
+<pre style="background-color:#ffffff;">
+<span style="color:#8959a8;">use </span><span style="color:#4d4d4c;">std::fs::File;
+</span><span style="color:#8959a8;">use </span><span style="color:#4d4d4c;">std::io::Read;
+</span><span style="color:#8959a8;">use </span><span style="color:#4d4d4c;">std::path::Path;
+</span><span style="color:#8959a8;">fn </span><span style="color:#4271ae;">main</span><span style="color:#4d4d4c;">() {
+    </span><span style="color:#8959a8;">let</span><span style="color:#4d4d4c;"> file_content </span><span style="color:#3e999f;">= </span><span style="color:#4d4d4c;">File::open(Path::new(</span><span style="color:#718c00;">&quot;./file.txt&quot;</span><span style="color:#4d4d4c;">)).</span><span style="color:#4271ae;">read_to_string</span><span style="color:#4d4d4c;">();
+    file.content.</span><span style="color:#4271ae;">lines</span><span style="color:#4d4d4c;">().</span><span style="color:#4271ae;">filter</span><span style="color:#4d4d4c;">().</span><span style="color:#4271ae;">map</span><span style="color:#4d4d4c;">( </span><span style="color:#3e999f;">...
+</span></pre>
+<p>This does not work either, because for some odd reason <code>read_to_string</code> does not return its result but rather takes a <code>&amp;mut String</code>, a mutable reference to a String.
+So I add <code>let mut file_content = String::new()</code> because it wants to be initialized too.
+Let's also pull out the path variable, just to make the lines shorter.</p>
+<pre style="background-color:#ffffff;">
+<span style="color:#3e999f;">...
+</span><span style="color:#8959a8;">let</span><span style="color:#4d4d4c;"> path </span><span style="color:#3e999f;">= </span><span style="color:#4d4d4c;">Path::new(</span><span style="color:#718c00;">&quot;./file.txt&quot;</span><span style="color:#4d4d4c;">);
+</span><span style="color:#8959a8;">let mut</span><span style="color:#4d4d4c;"> file_content </span><span style="color:#3e999f;">= </span><span style="color:#c99e00;">String</span><span style="color:#4d4d4c;">::new();
+File::open(</span><span style="color:#3e999f;">&amp;</span><span style="color:#4d4d4c;">path).</span><span style="color:#4271ae;">unwrap</span><span style="color:#4d4d4c;">().</span><span style="color:#4271ae;">read_to_string</span><span style="color:#4d4d4c;">(</span><span style="color:#3e999f;">&amp;</span><span style="color:#8959a8;">mut</span><span style="color:#4d4d4c;"> file_content).</span><span style="color:#4271ae;">unwrap</span><span style="color:#4d4d4c;">();
+</span><span style="color:#3e999f;">...
+</span></pre>
+<p>But now we finally have the content of our file in a string and the Rust standard-lib even offers a <code>lines()</code> methods for <code>String</code>s.
+<strong>Rejoice!</strong></p>
+<p>Now <code>lines()</code> does not return an Array, it returns a <code>Lines</code> struct.
+The Rust equivalent to <code>Array::select()</code> is <code>Iterator::filter</code>, and <code>Lines</code> happens to implement <code>Iterator&lt;&amp;str&gt;</code>. Let's have a look:</p>
+<pre style="background-color:#ffffff;">
+<span style="color:#8959a8;">let</span><span style="color:#4d4d4c;"> lines:Vec&lt;</span><span style="color:#3e999f;">&amp;</span><span style="color:#8959a8;">str</span><span style="color:#4d4d4c;">&gt; </span><span style="color:#3e999f;">=</span><span style="color:#4d4d4c;"> file_content
+    .</span><span style="color:#4271ae;">lines</span><span style="color:#4d4d4c;">()
+    .</span><span style="color:#4271ae;">filter</span><span style="color:#4d4d4c;">(|</span><span style="color:#f5871f;">l</span><span style="color:#4d4d4c;">|{ l.</span><span style="color:#4271ae;">starts_with</span><span style="color:#4d4d4c;">(</span><span style="color:#718c00;">&#39;&quot;&#39;</span><span style="color:#4d4d4c;">) })
+    .</span><span style="color:#4271ae;">map</span><span style="color:#4d4d4c;">(|</span><span style="color:#f5871f;">l</span><span style="color:#4d4d4c;">|l.</span><span style="color:#4271ae;">split_whitespace</span><span style="color:#4d4d4c;">().</span><span style="color:#4271ae;">nth</span><span style="color:#4d4d4c;">(</span><span style="color:#f5871f;">0</span><span style="color:#4d4d4c;">).</span><span style="color:#4271ae;">unwrap</span><span style="color:#4d4d4c;">())
+    .</span><span style="color:#4271ae;">map</span><span style="color:#4d4d4c;">(|</span><span style="color:#f5871f;">l</span><span style="color:#4d4d4c;">|l.</span><span style="color:#4271ae;">trim_matches</span><span style="color:#4d4d4c;">(</span><span style="color:#718c00;">&#39;&quot;&#39;</span><span style="color:#4d4d4c;">))
+    .</span><span style="color:#4271ae;">collect</span><span style="color:#4d4d4c;">();
+</span></pre><h2 id="what-s-different">What's different?</h2>
+<blockquote>
+<p>Rust feels almost, but not quite, entirely unlike Ruby</p>
+</blockquote>
+<p>So why does this look awkward to the Rubyist?
+In Rust a Vector<sup class="footnote-reference"><a href="#v">5</a></sup> is not quite an Iterator and vice versa.
+This divide is what keeps us from writing such simple code as in Ruby.
+The output of <code>lines()</code> is an Iterator, so we have to <code>collect()</code> at the end to turn it back into a Vector.
+Same with <code>split_whitespace()</code> so we can't index into the first item with <code>[0]</code> <small>(that's for Vector)</small> but rather have to run there with <code>.nth(0)</code>, which my fail and therefore returns a <a href="http://rustbyexample.com/std/result.html">Result</a>.</p>
+<div class="footnote-definition" id="v"><sup class="footnote-definition-label">5</sup>
+<p>Rust Arrays are primitives and can not grow, there for we use Vectors. Same as in C++.</p>
+</div>
+<h2 id="printing">Printing</h2>
+<p>Now that we have the data we wanted in the datastructure that we wanted we have to print it.
+Ruby allows to simply <code>puts</code> it and the Array of Strings will already be neatly formated into lines.
+Rust has the <code>println!()</code> macro.</p>
+<pre style="background-color:#ffffff;">
+<span style="color:#4d4d4c;">println!(</span><span style="color:#718c00;">&quot;</span><span style="color:#666969;">{}</span><span style="color:#718c00;">&quot;</span><span style="color:#4d4d4c;">, lines);
+</span></pre>
+<p>For this to work you have to implement <code>core::fmt::Display</code> for <code>collections::vec::Vec&lt;&amp;str&gt;</code>.
+Let's not go into this right now, I will if you ask me.
+What is implemented is the Debug trait.</p>
+<pre style="background-color:#ffffff;">
+<span style="color:#4d4d4c;">println!(</span><span style="color:#718c00;">&quot;</span><span style="color:#666969;">{:#?}</span><span style="color:#718c00;">&quot;</span><span style="color:#4d4d4c;">, lines);
+</span></pre>
+<p>Works immediately but, looks like this.</p>
+<pre style="background-color:#ffffff;">
+<span style="color:#4d4d4c;">[
+    &quot;like&quot;,
+    &quot;your&quot;,
+    &quot;style&quot;
+]
+
+</span></pre>
+<p>So we have to resort to the for loop, which in Rust is syntactic sugar to the <a href="http://rustbyexample.com/trait/iter.html">iterator</a> trait.</p>
+<pre style="background-color:#ffffff;">
+<span style="color:#8959a8;">for</span><span style="color:#4d4d4c;"> line </span><span style="color:#3e999f;">in</span><span style="color:#4d4d4c;"> lines{
+    println!(</span><span style="color:#718c00;">&quot;</span><span style="color:#666969;">{}</span><span style="color:#718c00;">&quot;</span><span style="color:#4d4d4c;">, line);
+}
+</span></pre><pre style="background-color:#ffffff;">
+<span style="color:#4d4d4c;">like
+your
+style
+</span></pre>
+<p>We got it!!1!</p>
+<pre style="background-color:#ffffff;">
+<span style="color:#8959a8;">use </span><span style="color:#4d4d4c;">std::fs::File;
+</span><span style="color:#8959a8;">use </span><span style="color:#4d4d4c;">std::io::Read;
+</span><span style="color:#8959a8;">use </span><span style="color:#4d4d4c;">std::path::Path;
+
+</span><span style="color:#8959a8;">fn </span><span style="color:#4271ae;">main</span><span style="color:#4d4d4c;">() {
+    </span><span style="color:#8959a8;">let</span><span style="color:#4d4d4c;"> arg </span><span style="color:#3e999f;">= </span><span style="color:#4d4d4c;">std::env::args().</span><span style="color:#4271ae;">nth</span><span style="color:#4d4d4c;">(</span><span style="color:#f5871f;">1</span><span style="color:#4d4d4c;">).</span><span style="color:#4271ae;">unwrap</span><span style="color:#4d4d4c;">();
+    </span><span style="color:#8959a8;">let</span><span style="color:#4d4d4c;"> path </span><span style="color:#3e999f;">= </span><span style="color:#4d4d4c;">Path::new(</span><span style="color:#3e999f;">&amp;</span><span style="color:#4d4d4c;">arg);
+    </span><span style="color:#8959a8;">let mut</span><span style="color:#4d4d4c;"> file_content </span><span style="color:#3e999f;">= </span><span style="color:#c99e00;">String</span><span style="color:#4d4d4c;">::new();
+
+    File::open(</span><span style="color:#3e999f;">&amp;</span><span style="color:#4d4d4c;">path).</span><span style="color:#4271ae;">unwrap</span><span style="color:#4d4d4c;">().</span><span style="color:#4271ae;">read_to_string</span><span style="color:#4d4d4c;">(</span><span style="color:#3e999f;">&amp;</span><span style="color:#8959a8;">mut</span><span style="color:#4d4d4c;"> file_content).</span><span style="color:#4271ae;">unwrap</span><span style="color:#4d4d4c;">();
+
+    </span><span style="color:#8959a8;">let</span><span style="color:#4d4d4c;"> lines:Vec&lt;</span><span style="color:#3e999f;">&amp;</span><span style="color:#8959a8;">str</span><span style="color:#4d4d4c;">&gt; </span><span style="color:#3e999f;">=</span><span style="color:#4d4d4c;"> file_content
+        .</span><span style="color:#4271ae;">lines</span><span style="color:#4d4d4c;">()
+        .</span><span style="color:#4271ae;">filter</span><span style="color:#4d4d4c;">(|</span><span style="color:#f5871f;">l</span><span style="color:#4d4d4c;">|{ l.</span><span style="color:#4271ae;">starts_with</span><span style="color:#4d4d4c;">(</span><span style="color:#718c00;">&#39;&quot;&#39;</span><span style="color:#4d4d4c;">) })
+        .</span><span style="color:#4271ae;">map</span><span style="color:#4d4d4c;">(|</span><span style="color:#f5871f;">l</span><span style="color:#4d4d4c;">|l.</span><span style="color:#4271ae;">split_whitespace</span><span style="color:#4d4d4c;">().</span><span style="color:#4271ae;">nth</span><span style="color:#4d4d4c;">(</span><span style="color:#f5871f;">0</span><span style="color:#4d4d4c;">).</span><span style="color:#4271ae;">unwrap</span><span style="color:#4d4d4c;">())
+        .</span><span style="color:#4271ae;">map</span><span style="color:#4d4d4c;">(|</span><span style="color:#f5871f;">l</span><span style="color:#4d4d4c;">|l.</span><span style="color:#4271ae;">trim_matches</span><span style="color:#4d4d4c;">(</span><span style="color:#718c00;">&#39;&quot;&#39;</span><span style="color:#4d4d4c;">))
+        .</span><span style="color:#4271ae;">collect</span><span style="color:#4d4d4c;">();
+
+    </span><span style="color:#8959a8;">for</span><span style="color:#4d4d4c;"> line </span><span style="color:#3e999f;">in</span><span style="color:#4d4d4c;"> lines{
+        println!(</span><span style="color:#718c00;">&quot;</span><span style="color:#666969;">{}</span><span style="color:#718c00;">&quot;</span><span style="color:#4d4d4c;">, line);
+    }
+}
+</span></pre>
+<p>Feel free to bug me with questions on <a href="https://twitter.com/hashtag/rustvsruby">twitter #rustvsruby</a>.</p>
+<h2 id="conclusion">Conclusion</h2>
+<p>So Rust and Ruby have a few functional aspects in common, mostly Rust let's you do a few things you know from Ruby but can't do in e.g. old style C++ or even python or javascript without an abundance of <code>function</code> or <code>lambda</code> keywords.
+However Rust is still far from a scripting language in that it is clearly less productive.
+Mostly the type system makes you stumble into a lot of pitfalls if you try to hang on to your Ruby-Mindset.
+Anyways, its still much prettier to look at than comparable languages, which by now is the major reason I like it.</p>
+<p><small>PS: todays background image comes from <a href="https://www.flickr.com/photos/vinothchandar/4308120229/in/photostream/">Vinoth Chandar</a></small></p>
+<p><small>PS2: I'd be happy to receive your C++, javascript and python implementations of this program.</small></p>
+<h2 id="appendix">Appendix</h2>
+<p>Thanks for sending me more examples, not that this piece of code is particularly difficult to write, so just for fun, here are examples in </p>
+<h3 id="haskell"><a href="https://gist.github.com/JustusAdam/0d793b4ef86711273f68">Haskell</a></h3>
+<pre style="background-color:#ffffff;">
+<span style="color:#999999;">{- read a file, filter out all words in quotes that are at the beginning of a line, and print the resulting words. Using functions from Prelude only -}</span><span style="color:#4d4d4c;">
+main </span><span style="color:#3e999f;">=</span><span style="color:#4d4d4c;"> readFile </span><span style="color:#718c00;">&quot;input.txt&quot; </span><span style="color:#3e999f;">&gt;&gt;=</span><span style="color:#4d4d4c;"> mapM (putStrLn </span><span style="color:#3e999f;">.</span><span style="color:#4d4d4c;"> ((</span><span style="color:#718c00;">&#39;</span><span style="color:#f5871f;">\&quot;</span><span style="color:#718c00;">&#39; </span><span style="color:#3e999f;">:</span><span style="color:#4d4d4c;">) </span><span style="color:#3e999f;">.</span><span style="color:#4d4d4c;"> (</span><span style="color:#3e999f;">++ </span><span style="color:#718c00;">&quot;</span><span style="color:#f5871f;">\&quot;</span><span style="color:#718c00;">&quot;</span><span style="color:#4d4d4c;">) </span><span style="color:#3e999f;">.</span><span style="color:#4d4d4c;"> takeWhile (</span><span style="color:#3e999f;">/= </span><span style="color:#718c00;">&#39;</span><span style="color:#f5871f;">\&quot;</span><span style="color:#718c00;">&#39;</span><span style="color:#4d4d4c;">) </span><span style="color:#3e999f;">.</span><span style="color:#4d4d4c;"> tail)) </span><span style="color:#3e999f;">.</span><span style="color:#4d4d4c;"> filter ((</span><span style="color:#3e999f;">== </span><span style="color:#718c00;">&#39;</span><span style="color:#f5871f;">\&quot;</span><span style="color:#718c00;">&#39;</span><span style="color:#4d4d4c;">) </span><span style="color:#3e999f;">.</span><span style="color:#4d4d4c;"> head) </span><span style="color:#3e999f;">.</span><span style="color:#4d4d4c;"> lines
+</span></pre><pre style="background-color:#ffffff;">
+<span style="color:#999999;">{- here&#39;s another version, that&#39;s a bit more hacky in my opinion, but closer to the original (and shorter than the runby code ;) -}</span><span style="color:#4d4d4c;">
+main</span><span style="color:#3e999f;">=</span><span style="color:#4d4d4c;">readFile</span><span style="color:#718c00;">&quot;input.txt&quot;</span><span style="color:#3e999f;">&gt;&gt;=</span><span style="color:#4d4d4c;">mapM(putStrLn</span><span style="color:#3e999f;">.</span><span style="color:#4d4d4c;">takeWhile(</span><span style="color:#3e999f;">/=</span><span style="color:#718c00;">&#39; &#39;</span><span style="color:#4d4d4c;">))</span><span style="color:#3e999f;">.</span><span style="color:#4d4d4c;">filter((</span><span style="color:#3e999f;">==</span><span style="color:#718c00;">&#39;</span><span style="color:#f5871f;">\&quot;</span><span style="color:#718c00;">&#39;</span><span style="color:#4d4d4c;">)</span><span style="color:#3e999f;">.</span><span style="color:#4d4d4c;">head)</span><span style="color:#3e999f;">.</span><span style="color:#4d4d4c;">lines
+</span></pre><h3 id="more-ruby">More Ruby</h3>
+<pre style="background-color:#ffffff;">
+<span style="color:#999999;">#!/bin/env ruby
+</span><span style="color:#4271ae;">puts open</span><span style="color:#4d4d4c;">(</span><span style="color:#c82829;">$FILENAME</span><span style="color:#4d4d4c;">).grep(</span><span style="color:#c82829;">/</span><span style="color:#f5871f;">\&quot;</span><span style="color:#c82829;">(</span><span style="color:#f5871f;">\w</span><span style="color:#c82829;">+)</span><span style="color:#f5871f;">\&quot;</span><span style="color:#c82829;">/</span><span style="color:#4d4d4c;">){</span><span style="color:#c82829;">$1</span><span style="color:#4d4d4c;">}
+
+</span><span style="color:#4271ae;">puts open</span><span style="color:#4d4d4c;">(</span><span style="color:#c82829;">$FILENAME</span><span style="color:#4d4d4c;">).read.lines().</span><span style="color:#4271ae;">select</span><span style="color:#4d4d4c;">{|</span><span style="color:#f5871f;">l</span><span style="color:#4d4d4c;">| l.start_with?  </span><span style="color:#f5871f;">?&quot;</span><span style="color:#4d4d4c;">}.map{|</span><span style="color:#f5871f;">l</span><span style="color:#4d4d4c;">|l.split[</span><span style="color:#f5871f;">0</span><span style="color:#4d4d4c;">][</span><span style="color:#f5871f;">1</span><span style="color:#3e999f;">..-</span><span style="color:#f5871f;">2</span><span style="color:#4d4d4c;">]}
+
+</span><span style="color:#4271ae;">puts open</span><span style="color:#4d4d4c;">(</span><span style="color:#c82829;">$FILENAME</span><span style="color:#4d4d4c;">).</span><span style="color:#4271ae;">readlines</span><span style="color:#4d4d4c;">().</span><span style="color:#4271ae;">select</span><span style="color:#4d4d4c;">{|</span><span style="color:#f5871f;">l</span><span style="color:#4d4d4c;">| l[</span><span style="color:#f5871f;">0</span><span style="color:#4d4d4c;">]</span><span style="color:#3e999f;">==</span><span style="color:#f5871f;">?&quot;</span><span style="color:#4d4d4c;">}.map{|</span><span style="color:#f5871f;">l</span><span style="color:#4d4d4c;">|l.split[</span><span style="color:#f5871f;">0</span><span style="color:#4d4d4c;">][</span><span style="color:#f5871f;">1</span><span style="color:#3e999f;">..-</span><span style="color:#f5871f;">2</span><span style="color:#4d4d4c;">]}
+
+</span><span style="color:#4271ae;">puts open</span><span style="color:#4d4d4c;">(</span><span style="color:#c82829;">$FILENAME</span><span style="color:#4d4d4c;">).</span><span style="color:#4271ae;">readlines</span><span style="color:#4d4d4c;">().</span><span style="color:#4271ae;">select</span><span style="color:#4d4d4c;">{|</span><span style="color:#f5871f;">l</span><span style="color:#4d4d4c;">| l[</span><span style="color:#f5871f;">0</span><span style="color:#4d4d4c;">]</span><span style="color:#3e999f;">==</span><span style="color:#f5871f;">?&quot;</span><span style="color:#4d4d4c;">}.map(</span><span style="color:#3e999f;">&amp;</span><span style="color:#718c00;">:split</span><span style="color:#4d4d4c;">).map(</span><span style="color:#3e999f;">&amp;</span><span style="color:#718c00;">:first</span><span style="color:#4d4d4c;">).map{|</span><span style="color:#f5871f;">l</span><span style="color:#4d4d4c;">|l[</span><span style="color:#f5871f;">1</span><span style="color:#3e999f;">..-</span><span style="color:#f5871f;">2</span><span style="color:#4d4d4c;">]}
+
+</span><span style="color:#4271ae;">puts open</span><span style="color:#4d4d4c;">(</span><span style="color:#c82829;">$FILENAME</span><span style="color:#4d4d4c;">).read.lines().</span><span style="color:#4271ae;">select</span><span style="color:#4d4d4c;">{|</span><span style="color:#f5871f;">l</span><span style="color:#4d4d4c;">| l[</span><span style="color:#f5871f;">0</span><span style="color:#4d4d4c;">]</span><span style="color:#3e999f;">==</span><span style="color:#f5871f;">?&quot;</span><span style="color:#4d4d4c;">}.map{|</span><span style="color:#f5871f;">l</span><span style="color:#4d4d4c;">|l.split(</span><span style="color:#f5871f;">?&quot;</span><span style="color:#4d4d4c;">)[</span><span style="color:#f5871f;">1</span><span style="color:#4d4d4c;">]}
+
+</span><span style="color:#4271ae;">puts open</span><span style="color:#4d4d4c;">(</span><span style="color:#c82829;">$FILENAME</span><span style="color:#4d4d4c;">).</span><span style="color:#4271ae;">readlines</span><span style="color:#4d4d4c;">().</span><span style="color:#4271ae;">select</span><span style="color:#4d4d4c;">{|</span><span style="color:#f5871f;">l</span><span style="color:#4d4d4c;">| l[</span><span style="color:#f5871f;">0</span><span style="color:#4d4d4c;">]</span><span style="color:#3e999f;">==</span><span style="color:#f5871f;">?&quot;</span><span style="color:#4d4d4c;">}.map(</span><span style="color:#3e999f;">&amp;</span><span style="color:#718c00;">:split</span><span style="color:#4d4d4c;">).map{|</span><span style="color:#f5871f;">l</span><span style="color:#4d4d4c;">|l[</span><span style="color:#f5871f;">1</span><span style="color:#4d4d4c;">]}
+</span></pre>
+<p>Thanks to Justus and Thomas for sending in examples ☺</p>
+
+      
+  </article>
+</section>
+
+
+      
+    </body>
+</html>
