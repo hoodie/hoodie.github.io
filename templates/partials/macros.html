@@ -1,12 +1,3 @@
-{% macro mini_logo(classes, title, siteurl, logourl) %}
-<figure class="mini_logo {{ classes }}">
-    <a href="{{siteurl}}" style="background-image: url({{siteurl}}/img/{{logourl}})"></a>
-</figure>
-<h5>
-    <a href="{{siteurl}}">{{title}}</a>
-</h5>
-{% endmacro mini_logo %}
-
 <!-- classes=any extra styling, bsize=buttonsize, extra=config.extra, siteurl=config.base_url -->
 {% macro social_list(extra, rss, siteurl) %}
     {% if extra.website %}
@@ -54,4 +45,13 @@
     <span class="dotDivider"></span>
     <li> <time class="article_time"  datetime="{{date}}">{{ date | date(format="%d. %B %Y") }}</time> </li>
 </ul>
+
 {% endmacro frontmatter %}
+
+{% macro tag_list(page)%}
+{% if page.taxonomies.tags %}
+{% for tag in page.taxonomies.tags %}
+        <a href="{{ get_taxonomy_url(kind="tags", name=tag) }}">#{{ tag }}</a>
+    {% endfor %}
+{% endif%}
+{% endmacro tag_list%}

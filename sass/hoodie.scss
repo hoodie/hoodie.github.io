@@ -112,7 +112,7 @@ tr {
     vertical-align: middle;
 }
 
-header {
+body>header {
     position: relative;
     top: 0;
     padding-top: 0px;
@@ -161,7 +161,7 @@ header {
 }
 
 .frontmatter {
-    display: block;
+    display: inline;
     font-size: 1em;
     padding-left: 0;
     color: $title;
@@ -178,7 +178,6 @@ header {
     > span {
         display: inline;
     }
-    display: block;
     opacity: 0.3;
     transition: opacity 0.70s ease-out 1.7s;
 }

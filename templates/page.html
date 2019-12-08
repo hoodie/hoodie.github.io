@@ -22,6 +22,7 @@
 
   <article>
     {% block post %}
+      <header>
       <h2 class="article_title">
         <a href="{{page.permalink}}" id="article_link">
           {{ page.title }}
@@ -33,6 +34,8 @@
       {% if page.date %}
       {{ macros::frontmatter(classes="frontmatter_page", date=page.date, word_count=page.word_count, read_time=page.reading_time) }}
       {% endif %}
+      | {{ macros::tag_list(page=page) }}
+      </header>
       {{ page.content | safe }}
       {% endblock post %}
   </article>

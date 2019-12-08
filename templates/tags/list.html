@@ -1,0 +1,28 @@
+{% extends "partials/base.html" %}
+{% import "partials/macros.html" as macros %}
+
+{% block header %}
+<h1>
+    <a href="{{config.base_url}}/blog">
+        {{config.title}}
+    </a>
+</h1>
+
+<h3><a>tags</a></h3>
+{% endblock header %}
+
+{% block content %}
+<section class="post_container">
+        <h3>
+            Tags: {{ terms | length }}
+        </h3>
+        <div>
+            {% for tag in terms %}
+            <a href="{{ tag.permalink }}">
+                {{ tag.name }}
+                <span class="count">{{ tag.pages | length }}</span>
+            </a>
+            {% endfor %}
+        </div>
+</section>
+{% endblock content %}

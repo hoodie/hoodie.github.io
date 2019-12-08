@@ -17,12 +17,12 @@ highlight_theme = "Tomorrow"
 build_search_index = true
 
 taxonomies = [
-    {name = "categories", rss = true},
     {name = "tags", rss = true},
 ]
 
 generate_rss=true
 generate_tags_pages = true
+
 [extra]
 # Put all your custom variables here
 twitter = "hoodie_de"
@@ -30,4 +30,4 @@ github = "hoodie"
 podcast_url= "http://akronymisier.bar"
 podcast_name= "akronymisier.bar"
 
-debug=true
+debug=false

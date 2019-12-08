@@ -5,6 +5,8 @@ description = "how I did the same thing twice - adding iso8601 to rust-datetime"
 author = "Hendrik Sollich"
 layout = "post"
 header-img = "backgrounds/time.jpg"
+[taxonomies]
+tags = ["rust"]
 
 +++
 
