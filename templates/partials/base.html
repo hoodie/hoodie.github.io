@@ -21,7 +21,7 @@
     <body>
       <header
         {%if page.extra.header_img%}
-        style="background-image: url({{page.extra.header_img}});" >
+        style="background-image: url({{page.extra.header_img}});" 
         {% endif %} >
         {% block header %}
         <h1>
@@ -40,12 +40,11 @@
                 <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                     <ul class="nav navbar-nav navbar-right">
                     {% if page %}
-                        <li> <a href="/"> Home </a> </li>
                     {% endif %}
+                        <li> <a href="/"> Home </a> </li>
                         <li> <a href="/blog"> Blog </a> </li>
                         <li> <a href="/bio"> Bio </a> </li>
                         <li> <a href="/archive"> Archive </a> </li>
-                        <li> <a href="/projects"> Projects </a> </li>  
                         {{ macros::social_list(extra=config.extra, siteurl=config.base_url, rss=config.generate_rss) }}
                     </ul>
                 </div>

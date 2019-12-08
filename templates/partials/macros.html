@@ -16,33 +16,33 @@
     {% endif %}
     {% if extra.github %}
     <li>
-        <a href="https://github.com/{{extra.github}}" target="_blank">
+        <a href="https://github.com/{{extra.github}}" target="_blank" title="github/{{extra.github}}">
             <i class="fab fa-github"></i>
-            {{extra.github}}
+            <span> {{extra.github}} </span>
         </a>
     </li>
     {% endif %}
     {% if extra.twitter %}
     <li>
-        <a href="https://twitter.com/{{extra.twitter}}" target="_blank">
+        <a href="https://twitter.com/{{extra.twitter}}" target="_blank" title="twitter/{{extra.twitter}}">
             <i class="fab fa-twitter" ></i>
-            @{{extra.twitter}}
+            <span> @{{extra.twitter}} </span>
         </a>
     </li>
     {% endif %}
     {% if extra.podcast_url%}
     <li>
-        <a href="{{extra.podcast_name}}" target="_blank">
+        <a href="{{extra.podcast_name}}" target="_blank" title="{{extra.podcast_name}}">
             <i class="fas fa-microphone-alt" ></i>
-            {{ extra.podcast_name }}
+            <span> {{ extra.podcast_name }} </span>
         </a>
     </li>
     {% endif %}
     {% if rss %}
     <li>
-        <a href="{{siteurl}}/rss.xml" target ="_blank">
+        <a href="{{siteurl}}/rss.xml" target ="_blank" title="RSS">
             <i class="fas fa-rss" ></i>
-            rss
+            <span> RSS </span>
         </a>
     </li>
     {% endif %}

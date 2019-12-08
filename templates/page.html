@@ -15,7 +15,9 @@
 {% endblock header %}
 
 {% block content %}
+{% if config.extra.debug %}
 <code> PAGE </code>
+{% endif %}
 <section class="post_container">
 
   <article>

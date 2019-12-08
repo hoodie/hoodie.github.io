@@ -56,7 +56,7 @@ pre {
 
 code {
     color: $code;
-    font-size: 1.2em;
+    font-size: 1.02em;
     font-weight: bold;
     font-family: Menlo,Monaco,Consolas,"Courier New",monospace;
 }
@@ -78,18 +78,21 @@ hr {
 }
 
 article {
-    outline: 2px dashed red;
+    // outline: 2px dashed red;
     a {
-        border-bottom: 2px solid $outline;
+        text-decoration: underline $outline;
         color: $text;
     }
     a:link {
-        text-decoration: none;
     }
     a:hover {
         outline: 0;
-        border-bottom: 2px solid $accent;
+        text-decoration: underline $accent;
         opacity: 1;
+    }
+    footer a ,
+    footer a:hover {
+        text-decoration: none;
     }
 }
 
@@ -197,7 +200,6 @@ header {
 
 a#article_link, a#article_link:visited {
     transition: all 0.35s ease-out;
-    text-decoration: none;
     color: $title;
 }
 
@@ -226,20 +228,8 @@ h1.article_title {
     }
 }
 
-@media (max-width: 800px) {
-    .post_container {
-        max-width: 100%;
-        margin: 2em;
-        color: red;
-    }
-}
-@media (min-width: 800px) {
-    .post_container  {
-        max-width: 750px;
-    }
-}
 .post_list {
-    outline: 2px dashed red;    
+    // outline: 2px dashed red;    
 }
 
 .post_list_item {
@@ -276,6 +266,13 @@ h1.article_title {
 .header_list {
     margin: auto;
     margin-top: 2em;
+}
+
+ul.navbar-nav {
+    li>a>span {
+        display: none;
+        opacity: 0;
+    }
 }
 
 nav.pagination {
@@ -357,4 +354,21 @@ nav.pagination {
 }
 .footnote-definition p {
     display: inline;
+}
+
+
+@media (max-width: 800px) {
+    .post_container {
+        max-width: 100%;
+        margin-top: 30px;
+        > article {
+            margin: 2em;
+        }
+        // outline: 2px dashed red;
+    }
+}
+@media (min-width: 800px) {
+    .post_container  {
+        max-width: 750px;
+    }
 }

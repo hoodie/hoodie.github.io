@@ -1,7 +1,7 @@
 # The URL the site will be built for
 # base_url = "https://blog.hoodie.de"
-#base_url = "http://dean:1111"
-base_url = "http://localhost:1111"
+base_url = "http://dean.fritz.box:1111"
+#base_url = "http://localhost:1111"
 title = "hoodie blog"
 description = "where hendrik occationaly drops some articles"
 
@@ -29,3 +29,5 @@ twitter = "hoodie_de"
 github = "hoodie"
 podcast_url= "http://akronymisier.bar"
 podcast_name= "akronymisier.bar"
+
+debug=false

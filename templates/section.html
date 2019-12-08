@@ -2,7 +2,9 @@
 {% import "partials/macros.html" as macros %}
 
 {% block content %}
+{% if config.extra.debug %}
 <code> SECTION </code>
+{% endif %}
 
 <section class="post_container">
     {% for page in paginator.pages %}
@@ -16,7 +18,9 @@
             {{ macros::frontmatter(classes="", date="", word_count=page.word_count, read_time=page.reading_time) }}
           {% endif %}
         <p class="article_content">{{ page.content | safe | striptags | truncate }}</p>
+      <footer>
         <a class="small" href="{{page.permalink}}"> more → </a>
+      </footer>
       </article>
     {% endfor %}
 </section>

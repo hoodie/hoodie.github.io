@@ -2,7 +2,9 @@
 {% import "partials/macros.html" as macros %}
 
 {% block content %}
+{% if config.extra.debug %}
 <code> INDEX </code>
+{% endif %}
 <section class="post_container">
   
  {% set page = get_page(path="home.md") %}

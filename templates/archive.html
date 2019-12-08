@@ -1,7 +1,19 @@
 {% extends "partials/base.html" %}
 {% import "partials/macros.html" as macros %}
 
+{% block header %}
+    <h1>
+      <a href="{{page.permalink}}">
+       {{page.title}}
+      </a>
+    </h1>
+  </h3>
+{% endblock header %}
+
 {% block content %}
+{% if config.extra.debug %}
+<code> archive </code>
+{% endif %}
 
 <section class="post_container">
 {% set section = get_section(path="blog/_index.md") %}
