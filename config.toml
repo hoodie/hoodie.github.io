@@ -18,7 +18,7 @@ taxonomies = [
     {name = "tags", rss = true},
 ]
 
-generate_rss=true
+generate_feed=true
 generate_tags_pages = true
 
 [extra]
