@@ -70,9 +70,9 @@
     
     
     <li>
-        <a href="https://twitter.com/hoodie_de" target="_blank" title="twitter/hoodie_de">
-            <i class="fab fa-twitter" ></i>
-            <span> @hoodie_de </span>
+        <a href="https://bsky.app/profile/hoodie.de" target="_blank" title="bluesky/hoodie.de">
+            <i>🦋</i>
+            <span> bluesky hoodie.de </span>
         </a>
     </li>
     
@@ -119,7 +119,7 @@
       
       
 <ul class="frontmatter frontmatter_page" id="frontmatter">
-    <li> 143 words → 1 min </li>
+    <li> 80 words → 1 min </li>
     <span class="dotDivider"></span>
     <li> <time class="article_time"  datetime="2014-05-17">17. May 2014</time> </li>
 </ul>
@@ -135,24 +135,24 @@ your personal server, your universities server and/or github ) and you
 do not which to manually keep them in sync but pushing everything twice.
 There is nice and rather simple way to keep pushing to all of the at
 once. Lets imagine your .git/config looks like this:</p>
-<pre><code>    [core]
-        repositoryformatversion = 0
-        filemode = true
-        bare = false
-        logallrefupdates = true
-    [remote &quot;ganymed&quot;]
-        url = ganymed:repo&#x2F;Beleg
-        fetch = +refs&#x2F;heads&#x2F;*:refs&#x2F;remotes&#x2F;ganymed&#x2F;*
-    [remote &quot;hoodie&quot;]
-        url = hoodie.de:repo&#x2F;Beleg
-        fetch = +refs&#x2F;heads&#x2F;*:refs&#x2F;remotes&#x2F;hoodie&#x2F;*
-
-    In this case you can add a virtual remote (lets call it “all”) that simply looks like this:
-    [remote &quot;all&quot;]
-        url = ganymed:repo&#x2F;Beleg
-        url = hoodie.de:repo&#x2F;Beleg
-        fetch = +refs&#x2F;heads&#x2F;*:refs&#x2F;remotes&#x2F;ganymed&#x2F;*
-</code></pre>
+<pre style="background-color:#ffffff;color:#4d4d4c;"><code><span>    [core]
+</span><span>        repositoryformatversion = 0
+</span><span>        filemode = true
+</span><span>        bare = false
+</span><span>        logallrefupdates = true
+</span><span>    [remote &quot;ganymed&quot;]
+</span><span>        url = ganymed:repo/Beleg
+</span><span>        fetch = +refs/heads/*:refs/remotes/ganymed/*
+</span><span>    [remote &quot;hoodie&quot;]
+</span><span>        url = hoodie.de:repo/Beleg
+</span><span>        fetch = +refs/heads/*:refs/remotes/hoodie/*
+</span><span>
+</span><span>    In this case you can add a virtual remote (lets call it “all”) that simply looks like this:
+</span><span>    [remote &quot;all&quot;]
+</span><span>        url = ganymed:repo/Beleg
+</span><span>        url = hoodie.de:repo/Beleg
+</span><span>        fetch = +refs/heads/*:refs/remotes/ganymed/*
+</span></code></pre>
 <p>Bear in mind: git pull all will in this case do the same thing as git pull ganymed</p>
 
       

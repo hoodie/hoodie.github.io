@@ -1,15 +1,13 @@
 # The URL the site will be built for
 base_url = "https://www.hoodie.de"
 title = "hoodie blog"
-description = "where hendrik occationaly drops some articles"
+description = "where hendrik occasionally drops some articles"
 
 # Whether to automatically compile all Sass files in the sass directory
 compile_sass = true
 
 # Whether to do syntax highlighting
-# Theme can be customised by setting the `highlight_theme` variable to a theme supported by Zola
-highlight_code = true
-highlight_theme = "Tomorrow"
+# Theme can be customized by setting the `highlight_theme` variable to a theme supported by Zola
 
 # Whether to build a search index to be used later on by a JavaScript library
 build_search_index = true
@@ -19,12 +17,15 @@ taxonomies = [
 ]
 
 output_dir = "docs"
-generate_feed=true
-generate_tags_pages = true
+generate_feeds=true
+#generate_tags_pages = true
+[markdown]
+highlight_code = true
+highlight_theme = "Tomorrow"
 
 [extra]
 # Put all your custom variables here
-twitter = "hoodie_de"
+bluesky = "hoodie.de"
 mastodon = "chaos.social/@hoodie"
 github = "hoodie"
 podcast_url= "http://akronymisier.bar"
