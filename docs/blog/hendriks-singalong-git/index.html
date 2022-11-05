@@ -11,7 +11,7 @@
         <title> hoodie blog </title>
 
 
-        <link rel="alternate" type="application/rss+xml" title="RSS" href="https:&#x2F;&#x2F;www.hoodie.de&#x2F;rss.xml">
+        <link rel="alternate" type="application/rss+xml" title="RSS" href="https://www.hoodie.de/rss.xml">
         <!--  css -->
         <link rel="stylesheet"  href="https:&#x2F;&#x2F;www.hoodie.de/fonts.css" >
         <link rel="stylesheet"  href="https:&#x2F;&#x2F;www.hoodie.de/hoodie.css" >
@@ -148,13 +148,12 @@ I don't want to have to do anything more than just type in the song name and art
 Fortunately there are scrapers for this.
 <a href="https://github.com/yeexel/nodycs">nodycs</a> for example.</p>
 <p>So something like this will fetch the lyrics and write them in a nice little markdown file, even with a heading ☺</p>
-<pre style="background-color:#ffffff;">
-<span style="color:#999999;">#!/bin/bash
-</span><span style="color:#4271ae;">echo </span><span style="color:#718c00;">&quot;## $</span><span style="color:#c82829;">2</span><span style="color:#718c00;">&quot; </span><span style="color:#3e999f;">&gt; </span><span style="color:#718c00;">&quot;songs/$</span><span style="color:#c82829;">1</span><span style="color:#718c00;"> - $</span><span style="color:#c82829;">2</span><span style="color:#718c00;">.md&quot;
-</span><span style="color:#c82829;">./nodycs/nodycs.js</span><span style="color:#4271ae;"> show </span><span style="color:#718c00;">&quot;$</span><span style="color:#c82829;">1</span><span style="color:#718c00;">&quot; &quot;$</span><span style="color:#c82829;">2</span><span style="color:#718c00;">&quot; </span><span style="color:#3e999f;">&gt;&gt; </span><span style="color:#718c00;">&quot;songs/$</span><span style="color:#c82829;">1</span><span style="color:#718c00;"> - $</span><span style="color:#c82829;">2</span><span style="color:#718c00;">.md&quot;
-</span><span style="color:#4271ae;">echo </span><span style="color:#718c00;">&quot;# $</span><span style="color:#c82829;">1</span><span style="color:#718c00;">&quot; </span><span style="color:#3e999f;">&gt; </span><span style="color:#718c00;">&quot;songs/$</span><span style="color:#c82829;">1</span><span style="color:#718c00;"> - 00header.md&quot;
-</span><span style="color:#c82829;">head </span><span style="color:#718c00;">&quot;songs/$</span><span style="color:#c82829;">1</span><span style="color:#718c00;"> - $</span><span style="color:#c82829;">2</span><span style="color:#718c00;">.md&quot;
-</span></pre>
+<pre data-lang="bash" class="language-bash "><code class="language-bash" data-lang="bash">#!&#x2F;bin&#x2F;bash
+echo &quot;## $2&quot; &gt; &quot;songs&#x2F;$1 - $2.md&quot;
+.&#x2F;nodycs&#x2F;nodycs.js show &quot;$1&quot; &quot;$2&quot; &gt;&gt; &quot;songs&#x2F;$1 - $2.md&quot;
+echo &quot;# $1&quot; &gt; &quot;songs&#x2F;$1 - 00header.md&quot;
+head &quot;songs&#x2F;$1 - $2.md&quot;
+</code></pre>
 <p>Naming the file the same way also assures that the list of files will always be orderly.
 It also creates (overwrites) a file called <code>Artist - 00header.md</code>, I will get to that.
 The <code>head</code> at the end is just a quick manual check.</p>
@@ -167,42 +166,41 @@ I recently heard about something like gitbook, I haven't tried that yet.
 My favorite swiss-army-sledge-hammer for anything textdocument related is still <a href="http://pandoc.org/">pandoc</a>.</p>
 <p><code>pandoc songs/*.md -f markdown+hard_line_breaks -s -o songbook.epub</code></p>
 <p>or better: write a <strong>Makefile</strong></p>
-<pre style="background-color:#ffffff;">
-<span style="color:#c82829;">SRC </span><span style="color:#3e999f;">= </span><span style="color:#718c00;">songs/*.md</span><span style="color:#c82829;">
-NAME</span><span style="color:#3e999f;">= </span><span style="color:#718c00;">&quot;songbook&quot;</span><span style="color:#c82829;">
-HTML</span><span style="color:#3e999f;">= </span><span style="color:#8959a8;">$(</span><span style="color:#f5871f;">NAME</span><span style="color:#8959a8;">)</span><span style="color:#718c00;">.html</span><span style="color:#c82829;">
-EPUB</span><span style="color:#3e999f;">= </span><span style="color:#8959a8;">$(</span><span style="color:#f5871f;">NAME</span><span style="color:#8959a8;">)</span><span style="color:#718c00;">.epub</span><span style="color:#c82829;">
-MOBI</span><span style="color:#3e999f;">= </span><span style="color:#8959a8;">$(</span><span style="color:#f5871f;">NAME</span><span style="color:#8959a8;">)</span><span style="color:#718c00;">.mobi</span><span style="color:#4271ae;">
-PDF = </span><span style="color:#8959a8;">$(</span><span style="color:#f5871f;">NAME</span><span style="color:#8959a8;">)</span><span style="color:#4271ae;">.pdf
+<pre data-lang="Makefile" class="language-Makefile "><code class="language-Makefile" data-lang="Makefile">SRC = songs&#x2F;*.md
+NAME= &quot;songbook&quot;
+HTML= $(NAME).html
+EPUB= $(NAME).epub
+MOBI= $(NAME).mobi
+PDF = $(NAME).pdf
 
-default</span><span style="color:#3e999f;">:  </span><span style="color:#8959a8;">$(</span><span style="color:#f5871f;">MOBI</span><span style="color:#8959a8;">)
+default:  $(MOBI)
 
-$(</span><span style="color:#f5871f;">HTML</span><span style="color:#8959a8;">)</span><span style="color:#3e999f;">: </span><span style="color:#8959a8;">$(</span><span style="color:#f5871f;">SRC</span><span style="color:#8959a8;">)
-	</span><span style="color:#c82829;">pandoc </span><span style="color:#8959a8;">$(</span><span style="color:#f5871f;">SRC</span><span style="color:#8959a8;">)</span><span style="color:#4271ae;">\
+$(HTML): $(SRC)
+	pandoc $(SRC)\
 		-f markdown+hard_line_breaks\
-		-s</span><span style="color:#f5871f;"> -t</span><span style="color:#4271ae;"> html5</span><span style="color:#f5871f;"> -o </span><span style="color:#8959a8;">$(</span><span style="color:#f5871f;">HTML</span><span style="color:#8959a8;">)</span><span style="color:#4271ae;">\
+		-s -t html5 -o $(HTML)\
 		--section-divs
 
-</span><span style="color:#8959a8;">$(</span><span style="color:#f5871f;">EPUB</span><span style="color:#8959a8;">)</span><span style="color:#3e999f;">: </span><span style="color:#8959a8;">$(</span><span style="color:#f5871f;">HTML</span><span style="color:#8959a8;">)
-	</span><span style="color:#c82829;">pandoc </span><span style="color:#8959a8;">$(</span><span style="color:#f5871f;">HTML</span><span style="color:#8959a8;">)</span><span style="color:#f5871f;"> -o </span><span style="color:#8959a8;">$(</span><span style="color:#f5871f;">EPUB</span><span style="color:#8959a8;">)
+$(EPUB): $(HTML)
+	pandoc $(HTML) -o $(EPUB)
 
-</span><span style="color:#4271ae;">songbook.pdf</span><span style="color:#8959a8;">$(</span><span style="color:#f5871f;">PDF</span><span style="color:#8959a8;">)</span><span style="color:#3e999f;">: </span><span style="color:#8959a8;">$(</span><span style="color:#f5871f;">HTML</span><span style="color:#8959a8;">)
-	</span><span style="color:#c82829;">pandoc </span><span style="color:#8959a8;">$(</span><span style="color:#f5871f;">HTML</span><span style="color:#8959a8;">)</span><span style="color:#f5871f;"> --chapters --toc -o </span><span style="color:#8959a8;">$(</span><span style="color:#f5871f;">PDF</span><span style="color:#8959a8;">)
+songbook.pdf$(PDF): $(HTML)
+	pandoc $(HTML) --chapters --toc -o $(PDF)
 
-$(</span><span style="color:#f5871f;">MOBI</span><span style="color:#8959a8;">)</span><span style="color:#3e999f;">: </span><span style="color:#8959a8;">$(</span><span style="color:#f5871f;">EPUB</span><span style="color:#8959a8;">)
-	</span><span style="color:#c82829;">ebook-convert </span><span style="color:#8959a8;">$(</span><span style="color:#f5871f;">EPUB</span><span style="color:#8959a8;">) $(</span><span style="color:#f5871f;">MOBI</span><span style="color:#8959a8;">)
+$(MOBI): $(EPUB)
+	ebook-convert $(EPUB) $(MOBI)
 
-</span><span style="color:#4271ae;">.PHONY</span><span style="color:#3e999f;">: </span><span style="color:#718c00;">clean
-</span><span style="color:#4271ae;">clean</span><span style="color:#3e999f;">:
-	</span><span style="color:#718c00;">rm -f </span><span style="color:#8959a8;">$(</span><span style="color:#f5871f;">EPUB</span><span style="color:#8959a8;">) $(</span><span style="color:#f5871f;">MOBI</span><span style="color:#8959a8;">) $(</span><span style="color:#f5871f;">HTML</span><span style="color:#8959a8;">) $(</span><span style="color:#f5871f;">PDF</span><span style="color:#8959a8;">)
-</span><span style="color:#4271ae;">
-mobi</span><span style="color:#3e999f;">:  </span><span style="color:#8959a8;">$(</span><span style="color:#f5871f;">MOBI</span><span style="color:#8959a8;">)
-</span><span style="color:#4271ae;">pdf</span><span style="color:#3e999f;">:  </span><span style="color:#8959a8;">$(</span><span style="color:#f5871f;">PDF</span><span style="color:#8959a8;">)
-</span><span style="color:#4271ae;">html</span><span style="color:#3e999f;">: </span><span style="color:#8959a8;">$(</span><span style="color:#f5871f;">HTML</span><span style="color:#8959a8;">)
-</span><span style="color:#4271ae;">epub</span><span style="color:#3e999f;">: </span><span style="color:#8959a8;">$(</span><span style="color:#f5871f;">EPUB</span><span style="color:#8959a8;">)
+.PHONY: clean
+clean:
+	rm -f $(EPUB) $(MOBI) $(HTML) $(PDF)
+
+mobi:  $(MOBI)
+pdf:  $(PDF)
+html: $(HTML)
+epub: $(EPUB)
 
 
-</span></pre>
+</code></pre>
 <p>The ebook-convert comes with <a href="http://calibre-ebook.com/">calibre</a> and comes in handy since kindle<sup class="footnote-reference"><a href="#kindle">1</a></sup> does not support ePub.
 Toss this on you reader and be done with.</p>
 <div class="footnote-definition" id="kindle"><sup class="footnote-definition-label">1</sup>

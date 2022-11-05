@@ -11,7 +11,7 @@
         <title> hoodie blog </title>
 
 
-        <link rel="alternate" type="application/rss+xml" title="RSS" href="https:&#x2F;&#x2F;www.hoodie.de&#x2F;rss.xml">
+        <link rel="alternate" type="application/rss+xml" title="RSS" href="https://www.hoodie.de/rss.xml">
         <!--  css -->
         <link rel="stylesheet"  href="https:&#x2F;&#x2F;www.hoodie.de/fonts.css" >
         <link rel="stylesheet"  href="https:&#x2F;&#x2F;www.hoodie.de/hoodie.css" >
@@ -126,25 +126,24 @@ your personal server, your universities server and/or github ) and you
 do not which to manually keep them in sync but pushing everything twice.
 There is nice and rather simple way to keep pushing to all of the at
 once. Lets imagine your .git/config looks like this:</p>
-<pre style="background-color:#ffffff;">
-<span style="color:#4d4d4c;">    [core]
+<pre><code>    [core]
         repositoryformatversion = 0
         filemode = true
         bare = false
         logallrefupdates = true
     [remote &quot;ganymed&quot;]
-        url = ganymed:repo/Beleg
-        fetch = +refs/heads/*:refs/remotes/ganymed/*
+        url = ganymed:repo&#x2F;Beleg
+        fetch = +refs&#x2F;heads&#x2F;*:refs&#x2F;remotes&#x2F;ganymed&#x2F;*
     [remote &quot;hoodie&quot;]
-        url = hoodie.de:repo/Beleg
-        fetch = +refs/heads/*:refs/remotes/hoodie/*
+        url = hoodie.de:repo&#x2F;Beleg
+        fetch = +refs&#x2F;heads&#x2F;*:refs&#x2F;remotes&#x2F;hoodie&#x2F;*
 
     In this case you can add a virtual remote (lets call it “all”) that simply looks like this:
     [remote &quot;all&quot;]
-        url = ganymed:repo/Beleg
-        url = hoodie.de:repo/Beleg
-        fetch = +refs/heads/*:refs/remotes/ganymed/*
-</span></pre>
+        url = ganymed:repo&#x2F;Beleg
+        url = hoodie.de:repo&#x2F;Beleg
+        fetch = +refs&#x2F;heads&#x2F;*:refs&#x2F;remotes&#x2F;ganymed&#x2F;*
+</code></pre>
 <p>Bear in mind: git pull all will in this case do the same thing as git pull ganymed</p>
 
       

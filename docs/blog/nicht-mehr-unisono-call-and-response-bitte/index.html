@@ -11,7 +11,7 @@
         <title> hoodie blog </title>
 
 
-        <link rel="alternate" type="application/rss+xml" title="RSS" href="https:&#x2F;&#x2F;www.hoodie.de&#x2F;rss.xml">
+        <link rel="alternate" type="application/rss+xml" title="RSS" href="https://www.hoodie.de/rss.xml">
         <!--  css -->
         <link rel="stylesheet"  href="https:&#x2F;&#x2F;www.hoodie.de/fonts.css" >
         <link rel="stylesheet"  href="https:&#x2F;&#x2F;www.hoodie.de/hoodie.css" >
@@ -126,92 +126,92 @@
 <p>Intern arbeitet Unison mit Rsync, welches an sich ja schon sehr mächtig ist, jedoch nur zum synchronisieren in eine Richtung gedacht ist, also mit einer festen Quelle und einem festen Ziel. Dateien die nicht in der Quelle vorkommen werden aus dem Ziel gelöscht. Unison hat in diesem Falle vermittelt und dabei die Aktualität der Dateien in mit einbezogen. Dieses Feature vermisse ich besonders bei meiner 3 Punkte Synchronisierung.</p>
 <p>Da ich allerdings in den letzten Wochen auch mehr mit dem source code management tool <a href="http://git-scm.com/">git</a> zu tun hatte kam ich auf die Idee, wenn ich schon nicht hin und her Synchronisieren kann, dann muss ich halt vorher mein lokales System updaten, wie man das bei jedem guten Softwareprojekt auch macht. Dazu hab ich mir ein kleines Bash Skript gebaut, welches genau das mittels rsync macht.<br />
 </p>
-<pre style="background-color:#ffffff;">
-<span style="color:#999999;">#!/bin/bash
+<pre data-lang="bash" class="language-bash "><code class="language-bash" data-lang="bash">#!&#x2F;bin&#x2F;bash
 
-</span><span style="color:#c82829;">root1</span><span style="color:#3e999f;">=</span><span style="color:#718c00;">/home/username/pfad
-</span><span style="color:#c82829;">root2</span><span style="color:#3e999f;">=</span><span style="color:#718c00;">username@server:/pfad
+root1=&#x2F;home&#x2F;username&#x2F;pfad
+root2=username@server:&#x2F;pfad
 
-</span><span style="color:#c82829;">paths[</span><span style="color:#f5871f;">0</span><span style="color:#c82829;">]</span><span style="color:#3e999f;">=</span><span style="color:#718c00;">&#39;.mozilla/&#39;
-</span><span style="color:#c82829;">paths[</span><span style="color:#f5871f;">1</span><span style="color:#c82829;">]</span><span style="color:#3e999f;">=</span><span style="color:#718c00;">&#39;Bilder/&#39;
+paths[0]=&#x27;.mozilla&#x2F;&#x27;
+paths[1]=&#x27;Bilder&#x2F;&#x27;
 
-</span><span style="color:#c82829;">attributes</span><span style="color:#3e999f;">=</span><span style="color:#718c00;">&#39;acvzpue ssh --delete&#39;
-</span><span style="color:#4271ae;">checkpush</span><span style="color:#4d4d4c;">(){
-	</span><span style="color:#8959a8;">for</span><span style="color:#4d4d4c;"> path </span><span style="color:#8959a8;">in </span><span style="color:#4d4d4c;">${</span><span style="color:#c82829;">paths[*]</span><span style="color:#4d4d4c;">} </span><span style="color:#3e999f;">;
-	</span><span style="color:#8959a8;">do </span><span style="color:#c82829;">rsync</span><span style="color:#f5871f;"> -n${</span><span style="color:#c82829;">attributes</span><span style="color:#f5871f;">} </span><span style="color:#4271ae;">${</span><span style="color:#c82829;">root1</span><span style="color:#4271ae;">}${</span><span style="color:#c82829;">path</span><span style="color:#4271ae;">} ${</span><span style="color:#c82829;">root2</span><span style="color:#4271ae;">}/${</span><span style="color:#c82829;">path</span><span style="color:#4271ae;">} </span><span style="color:#3e999f;">| </span><span style="color:#c82829;">grep</span><span style="color:#4271ae;"> delet
-	</span><span style="color:#8959a8;">done</span><span style="color:#3e999f;">;
-</span><span style="color:#4d4d4c;">}
-</span><span style="color:#4271ae;">checkpull</span><span style="color:#4d4d4c;">(){
-	</span><span style="color:#8959a8;">for</span><span style="color:#4d4d4c;"> path </span><span style="color:#8959a8;">in </span><span style="color:#4d4d4c;">${</span><span style="color:#c82829;">paths[*]</span><span style="color:#4d4d4c;">} </span><span style="color:#3e999f;">;
-	</span><span style="color:#8959a8;">do </span><span style="color:#c82829;">rsync</span><span style="color:#f5871f;"> -n${</span><span style="color:#c82829;">attributes</span><span style="color:#f5871f;">} </span><span style="color:#4271ae;">${</span><span style="color:#c82829;">root2</span><span style="color:#4271ae;">}${</span><span style="color:#c82829;">path</span><span style="color:#4271ae;">} ${</span><span style="color:#c82829;">root1</span><span style="color:#4271ae;">}/${</span><span style="color:#c82829;">path</span><span style="color:#4271ae;">} </span><span style="color:#3e999f;">| </span><span style="color:#c82829;">grep</span><span style="color:#4271ae;"> delet
-	</span><span style="color:#8959a8;">done</span><span style="color:#3e999f;">;
-</span><span style="color:#4d4d4c;">}
-</span><span style="color:#4271ae;">pull</span><span style="color:#4d4d4c;">(){
-	</span><span style="color:#8959a8;">for</span><span style="color:#4d4d4c;"> path </span><span style="color:#8959a8;">in </span><span style="color:#4d4d4c;">${</span><span style="color:#c82829;">paths[*]</span><span style="color:#4d4d4c;">} </span><span style="color:#3e999f;">;
-	</span><span style="color:#8959a8;">do
-		if </span><span style="color:#4271ae;">[ </span><span style="color:#f5871f;">-d </span><span style="color:#4271ae;">${</span><span style="color:#c82829;">root1</span><span style="color:#4271ae;">}${</span><span style="color:#c82829;">path</span><span style="color:#4271ae;">} ] </span><span style="color:#3e999f;">|| </span><span style="color:#4271ae;">[ </span><span style="color:#f5871f;">-f </span><span style="color:#4271ae;">${</span><span style="color:#c82829;">root1</span><span style="color:#4271ae;">}${</span><span style="color:#c82829;">path</span><span style="color:#4271ae;">} ]</span><span style="color:#3e999f;">;
-		</span><span style="color:#8959a8;">then
-			</span><span style="color:#4271ae;">echo </span><span style="color:#f5871f;">-en </span><span style="color:#718c00;">&quot;\e[1;32mpull\t\t\e[00;37m${</span><span style="color:#c82829;">root1</span><span style="color:#718c00;">}\e[01;37m${</span><span style="color:#c82829;">path</span><span style="color:#718c00;">}\t\e[01;31m&lt; - \e[00;37m${</span><span style="color:#c82829;">root2</span><span style="color:#718c00;">}\e[01;37m${</span><span style="color:#c82829;">path</span><span style="color:#718c00;">}\n\e[00;37m&quot;</span><span style="color:#3e999f;">;
-			</span><span style="color:#c82829;">rsync</span><span style="color:#f5871f;"> -${</span><span style="color:#c82829;">attributes</span><span style="color:#f5871f;">} </span><span style="color:#4271ae;">${</span><span style="color:#c82829;">root2</span><span style="color:#4271ae;">}${</span><span style="color:#c82829;">path</span><span style="color:#4271ae;">} ${</span><span style="color:#c82829;">root1</span><span style="color:#4271ae;">}/${</span><span style="color:#c82829;">path</span><span style="color:#4271ae;">}</span><span style="color:#3e999f;">;
-		</span><span style="color:#8959a8;">else
-			</span><span style="color:#4271ae;">echo </span><span style="color:#f5871f;">-en </span><span style="color:#718c00;">&quot;\e[1;41m${</span><span style="color:#c82829;">root1</span><span style="color:#718c00;">}${</span><span style="color:#c82829;">path</span><span style="color:#718c00;">} existiert nicht\n\e[00;37m\e[00;40m&quot;
-		</span><span style="color:#8959a8;">fi
-	done</span><span style="color:#3e999f;">;
-</span><span style="color:#4d4d4c;">}
-</span><span style="color:#4271ae;">push</span><span style="color:#4d4d4c;">(){
-	</span><span style="color:#8959a8;">for</span><span style="color:#4d4d4c;"> path </span><span style="color:#8959a8;">in </span><span style="color:#4d4d4c;">${</span><span style="color:#c82829;">paths[*]</span><span style="color:#4d4d4c;">} </span><span style="color:#3e999f;">;
-	</span><span style="color:#8959a8;">do
-		if </span><span style="color:#4271ae;">[ </span><span style="color:#f5871f;">-d </span><span style="color:#4271ae;">${</span><span style="color:#c82829;">root1</span><span style="color:#4271ae;">}${</span><span style="color:#c82829;">path</span><span style="color:#4271ae;">} ] </span><span style="color:#3e999f;">|| </span><span style="color:#4271ae;">[ </span><span style="color:#f5871f;">-f </span><span style="color:#4271ae;">${</span><span style="color:#c82829;">root1</span><span style="color:#4271ae;">}${</span><span style="color:#c82829;">path</span><span style="color:#4271ae;">} ]</span><span style="color:#3e999f;">;
-		</span><span style="color:#8959a8;">then
-			</span><span style="color:#4271ae;">echo </span><span style="color:#f5871f;">-en </span><span style="color:#718c00;">&quot;\e[1;32mpush\t\t\e[00;37m${</span><span style="color:#c82829;">root1</span><span style="color:#718c00;">}\e[01;37m${</span><span style="color:#c82829;">path</span><span style="color:#718c00;">}\t\e[01;31m-&gt; \e[00;37m${</span><span style="color:#c82829;">root2</span><span style="color:#718c00;">}\e[01;37m${</span><span style="color:#c82829;">path</span><span style="color:#718c00;">}\n\e[00;37m&quot;</span><span style="color:#3e999f;">;
-			</span><span style="color:#c82829;">rsync</span><span style="color:#f5871f;"> -${</span><span style="color:#c82829;">attributes</span><span style="color:#f5871f;">} </span><span style="color:#4271ae;">${</span><span style="color:#c82829;">root1</span><span style="color:#4271ae;">}${</span><span style="color:#c82829;">path</span><span style="color:#4271ae;">} ${</span><span style="color:#c82829;">root2</span><span style="color:#4271ae;">}/${</span><span style="color:#c82829;">path</span><span style="color:#4271ae;">}</span><span style="color:#3e999f;">;
-		</span><span style="color:#8959a8;">else
-			</span><span style="color:#4271ae;">echo </span><span style="color:#f5871f;">-en </span><span style="color:#718c00;">&quot;\e[1;41m${</span><span style="color:#c82829;">root1</span><span style="color:#718c00;">}${</span><span style="color:#c82829;">path</span><span style="color:#718c00;">} existiert nicht\n\e[00;37m\e[00;40m&quot;
-		</span><span style="color:#8959a8;">fi
-	done</span><span style="color:#3e999f;">;
-</span><span style="color:#4d4d4c;">}
+attributes=&#x27;acvzpue ssh --delete&#x27;
+checkpush(){
+	for path in ${paths[*]} ;
+	do rsync -n${attributes} ${root1}${path} ${root2}&#x2F;${path} | grep delet
+	done;
+}
+checkpull(){
+	for path in ${paths[*]} ;
+	do rsync -n${attributes} ${root2}${path} ${root1}&#x2F;${path} | grep delet
+	done;
+}
+pull(){
+	for path in ${paths[*]} ;
+	do
+		if [ -d ${root1}${path} ] || [ -f ${root1}${path} ];
+		then
+			echo -en &quot;\e[1;32mpull\t\t\e[00;37m${root1}\e[01;37m${path}\t\e[01;31m&lt; - \e[00;37m${root2}\e[01;37m${path}\n\e[00;37m&quot;;
+			rsync -${attributes} ${root2}${path} ${root1}&#x2F;${path};
+		else
+			echo -en &quot;\e[1;41m${root1}${path} existiert nicht\n\e[00;37m\e[00;40m&quot;
+		fi
+	done;
+}
+push(){
+	for path in ${paths[*]} ;
+	do
+		if [ -d ${root1}${path} ] || [ -f ${root1}${path} ];
+		then
+			echo -en &quot;\e[1;32mpush\t\t\e[00;37m${root1}\e[01;37m${path}\t\e[01;31m-&gt; \e[00;37m${root2}\e[01;37m${path}\n\e[00;37m&quot;;
+			rsync -${attributes} ${root1}${path} ${root2}&#x2F;${path};
+		else
+			echo -en &quot;\e[1;41m${root1}${path} existiert nicht\n\e[00;37m\e[00;40m&quot;
+		fi
+	done;
+}
 
-</span><span style="color:#8959a8;">case </span><span style="color:#4d4d4c;">$</span><span style="color:#c82829;">1 </span><span style="color:#8959a8;">in</span><span style="color:#4d4d4c;">
-pull</span><span style="color:#8959a8;">)
-	</span><span style="color:#c82829;">checkpull
-	</span><span style="color:#4271ae;">echo </span><span style="color:#f5871f;">-n </span><span style="color:#718c00;">&quot;Proceed with pulling?  [Y/n]&quot;
-	</span><span style="color:#4271ae;">read descision
+case $1 in
+pull)
+	checkpull
+	echo -n &quot;Proceed with pulling?  [Y&#x2F;n]&quot;
+	read descision
 
-	</span><span style="color:#8959a8;">case </span><span style="color:#718c00;">&quot;$</span><span style="color:#c82829;">descision</span><span style="color:#718c00;">&quot; </span><span style="color:#8959a8;">in</span><span style="color:#4d4d4c;">
-		Yes</span><span style="color:#3e999f;">|</span><span style="color:#4d4d4c;">yes</span><span style="color:#3e999f;">|</span><span style="color:#4d4d4c;">Y</span><span style="color:#3e999f;">|</span><span style="color:#4d4d4c;">y</span><span style="color:#3e999f;">|</span><span style="color:#718c00;">&quot;&quot;</span><span style="color:#8959a8;">)
-		</span><span style="color:#c82829;">pull</span><span style="color:#4d4d4c;">;;
-		No</span><span style="color:#3e999f;">|</span><span style="color:#4d4d4c;">no</span><span style="color:#3e999f;">|</span><span style="color:#4d4d4c;">N</span><span style="color:#3e999f;">|</span><span style="color:#4d4d4c;">n</span><span style="color:#8959a8;">) </span><span style="color:#4271ae;">echo </span><span style="color:#718c00;">&quot;Cancel.&quot;
-		           </span><span style="color:#4271ae;">exit 1  </span><span style="color:#4d4d4c;">;;
-		</span><span style="color:#3e999f;">*</span><span style="color:#8959a8;">) </span><span style="color:#4271ae;">echo </span><span style="color:#718c00;">&quot;Unknown Parameter&quot; </span><span style="color:#4d4d4c;">;;
-	</span><span style="color:#8959a8;">esac</span><span style="color:#4d4d4c;">;;
+	case &quot;$descision&quot; in
+		Yes|yes|Y|y|&quot;&quot;)
+		pull;;
+		No|no|N|n) echo &quot;Cancel.&quot;
+		           exit 1  ;;
+		*) echo &quot;Unknown Parameter&quot; ;;
+	esac;;
 
-push</span><span style="color:#8959a8;">)
-	</span><span style="color:#c82829;">checkpush
-	</span><span style="color:#4271ae;">echo </span><span style="color:#f5871f;">-n </span><span style="color:#718c00;">&quot;Proceed with pushing? [Y/n]&quot;
-	</span><span style="color:#4271ae;">read descision
+push)
+	checkpush
+	echo -n &quot;Proceed with pushing? [Y&#x2F;n]&quot;
+	read descision
 
-	</span><span style="color:#8959a8;">case </span><span style="color:#718c00;">&quot;$</span><span style="color:#c82829;">descision</span><span style="color:#718c00;">&quot; </span><span style="color:#8959a8;">in</span><span style="color:#4d4d4c;">
-		Yes</span><span style="color:#3e999f;">|</span><span style="color:#4d4d4c;">yes</span><span style="color:#3e999f;">|</span><span style="color:#4d4d4c;">Y</span><span style="color:#3e999f;">|</span><span style="color:#4d4d4c;">y</span><span style="color:#3e999f;">|</span><span style="color:#718c00;">&quot;&quot;</span><span style="color:#8959a8;">)
-		</span><span style="color:#c82829;">push</span><span style="color:#4d4d4c;">;;
-		No</span><span style="color:#3e999f;">|</span><span style="color:#4d4d4c;">no</span><span style="color:#3e999f;">|</span><span style="color:#4d4d4c;">N</span><span style="color:#3e999f;">|</span><span style="color:#4d4d4c;">n</span><span style="color:#8959a8;">) </span><span style="color:#4271ae;">echo </span><span style="color:#718c00;">&quot;Cancel.&quot;
-		           </span><span style="color:#4271ae;">exit 1  </span><span style="color:#4d4d4c;">;;
-		</span><span style="color:#3e999f;">*</span><span style="color:#8959a8;">) </span><span style="color:#4271ae;">echo </span><span style="color:#718c00;">&quot;Unknown Parameter&quot; </span><span style="color:#4d4d4c;">;;
-	</span><span style="color:#8959a8;">esac</span><span style="color:#4d4d4c;">;;
-spush</span><span style="color:#8959a8;">)
-	</span><span style="color:#c82829;">push</span><span style="color:#4d4d4c;">;;
-spull</span><span style="color:#8959a8;">)
-	</span><span style="color:#c82829;">pull</span><span style="color:#4d4d4c;">;;
-f</span><span style="color:#8959a8;">)
-	</span><span style="color:#c82829;">check</span><span style="color:#3e999f;">= </span><span style="color:#c82829;">checkpush
-	</span><span style="color:#8959a8;">if </span><span style="color:#4271ae;">[ check </span><span style="color:#3e999f;">==</span><span style="color:#4271ae;"> 1 ] </span><span style="color:#3e999f;">;
-		</span><span style="color:#8959a8;">then </span><span style="color:#4271ae;">echo </span><span style="color:#718c00;">&quot;ja&quot;
-	</span><span style="color:#8959a8;">fi
-</span><span style="color:#4d4d4c;">;;
+	case &quot;$descision&quot; in
+		Yes|yes|Y|y|&quot;&quot;)
+		push;;
+		No|no|N|n) echo &quot;Cancel.&quot;
+		           exit 1  ;;
+		*) echo &quot;Unknown Parameter&quot; ;;
+	esac;;
+spush)
+	push;;
+spull)
+	pull;;
+f)
+	check= checkpush
+	if [ check == 1 ] ;
+		then echo &quot;ja&quot;
+	fi
+;;
 	
-</span><span style="color:#3e999f;">*</span><span style="color:#8959a8;">)
-	</span><span style="color:#4271ae;">echo </span><span style="color:#718c00;">&quot;Ohhh Nooo!!!&quot;</span><span style="color:#4d4d4c;">;;
-</span><span style="color:#8959a8;">esac
-</span></pre><p>Probiert&#8217;s mal aus. Hat noch wer Vorschläge?</p>
+*)
+	echo &quot;Ohhh Nooo!!!&quot;;;
+esac
+</code></pre>
+<p>Probiert&#8217;s mal aus. Hat noch wer Vorschläge?</p>
 
       
   </article>

@@ -11,7 +11,7 @@
         <title> hoodie blog </title>
 
 
-        <link rel="alternate" type="application/rss+xml" title="RSS" href="https:&#x2F;&#x2F;www.hoodie.de&#x2F;rss.xml">
+        <link rel="alternate" type="application/rss+xml" title="RSS" href="https://www.hoodie.de/rss.xml">
         <!--  css -->
         <link rel="stylesheet"  href="https:&#x2F;&#x2F;www.hoodie.de/fonts.css" >
         <link rel="stylesheet"  href="https:&#x2F;&#x2F;www.hoodie.de/hoodie.css" >
@@ -120,7 +120,7 @@
       | 
 
 
-        <a href="https:&#x2F;&#x2F;www.hoodie.de&#x2F;tags&#x2F;rust&#x2F;">#rust</a>
+        <a href="https://www.hoodie.de/tags/rust/">#rust</a>
     
 
 
@@ -144,25 +144,23 @@ Because I heard many good things about <a href="https://github.com/Geal/nom">nom
 <div class="footnote-definition" id="2"><sup class="footnote-definition-label">2</sup>
 <p>currently the most popular date/time crate</p>
 </div>
-<pre style="background-color:#ffffff;">
-<span style="color:#4d4d4c;">     </span><span style="color:#c82829;">Running</span><span style="color:#4271ae;"> target/release/dateparser_benchmarks-71747040d4b5a03b
+<pre data-lang="bash" class="language-bash "><code class="language-bash" data-lang="bash">     Running target&#x2F;release&#x2F;dateparser_benchmarks-71747040d4b5a03b
 
-</span><span style="color:#c82829;">running</span><span style="color:#4271ae;"> 4 tests
-</span><span style="color:#c82829;">test</span><span style="color:#4271ae;"> chrono_bench::parse_iso8601              ... bench:         866 ns/iter (+/- 3</span><span style="color:#4d4d4c;">)
-</span><span style="color:#c82829;">test</span><span style="color:#4271ae;"> datetime_bench::parse_iso8601            ... bench:      82,033 ns/iter (+/- 847</span><span style="color:#4d4d4c;">)
-</span><span style="color:#c82829;">test</span><span style="color:#4271ae;"> nomdate_bench::parse_iso8601             ... bench:         260 ns/iter (+/- 2</span><span style="color:#4d4d4c;">)
+running 4 tests
+test chrono_bench::parse_iso8601              ... bench:         866 ns&#x2F;iter (+&#x2F;- 3)
+test datetime_bench::parse_iso8601            ... bench:      82,033 ns&#x2F;iter (+&#x2F;- 847)
+test nomdate_bench::parse_iso8601             ... bench:         260 ns&#x2F;iter (+&#x2F;- 2)
 
-</span><span style="color:#c82829;">test</span><span style="color:#4271ae;"> result: ok. 0 passed</span><span style="color:#3e999f;">; </span><span style="color:#c82829;">0</span><span style="color:#4271ae;"> failed</span><span style="color:#3e999f;">; </span><span style="color:#c82829;">0</span><span style="color:#4271ae;"> ignored</span><span style="color:#3e999f;">; </span><span style="color:#c82829;">4</span><span style="color:#4271ae;"> measured
-</span></pre>
+test result: ok. 0 passed; 0 failed; 0 ignored; 4 measured
+</code></pre>
 <p>Too my defense: I hadn't spent a second on optimizations, and the datetime implementation was still the most standard conform out of the three.</p>
 <p>A little later, without my participation, this benchmark got a little bit of <a href="https://www.reddit.com/r/rust/comments/3pwxqw/benchmarking_datetime_libs_in_rust/">attention on reddit</a>.
 With help of <a href="https://github.com/pczarn">Piotr Czarnecki</a> it was possible to deduce that the instantiation of Regex objects is the most expensive part:</p>
-<pre style="background-color:#ffffff;">
-<span style="color:#c82829;">...
-test</span><span style="color:#4271ae;"> datetime_regex_pure_bench::create_regex ... bench:      41,473 ns/iter (+/- 1,217</span><span style="color:#4d4d4c;">)
-</span><span style="color:#c82829;">test</span><span style="color:#4271ae;"> datetime_regex_pure_bench::apply_regex  ... bench:       1,484 ns/iter (+/- 137</span><span style="color:#4d4d4c;">)
-</span><span style="color:#c82829;">...
-</span></pre>
+<pre data-lang="bash" class="language-bash "><code class="language-bash" data-lang="bash">...
+test datetime_regex_pure_bench::create_regex ... bench:      41,473 ns&#x2F;iter (+&#x2F;- 1,217)
+test datetime_regex_pure_bench::apply_regex  ... bench:       1,484 ns&#x2F;iter (+&#x2F;- 137)
+...
+</code></pre>
 <p>That doesn't help much though, because when you parse a single string you still have to instantiate the Regex each time, and pulling it out of the implementation like Piotr did would just not make for a neat API.
 And even then, the nom version was still twice 3x as fast.</p>
 <h2 id="rolling-up-the-sleeves">Rolling up the sleeves</h2>

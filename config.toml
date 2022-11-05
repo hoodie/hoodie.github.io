@@ -18,6 +18,7 @@ taxonomies = [
     {name = "tags", rss = true},
 ]
 
+output_dir = "docs"
 generate_feed=true
 generate_tags_pages = true
 

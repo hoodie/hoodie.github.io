@@ -1,500 +1,289 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-    
-        <url>
-            <loc>https://www.hoodie.de/</loc>
-            
-        </url>
-    
-        <url>
-            <loc>https://www.hoodie.de/archive/</loc>
-            
-        </url>
-    
-        <url>
-            <loc>https://www.hoodie.de/bio/</loc>
-            
-        </url>
-    
-        <url>
-            <loc>https://www.hoodie.de/blog/</loc>
-            
-        </url>
-    
-        <url>
-            <loc>https://www.hoodie.de/blog/82millionen-bigbrothers-endlich-online/</loc>
-            
-                <lastmod>2010-11-18</lastmod>
-            
-        </url>
-    
-        <url>
-            <loc>https://www.hoodie.de/blog/about-gnome-again/</loc>
-            
-                <lastmod>2011-12-01</lastmod>
-            
-        </url>
-    
-        <url>
-            <loc>https://www.hoodie.de/blog/akra-dabakra-oder-so-ahnlich/</loc>
-            
-                <lastmod>2010-05-26</lastmod>
-            
-        </url>
-    
-        <url>
-            <loc>https://www.hoodie.de/blog/android-fridge/</loc>
-            
-                <lastmod>2011-11-02</lastmod>
-            
-        </url>
-    
-        <url>
-            <loc>https://www.hoodie.de/blog/bitte-recht-freundlich-2/</loc>
-            
-                <lastmod>2010-06-14</lastmod>
-            
-        </url>
-    
-        <url>
-            <loc>https://www.hoodie.de/blog/bitte-recht-freundlich/</loc>
-            
-                <lastmod>2010-05-29</lastmod>
-            
-        </url>
-    
-        <url>
-            <loc>https://www.hoodie.de/blog/bye-bye-75w/</loc>
-            
-                <lastmod>2010-09-01</lastmod>
-            
-        </url>
-    
-        <url>
-            <loc>https://www.hoodie.de/blog/catch-my-rust/</loc>
-            
-                <lastmod>2015-06-20</lastmod>
-            
-        </url>
-    
-        <url>
-            <loc>https://www.hoodie.de/blog/catching-up/</loc>
-            
-                <lastmod>2010-09-03</lastmod>
-            
-        </url>
-    
-        <url>
-            <loc>https://www.hoodie.de/blog/da-gibt-s-noch-was-anderes/</loc>
-            
-                <lastmod>2011-02-01</lastmod>
-            
-        </url>
-    
-        <url>
-            <loc>https://www.hoodie.de/blog/ein-jahr-ist-vergangen/</loc>
-            
-                <lastmod>2010-07-22</lastmod>
-            
-        </url>
-    
-        <url>
-            <loc>https://www.hoodie.de/blog/einmal-zum-exmatrikulationsamt-bitte/</loc>
-            
-                <lastmod>2011-05-12</lastmod>
-            
-        </url>
-    
-        <url>
-            <loc>https://www.hoodie.de/blog/erst-spam-dann-spim-was-nun/</loc>
-            
-                <lastmod>2011-01-10</lastmod>
-            
-        </url>
-    
-        <url>
-            <loc>https://www.hoodie.de/blog/erste-schritte-in-ruby/</loc>
-            
-                <lastmod>2011-04-01</lastmod>
-            
-        </url>
-    
-        <url>
-            <loc>https://www.hoodie.de/blog/everyday-life-security/</loc>
-            
-                <lastmod>2010-07-15</lastmod>
-            
-        </url>
-    
-        <url>
-            <loc>https://www.hoodie.de/blog/evolution-of-a-hoodie/</loc>
-            
-                <lastmod>2011-10-10</lastmod>
-            
-        </url>
-    
-        <url>
-            <loc>https://www.hoodie.de/blog/get-born-again/</loc>
-            
-                <lastmod>2010-04-25</lastmod>
-            
-        </url>
-    
-        <url>
-            <loc>https://www.hoodie.de/blog/git-push-to-all-remotes/</loc>
-            
-                <lastmod>2014-05-17</lastmod>
-            
-        </url>
-    
-        <url>
-            <loc>https://www.hoodie.de/blog/githubs-ssh-key-audit/</loc>
-            
-                <lastmod>2012-03-11</lastmod>
-            
-        </url>
-    
-        <url>
-            <loc>https://www.hoodie.de/blog/handpicked-rusty-crates/</loc>
-            
-                <lastmod>2016-04-30T01:49:23+02:00</lastmod>
-            
-        </url>
-    
-        <url>
-            <loc>https://www.hoodie.de/blog/hendriks-singalong-git/</loc>
-            
-                <lastmod>2015-09-30T21:42:59+02:00</lastmod>
-            
-        </url>
-    
-        <url>
-            <loc>https://www.hoodie.de/blog/ich-weiss-ich-weiss/</loc>
-            
-                <lastmod>2011-03-04</lastmod>
-            
-        </url>
-    
-        <url>
-            <loc>https://www.hoodie.de/blog/illuminati-naubino/</loc>
-            
-                <lastmod>2014-03-13</lastmod>
-            
-        </url>
-    
-        <url>
-            <loc>https://www.hoodie.de/blog/im-so-lucid/</loc>
-            
-                <lastmod>2010-05-01</lastmod>
-            
-        </url>
-    
-        <url>
-            <loc>https://www.hoodie.de/blog/initializing-octopress/</loc>
-            
-                <lastmod>2015-08-13</lastmod>
-            
-        </url>
-    
-        <url>
-            <loc>https://www.hoodie.de/blog/jetzt-is-es-raus/</loc>
-            
-                <lastmod>2011-01-18</lastmod>
-            
-        </url>
-    
-        <url>
-            <loc>https://www.hoodie.de/blog/kaffeesatz-uberall/</loc>
-            
-                <lastmod>2011-02-09</lastmod>
-            
-        </url>
-    
-        <url>
-            <loc>https://www.hoodie.de/blog/kde-puts-on-some-looks/</loc>
-            
-                <lastmod>2014-03-17</lastmod>
-            
-        </url>
-    
-        <url>
-            <loc>https://www.hoodie.de/blog/leipzigs-mangel-an-kultur/</loc>
-            
-                <lastmod>2011-04-03</lastmod>
-            
-        </url>
-    
-        <url>
-            <loc>https://www.hoodie.de/blog/link-redirection-seriously/</loc>
-            
-                <lastmod>2012-06-14</lastmod>
-            
-        </url>
-    
-        <url>
-            <loc>https://www.hoodie.de/blog/mocca-stripes/</loc>
-            
-                <lastmod>2010-04-25</lastmod>
-            
-        </url>
-    
-        <url>
-            <loc>https://www.hoodie.de/blog/naubino-2-11/</loc>
-            
-                <lastmod>2014-04-09</lastmod>
-            
-        </url>
-    
-        <url>
-            <loc>https://www.hoodie.de/blog/nicht-mehr-unisono-call-and-response-bitte/</loc>
-            
-                <lastmod>2010-05-11</lastmod>
-            
-        </url>
-    
-        <url>
-            <loc>https://www.hoodie.de/blog/now-this-looks-familiar/</loc>
-            
-                <lastmod>2011-09-11</lastmod>
-            
-        </url>
-    
-        <url>
-            <loc>https://www.hoodie.de/blog/ordner-als-podcast/</loc>
-            
-                <lastmod>2011-10-07</lastmod>
-            
-        </url>
-    
-        <url>
-            <loc>https://www.hoodie.de/blog/page/1/</loc>
-            
-        </url>
-    
-        <url>
-            <loc>https://www.hoodie.de/blog/page/10/</loc>
-            
-        </url>
-    
-        <url>
-            <loc>https://www.hoodie.de/blog/page/11/</loc>
-            
-        </url>
-    
-        <url>
-            <loc>https://www.hoodie.de/blog/page/12/</loc>
-            
-        </url>
-    
-        <url>
-            <loc>https://www.hoodie.de/blog/page/2/</loc>
-            
-        </url>
-    
-        <url>
-            <loc>https://www.hoodie.de/blog/page/3/</loc>
-            
-        </url>
-    
-        <url>
-            <loc>https://www.hoodie.de/blog/page/4/</loc>
-            
-        </url>
-    
-        <url>
-            <loc>https://www.hoodie.de/blog/page/5/</loc>
-            
-        </url>
-    
-        <url>
-            <loc>https://www.hoodie.de/blog/page/6/</loc>
-            
-        </url>
-    
-        <url>
-            <loc>https://www.hoodie.de/blog/page/7/</loc>
-            
-        </url>
-    
-        <url>
-            <loc>https://www.hoodie.de/blog/page/8/</loc>
-            
-        </url>
-    
-        <url>
-            <loc>https://www.hoodie.de/blog/page/9/</loc>
-            
-        </url>
-    
-        <url>
-            <loc>https://www.hoodie.de/blog/parsing-a-file-in-two-languages/</loc>
-            
-                <lastmod>2015-09-23T13:52:13+02:00</lastmod>
-            
-        </url>
-    
-        <url>
-            <loc>https://www.hoodie.de/blog/psi-password-recovery/</loc>
-            
-                <lastmod>2011-03-11</lastmod>
-            
-        </url>
-    
-        <url>
-            <loc>https://www.hoodie.de/blog/python-stapler/</loc>
-            
-                <lastmod>2010-07-18</lastmod>
-            
-        </url>
-    
-        <url>
-            <loc>https://www.hoodie.de/blog/rockbox-saved-the-world-again/</loc>
-            
-                <lastmod>2010-06-05</lastmod>
-            
-        </url>
-    
-        <url>
-            <loc>https://www.hoodie.de/blog/soja-inc/</loc>
-            
-                <lastmod>2010-05-17</lastmod>
-            
-        </url>
-    
-        <url>
-            <loc>https://www.hoodie.de/blog/spielzeuge-fur-softwareentwickler/</loc>
-            
-                <lastmod>2010-04-28</lastmod>
-            
-        </url>
-    
-        <url>
-            <loc>https://www.hoodie.de/blog/this-is-it-flash-is-dead/</loc>
-            
-                <lastmod>2010-07-29</lastmod>
-            
-        </url>
-    
-        <url>
-            <loc>https://www.hoodie.de/blog/time-and-datetime-again/</loc>
-            
-                <lastmod>2015-11-04T00:02:58+01:00</lastmod>
-            
-        </url>
-    
-        <url>
-            <loc>https://www.hoodie.de/blog/too-similar-to-be-a-coincident/</loc>
-            
-                <lastmod>2010-07-20</lastmod>
-            
-        </url>
-    
-        <url>
-            <loc>https://www.hoodie.de/blog/tud-folders-for-everyone/</loc>
-            
-                <lastmod>2010-05-04</lastmod>
-            
-        </url>
-    
-        <url>
-            <loc>https://www.hoodie.de/blog/umbaupause/</loc>
-            
-                <lastmod>2010-10-20</lastmod>
-            
-        </url>
-    
-        <url>
-            <loc>https://www.hoodie.de/blog/umzug-die-letzte/</loc>
-            
-                <lastmod>2011-01-05</lastmod>
-            
-        </url>
-    
-        <url>
-            <loc>https://www.hoodie.de/blog/umzug/</loc>
-            
-                <lastmod>2010-09-13</lastmod>
-            
-        </url>
-    
-        <url>
-            <loc>https://www.hoodie.de/blog/und-ich-komm-nicht-dran/</loc>
-            
-                <lastmod>2010-07-27</lastmod>
-            
-        </url>
-    
-        <url>
-            <loc>https://www.hoodie.de/blog/undo-ubuntu-scrollbars/</loc>
-            
-                <lastmod>2011-05-02</lastmod>
-            
-        </url>
-    
-        <url>
-            <loc>https://www.hoodie.de/blog/vollkorn-kaffeesatz-und-vera/</loc>
-            
-                <lastmod>2011-01-09</lastmod>
-            
-        </url>
-    
-        <url>
-            <loc>https://www.hoodie.de/blog/wdw-es-kommt-wieder/</loc>
-            
-                <lastmod>2010-06-29</lastmod>
-            
-        </url>
-    
-        <url>
-            <loc>https://www.hoodie.de/blog/welche-produkte-brauche-ich-denn-nun/</loc>
-            
-                <lastmod>2010-04-27</lastmod>
-            
-        </url>
-    
-        <url>
-            <loc>https://www.hoodie.de/blog/wer-steht-hier-modell/</loc>
-            
-                <lastmod>2010-06-08</lastmod>
-            
-        </url>
-    
-        <url>
-            <loc>https://www.hoodie.de/blog/wieder-sehr-cinematisch/</loc>
-            
-                <lastmod>2010-07-16</lastmod>
-            
-        </url>
-    
-        <url>
-            <loc>https://www.hoodie.de/blog/will-rust-stick-around/</loc>
-            
-                <lastmod>2015-09-16T17:56:11+02:00</lastmod>
-            
-        </url>
-    
-        <url>
-            <loc>https://www.hoodie.de/blog/wiwiwiwi/</loc>
-            
-                <lastmod>2011-03-23</lastmod>
-            
-        </url>
-    
-        <url>
-            <loc>https://www.hoodie.de/blog/wo-bin-ich-update/</loc>
-            
-                <lastmod>2011-01-19</lastmod>
-            
-        </url>
-    
-        <url>
-            <loc>https://www.hoodie.de/tags/</loc>
-            
-        </url>
-    
-        <url>
-            <loc>https://www.hoodie.de/tags/rust/</loc>
-            
-        </url>
-    
+    <url>
+        <loc>https://www.hoodie.de/</loc>
+    </url>
+    <url>
+        <loc>https://www.hoodie.de/archive/</loc>
+    </url>
+    <url>
+        <loc>https://www.hoodie.de/bio/</loc>
+    </url>
+    <url>
+        <loc>https://www.hoodie.de/blog/</loc>
+    </url>
+    <url>
+        <loc>https://www.hoodie.de/blog/82millionen-bigbrothers-endlich-online/</loc>
+        <lastmod>2010-11-18</lastmod>
+    </url>
+    <url>
+        <loc>https://www.hoodie.de/blog/about-gnome-again/</loc>
+        <lastmod>2011-12-01</lastmod>
+    </url>
+    <url>
+        <loc>https://www.hoodie.de/blog/akra-dabakra-oder-so-ahnlich/</loc>
+        <lastmod>2010-05-26</lastmod>
+    </url>
+    <url>
+        <loc>https://www.hoodie.de/blog/android-fridge/</loc>
+        <lastmod>2011-11-02</lastmod>
+    </url>
+    <url>
+        <loc>https://www.hoodie.de/blog/bitte-recht-freundlich-2/</loc>
+        <lastmod>2010-06-14</lastmod>
+    </url>
+    <url>
+        <loc>https://www.hoodie.de/blog/bitte-recht-freundlich/</loc>
+        <lastmod>2010-05-29</lastmod>
+    </url>
+    <url>
+        <loc>https://www.hoodie.de/blog/bye-bye-75w/</loc>
+        <lastmod>2010-09-01</lastmod>
+    </url>
+    <url>
+        <loc>https://www.hoodie.de/blog/catch-my-rust/</loc>
+        <lastmod>2015-06-20</lastmod>
+    </url>
+    <url>
+        <loc>https://www.hoodie.de/blog/catching-up/</loc>
+        <lastmod>2010-09-03</lastmod>
+    </url>
+    <url>
+        <loc>https://www.hoodie.de/blog/da-gibt-s-noch-was-anderes/</loc>
+        <lastmod>2011-02-01</lastmod>
+    </url>
+    <url>
+        <loc>https://www.hoodie.de/blog/ein-jahr-ist-vergangen/</loc>
+        <lastmod>2010-07-22</lastmod>
+    </url>
+    <url>
+        <loc>https://www.hoodie.de/blog/einmal-zum-exmatrikulationsamt-bitte/</loc>
+        <lastmod>2011-05-12</lastmod>
+    </url>
+    <url>
+        <loc>https://www.hoodie.de/blog/erst-spam-dann-spim-was-nun/</loc>
+        <lastmod>2011-01-10</lastmod>
+    </url>
+    <url>
+        <loc>https://www.hoodie.de/blog/erste-schritte-in-ruby/</loc>
+        <lastmod>2011-04-01</lastmod>
+    </url>
+    <url>
+        <loc>https://www.hoodie.de/blog/everyday-life-security/</loc>
+        <lastmod>2010-07-15</lastmod>
+    </url>
+    <url>
+        <loc>https://www.hoodie.de/blog/evolution-of-a-hoodie/</loc>
+        <lastmod>2011-10-10</lastmod>
+    </url>
+    <url>
+        <loc>https://www.hoodie.de/blog/get-born-again/</loc>
+        <lastmod>2010-04-25</lastmod>
+    </url>
+    <url>
+        <loc>https://www.hoodie.de/blog/git-push-to-all-remotes/</loc>
+        <lastmod>2014-05-17</lastmod>
+    </url>
+    <url>
+        <loc>https://www.hoodie.de/blog/githubs-ssh-key-audit/</loc>
+        <lastmod>2012-03-11</lastmod>
+    </url>
+    <url>
+        <loc>https://www.hoodie.de/blog/handpicked-rusty-crates/</loc>
+        <lastmod>2016-04-30T01:49:23+02:00</lastmod>
+    </url>
+    <url>
+        <loc>https://www.hoodie.de/blog/hendriks-singalong-git/</loc>
+        <lastmod>2015-09-30T21:42:59+02:00</lastmod>
+    </url>
+    <url>
+        <loc>https://www.hoodie.de/blog/ich-weiss-ich-weiss/</loc>
+        <lastmod>2011-03-04</lastmod>
+    </url>
+    <url>
+        <loc>https://www.hoodie.de/blog/illuminati-naubino/</loc>
+        <lastmod>2014-03-13</lastmod>
+    </url>
+    <url>
+        <loc>https://www.hoodie.de/blog/im-so-lucid/</loc>
+        <lastmod>2010-05-01</lastmod>
+    </url>
+    <url>
+        <loc>https://www.hoodie.de/blog/initializing-octopress/</loc>
+        <lastmod>2015-08-13</lastmod>
+    </url>
+    <url>
+        <loc>https://www.hoodie.de/blog/jetzt-is-es-raus/</loc>
+        <lastmod>2011-01-18</lastmod>
+    </url>
+    <url>
+        <loc>https://www.hoodie.de/blog/kaffeesatz-uberall/</loc>
+        <lastmod>2011-02-09</lastmod>
+    </url>
+    <url>
+        <loc>https://www.hoodie.de/blog/kde-puts-on-some-looks/</loc>
+        <lastmod>2014-03-17</lastmod>
+    </url>
+    <url>
+        <loc>https://www.hoodie.de/blog/leipzigs-mangel-an-kultur/</loc>
+        <lastmod>2011-04-03</lastmod>
+    </url>
+    <url>
+        <loc>https://www.hoodie.de/blog/link-redirection-seriously/</loc>
+        <lastmod>2012-06-14</lastmod>
+    </url>
+    <url>
+        <loc>https://www.hoodie.de/blog/mocca-stripes/</loc>
+        <lastmod>2010-04-25</lastmod>
+    </url>
+    <url>
+        <loc>https://www.hoodie.de/blog/naubino-2-11/</loc>
+        <lastmod>2014-04-09</lastmod>
+    </url>
+    <url>
+        <loc>https://www.hoodie.de/blog/nicht-mehr-unisono-call-and-response-bitte/</loc>
+        <lastmod>2010-05-11</lastmod>
+    </url>
+    <url>
+        <loc>https://www.hoodie.de/blog/now-this-looks-familiar/</loc>
+        <lastmod>2011-09-11</lastmod>
+    </url>
+    <url>
+        <loc>https://www.hoodie.de/blog/ordner-als-podcast/</loc>
+        <lastmod>2011-10-07</lastmod>
+    </url>
+    <url>
+        <loc>https://www.hoodie.de/blog/page/1/</loc>
+    </url>
+    <url>
+        <loc>https://www.hoodie.de/blog/page/10/</loc>
+    </url>
+    <url>
+        <loc>https://www.hoodie.de/blog/page/11/</loc>
+    </url>
+    <url>
+        <loc>https://www.hoodie.de/blog/page/12/</loc>
+    </url>
+    <url>
+        <loc>https://www.hoodie.de/blog/page/2/</loc>
+    </url>
+    <url>
+        <loc>https://www.hoodie.de/blog/page/3/</loc>
+    </url>
+    <url>
+        <loc>https://www.hoodie.de/blog/page/4/</loc>
+    </url>
+    <url>
+        <loc>https://www.hoodie.de/blog/page/5/</loc>
+    </url>
+    <url>
+        <loc>https://www.hoodie.de/blog/page/6/</loc>
+    </url>
+    <url>
+        <loc>https://www.hoodie.de/blog/page/7/</loc>
+    </url>
+    <url>
+        <loc>https://www.hoodie.de/blog/page/8/</loc>
+    </url>
+    <url>
+        <loc>https://www.hoodie.de/blog/page/9/</loc>
+    </url>
+    <url>
+        <loc>https://www.hoodie.de/blog/parsing-a-file-in-two-languages/</loc>
+        <lastmod>2015-09-23T13:52:13+02:00</lastmod>
+    </url>
+    <url>
+        <loc>https://www.hoodie.de/blog/psi-password-recovery/</loc>
+        <lastmod>2011-03-11</lastmod>
+    </url>
+    <url>
+        <loc>https://www.hoodie.de/blog/python-stapler/</loc>
+        <lastmod>2010-07-18</lastmod>
+    </url>
+    <url>
+        <loc>https://www.hoodie.de/blog/rockbox-saved-the-world-again/</loc>
+        <lastmod>2010-06-05</lastmod>
+    </url>
+    <url>
+        <loc>https://www.hoodie.de/blog/soja-inc/</loc>
+        <lastmod>2010-05-17</lastmod>
+    </url>
+    <url>
+        <loc>https://www.hoodie.de/blog/spielzeuge-fur-softwareentwickler/</loc>
+        <lastmod>2010-04-28</lastmod>
+    </url>
+    <url>
+        <loc>https://www.hoodie.de/blog/this-is-it-flash-is-dead/</loc>
+        <lastmod>2010-07-29</lastmod>
+    </url>
+    <url>
+        <loc>https://www.hoodie.de/blog/time-and-datetime-again/</loc>
+        <lastmod>2015-11-04T00:02:58+01:00</lastmod>
+    </url>
+    <url>
+        <loc>https://www.hoodie.de/blog/too-similar-to-be-a-coincident/</loc>
+        <lastmod>2010-07-20</lastmod>
+    </url>
+    <url>
+        <loc>https://www.hoodie.de/blog/tud-folders-for-everyone/</loc>
+        <lastmod>2010-05-04</lastmod>
+    </url>
+    <url>
+        <loc>https://www.hoodie.de/blog/umbaupause/</loc>
+        <lastmod>2010-10-20</lastmod>
+    </url>
+    <url>
+        <loc>https://www.hoodie.de/blog/umzug-die-letzte/</loc>
+        <lastmod>2011-01-05</lastmod>
+    </url>
+    <url>
+        <loc>https://www.hoodie.de/blog/umzug/</loc>
+        <lastmod>2010-09-13</lastmod>
+    </url>
+    <url>
+        <loc>https://www.hoodie.de/blog/und-ich-komm-nicht-dran/</loc>
+        <lastmod>2010-07-27</lastmod>
+    </url>
+    <url>
+        <loc>https://www.hoodie.de/blog/undo-ubuntu-scrollbars/</loc>
+        <lastmod>2011-05-02</lastmod>
+    </url>
+    <url>
+        <loc>https://www.hoodie.de/blog/vollkorn-kaffeesatz-und-vera/</loc>
+        <lastmod>2011-01-09</lastmod>
+    </url>
+    <url>
+        <loc>https://www.hoodie.de/blog/wdw-es-kommt-wieder/</loc>
+        <lastmod>2010-06-29</lastmod>
+    </url>
+    <url>
+        <loc>https://www.hoodie.de/blog/welche-produkte-brauche-ich-denn-nun/</loc>
+        <lastmod>2010-04-27</lastmod>
+    </url>
+    <url>
+        <loc>https://www.hoodie.de/blog/wer-steht-hier-modell/</loc>
+        <lastmod>2010-06-08</lastmod>
+    </url>
+    <url>
+        <loc>https://www.hoodie.de/blog/wieder-sehr-cinematisch/</loc>
+        <lastmod>2010-07-16</lastmod>
+    </url>
+    <url>
+        <loc>https://www.hoodie.de/blog/will-rust-stick-around/</loc>
+        <lastmod>2015-09-16T17:56:11+02:00</lastmod>
+    </url>
+    <url>
+        <loc>https://www.hoodie.de/blog/wiwiwiwi/</loc>
+        <lastmod>2011-03-23</lastmod>
+    </url>
+    <url>
+        <loc>https://www.hoodie.de/blog/wo-bin-ich-update/</loc>
+        <lastmod>2011-01-19</lastmod>
+    </url>
+    <url>
+        <loc>https://www.hoodie.de/tags/</loc>
+    </url>
+    <url>
+        <loc>https://www.hoodie.de/tags/rust/</loc>
+    </url>
 </urlset>

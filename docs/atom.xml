@@ -1,0 +1,1539 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en">
+	<title>hoodie blog</title>
+	<subtitle>where hendrik occationaly drops some articles</subtitle>
+	<link href="https://www.hoodie.de/atom.xml" rel="self" type="application/atom+xml"/>
+  <link href="https://www.hoodie.de"/>
+	<generator uri="https://www.getzola.org/">Zola</generator>
+	<updated>2016-04-30T01:49:23+02:00</updated>
+	<id>https://www.hoodie.de/atom.xml</id>
+	<entry xml:lang="en">
+		<title>Handpicked Rusty Crates</title>
+		<published>2016-04-30T01:49:23+02:00</published>
+		<updated>2016-04-30T01:49:23+02:00</updated>
+		<link rel="alternate" href="https://www.hoodie.de/blog/handpicked-rusty-crates/" type="text/html"/>
+		<id>https://www.hoodie.de/blog/handpicked-rusty-crates/</id>
+		<content type="html">&lt;p&gt;I&#x27;ve been leaning Rust for a year now.
+Yes, I&#x27;m &lt;a href=&quot;https:&#x2F;&#x2F;twitter.com&#x2F;hoodie_de&#x2F;status&#x2F;725838737146535936&quot;&gt;still learning&lt;&#x2F;a&gt;, but I have in this time released&lt;sup class=&quot;footnote-reference&quot;&gt;&lt;a href=&quot;#notify-rust&quot;&gt;1&lt;&#x2F;a&gt;&lt;&#x2F;sup&gt; and contributed&lt;sup class=&quot;footnote-reference&quot;&gt;&lt;a href=&quot;#contributions&quot;&gt;2&lt;&#x2F;a&gt;&lt;&#x2F;sup&gt; to a number of crates.&lt;&#x2F;p&gt;
+&lt;p&gt;But it is only because of some amazing crates that I was able to write the code that I wanted. And if they hadn&#x27;t been there, I might have rage-quit Rust very early, because I would have had to write the myself.&lt;&#x2F;p&gt;
+&lt;p&gt;If you are still learning Rust, like me, here are some crates that I enjoyed using or that have inspired me to try something new.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;maplit-or-collect-mac&quot;&gt;&lt;a href=&quot;https:&#x2F;&#x2F;crates.io&#x2F;crates&#x2F;maplit&quot;&gt;maplit&lt;&#x2F;a&gt; or &lt;a href=&quot;https:&#x2F;&#x2F;crates.io&#x2F;crates&#x2F;collect-mac&quot;&gt;collect-mac&lt;&#x2F;a&gt;&lt;&#x2F;h2&gt;
+&lt;p&gt;Rust lacks a few syntactic features that other languages have.
+One of which is built-in dictionary literals.
+While languages like &lt;a href=&quot;https:&#x2F;&#x2F;swift.org&#x2F;&quot;&gt;swift&lt;&#x2F;a&gt; &lt;a href=&quot;http:&#x2F;&#x2F;www.tuicool.com&#x2F;articles&#x2F;yA7v6rA&quot;&gt;have&lt;&#x2F;a&gt; these, in Rust you can help yourself with either &lt;a href=&quot;https:&#x2F;&#x2F;crates.io&#x2F;crates&#x2F;maplit&quot;&gt;maplit&lt;&#x2F;a&gt; or &lt;a href=&quot;https:&#x2F;&#x2F;crates.io&#x2F;crates&#x2F;collect-mac&quot;&gt;collect-mac&lt;&#x2F;a&gt;.&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;crates.io&#x2F;crates&#x2F;maplit&quot;&gt;Maplit&lt;&#x2F;a&gt; offers a set of macros similar to Rust&#x27;s built-in &lt;code&gt;vec![]&lt;&#x2F;code&gt; so you can write stuff like this:&lt;&#x2F;p&gt;
+&lt;pre data-lang=&quot;rust&quot; class=&quot;language-rust &quot;&gt;&lt;code class=&quot;language-rust&quot; data-lang=&quot;rust&quot;&gt;let employees = hashmap!{
+    &amp;quot;employees&amp;quot; =&amp;gt; hashmap! {
+        &amp;quot;employee  1&amp;quot; =&amp;gt; hashmap![&amp;quot;attribute&amp;quot; =&amp;gt; &amp;quot;value&amp;quot;],
+        &amp;quot;employee  2&amp;quot; =&amp;gt; hashmap![&amp;quot;attribute&amp;quot; =&amp;gt; &amp;quot;value&amp;quot;],
+        &amp;quot;employee  3&amp;quot; =&amp;gt; hashmap![&amp;quot;attribute&amp;quot; =&amp;gt; &amp;quot;value&amp;quot;],
+        &amp;quot;employee  4&amp;quot; =&amp;gt; hashmap![&amp;quot;attribute&amp;quot; =&amp;gt; &amp;quot;value&amp;quot;],
+        &amp;quot;employee  5&amp;quot; =&amp;gt; hashmap![&amp;quot;attribute&amp;quot; =&amp;gt; &amp;quot;value&amp;quot;],
+        &amp;quot;employee  6&amp;quot; =&amp;gt; hashmap![&amp;quot;attribute&amp;quot; =&amp;gt; &amp;quot;value&amp;quot;],
+        &amp;quot;employee  7&amp;quot; =&amp;gt; hashmap![&amp;quot;attribute&amp;quot; =&amp;gt; &amp;quot;value&amp;quot;],
+        &amp;quot;employee  8&amp;quot; =&amp;gt; hashmap![&amp;quot;attribute&amp;quot; =&amp;gt; &amp;quot;value&amp;quot;],
+        &amp;quot;employee  9&amp;quot; =&amp;gt; hashmap![&amp;quot;attribute&amp;quot; =&amp;gt; &amp;quot;value&amp;quot;],
+        &amp;quot;employee 10&amp;quot; =&amp;gt; hashmap![&amp;quot;attribute&amp;quot; =&amp;gt; &amp;quot;value&amp;quot;],
+        &amp;quot;employee 11&amp;quot; =&amp;gt; hashmap![&amp;quot;attribute&amp;quot; =&amp;gt; &amp;quot;value&amp;quot;],
+        &amp;quot;employee 12&amp;quot; =&amp;gt; hashmap![&amp;quot;attribute&amp;quot; =&amp;gt; &amp;quot;value&amp;quot;],
+        &amp;quot;employee 13&amp;quot; =&amp;gt; hashmap![&amp;quot;attribute&amp;quot; =&amp;gt; &amp;quot;value&amp;quot;],
+        &amp;quot;employee 14&amp;quot; =&amp;gt; hashmap![&amp;quot;attribute&amp;quot; =&amp;gt; &amp;quot;value&amp;quot;],
+        &amp;quot;employee 15&amp;quot; =&amp;gt; hashmap![&amp;quot;attribute&amp;quot; =&amp;gt; &amp;quot;value&amp;quot;],
+        &amp;quot;employee 16&amp;quot; =&amp;gt; hashmap![&amp;quot;attribute&amp;quot; =&amp;gt; &amp;quot;value&amp;quot;],
+        &amp;quot;employee 17&amp;quot; =&amp;gt; hashmap![&amp;quot;attribute&amp;quot; =&amp;gt; &amp;quot;value&amp;quot;],
+        &amp;quot;employee 18&amp;quot; =&amp;gt; hashmap![&amp;quot;attribute&amp;quot; =&amp;gt; &amp;quot;value&amp;quot;],
+        &amp;quot;employee 19&amp;quot; =&amp;gt; hashmap![&amp;quot;attribute&amp;quot; =&amp;gt; &amp;quot;value&amp;quot;],
+        &amp;quot;employee 20&amp;quot; =&amp;gt; hashmap![&amp;quot;attribute&amp;quot; =&amp;gt; &amp;quot;value&amp;quot;],
+    }
+};
+&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;These little macros let you almost forget, they are not part of the stdlib.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;multimap&quot;&gt;&lt;a href=&quot;https:&#x2F;&#x2F;crates.io&#x2F;crates&#x2F;multimap&quot;&gt;multimap&lt;&#x2F;a&gt;&lt;&#x2F;h2&gt;
+&lt;p&gt;Another crate that provides functionality,
+which should actually be built-in.
+Brian Anderson compiled a &lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;brson&#x2F;stdx&quot;&gt;list of crates&lt;&#x2F;a&gt; that feel like they should have been part of the std.&lt;&#x2F;p&gt;
+&lt;pre data-lang=&quot;rust&quot; class=&quot;language-rust &quot;&gt;&lt;code class=&quot;language-rust&quot; data-lang=&quot;rust&quot;&gt;let mut map = MultiMap::new();
+
+map.insert(&amp;quot;key1&amp;quot;, 42);
+map.insert(&amp;quot;key1&amp;quot;, 1337);
+map.insert(&amp;quot;key2&amp;quot;, 2332);
+
+assert_eq!(map[&amp;quot;key1&amp;quot;], 42);
+assert_eq!(map.get(&amp;quot;key1&amp;quot;), Some(&amp;amp;42));
+assert_eq!(map.get_vec(&amp;quot;key1&amp;quot;), Some(&amp;amp;vec![42, 1337]));
+&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;h2 id=&quot;command-line-argument-parser&quot;&gt;command line argument parser&lt;&#x2F;h2&gt;
+&lt;p&gt;Aka: &lt;a href=&quot;https:&#x2F;&#x2F;crates.io&#x2F;crates&#x2F;clap&quot;&gt;clap&lt;&#x2F;a&gt;.
+I started rewriting a command line application I had originally written in Ruby.
+There I had used &lt;a href=&quot;http:&#x2F;&#x2F;whatisthor.com&#x2F;&quot;&gt;Thor&lt;&#x2F;a&gt; to configure the commands.
+Clap is very different but not less cool,
+for instance it lets you describe your interface in yaml,
+which is then compiled into your binary.
+Is also happens to be one of the best documented crates, with currently 19 elaborate examples.
+This is I wanna see libraries documented.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;anything-that-starts-with-cargo&quot;&gt;anything that starts with cargo-*&lt;&#x2F;h2&gt;
+&lt;p&gt;Cargo is already great itself, but it is also quite extensible and there are a number of tools that integrate with it.&lt;&#x2F;p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;crates.io&#x2F;crates&#x2F;cargo-check&quot;&gt;cargo-check&lt;&#x2F;a&gt; quickly checks your code without compiling. This combines well with...&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;crates.io&#x2F;crates&#x2F;cargo-watch&quot;&gt;cargo-watch&lt;&#x2F;a&gt;, which repeats a command when you save a source file.&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;crates.io&#x2F;crates&#x2F;cargo-add&quot;&gt;cargo-add&lt;&#x2F;a&gt; adds new dependencies to your project while&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;crates.io&#x2F;crates&#x2F;cargo-graph&quot;&gt;cargo-graph&lt;&#x2F;a&gt; produces a graph of all your dependencies.&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;crates.io&#x2F;crates&#x2F;cargo-clone&quot;&gt;cargo-clone&lt;&#x2F;a&gt; clones the source repo of a crate.&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;crates.io&#x2F;crates&#x2F;cargo-fmt&quot;&gt;cargo-fmt&lt;&#x2F;a&gt; formats your code project
+and by now there are many more, like &lt;a href=&quot;https:&#x2F;&#x2F;crates.io&#x2F;crates&#x2F;cargo-apk&quot;&gt;cargo-apk&lt;&#x2F;a&gt;, &lt;a href=&quot;https:&#x2F;&#x2F;crates.io&#x2F;crates&#x2F;cargo-brew&quot;&gt;cargo-brew&lt;&#x2F;a&gt;, &lt;a href=&quot;https:&#x2F;&#x2F;crates.io&#x2F;crates&#x2F;cargo-lipo&quot;&gt;cargo-lipo&lt;&#x2F;a&gt;, &lt;a href=&quot;https:&#x2F;&#x2F;crates.io&#x2F;crates&#x2F;cargo-at&quot;&gt;cargo-at&lt;&#x2F;a&gt;, &lt;a href=&quot;https:&#x2F;&#x2F;crates.io&#x2F;crates&#x2F;cargo-count&quot;&gt;cargo-count&lt;&#x2F;a&gt;, &lt;a href=&quot;https:&#x2F;&#x2F;crates.io&#x2F;crates&#x2F;cargo-open&quot;&gt;cargo-open&lt;&#x2F;a&gt;, &lt;a href=&quot;https:&#x2F;&#x2F;crates.io&#x2F;crates&#x2F;cargo-outdated&quot;&gt;cargo-outdated&lt;&#x2F;a&gt;, ... I&#x27;m gonna stop here.&lt;&#x2F;li&gt;
+&lt;&#x2F;ol&gt;
+&lt;h2 id=&quot;clippy&quot;&gt;&lt;a href=&quot;https:&#x2F;&#x2F;crates.io&#x2F;crates&#x2F;clippy&quot;&gt;clippy&lt;&#x2F;a&gt;&lt;&#x2F;h2&gt;
+&lt;p&gt;This is named after the cute little cartoon paper clip from Word.
+It is much more sophisticated than that.
+Clippy is a growing set of lints that will tell you that you are writing bad Rust.
+Amazingly though it most of the time also tells you how to write better rust.
+Btw: there is a cargo command that will make it easier to use clippy called, you guessed correctly &lt;a href=&quot;https:&#x2F;&#x2F;crates.io&#x2F;crates&#x2F;cargo-clippy&quot;&gt;cargo-clippy&lt;&#x2F;a&gt; .&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;itertools&quot;&gt;&lt;a href=&quot;https:&#x2F;&#x2F;crates.io&#x2F;crates&#x2F;itertools&quot;&gt;itertools&lt;&#x2F;a&gt;&lt;&#x2F;h2&gt;
+&lt;p&gt;What I already loved about Ruby and now love about Rust is iterators and iterator-adapters.The standard &lt;code&gt;Interator&lt;&#x2F;code&gt;-trait already has a lot of functionality,
+but itertools adds &lt;code&gt;Chunks&lt;&#x2F;code&gt;, &lt;code&gt;Flatten&lt;&#x2F;code&gt;, &lt;code&gt;Group&lt;&#x2F;code&gt;, &lt;code&gt;Unique&lt;&#x2F;code&gt;, &lt;code&gt;Zip&lt;&#x2F;code&gt; and so on.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;boolinator&quot;&gt;&lt;a href=&quot;https:&#x2F;&#x2F;crates.io&#x2F;crates&#x2F;boolinator&quot;&gt;boolinator&lt;&#x2F;a&gt;&lt;&#x2F;h2&gt;
+&lt;p&gt;If you&#x27;ve gotten addicted to functional mapping of &lt;code&gt;Option&amp;lt;T&amp;gt;&lt;&#x2F;code&gt;s or &lt;code&gt;Result&amp;lt;T,E&amp;gt;&lt;&#x2F;code&gt;s,
+then you sometimes course at the fact that you have to handle &lt;code&gt;boolean&lt;&#x2F;code&gt;s with icky &lt;code&gt;if&lt;&#x2F;code&gt; blocks.
+&lt;code&gt;boolinator&lt;&#x2F;code&gt; lets you convert booleans into &lt;code&gt;Option&amp;lt;()&amp;gt;&lt;&#x2F;code&gt; and other nicities.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;chrono-or-datetime&quot;&gt;&lt;a href=&quot;https:&#x2F;&#x2F;crates.io&#x2F;crates&#x2F;chrono&quot;&gt;chrono&lt;&#x2F;a&gt; or &lt;a href=&quot;https:&#x2F;&#x2F;crates.io&#x2F;crates&#x2F;datetime&quot;&gt;datetime&lt;&#x2F;a&gt;&lt;&#x2F;h2&gt;
+&lt;p&gt;Pick one, they are both pretty good.
+Chrono seems a bit more complete, while it sometimes lacks a complete rustacious feeling.
+Datetime has the faster string parser :D&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;prettytable&quot;&gt;&lt;a href=&quot;https:&#x2F;&#x2F;crates.io&#x2F;crates&#x2F;prettytable&quot;&gt;prettytable&lt;&#x2F;a&gt;&lt;&#x2F;h2&gt;
+&lt;p&gt;When you wanna print complex data onto the terminal, use this.
+It is quite fast and its API is really nice.&lt;&#x2F;p&gt;
+&lt;pre data-lang=&quot;rust&quot; class=&quot;language-rust &quot;&gt;&lt;code class=&quot;language-rust&quot; data-lang=&quot;rust&quot;&gt;let table = table!([&amp;quot;ABC&amp;quot;,     &amp;quot;DEFG&amp;quot;, &amp;quot;HIJKLMN&amp;quot;],
+                   [&amp;quot;foobar&amp;quot;,  &amp;quot;bar&amp;quot;,  &amp;quot;foo&amp;quot;],
+                   [&amp;quot;foobar2&amp;quot;, &amp;quot;bar2&amp;quot;, &amp;quot;foo2&amp;quot;]
+                  );
+table.printstd();
+&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;h2 id=&quot;simple-parallel-or-rayon&quot;&gt;&lt;a href=&quot;https:&#x2F;&#x2F;crates.io&#x2F;crates&#x2F;simple_parallel&quot;&gt;simple_parallel&lt;&#x2F;a&gt; or &lt;a href=&quot;https:&#x2F;&#x2F;crates.io&#x2F;crates&#x2F;rayon&quot;&gt;rayon&lt;&#x2F;a&gt;&lt;&#x2F;h2&gt;
+&lt;p&gt;While I haven&#x27;t played around with either of these yet, I so want to.
+Essentially either of them is capable of turning an ordinary iterator into a multithreaded parallel iterator.&lt;&#x2F;p&gt;
+&lt;p&gt;Rayon:&lt;&#x2F;p&gt;
+&lt;pre data-lang=&quot;rust&quot; class=&quot;language-rust &quot;&gt;&lt;code class=&quot;language-rust&quot; data-lang=&quot;rust&quot;&gt;use rayon::prelude::*;
+fn sum_of_squares(input: &amp;amp;[i32]) -&amp;gt; i32 {
+    input.par_iter()
+         .map(|&amp;amp;i| i * i)
+         .sum()
+}
+&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;AMAZING&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;image&quot;&gt;&lt;a href=&quot;https:&#x2F;&#x2F;crates.io&#x2F;crates&#x2F;image&quot;&gt;image&lt;&#x2F;a&gt;&lt;&#x2F;h2&gt;
+&lt;p&gt;Images is a nice collection of native Rust libraries to encode and decode bmp, gif, ico, jpeg, png, ppm, tga, tiff and webp.
+Last time I checked that list was a lot shorter.
+These are mostly maintained by the people behind &lt;a href=&quot;http:&#x2F;&#x2F;piston.rs&#x2F;&quot;&gt;piston&lt;&#x2F;a&gt; and also used in &lt;a href=&quot;http:&#x2F;&#x2F;servo.org&#x2F;&quot;&gt;servo&lt;&#x2F;a&gt;, so expect some high quality code here.
+I personally used this to do a little stenography &lt;a href=&quot;http:&#x2F;&#x2F;github.com&#x2F;hoodie&#x2F;lsb-rs&quot;&gt;experiment&lt;&#x2F;a&gt;.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;honorable-mentions&quot;&gt;Honorable Mentions&lt;&#x2F;h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;crates.io&#x2F;crates&#x2F;quick-error&quot;&gt;quick-error&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;crates.io&#x2F;crates&#x2F;env_logger&quot;&gt;env_logger&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;crates.io&#x2F;crates&#x2F;log&quot;&gt;log&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;crates.io&#x2F;crates&#x2F;cargo-bake&quot;&gt;cargo-bake&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;crates.io&#x2F;crates&#x2F;strsim&quot;&gt;strsim&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;crates.io&#x2F;crates&#x2F;iso8601&quot;&gt;iso8601&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;crates.io&#x2F;crates&#x2F;git2&quot;&gt;git2&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;crates.io&#x2F;crates&#x2F;open&quot;&gt;open&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;crates.io&#x2F;crates&#x2F;mpd&quot;&gt;mpd&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;crates.io&#x2F;crates&#x2F;leftpad&quot;&gt;leftpad&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;crates.io&#x2F;crates&#x2F;yolo&quot;&gt;yolo&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;crates.io&#x2F;crates&#x2F;cool_faces&quot;&gt;cool_faces&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;p&gt;This posts title image is called &amp;quot;crates&amp;quot; and is by &lt;a href=&quot;https:&#x2F;&#x2F;www.flickr.com&#x2F;photos&#x2F;hvc&#x2F;7412773976&#x2F;&quot;&gt;Helen Cook&lt;&#x2F;a&gt;.&lt;&#x2F;p&gt;
+&lt;hr &#x2F;&gt;
+&lt;div class=&quot;footnote-definition&quot; id=&quot;notify-rust&quot;&gt;&lt;sup class=&quot;footnote-definition-label&quot;&gt;1&lt;&#x2F;sup&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;crates.io&#x2F;crates&#x2F;notify-rust&#x2F;&quot;&gt;notify-rust&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;div&gt;
+&lt;div class=&quot;footnote-definition&quot; id=&quot;contributions&quot;&gt;&lt;sup class=&quot;footnote-definition-label&quot;&gt;2&lt;&#x2F;sup&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;crates.io&#x2F;crates&#x2F;datetime&#x2F;&quot;&gt;datetime&lt;&#x2F;a&gt;,
+&lt;a href=&quot;https:&#x2F;&#x2F;crates.io&#x2F;crates&#x2F;iso8601&quot;&gt;iso8601&lt;&#x2F;a&gt;,
+&lt;a href=&quot;https:&#x2F;&#x2F;crates.io&#x2F;crates&#x2F;currency&quot;&gt;currency&lt;&#x2F;a&gt;,
+&lt;a href=&quot;https:&#x2F;&#x2F;crates.io&#x2F;crates&#x2F;yaml-rust&quot;&gt;yaml-rust&lt;&#x2F;a&gt;,
+&lt;a href=&quot;https:&#x2F;&#x2F;crates.io&#x2F;crates&#x2F;multimap&quot;&gt;multimap&lt;&#x2F;a&gt;,
+&lt;a href=&quot;https:&#x2F;&#x2F;crates.io&#x2F;crates&#x2F;open&quot;&gt;open&lt;&#x2F;a&gt;,
+&lt;a href=&quot;https:&#x2F;&#x2F;crates.io&#x2F;crates&#x2F;dbus&quot;&gt;dbus&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;div&gt;
+</content>
+	</entry>
+	<entry xml:lang="en">
+		<title>Time and Datetime Again</title>
+		<published>2015-11-04T00:02:58+01:00</published>
+		<updated>2015-11-04T00:02:58+01:00</updated>
+		<link rel="alternate" href="https://www.hoodie.de/blog/time-and-datetime-again/" type="text/html"/>
+		<id>https://www.hoodie.de/blog/time-and-datetime-again/</id>
+		<content type="html">&lt;h2 id=&quot;prerequisite&quot;&gt;Prerequisite&lt;&#x2F;h2&gt;
+&lt;p&gt;Last July I was looking around for some Rust projects to contribute to in order to sharpen my teeth on an existing codebase.
+I ran into a Rust crate called &lt;strong&gt;&lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;rust-datetime&#x2F;datetime&#x2F;&quot;&gt;datetime&lt;&#x2F;a&gt;&lt;&#x2F;strong&gt;.
+After I heard that Rust&#x27;s Regex was supposedly very fast - I though - &lt;em&gt;a crate with such a prominent name&lt;sup class=&quot;footnote-reference&quot;&gt;&lt;a href=&quot;#1&quot;&gt;1&lt;&#x2F;a&gt;&lt;&#x2F;sup&gt; and it does not yet support parsing dates?&lt;&#x2F;em&gt;&lt;&#x2F;p&gt;
+&lt;div class=&quot;footnote-definition&quot; id=&quot;1&quot;&gt;&lt;sup class=&quot;footnote-definition-label&quot;&gt;1&lt;&#x2F;sup&gt;
+&lt;p&gt;eg &amp;quot;&lt;a href=&quot;http:&#x2F;&#x2F;ruby-doc.org&#x2F;stdlib-2.2.2&#x2F;libdoc&#x2F;date&#x2F;rdoc&#x2F;DateTime.html&quot;&gt;Datetime&lt;&#x2F;a&gt;&amp;quot; is a part of the Ruby standard library&lt;&#x2F;p&gt;
+&lt;&#x2F;div&gt;
+&lt;p&gt;So I went ahead and added the functionality to parse &lt;a href=&quot;https:&#x2F;&#x2F;en.wikipedia.org&#x2F;wiki&#x2F;ISO_8601&quot;&gt;iso8601&lt;&#x2F;a&gt; with regular expressions.
+With a little help of http:&#x2F;&#x2F;regexr.com&#x2F; I got it done.
+While I dug around in the internals of &lt;em&gt;datetime&lt;&#x2F;em&gt; I also found and fixed a few minor issues, hence it&#x27;s original maintainer already had good experiences excepting my pull requests :D&lt;&#x2F;p&gt;
+&lt;h3 id=&quot;coda&quot;&gt;Coda&lt;&#x2F;h3&gt;
+&lt;p&gt;After my Regex parser was accepted I read about yet &lt;a href=&quot;http:&#x2F;&#x2F;fnordig.de&#x2F;2015&#x2F;07&#x2F;16&#x2F;omnomnom-parsing-iso8601-dates-using-nom&#x2F;&quot;&gt;another implementation of iso8601&lt;&#x2F;a&gt; in Rust, using a parser combinator called &lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;Geal&#x2F;nom&quot;&gt;nom&lt;&#x2F;a&gt; instead of regular expressions.
+At the time I just though &amp;quot;Oh well - but I just got done, and Rust&#x27;s &lt;a href=&quot;http:&#x2F;&#x2F;doc.rust-lang.org&#x2F;regex&#x2F;&quot;&gt;Regex&lt;&#x2F;a&gt; is fast.&amp;quot;&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;the-backlash&quot;&gt;The backlash&lt;&#x2F;h2&gt;
+&lt;p&gt;2 months later I played around with Rust&#x27;s benchmarking.
+Because I heard many good things about &lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;Geal&#x2F;nom&quot;&gt;nom&lt;&#x2F;a&gt; I decided to compare &lt;a href=&quot;https:&#x2F;&#x2F;crates.io&#x2F;crates&#x2F;chrono&quot;&gt;chrono&lt;&#x2F;a&gt;&#x27;s&lt;sup class=&quot;footnote-reference&quot;&gt;&lt;a href=&quot;#2&quot;&gt;2&lt;&#x2F;a&gt;&lt;&#x2F;sup&gt; and &lt;em&gt;datetimes&lt;&#x2F;em&gt; parsing performance with the implementation presented by Jan-Erik Rediger&#x27;s &lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;badboy&#x2F;iso8601&#x2F;commit&#x2F;72cc6a0d257dd0fbac38ce120a8e32e35868b8bf&quot;&gt;implementation&lt;&#x2F;a&gt; using nom. The &lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;hoodie&#x2F;dateparser_benchmarks&#x2F;tree&#x2F;2aa390ad2b8750c9dd606100e66b51b461d22b0d&quot;&gt;Results&lt;&#x2F;a&gt; were devastating:&lt;&#x2F;p&gt;
+&lt;div class=&quot;footnote-definition&quot; id=&quot;2&quot;&gt;&lt;sup class=&quot;footnote-definition-label&quot;&gt;2&lt;&#x2F;sup&gt;
+&lt;p&gt;currently the most popular date&#x2F;time crate&lt;&#x2F;p&gt;
+&lt;&#x2F;div&gt;
+&lt;pre data-lang=&quot;bash&quot; class=&quot;language-bash &quot;&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;     Running target&amp;#x2F;release&amp;#x2F;dateparser_benchmarks-71747040d4b5a03b
+
+running 4 tests
+test chrono_bench::parse_iso8601              ... bench:         866 ns&amp;#x2F;iter (+&amp;#x2F;- 3)
+test datetime_bench::parse_iso8601            ... bench:      82,033 ns&amp;#x2F;iter (+&amp;#x2F;- 847)
+test nomdate_bench::parse_iso8601             ... bench:         260 ns&amp;#x2F;iter (+&amp;#x2F;- 2)
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 4 measured
+&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;Too my defense: I hadn&#x27;t spent a second on optimizations, and the datetime implementation was still the most standard conform out of the three.&lt;&#x2F;p&gt;
+&lt;p&gt;A little later, without my participation, this benchmark got a little bit of &lt;a href=&quot;https:&#x2F;&#x2F;www.reddit.com&#x2F;r&#x2F;rust&#x2F;comments&#x2F;3pwxqw&#x2F;benchmarking_datetime_libs_in_rust&#x2F;&quot;&gt;attention on reddit&lt;&#x2F;a&gt;.
+With help of &lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;pczarn&quot;&gt;Piotr Czarnecki&lt;&#x2F;a&gt; it was possible to deduce that the instantiation of Regex objects is the most expensive part:&lt;&#x2F;p&gt;
+&lt;pre data-lang=&quot;bash&quot; class=&quot;language-bash &quot;&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;...
+test datetime_regex_pure_bench::create_regex ... bench:      41,473 ns&amp;#x2F;iter (+&amp;#x2F;- 1,217)
+test datetime_regex_pure_bench::apply_regex  ... bench:       1,484 ns&amp;#x2F;iter (+&amp;#x2F;- 137)
+...
+&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;That doesn&#x27;t help much though, because when you parse a single string you still have to instantiate the Regex each time, and pulling it out of the implementation like Piotr did would just not make for a neat API.
+And even then, the nom version was still twice 3x as fast.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;rolling-up-the-sleeves&quot;&gt;Rolling up the sleeves&lt;&#x2F;h2&gt;
+&lt;p&gt;So the next time when I had a little time on my hands, I though I&#x27;d give it a try and put in Jan-Erik&#x27;s nom parser into datetime instead of mine.&lt;sup class=&quot;footnote-reference&quot;&gt;&lt;a href=&quot;#3&quot;&gt;3&lt;&#x2F;a&gt;&lt;&#x2F;sup&gt; 
+After all, I kinda owed ogham as much, after leaving him with such a slow implementation :D&lt;&#x2F;p&gt;
+&lt;p&gt;Turns out, the nom parser was still a bit incomplete since it was never meant for release as a crate.
+So I decided to contribute to both crates:&lt;&#x2F;p&gt;
+&lt;ol&gt;
+&lt;li&gt;make iso8601 a releasable general purpose library that exposes a simple API&lt;&#x2F;li&gt;
+&lt;li&gt;remove regex parsing from datetime all together&lt;&#x2F;li&gt;
+&lt;&#x2F;ol&gt;
+&lt;p&gt;The important differentiation is that iso8601 is no datetime library, it only knows how to parse those darn strings, while datetime itself does not care about iso standards, but understands what a valid date is. There is preliminary validity checking in iso8601, but that may even be dropped later on, if it has a performance advantage.
+Though the nom version became slightly slower through this &lt;sup class=&quot;footnote-reference&quot;&gt;&lt;a href=&quot;#4&quot;&gt;4&lt;&#x2F;a&gt;&lt;&#x2F;sup&gt;. &lt;&#x2F;p&gt;
+&lt;div class=&quot;footnote-definition&quot; id=&quot;3&quot;&gt;&lt;sup class=&quot;footnote-definition-label&quot;&gt;3&lt;&#x2F;sup&gt;
+&lt;p&gt;Meanwhile Datetime&#x27;s maintainer &lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;ogham&#x2F;&quot;&gt;Benjamin Sago&lt;&#x2F;a&gt; decided to tackle the same issue by using &lt;a href=&quot;https:&#x2F;&#x2F;crates.io&#x2F;crates&#x2F;lazy_static&quot;&gt;lazy static&lt;&#x2F;a&gt;, At this point, sorry Ben for missing this, you had to &lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;rust-datetime&#x2F;datetime&#x2F;pull&#x2F;9&quot;&gt;pay the price&lt;&#x2F;a&gt;. Ogham: &amp;quot;This merge sucks :p&amp;quot;&lt;&#x2F;p&gt;
+&lt;&#x2F;div&gt;
+&lt;div class=&quot;footnote-definition&quot; id=&quot;4&quot;&gt;&lt;sup class=&quot;footnote-definition-label&quot;&gt;4&lt;&#x2F;sup&gt;
+&lt;p&gt;I was never able to reproduce those 260ns numbers, even without modifications.&lt;&#x2F;p&gt;
+&lt;&#x2F;div&gt;
+&lt;p&gt;After sending pull requests to two separate crate owners I am glad to announce, &lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;rust-datetime&#x2F;datetime&quot;&gt;datetime&lt;&#x2F;a&gt; now has a faster and more complete parsing date-string-parsing implementation than chrono, thanks to &lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;badboy&#x2F;&quot;&gt;@badboy&lt;&#x2F;a&gt; and &lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;ogham&#x2F;&quot;&gt;@ogham&lt;&#x2F;a&gt;.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;conclusion&quot;&gt;Conclusion&lt;&#x2F;h2&gt;
+&lt;p&gt;This may be a very small contribution to the Rust crates ecosystem,
+but I had the chance to improve my Regex skills, could play around with Rusts benchmarking features, got a good look at how fast and safe parsers are really build and got a little bit of github-cred along the way. Let&#x27;s call that a day.&lt;&#x2F;p&gt;
+</content>
+	</entry>
+	<entry xml:lang="en">
+		<title>Hendriks Singalong Book</title>
+		<published>2015-09-30T21:42:59+02:00</published>
+		<updated>2015-09-30T21:42:59+02:00</updated>
+		<link rel="alternate" href="https://www.hoodie.de/blog/hendriks-singalong-git/" type="text/html"/>
+		<id>https://www.hoodie.de/blog/hendriks-singalong-git/</id>
+		<content type="html">&lt;h2 id=&quot;the-problem&quot;&gt;The Problem&lt;&#x2F;h2&gt;
+&lt;p&gt;When I&#x27;m asked to accompany somebody on the guitar, no big deal,
+I can usually come up with the right chords to a song.
+When it comes to actually singing along, now that is more of a problem.
+I just have a better memory for chords and melodies than for actual lyrics.&lt;&#x2F;p&gt;
+&lt;p&gt;Now some people tend to maintain a huge binder of songs they once learned and carry it around anywhere.
+Others might just search for the lyrics on their phone.
+Both solutions have their downsides:&lt;&#x2F;p&gt;
+&lt;ol&gt;
+&lt;li&gt;I haven&#x27;t connected my printer since two moves ago, so no printing for me&lt;&#x2F;li&gt;
+&lt;li&gt;sometimes you are a place where there&#x27;s instruments, but you forgot your huge binder, &lt;em&gt;dang&lt;&#x2F;em&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;unless you have a tablet a phone is not very practical, too small&lt;&#x2F;li&gt;
+&lt;li&gt;you probably want to maintain a collection of songs you can play, because when you&#x27;re asked you need a list of things you know, otherwise &lt;strong&gt;I&lt;&#x2F;strong&gt; know anything to play, on top of my head&lt;&#x2F;li&gt;
+&lt;&#x2F;ol&gt;
+&lt;div class=&quot;well&quot;&gt;
+&lt;p&gt;&lt;em&gt;We can solve this with software!&lt;&#x2F;em&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;div&gt;
+&lt;p&gt;I usually carry an old &lt;code&gt;[EBOOKREADER]&lt;&#x2F;code&gt; with me.
+So why not make an ebook-songbook?&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;how-to-create-a-songbook&quot;&gt;How to create a Songbook?&lt;&#x2F;h2&gt;
+&lt;h3 id=&quot;how-to-get-the-lyrics&quot;&gt;How to get the lyrics?&lt;&#x2F;h3&gt;
+&lt;p&gt;Well I most certainly don&#x27;t want to google™ everything by hand and copy and paste the lyrics into some document file.
+Word and it&#x27;s competitors are way to have and complicated for this task, which was my original motivation for building the &lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;ascii-dresden&#x2F;ascii-invoicer&quot;&gt;ascii invoicer&lt;&#x2F;a&gt;.
+I don&#x27;t want to have to do anything more than just type in the song name and artist and be done with it.
+Fortunately there are scrapers for this.
+&lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;yeexel&#x2F;nodycs&quot;&gt;nodycs&lt;&#x2F;a&gt; for example.&lt;&#x2F;p&gt;
+&lt;p&gt;So something like this will fetch the lyrics and write them in a nice little markdown file, even with a heading ☺&lt;&#x2F;p&gt;
+&lt;pre data-lang=&quot;bash&quot; class=&quot;language-bash &quot;&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;#!&amp;#x2F;bin&amp;#x2F;bash
+echo &amp;quot;## $2&amp;quot; &amp;gt; &amp;quot;songs&amp;#x2F;$1 - $2.md&amp;quot;
+.&amp;#x2F;nodycs&amp;#x2F;nodycs.js show &amp;quot;$1&amp;quot; &amp;quot;$2&amp;quot; &amp;gt;&amp;gt; &amp;quot;songs&amp;#x2F;$1 - $2.md&amp;quot;
+echo &amp;quot;# $1&amp;quot; &amp;gt; &amp;quot;songs&amp;#x2F;$1 - 00header.md&amp;quot;
+head &amp;quot;songs&amp;#x2F;$1 - $2.md&amp;quot;
+&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;Naming the file the same way also assures that the list of files will always be orderly.
+It also creates (overwrites) a file called &lt;code&gt;Artist - 00header.md&lt;&#x2F;code&gt;, I will get to that.
+The &lt;code&gt;head&lt;&#x2F;code&gt; at the end is just a quick manual check.&lt;&#x2F;p&gt;
+&lt;p&gt;Calling this script &amp;quot;get&amp;quot; allows us to &lt;kbd&gt;.&#x2F;get &amp;quot;Flogging Molly&amp;quot; &amp;quot;Rare Ould Times&amp;quot;&lt;&#x2F;kbd&gt; and it will happily create a &lt;samp&gt; Flogging Molly - Rare Ould Times.md &lt;&#x2F;samp&gt;&lt;&#x2F;p&gt;
+&lt;p&gt;High Five!&lt;&#x2F;p&gt;
+&lt;h3 id=&quot;how-to-make-an-e-book&quot;&gt;How to make an (e)book?&lt;&#x2F;h3&gt;
+&lt;p&gt;Now we can gather a nice orderly collection of markdown files,
+what do we do with them?
+I recently heard about something like gitbook, I haven&#x27;t tried that yet.
+My favorite swiss-army-sledge-hammer for anything textdocument related is still &lt;a href=&quot;http:&#x2F;&#x2F;pandoc.org&#x2F;&quot;&gt;pandoc&lt;&#x2F;a&gt;.&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;code&gt;pandoc songs&#x2F;*.md -f markdown+hard_line_breaks -s -o songbook.epub&lt;&#x2F;code&gt;&lt;&#x2F;p&gt;
+&lt;p&gt;or better: write a &lt;strong&gt;Makefile&lt;&#x2F;strong&gt;&lt;&#x2F;p&gt;
+&lt;pre data-lang=&quot;Makefile&quot; class=&quot;language-Makefile &quot;&gt;&lt;code class=&quot;language-Makefile&quot; data-lang=&quot;Makefile&quot;&gt;SRC = songs&amp;#x2F;*.md
+NAME= &amp;quot;songbook&amp;quot;
+HTML= $(NAME).html
+EPUB= $(NAME).epub
+MOBI= $(NAME).mobi
+PDF = $(NAME).pdf
+
+default:  $(MOBI)
+
+$(HTML): $(SRC)
+	pandoc $(SRC)\
+		-f markdown+hard_line_breaks\
+		-s -t html5 -o $(HTML)\
+		--section-divs
+
+$(EPUB): $(HTML)
+	pandoc $(HTML) -o $(EPUB)
+
+songbook.pdf$(PDF): $(HTML)
+	pandoc $(HTML) --chapters --toc -o $(PDF)
+
+$(MOBI): $(EPUB)
+	ebook-convert $(EPUB) $(MOBI)
+
+.PHONY: clean
+clean:
+	rm -f $(EPUB) $(MOBI) $(HTML) $(PDF)
+
+mobi:  $(MOBI)
+pdf:  $(PDF)
+html: $(HTML)
+epub: $(EPUB)
+
+
+&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;The ebook-convert comes with &lt;a href=&quot;http:&#x2F;&#x2F;calibre-ebook.com&#x2F;&quot;&gt;calibre&lt;&#x2F;a&gt; and comes in handy since kindle&lt;sup class=&quot;footnote-reference&quot;&gt;&lt;a href=&quot;#kindle&quot;&gt;1&lt;&#x2F;a&gt;&lt;&#x2F;sup&gt; does not support ePub.
+Toss this on you reader and be done with.&lt;&#x2F;p&gt;
+&lt;div class=&quot;footnote-definition&quot; id=&quot;kindle&quot;&gt;&lt;sup class=&quot;footnote-definition-label&quot;&gt;1&lt;&#x2F;sup&gt;
+&lt;p&gt;at least my old one&lt;&#x2F;p&gt;
+&lt;&#x2F;div&gt;
+&lt;h3 id=&quot;how-maintain-save-share-everything&quot;&gt;How maintain, save, share everything?&lt;&#x2F;h3&gt;
+&lt;p&gt;Just run &lt;kbd&gt;git&lt;&#x2F;kbd&gt; already stupid!
+&lt;span class=&quot;glyphicon glyphicon-thumbs-up&quot; aria-hidden=&quot;true&quot;&gt; &lt;&#x2F;span&gt;&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;conclusion&quot;&gt;Conclusion&lt;&#x2F;h2&gt;
+&lt;ul class=&quot;list-unstyled&quot;&gt;
+&lt;li&gt;&lt;span class=&quot;glyphicon glyphicon-check&quot; aria-hidden=&quot;true&quot;&gt; finding lyrics &lt;&#x2F;span&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;span class=&quot;glyphicon glyphicon-check&quot; aria-hidden=&quot;true&quot;&gt; saving and organizing lyrics collection &lt;&#x2F;span&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;span class=&quot;glyphicon glyphicon-check&quot; aria-hidden=&quot;true&quot;&gt; creating documents &lt;&#x2F;span&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;span class=&quot;glyphicon glyphicon-check&quot; aria-hidden=&quot;true&quot;&gt; store, sync, version control &lt;&#x2F;span&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;span class=&quot;glyphicon glyphicon-unchecked&quot; aria-hidden=&quot;true&quot;&gt; learn to sing &lt;&#x2F;span&gt;&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+</content>
+	</entry>
+	<entry xml:lang="en">
+		<title>Parsing a File in Two Languages</title>
+		<published>2015-09-23T13:52:13+02:00</published>
+		<updated>2015-09-23T13:52:13+02:00</updated>
+		<link rel="alternate" href="https://www.hoodie.de/blog/parsing-a-file-in-two-languages/" type="text/html"/>
+		<id>https://www.hoodie.de/blog/parsing-a-file-in-two-languages/</id>
+		<content type="html">&lt;h2 id=&quot;introduction&quot;&gt;Introduction&lt;&#x2F;h2&gt;
+&lt;p&gt;A friend asked me today to write him a little script to filter a file in ruby.
+The objective was odd but simple, the file looked like this:&lt;&#x2F;p&gt;
+&lt;pre&gt;&lt;code&gt;this file contains lines that start with quotes
+like this, not but
+&amp;quot;like&amp;quot; this
+and another one for
+&amp;quot;your&amp;quot; entertainment
+this is not a particularly good
+&amp;quot;style&amp;quot; but it serves the purpose
+&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;What the script needed to do was get all the words in quotes, but only those at the beginning of a line.
+You could waste some time and write a REGEX&lt;sup class=&quot;footnote-reference&quot;&gt;&lt;a href=&quot;#r&quot;&gt;1&lt;&#x2F;a&gt;&lt;&#x2F;sup&gt;, but Ruby was our weapon of choice. &lt;sup class=&quot;footnote-reference&quot;&gt;&lt;a href=&quot;#1&quot;&gt;2&lt;&#x2F;a&gt;&lt;&#x2F;sup&gt;
+My personal requirement was: &lt;em&gt;do it in one line&lt;&#x2F;em&gt; but keep it legible.
+So this came out of it.&lt;&#x2F;p&gt;
+&lt;div class=&quot;footnote-definition&quot; id=&quot;1&quot;&gt;&lt;sup class=&quot;footnote-definition-label&quot;&gt;2&lt;&#x2F;sup&gt;
+&lt;p&gt;Please leave me be, I know it could have been even shorter than this and more readable :D &lt;sup class=&quot;footnote-reference&quot;&gt;&lt;a href=&quot;#2&quot;&gt;3&lt;&#x2F;a&gt;&lt;&#x2F;sup&gt;
+&lt;sup class=&quot;footnote-reference&quot;&gt;&lt;a href=&quot;#2&quot;&gt;3&lt;&#x2F;a&gt;&lt;&#x2F;sup&gt;: Infact, please send me your implementations :P
+&lt;sup class=&quot;footnote-reference&quot;&gt;&lt;a href=&quot;#r&quot;&gt;1&lt;&#x2F;a&gt;&lt;&#x2F;sup&gt;: &lt;code&gt;sed -n &#x27;s&#x2F;^&amp;quot;\([^&amp;quot;]*\)&amp;quot;.*&#x2F;\1&#x2F;p&#x27; file.txt&lt;&#x2F;code&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;div&gt;
+&lt;pre data-lang=&quot;ruby&quot; class=&quot;language-ruby &quot;&gt;&lt;code class=&quot;language-ruby&quot; data-lang=&quot;ruby&quot;&gt;puts File.open($FILENAME).read().lines().select{|l|l.start_with? ?&amp;quot;}.map{|l|l.split()[0][1..-2]}
+&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;pre&gt;&lt;code&gt;&amp;quot;like&amp;quot;
+&amp;quot;your&amp;quot;
+&amp;quot;style&amp;quot;
+&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;h2 id=&quot;ruby-in-detail&quot;&gt;Ruby in Detail&lt;&#x2F;h2&gt;
+&lt;p&gt;I admire the functional simplicity of a piece of code like this.
+You might say, this is cryptic?
+&lt;strong&gt;Did you look at the Regex?&lt;&#x2F;strong&gt;
+So let&#x27;s write it down in a more legible fashion:&lt;&#x2F;p&gt;
+&lt;pre data-lang=&quot;ruby&quot; class=&quot;language-ruby &quot;&gt;&lt;code class=&quot;language-ruby&quot; data-lang=&quot;ruby&quot;&gt;File.open($FILENAME)             # opens the file, $FILENAME is a convenience
+    .read()                      # turns it into a string
+    .lines()                     # an Array of lines
+    .select{|l|l.start_with? ?&amp;quot;} # drops all the lines that don&amp;#x27;t start with the character &amp;quot;
+    .map{|l|                     # modify the Array
+      l.split()[0]               # first block before a SPACE
+      [1..-2]                    # use only the second till next to last character
+    }
+&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;Now my idea was to take a look at how much more code I would have to write to get this done in &lt;strong&gt;Rust&lt;&#x2F;strong&gt;, a language I sometimes compare to Ruby&lt;sup class=&quot;footnote-reference&quot;&gt;&lt;a href=&quot;#3&quot;&gt;4&lt;&#x2F;a&gt;&lt;&#x2F;sup&gt;.
+I&#x27;ve written a bunch of Rust so far, but never tried to produce a program that ought to look like a Ruby script.
+&lt;sup class=&quot;footnote-reference&quot;&gt;&lt;a href=&quot;#3&quot;&gt;4&lt;&#x2F;a&gt;&lt;&#x2F;sup&gt;: I take that back now&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;reading-the-file&quot;&gt;Reading the File&lt;&#x2F;h2&gt;
+&lt;p&gt;First we want to open a file, let&#x27;s leave out the argv part for now and open a static path.&lt;&#x2F;p&gt;
+&lt;pre data-lang=&quot;rust&quot; class=&quot;language-rust &quot;&gt;&lt;code class=&quot;language-rust&quot; data-lang=&quot;rust&quot;&gt;fn main() {
+    let file_content = File::open(Path::new(&amp;quot;.&amp;#x2F;file.txt&amp;quot;)).read_to_string();
+    file.content.lines().filter().map( ...
+&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;This looks reasonable doesn&#x27;t it?
+Unfortunately this is no working Rust code ☹.
+I did a whole lot of things that Rust wont let me get away with.
+First of all, I need to include
+&lt;code&gt;use std::path::Path;&lt;&#x2F;code&gt; to specify a &lt;code&gt;Path&lt;&#x2F;code&gt;,
+&lt;code&gt;use std::fs::File;&lt;&#x2F;code&gt; to open the file and finally
+&lt;code&gt;use std::io::Read;&lt;&#x2F;code&gt; to then read it into a &lt;code&gt;String&lt;&#x2F;code&gt;.&lt;&#x2F;p&gt;
+&lt;pre data-lang=&quot;rust&quot; class=&quot;language-rust &quot;&gt;&lt;code class=&quot;language-rust&quot; data-lang=&quot;rust&quot;&gt;use std::fs::File;
+use std::io::Read;
+use std::path::Path;
+fn main() {
+    let file_content = File::open(Path::new(&amp;quot;.&amp;#x2F;file.txt&amp;quot;)).read_to_string();
+    file.content.lines().filter().map( ...
+&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;This does not work either, because for some odd reason &lt;code&gt;read_to_string&lt;&#x2F;code&gt; does not return its result but rather takes a &lt;code&gt;&amp;amp;mut String&lt;&#x2F;code&gt;, a mutable reference to a String.
+So I add &lt;code&gt;let mut file_content = String::new()&lt;&#x2F;code&gt; because it wants to be initialized too.
+Let&#x27;s also pull out the path variable, just to make the lines shorter.&lt;&#x2F;p&gt;
+&lt;pre data-lang=&quot;rust&quot; class=&quot;language-rust &quot;&gt;&lt;code class=&quot;language-rust&quot; data-lang=&quot;rust&quot;&gt;...
+let path = Path::new(&amp;quot;.&amp;#x2F;file.txt&amp;quot;);
+let mut file_content = String::new();
+File::open(&amp;amp;path).unwrap().read_to_string(&amp;amp;mut file_content).unwrap();
+...
+&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;But now we finally have the content of our file in a string and the Rust standard-lib even offers a &lt;code&gt;lines()&lt;&#x2F;code&gt; methods for &lt;code&gt;String&lt;&#x2F;code&gt;s.
+&lt;strong&gt;Rejoice!&lt;&#x2F;strong&gt;&lt;&#x2F;p&gt;
+&lt;p&gt;Now &lt;code&gt;lines()&lt;&#x2F;code&gt; does not return an Array, it returns a &lt;code&gt;Lines&lt;&#x2F;code&gt; struct.
+The Rust equivalent to &lt;code&gt;Array::select()&lt;&#x2F;code&gt; is &lt;code&gt;Iterator::filter&lt;&#x2F;code&gt;, and &lt;code&gt;Lines&lt;&#x2F;code&gt; happens to implement &lt;code&gt;Iterator&amp;lt;&amp;amp;str&amp;gt;&lt;&#x2F;code&gt;. Let&#x27;s have a look:&lt;&#x2F;p&gt;
+&lt;pre data-lang=&quot;rust&quot; class=&quot;language-rust &quot;&gt;&lt;code class=&quot;language-rust&quot; data-lang=&quot;rust&quot;&gt;let lines:Vec&amp;lt;&amp;amp;str&amp;gt; = file_content
+    .lines()
+    .filter(|l|{ l.starts_with(&amp;#x27;&amp;quot;&amp;#x27;) })
+    .map(|l|l.split_whitespace().nth(0).unwrap())
+    .map(|l|l.trim_matches(&amp;#x27;&amp;quot;&amp;#x27;))
+    .collect();
+&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;h2 id=&quot;what-s-different&quot;&gt;What&#x27;s different?&lt;&#x2F;h2&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Rust feels almost, but not quite, entirely unlike Ruby&lt;&#x2F;p&gt;
+&lt;&#x2F;blockquote&gt;
+&lt;p&gt;So why does this look awkward to the Rubyist?
+In Rust a Vector&lt;sup class=&quot;footnote-reference&quot;&gt;&lt;a href=&quot;#v&quot;&gt;5&lt;&#x2F;a&gt;&lt;&#x2F;sup&gt; is not quite an Iterator and vice versa.
+This divide is what keeps us from writing such simple code as in Ruby.
+The output of &lt;code&gt;lines()&lt;&#x2F;code&gt; is an Iterator, so we have to &lt;code&gt;collect()&lt;&#x2F;code&gt; at the end to turn it back into a Vector.
+Same with &lt;code&gt;split_whitespace()&lt;&#x2F;code&gt; so we can&#x27;t index into the first item with &lt;code&gt;[0]&lt;&#x2F;code&gt; &lt;small&gt;(that&#x27;s for Vector)&lt;&#x2F;small&gt; but rather have to run there with &lt;code&gt;.nth(0)&lt;&#x2F;code&gt;, which my fail and therefore returns a &lt;a href=&quot;http:&#x2F;&#x2F;rustbyexample.com&#x2F;std&#x2F;result.html&quot;&gt;Result&lt;&#x2F;a&gt;.&lt;&#x2F;p&gt;
+&lt;div class=&quot;footnote-definition&quot; id=&quot;v&quot;&gt;&lt;sup class=&quot;footnote-definition-label&quot;&gt;5&lt;&#x2F;sup&gt;
+&lt;p&gt;Rust Arrays are primitives and can not grow, there for we use Vectors. Same as in C++.&lt;&#x2F;p&gt;
+&lt;&#x2F;div&gt;
+&lt;h2 id=&quot;printing&quot;&gt;Printing&lt;&#x2F;h2&gt;
+&lt;p&gt;Now that we have the data we wanted in the datastructure that we wanted we have to print it.
+Ruby allows to simply &lt;code&gt;puts&lt;&#x2F;code&gt; it and the Array of Strings will already be neatly formated into lines.
+Rust has the &lt;code&gt;println!()&lt;&#x2F;code&gt; macro.&lt;&#x2F;p&gt;
+&lt;pre data-lang=&quot;rust&quot; class=&quot;language-rust &quot;&gt;&lt;code class=&quot;language-rust&quot; data-lang=&quot;rust&quot;&gt;println!(&amp;quot;{}&amp;quot;, lines);
+&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;For this to work you have to implement &lt;code&gt;core::fmt::Display&lt;&#x2F;code&gt; for &lt;code&gt;collections::vec::Vec&amp;lt;&amp;amp;str&amp;gt;&lt;&#x2F;code&gt;.
+Let&#x27;s not go into this right now, I will if you ask me.
+What is implemented is the Debug trait.&lt;&#x2F;p&gt;
+&lt;pre data-lang=&quot;rust&quot; class=&quot;language-rust &quot;&gt;&lt;code class=&quot;language-rust&quot; data-lang=&quot;rust&quot;&gt;println!(&amp;quot;{:#?}&amp;quot;, lines);
+&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;Works immediately but, looks like this.&lt;&#x2F;p&gt;
+&lt;pre&gt;&lt;code&gt;[
+    &amp;quot;like&amp;quot;,
+    &amp;quot;your&amp;quot;,
+    &amp;quot;style&amp;quot;
+]
+
+&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;So we have to resort to the for loop, which in Rust is syntactic sugar to the &lt;a href=&quot;http:&#x2F;&#x2F;rustbyexample.com&#x2F;trait&#x2F;iter.html&quot;&gt;iterator&lt;&#x2F;a&gt; trait.&lt;&#x2F;p&gt;
+&lt;pre data-lang=&quot;rust&quot; class=&quot;language-rust &quot;&gt;&lt;code class=&quot;language-rust&quot; data-lang=&quot;rust&quot;&gt;for line in lines{
+    println!(&amp;quot;{}&amp;quot;, line);
+}
+&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;pre&gt;&lt;code&gt;like
+your
+style
+&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;We got it!!1!&lt;&#x2F;p&gt;
+&lt;pre data-lang=&quot;rust&quot; class=&quot;language-rust &quot;&gt;&lt;code class=&quot;language-rust&quot; data-lang=&quot;rust&quot;&gt;use std::fs::File;
+use std::io::Read;
+use std::path::Path;
+
+fn main() {
+    let arg = std::env::args().nth(1).unwrap();
+    let path = Path::new(&amp;amp;arg);
+    let mut file_content = String::new();
+
+    File::open(&amp;amp;path).unwrap().read_to_string(&amp;amp;mut file_content).unwrap();
+
+    let lines:Vec&amp;lt;&amp;amp;str&amp;gt; = file_content
+        .lines()
+        .filter(|l|{ l.starts_with(&amp;#x27;&amp;quot;&amp;#x27;) })
+        .map(|l|l.split_whitespace().nth(0).unwrap())
+        .map(|l|l.trim_matches(&amp;#x27;&amp;quot;&amp;#x27;))
+        .collect();
+
+    for line in lines{
+        println!(&amp;quot;{}&amp;quot;, line);
+    }
+}
+&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;Feel free to bug me with questions on &lt;a href=&quot;https:&#x2F;&#x2F;twitter.com&#x2F;hashtag&#x2F;rustvsruby&quot;&gt;twitter #rustvsruby&lt;&#x2F;a&gt;.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;conclusion&quot;&gt;Conclusion&lt;&#x2F;h2&gt;
+&lt;p&gt;So Rust and Ruby have a few functional aspects in common, mostly Rust let&#x27;s you do a few things you know from Ruby but can&#x27;t do in e.g. old style C++ or even python or javascript without an abundance of &lt;code&gt;function&lt;&#x2F;code&gt; or &lt;code&gt;lambda&lt;&#x2F;code&gt; keywords.
+However Rust is still far from a scripting language in that it is clearly less productive.
+Mostly the type system makes you stumble into a lot of pitfalls if you try to hang on to your Ruby-Mindset.
+Anyways, its still much prettier to look at than comparable languages, which by now is the major reason I like it.&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;small&gt;PS: todays background image comes from &lt;a href=&quot;https:&#x2F;&#x2F;www.flickr.com&#x2F;photos&#x2F;vinothchandar&#x2F;4308120229&#x2F;in&#x2F;photostream&#x2F;&quot;&gt;Vinoth Chandar&lt;&#x2F;a&gt;&lt;&#x2F;small&gt;&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;small&gt;PS2: I&#x27;d be happy to receive your C++, javascript and python implementations of this program.&lt;&#x2F;small&gt;&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;appendix&quot;&gt;Appendix&lt;&#x2F;h2&gt;
+&lt;p&gt;Thanks for sending me more examples, not that this piece of code is particularly difficult to write, so just for fun, here are examples in &lt;&#x2F;p&gt;
+&lt;h3 id=&quot;haskell&quot;&gt;&lt;a href=&quot;https:&#x2F;&#x2F;gist.github.com&#x2F;JustusAdam&#x2F;0d793b4ef86711273f68&quot;&gt;Haskell&lt;&#x2F;a&gt;&lt;&#x2F;h3&gt;
+&lt;pre data-lang=&quot;Haskell&quot; class=&quot;language-Haskell &quot;&gt;&lt;code class=&quot;language-Haskell&quot; data-lang=&quot;Haskell&quot;&gt;{- read a file, filter out all words in quotes that are at the beginning of a line, and print the resulting words. Using functions from Prelude only -}
+main = readFile &amp;quot;input.txt&amp;quot; &amp;gt;&amp;gt;= mapM (putStrLn . ((&amp;#x27;\&amp;quot;&amp;#x27; :) . (++ &amp;quot;\&amp;quot;&amp;quot;) . takeWhile (&amp;#x2F;= &amp;#x27;\&amp;quot;&amp;#x27;) . tail)) . filter ((== &amp;#x27;\&amp;quot;&amp;#x27;) . head) . lines
+&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;pre data-lang=&quot;Haskell&quot; class=&quot;language-Haskell &quot;&gt;&lt;code class=&quot;language-Haskell&quot; data-lang=&quot;Haskell&quot;&gt;{- here&amp;#x27;s another version, that&amp;#x27;s a bit more hacky in my opinion, but closer to the original (and shorter than the runby code ;) -}
+main=readFile&amp;quot;input.txt&amp;quot;&amp;gt;&amp;gt;=mapM(putStrLn.takeWhile(&amp;#x2F;=&amp;#x27; &amp;#x27;)).filter((==&amp;#x27;\&amp;quot;&amp;#x27;).head).lines
+&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;h3 id=&quot;more-ruby&quot;&gt;More Ruby&lt;&#x2F;h3&gt;
+&lt;pre data-lang=&quot;ruby&quot; class=&quot;language-ruby &quot;&gt;&lt;code class=&quot;language-ruby&quot; data-lang=&quot;ruby&quot;&gt;#!&amp;#x2F;bin&amp;#x2F;env ruby
+puts open($FILENAME).grep(&amp;#x2F;\&amp;quot;(\w+)\&amp;quot;&amp;#x2F;){$1}
+
+puts open($FILENAME).read.lines().select{|l| l.start_with?  ?&amp;quot;}.map{|l|l.split[0][1..-2]}
+
+puts open($FILENAME).readlines().select{|l| l[0]==?&amp;quot;}.map{|l|l.split[0][1..-2]}
+
+puts open($FILENAME).readlines().select{|l| l[0]==?&amp;quot;}.map(&amp;amp;:split).map(&amp;amp;:first).map{|l|l[1..-2]}
+
+puts open($FILENAME).read.lines().select{|l| l[0]==?&amp;quot;}.map{|l|l.split(?&amp;quot;)[1]}
+
+puts open($FILENAME).readlines().select{|l| l[0]==?&amp;quot;}.map(&amp;amp;:split).map{|l|l[1]}
+&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;Thanks to Justus and Thomas for sending in examples ☺&lt;&#x2F;p&gt;
+</content>
+	</entry>
+	<entry xml:lang="en">
+		<title>Will Rust stick around?</title>
+		<published>2015-09-16T17:56:11+02:00</published>
+		<updated>2015-09-16T17:56:11+02:00</updated>
+		<link rel="alternate" href="https://www.hoodie.de/blog/will-rust-stick-around/" type="text/html"/>
+		<id>https://www.hoodie.de/blog/will-rust-stick-around/</id>
+		<content type="html">&lt;p&gt;So I just finished listening to some almost ancient episodes of &lt;a href=&quot;https:&#x2F;&#x2F;cre.fm&#x2F;&quot;&gt;CRE&lt;&#x2F;a&gt;  (German) about interesting programming languages including &lt;a href=&quot;http:&#x2F;&#x2F;opendylan.org&#x2F;&quot;&gt;dylan&lt;&#x2F;a&gt;, &lt;a href=&quot;http:&#x2F;&#x2F;www.erlang.org&#x2F;&quot;&gt;erlang&lt;&#x2F;a&gt; and &lt;a href=&quot;http:&#x2F;&#x2F;isocpp.org&#x2F;&quot;&gt;c++&lt;&#x2F;a&gt;, and especially the episode on dylan made me wonder: &lt;strong&gt;Why is this not more popular?&lt;&#x2F;strong&gt;&lt;&#x2F;p&gt;
+&lt;p&gt;Dylan is a functional language, derived from &lt;a href=&quot;http:&#x2F;&#x2F;common-lisp.net&#x2F;&quot;&gt;LISP&lt;&#x2F;a&gt; and has a lot of features you can find in &lt;a href=&quot;https:&#x2F;&#x2F;ruby-lang.org&quot;&gt;Ruby&lt;&#x2F;a&gt; or &lt;a href=&quot;https:&#x2F;&#x2F;python.org&quot;&gt;python&lt;&#x2F;a&gt; and also in &lt;a href=&quot;https:&#x2F;&#x2F;rust-lang.org&quot;&gt;Rust&lt;&#x2F;a&gt;.
+For example the type system which I really like about Rust (and miss terribly in Ruby and python, now that I&#x27;ve gotten used to it ☺).
+It does a whole lot of things better than the currently predominant languages and yet it stayed small.
+I see a pattern there.
+Apart from rather &lt;a href=&quot;http:&#x2F;&#x2F;esolangs.org&#x2F;&quot;&gt;esoteric programming languages&lt;&#x2F;a&gt; over time I heard from several people &amp;quot;&lt;em&gt;xyz is the new awesome language I discovered, I write all my code in it and it will change the world!&lt;&#x2F;em&gt;&amp;quot; and somehow it didn&#x27;t.
+&lt;strong&gt;Is it the same with Rust?&lt;&#x2F;strong&gt;&lt;&#x2F;p&gt;
+&lt;p&gt;The thing is, many very smart and exited people keep putting together very excellent programming languages and invest entire lifetimes on building compilers and standard libraries and promoting their babies, and in the end those languages fail to become popular and to actually replace the common (and problematic) languages like c++ and java.
+Many of them haven&#x27;t even disappeared, they just lead the lives of hermits, with small user-bases, very special use-cases, and few projects written in the language.
+&lt;strong&gt;So will Rust in 10years be the language that is only maintained because mozilla uses it?&lt;&#x2F;strong&gt;&lt;&#x2F;p&gt;
+&lt;p&gt;Is is worth maintaining a compiler and stdlib for a unpopular languages? Their are security concerns as well. The resources to maintain the environment, find and eliminate bugs and vulnerabilities ought to be small compared to the amount of expertise in the field.
+For the same reasons as I do not want to use a linux distro, that is developed and used only by a handful of enthusiasts I do not want to use a language that is unpopular.&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;img src=&quot;https:&#x2F;&#x2F;www.hoodie.de&#x2F;blog&#x2F;will-rust-stick-around&#x2F;rust-logo-256x256.png&quot; alt=&quot;Rust logo&quot; &#x2F;&gt;&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;what-is-it-about-rust-that-will-keep-history-from-repeating&quot;&gt;What is it about Rust that will keep history from repeating?&lt;&#x2F;h2&gt;
+&lt;h3 id=&quot;sound-concept-and-real-innovation&quot;&gt;Sound concept and real innovation&lt;&#x2F;h3&gt;
+&lt;p&gt;The awesome new feature of Rust is not just that the language is nice and clean.
+It does have features you might find in &amp;quot;scripting languages&amp;quot; or functional languages,
+some of which &amp;quot;high performance&amp;quot; languages like Java or C++ only just recently acquired:&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;closures&lt;&#x2F;li&gt;
+&lt;li&gt;iterators&lt;&#x2F;li&gt;
+&lt;li&gt;pattern matching&lt;&#x2F;li&gt;
+&lt;li&gt;slices&lt;&#x2F;li&gt;
+&lt;li&gt;default immutability&lt;&#x2F;li&gt;
+&lt;li&gt;language build-in documentation conventions&lt;&#x2F;li&gt;
+&lt;li&gt;language build-in testing and benchmarking conventions&lt;&#x2F;li&gt;
+&lt;li&gt;a sound type system&lt;&#x2F;li&gt;
+&lt;li&gt;very meaningful error messages&lt;&#x2F;li&gt;
+&lt;li&gt;error handling&lt;&#x2F;li&gt;
+&lt;li&gt;UTF-8 handling &lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;p&gt;The awesome new feature of Rust is it&#x27;s memory management model,
+which no other language has (e.g. memory safety without garbage collection).
+Actually Rust doesn&#x27;t actually manage memory,
+it allows you to have as much control of your memory layout as c does,
+it only makes sure at compiletime that nothing goes wrong by enforcing very &lt;a href=&quot;http:&#x2F;&#x2F;doc.rust-lang.org&#x2F;book&#x2F;references-and-borrowing.html&quot;&gt;strict rules&lt;&#x2F;a&gt;.&lt;&#x2F;p&gt;
+&lt;p&gt;So actually it doesn&#x27;t make your code safe - it makes you write the safe code.&lt;&#x2F;p&gt;
+&lt;h3 id=&quot;backers&quot;&gt;Backers&lt;&#x2F;h3&gt;
+&lt;p&gt;Rust already has a some big players involved.
+The most prominent of which is mozilla - it is entirely possible that firefox&#x27;s &lt;a href=&quot;https:&#x2F;&#x2F;developer.mozilla.org&#x2F;en-US&#x2F;docs&#x2F;Gecko&quot;&gt;Gecko&lt;&#x2F;a&gt; will be succeeded by &lt;a href=&quot;http:&#x2F;&#x2F;servo.org&#x2F;&quot;&gt;Servo&lt;&#x2F;a&gt;.
+This would mean that a large community of open source developers are going to be continuously developing in Rust,
+therefore learning Rust and applying it to other problems in computing too.
+Others are also already jumping on the train, in the academic area for example but also backend and game developers.&lt;&#x2F;p&gt;
+&lt;h3 id=&quot;tools&quot;&gt;Tools&lt;&#x2F;h3&gt;
+&lt;p&gt;Rust comes with a very modern toolchain and ecosystem (cargo, crates.io, rustdoc) as well as very good documentation.&lt;&#x2F;p&gt;
+&lt;p&gt;Rust and Cargo make everything easier, mostly because they have conventions about most things.
+Starting a new project with cargo is as easy as &lt;code&gt;cargo new&lt;&#x2F;code&gt;.
+From here on out, most Rust projects look the same, there is &lt;code&gt;.&#x2F;src&lt;&#x2F;code&gt;, &lt;code&gt;.&#x2F;examples&lt;&#x2F;code&gt;, &lt;code&gt;.&#x2F;tests&lt;&#x2F;code&gt; etc,
+so reading through other peoples projects is straight forward.&lt;&#x2F;p&gt;
+&lt;p&gt;Using other peoples libs is as simple as using rubygems, because of cargo and &lt;a href=&quot;http:&#x2F;&#x2F;crates.io&#x2F;&quot;&gt;crates.io&lt;&#x2F;a&gt;.
+&lt;a href=&quot;http:&#x2F;&#x2F;doc.rust-lang.org&#x2F;stable&#x2F;book&#x2F;documentation.html&quot;&gt;Documentation&lt;&#x2F;a&gt;, &lt;a href=&quot;http:&#x2F;&#x2F;doc.rust-lang.org&#x2F;stable&#x2F;book&#x2F;testing.html&quot;&gt;testing&lt;&#x2F;a&gt; and &lt;a href=&quot;http:&#x2F;&#x2F;doc.rust-lang.org&#x2F;stable&#x2F;book&#x2F;benchmark-tests.html&quot;&gt;benchmarking&lt;&#x2F;a&gt; are part of the language and not of some third party tool.&lt;&#x2F;p&gt;
+&lt;p&gt;And the documentation written about the languages itself, especially the &lt;a href=&quot;http:&#x2F;&#x2F;doc.rust-lang.org&#x2F;stable&#x2F;book&#x2F;&quot;&gt;book&lt;&#x2F;a&gt; and &lt;a href=&quot;http:&#x2F;&#x2F;rustbyexample.com&#x2F;&quot;&gt;rust by example&lt;&#x2F;a&gt; make it a very approachable language.&lt;&#x2F;p&gt;
+&lt;h3 id=&quot;audience&quot;&gt;Audience&lt;&#x2F;h3&gt;
+&lt;p&gt;It actually plays in the same league as C++ performance wise,
+as opposed to interpreted languages, jvm languages or even compiled that make use of a garbage collector.
+Though, yes C++ still tends to be faster, but often only by allowing you to do things, that Rust considers unsafe.
+You can do very unsafe things in Rust too, you only have to explicitly label the code &lt;code&gt;unsafe{...}&lt;&#x2F;code&gt; so Rust will let you.&lt;&#x2F;p&gt;
+&lt;p&gt;So even though llvm makes it much easier to keep spitting out more, new, smart and exciting programming languages,
+I personally think Rust still has a strong position in the programming languages arena.
+I may be wrong, perhaps in 10years I&#x27;ll have a job as Java coder because it will have finally taken over the world completely,
+or as a C++ coder because nothing will really have changed.
+Who knows.&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;strong&gt;See you in 10years.&lt;&#x2F;strong&gt;&lt;&#x2F;p&gt;
+</content>
+	</entry>
+	<entry xml:lang="en">
+		<title>No longer self hosted blog.</title>
+		<published>2015-08-13T00:00:00+00:00</published>
+		<updated>2015-08-13T00:00:00+00:00</updated>
+		<link rel="alternate" href="https://www.hoodie.de/blog/initializing-octopress/" type="text/html"/>
+		<id>https://www.hoodie.de/blog/initializing-octopress/</id>
+		<content type="html">&lt;p&gt;So I just switched to github-pages for my blog, for the simple reason, that I used to update the version of my wordpress blog more often than its content. Also I prefer the experience of writing markdown in vim to the pretty web based wordpress editor and I want to be take some of the weight off my private machine. Unfortunately this eliminates the comments (for now), but you can always reach me on twitter or email. If you write me feedback I agree with I will update my blog posts accordingly.&lt;&#x2F;p&gt;
+&lt;p&gt;This entire thing is still a bit unsatisfying, octopress is not nearly as functional as I would have expected, you are required to handle both octopress and jekyll together and the default template does not quite resemble my personal taste. I will keep looking into this though.&lt;&#x2F;p&gt;
+&lt;p&gt;Another big issue is that gitpub pages neither &lt;a href=&quot;https:&#x2F;&#x2F;help.github.com&#x2F;articles&#x2F;what-are-github-pages&#x2F;&quot;&gt;supports HTTPS nor HTTP&#x2F;2, yet&lt;&#x2F;a&gt;, which is a shame, but perhaps they will change their mind.&lt;&#x2F;p&gt;
+&lt;p&gt;So keep your fingers crossed, that this will mean I will again post more frequently.
+Have a nice on.&lt;&#x2F;p&gt;
+</content>
+	</entry>
+	<entry xml:lang="en">
+		<title>Catch my Rust!</title>
+		<published>2015-06-20T00:00:00+00:00</published>
+		<updated>2015-06-20T00:00:00+00:00</updated>
+		<link rel="alternate" href="https://www.hoodie.de/blog/catch-my-rust/" type="text/html"/>
+		<id>https://www.hoodie.de/blog/catch-my-rust/</id>
+		<content type="html">&lt;p&gt;After JavaScript, Ruby, C++ and Python I had to try out a new
+programming language again.
+I’ve been wanting to play around with Mozilla’s Rust for quite a while
+but when I looked into it a year ago the language seem too weird to get
+a hold of its concepts. Rust felt like basically every syntactical
+concept was done differently than I would have expected, knowing other
+languages. Also, it was pretty inconvenient to get it to install on
+archlinux.
+Especially after hearing about several major changes in the
+architecture of the language and its objectives (moving away from
+garbage collection and dropping of green threads) it seemed like there
+was too much changing to get in now, so I waited.&lt;&#x2F;p&gt;
+&lt;p&gt;With the launch of Rust 1.0, I had to give it another chance, the
+language was being discussed all over the place. Some people claimed
+rust would look and feel like ruby, I beg to differ. It was tremendously
+harder to write a simple piece of software in rust than in ruby. At
+least to me in the beginning. My objective was to reproduce my &lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;hoodie&#x2F;catch-my-bus&quot;&gt;catch my
+bus&lt;&#x2F;a&gt; script in rust. The cool
+thing about rust was that it comes with a packagemanager&#x2F;buildsystem
+called cargo. It feels like a mix of cmake and ruby gems. Since there
+were several high profile projects already on the move I could already
+profit from a repository of crates (like gems in ruby) to help me in the
+process.&lt;&#x2F;p&gt;
+&lt;p&gt;Catch-my-bus is a bit like an advanced Hello World to me. It’s not meant
+to be a full fletched tool, even though it has been turned
+&lt;a href=&quot;http:&#x2F;&#x2F;catchmybus.kilian.io&#x2F;&quot;&gt;into&lt;&#x2F;a&gt;
+&lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;devmeepo&#x2F;catch-my-bus-python&quot;&gt;one&lt;&#x2F;a&gt;.
+It calls a webservice, parses some json and produces regular reminders.
+This can be done quite simply in ruby, using the right gems.
+In rust, the webservice and parsing part was relatively easy too, since
+there are already libs like &lt;a href=&quot;https:&#x2F;&#x2F;hyper.rs&#x2F;&quot;&gt;hyper&lt;&#x2F;a&gt; and
+&lt;a href=&quot;https:&#x2F;&#x2F;crates.io&#x2F;crates&#x2F;rustc-serialize&quot;&gt;rustc-serialize&lt;&#x2F;a&gt;. Since
+Mozilla is developing Servo in Rust you can expect to find excellent
+implementations for what ever a browser uses too. The missing component
+was the notification part.&lt;&#x2F;p&gt;
+&lt;p&gt;I researched into what had been done in that area and it seemed
+unsatisfactory. Though some people already implemented
+&lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;nykac&#x2F;rust-notify&quot;&gt;bindings&lt;&#x2F;a&gt;
+&lt;a href=&quot;https:&#x2F;&#x2F;crates.io&#x2F;crates&#x2F;libnotify-sys&quot;&gt;to&lt;&#x2F;a&gt;
+&lt;a href=&quot;https:&#x2F;&#x2F;crates.io&#x2F;crates&#x2F;libnotify&quot;&gt;libnotify&lt;&#x2F;a&gt;. So I decided to invest
+some time and do &lt;a href=&quot;https:&#x2F;&#x2F;crates.io&#x2F;crates&#x2F;notify-rust&quot;&gt;my own&lt;&#x2F;a&gt;. Now
+&lt;a href=&quot;https:&#x2F;&#x2F;xkcd.com&#x2F;927&#x2F;&quot;&gt;there are 3 crates&lt;&#x2F;a&gt; on
+&lt;a href=&quot;https:&#x2F;&#x2F;crates.io&#x2F;&quot;&gt;crates.io&lt;&#x2F;a&gt; that offer this functionality, however I
+can savely say, mine is the best documented and also the only one that
+does not rely on ffi bindings to C \0&#x2F;.&lt;&#x2F;p&gt;
+&lt;p&gt;Since I released my crate it has become my main rust project for a
+while, so my &lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;hoodie&#x2F;catch-my-rust&quot;&gt;catch-my-bus in
+rust&lt;&#x2F;a&gt; is still not where I
+wanted it to be originally, but since the compeeding implementations by
+&lt;a href=&quot;http:&#x2F;&#x2F;github.com&#x2F;kiliankoe&#x2F;catchmybus&quot;&gt;Kilian Koeltzsch&lt;&#x2F;a&gt; and
+&lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;devmeepo&#x2F;catch-my-bus-python&quot;&gt;Ian&lt;&#x2F;a&gt; extended the
+original functionality a little I am currently looking into system tray
+icons in rust. This however is strictly a side-side-project, so don’t be
+surprised if I drop that and stick with a clone of my original
+catch-my-bus ᐛ&lt;&#x2F;p&gt;
+&lt;p&gt;This was supposed to become a post about rust itself and what I think
+about it, but, why not make it a series.&lt;&#x2F;p&gt;
+&lt;p&gt;Later!&lt;&#x2F;p&gt;
+</content>
+	</entry>
+	<entry xml:lang="en">
+		<title>Git push to all remotes</title>
+		<published>2014-05-17T00:00:00+00:00</published>
+		<updated>2014-05-17T00:00:00+00:00</updated>
+		<link rel="alternate" href="https://www.hoodie.de/blog/git-push-to-all-remotes/" type="text/html"/>
+		<id>https://www.hoodie.de/blog/git-push-to-all-remotes/</id>
+		<content type="html">&lt;p&gt;If you are trying to host your code redundantly on two git remotes ( say
+your personal server, your universities server and&#x2F;or github ) and you
+do not which to manually keep them in sync but pushing everything twice.
+There is nice and rather simple way to keep pushing to all of the at
+once. Lets imagine your .git&#x2F;config looks like this:&lt;&#x2F;p&gt;
+&lt;pre&gt;&lt;code&gt;    [core]
+        repositoryformatversion = 0
+        filemode = true
+        bare = false
+        logallrefupdates = true
+    [remote &amp;quot;ganymed&amp;quot;]
+        url = ganymed:repo&amp;#x2F;Beleg
+        fetch = +refs&amp;#x2F;heads&amp;#x2F;*:refs&amp;#x2F;remotes&amp;#x2F;ganymed&amp;#x2F;*
+    [remote &amp;quot;hoodie&amp;quot;]
+        url = hoodie.de:repo&amp;#x2F;Beleg
+        fetch = +refs&amp;#x2F;heads&amp;#x2F;*:refs&amp;#x2F;remotes&amp;#x2F;hoodie&amp;#x2F;*
+
+    In this case you can add a virtual remote (lets call it “all”) that simply looks like this:
+    [remote &amp;quot;all&amp;quot;]
+        url = ganymed:repo&amp;#x2F;Beleg
+        url = hoodie.de:repo&amp;#x2F;Beleg
+        fetch = +refs&amp;#x2F;heads&amp;#x2F;*:refs&amp;#x2F;remotes&amp;#x2F;ganymed&amp;#x2F;*
+&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;Bear in mind: git pull all will in this case do the same thing as git pull ganymed&lt;&#x2F;p&gt;
+</content>
+	</entry>
+	<entry xml:lang="en">
+		<title>Naubino 2**11</title>
+		<published>2014-04-09T00:00:00+00:00</published>
+		<updated>2014-04-09T00:00:00+00:00</updated>
+		<link rel="alternate" href="https://www.hoodie.de/blog/naubino-2-11/" type="text/html"/>
+		<id>https://www.hoodie.de/blog/naubino-2-11/</id>
+		<content type="html">&lt;p&gt;Over the weekend I head the pleasure to attend the &lt;a title=&quot;libregraphicsmeeting&quot; href=&quot;http:&#x2F;&#x2F;libregraphicsmeeting.org&#x2F;2014&quot;&gt;libregraphicsmeeting&lt;&#x2F;a&gt; as a spectator. It was fascinating and fun both attending workshops and talks given by some of the original developers of Gimp, Krita, Inkscape, darktable, mypaint, blender etc and also to get to socialize with people who work in FLOSS part time or full time. I would love to get a Job in FLOSS as well once I got my diploma, let&amp;#8217;s see what I can do about that.&lt;&#x2F;p&gt;
+&lt;p&gt;But I actually wanted to post something about &lt;a href=&quot;http:&#x2F;&#x2F;naubino.de&quot;&gt;&lt;strong&gt;Naubino!&lt;&#x2F;strong&gt;&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;p&gt;It&amp;#8217;s still at the stage of a 1.0beta4 or something like that but I had the chance to add a few more levels. In may, when I got a little bit more free time I&amp;#8217;ll try to fix some touch quirks so it will work the way what we intended it to work on touch enabled laptops, which have become more popular since I stopped working on roughly 2 years ago&amp;#8230;.&lt;&#x2F;p&gt;
+&lt;p&gt;But what I actually did during the &lt;a title=&quot;libregraphicsmeeting&quot; href=&quot;http:&#x2F;&#x2F;libregraphicsmeeting.org&#x2F;2014&quot;&gt;LGM&lt;&#x2F;a&gt; was creating a new version of Naubino, mostyle inspired by the fabulous &lt;a href=&quot;http:&#x2F;&#x2F;gabrielecirulli.github.io&#x2F;2048&#x2F;&quot;&gt;2048&lt;&#x2F;a&gt; which has gotten us all addicted. I call it &lt;a title=&quot;Naubino 2048&quot; href=&quot;http:&#x2F;&#x2F;naubino.de&#x2F;2048&quot;&gt;Naubino 2048&lt;&#x2F;a&gt;.&lt;&#x2F;p&gt;
+&lt;p&gt;Have Fun&lt;&#x2F;p&gt;
+&lt;p&gt;&amp;nbsp;&lt;&#x2F;p&gt;
+&lt;p&gt;PS: Don&amp;#8217;t forget to eat and sleep!&lt;&#x2F;p&gt;
+</content>
+	</entry>
+	<entry xml:lang="en">
+		<title>KDE puts on some looks</title>
+		<published>2014-03-17T00:00:00+00:00</published>
+		<updated>2014-03-17T00:00:00+00:00</updated>
+		<link rel="alternate" href="https://www.hoodie.de/blog/kde-puts-on-some-looks/" type="text/html"/>
+		<id>https://www.hoodie.de/blog/kde-puts-on-some-looks/</id>
+		<content type="html">&lt;p&gt;In the last couple of weeks the efforts on finishing the next big KDE plasma release have gone into super pursuit mode. Their visual design group has been putting out their 7th weekly &amp;#8220;&lt;a href=&quot;http:&#x2F;&#x2F;wheeldesign.blogspot.de&#x2F;2014&#x2F;03&#x2F;monday-report-7-beach-edition.html&quot;&gt;Monday Report&lt;&#x2F;a&gt;&amp;#8221; with some fresh mockups and screenshots an I&amp;#8217;ve got to say, finaly some catching up in terms of design. After gnome has made some major leaps along with their redesign of the gnome shell I was wondering when KDE would make some efforts.&lt;&#x2F;p&gt;
+</content>
+	</entry>
+	<entry xml:lang="en">
+		<title>Illuminati Naubino</title>
+		<published>2014-03-13T00:00:00+00:00</published>
+		<updated>2014-03-13T00:00:00+00:00</updated>
+		<link rel="alternate" href="https://www.hoodie.de/blog/illuminati-naubino/" type="text/html"/>
+		<id>https://www.hoodie.de/blog/illuminati-naubino/</id>
+		<content type="html">&lt;p&gt;Gilbert is working like a mad man on &lt;a href=&quot;http:&#x2F;&#x2F;naubino.de&quot; title=&quot;naubino.js&quot;&gt;naubino&lt;&#x2F;a&gt; at the moment.
+This time the plan is to build it with &lt;a href=&quot;http:&#x2F;&#x2F;kivy.org&#x2F;&quot;&gt;Kivy&lt;&#x2F;a&gt;.&lt;&#x2F;p&gt;
+&lt;p&gt;I unfortunately have not had the time to get started helping him, yet.
+But a few minutes ago I created a little doodle of what could ( perhaps ) eventually become the next logo.
+Take this with a grain of salt, I exaggerated the symmetry aspect of it a little&lt;img src=&quot;https:&#x2F;&#x2F;www.hoodie.de&#x2F;blog&#x2F;illuminati-naubino&#x2F;%7B%7B%20root_url%20%7D%7D&#x2F;images&#x2F;naubino_illuminati.png&quot; alt=&quot;&quot; &#x2F;&gt;&lt;&#x2F;p&gt;
+</content>
+	</entry>
+	<entry xml:lang="en">
+		<title>Link Redirection – seriously?</title>
+		<published>2012-06-14T00:00:00+00:00</published>
+		<updated>2012-06-14T00:00:00+00:00</updated>
+		<link rel="alternate" href="https://www.hoodie.de/blog/link-redirection-seriously/" type="text/html"/>
+		<id>https://www.hoodie.de/blog/link-redirection-seriously/</id>
+		<content type="html">&lt;p&gt;Link shorteners are the death of the web. And here is another reason
+why!
+I just received a t.co link from a friend who probably didn’t know
+better. I, curious as I am checked out the redirection target before I
+clicked:&lt;&#x2F;p&gt;
+&lt;blockquote&gt;&lt;pre&gt;[17:43:31] &amp;lt;-----&amp;gt; btw das find ich ne gute idee ☺ http:&#x2F;&#x2F;t.co&#x2F;h3LGsKwt
+[17:45:54] &lt;strong&gt;&amp;lt;hoodie&amp;gt;&lt;&#x2F;strong&gt; meinst du jetzt echt den inhalt oder den link?
+[17:46:03] &lt;strong&gt;&amp;lt;----&amp;gt;&lt;&#x2F;strong&gt; den inhalt
+[17:46:35] &lt;strong&gt;&amp;lt;hoodie&amp;gt;&lt;&#x2F;strong&gt; &lt;code&gt;
+  hoodie:~&#x2F; $ resolve http:&#x2F;&#x2F;t.co&#x2F;h3LGsKwt
+  http:&#x2F;&#x2F;feedly.com&#x2F;k&#x2F;KvJmnI
+  hoodie:~&#x2F; $ resolve http:&#x2F;&#x2F;feedly.com&#x2F;k&#x2F;KvJmnI
+  http:&#x2F;&#x2F;bit.ly&#x2F;KvJmnI
+  hoodie:~&#x2F; $ resolve http:&#x2F;&#x2F;bit.ly&#x2F;KvJmnI
+  http:&#x2F;&#x2F;feedproxy.google.com&#x2F;~r&#x2F;aktuell&#x2F;feeds&#x2F;rss&#x2F;~3&#x2F;mgwYBUl5Oj0&#x2F;
+  hoodie:~&#x2F; $ resolve http:&#x2F;&#x2F;feedproxy.google.com&#x2F;\~r&#x2F;aktuell&#x2F;feeds&#x2F;rss&#x2F;\~3&#x2F;mgwYBUl5Oj0&#x2F;
+  http:&#x2F;&#x2F;t3n.de&#x2F;news&#x2F;online-shop-nimmt-zuschlag-394639&#x2F;?utm_source=feedburner+t3n+News+12.000er&amp;#038;utm_medium=feed&amp;#038;utm_campaign=Feed%3A+aktuell%2Ffeeds%2Frss+%28t3n+News%29 &lt;&#x2F;code&gt;
+[17:46:50] &lt;strong&gt;&amp;lt;----&amp;gt;&lt;&#x2F;strong&#x2F;&gt; oO wow
+[17:47:05] &lt;strong&gt;&amp;lt;----&amp;gt;&lt;&#x2F;strong&#x2F;&gt; das waren viele proxies
+[17:47:15] &lt;strong&gt;&amp;lt;hoodie&amp;gt;&lt;&#x2F;strong&#x2F;&gt; und zack wissen 4 unbekannte partein, was du so anklickst
+&lt;&#x2F;pre&gt;&lt;&#x2F;blockquote&gt;             
+&lt;p&gt;And this is what happens all the time day in day out all over the
+internet, you click on a link and all of a sudden 5 different parties
+know what you clicked and you don’t even know.
+And ten years from now nobody can make any assumptions on whether these links are still valid or not.
+Sometimes redirection links, e.g. those produced by twitter are even longer than the original url.
+So please let&#x27;s get rid of these things.&lt;&#x2F;p&gt;
+&lt;p&gt;Thank you.&lt;&#x2F;p&gt;
+&lt;hr &#x2F;&gt;
+&lt;p&gt;&lt;small&gt;PS: Background picture by &lt;a href=&quot;https:&#x2F;&#x2F;www.flickr.com&#x2F;photos&#x2F;howardlake&#x2F;4517566848&#x2F;in&#x2F;photolist-7TcHeA-weKXh-7Ljkjc-a6srq5-3ghYNw-tvDrYP-f2Yrfv-4vwvyV-25BYRZ-fTfXkN-9ht1x9-aY57Nk-2mZc5E-weKwj-rvEFyC-dSbR9U-8vNbtB-7oXrP6-2GChy-5wNugF-grvmp-jP2Adr-aoKBXj-7oU4R-7hEsyx-8nB8tX-rmcUBh-5vNGSB-81Fsyv-tJNKZK-4XvZ91-3FjCa-gBiE9M-5fg9Hc-6U37rj-rjmPkT-3gBug-wnA6G7-2E1aKs-J4H3j-ecx5KC-rpfepQ-d3yQff-5oW4Mw-51qcV2-96YT9u-4574zz-cAdPa-nCQdFW-94Kva6&#x2F;&quot;&gt;Howard Lake&lt;&#x2F;a&gt;&lt;&#x2F;small&gt;&lt;&#x2F;p&gt;
+</content>
+	</entry>
+	<entry xml:lang="en">
+		<title>Githubs SSH Key audit</title>
+		<published>2012-03-11T00:00:00+00:00</published>
+		<updated>2012-03-11T00:00:00+00:00</updated>
+		<link rel="alternate" href="https://www.hoodie.de/blog/githubs-ssh-key-audit/" type="text/html"/>
+		<id>https://www.hoodie.de/blog/githubs-ssh-key-audit/</id>
+		<content type="html">&lt;p&gt;Github just greeted me with:&lt;br &#x2F;&gt;
+&lt;pre&gt;&lt;code&gt;ERROR: Hi hoodie, it&#x27;s GitHub. We&#x27;re doing an SSH key audit.
+ Please visit https:&#x2F;&#x2F;github.com&#x2F;settings&#x2F;ssh&#x2F;audit&#x2F;679304
+ to approve this key so we know it&#x27;s safe.&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;&lt;br &#x2F;&gt;
+It&amp;#8217;s nice that they took that &lt;a title=&quot;golem artikel&quot; href=&quot;http:&#x2F;&#x2F;www.golem.de&#x2F;news&#x2F;programmierfehler-ruby-on-rails-repository-bei-github-kompromittiert-1203-90252.html&quot;&gt;hack&lt;&#x2F;a&gt; seriously.&lt;&#x2F;p&gt;
+</content>
+	</entry>
+	<entry xml:lang="en">
+		<title>About Gnome again</title>
+		<published>2011-12-01T00:00:00+00:00</published>
+		<updated>2011-12-01T00:00:00+00:00</updated>
+		<link rel="alternate" href="https://www.hoodie.de/blog/about-gnome-again/" type="text/html"/>
+		<id>https://www.hoodie.de/blog/about-gnome-again/</id>
+		<content type="html">&lt;p&gt;Linux Mint 12 just came out and I had to give it a try the other day.
+Very nice piece work. There have been quite a few interesting changes
+the Mint Contributers made to their Distro. So I am not at all surprised
+about Mints steady rise in popularity.&lt;&#x2F;p&gt;
+&lt;p&gt;Therefore I was very excited when I heard they made some changes to
+Gnome 3 to make it more usable. Unfortunately what they did was just
+adding a shell extension to Gnome 3 to give it a Gnome 2 like Taskbar.&lt;&#x2F;p&gt;
+&lt;p&gt;It did not save me from getting absolutely frustrated by it. There is
+just so much functionality missing and you can’t even blame it on an
+early release, because they didn’t even add anything useful in Gnome 3.2
+– they added web app integration…&lt;&#x2F;p&gt;
+&lt;p&gt;Suddenly you can’t do anything with it anymore. The window manager is
+minimal, you can only maximize or close windows. The desktops can only
+be accessed by sequentially walking through a vertical list and if you
+have more than one window on a desktop you never see a list of windows.
+The panel is rock solid at the top of the screen, no way of moving it
+around or changing its functionality. And don’t ask me about the
+application menu, which apparently is meant to be accessed via
+touchscreen because the buttons are humongous and searching for an
+application is causing you to pick up your mouse and scroll all around a
+grid that looks like is taken off the iPad.&lt;&#x2F;p&gt;
+&lt;p&gt;So. Did we all suddenly migrate our Linux desktops onto tablets over
+night and I did not realize? Do the Gnome people write their code on
+WeTabs? What about the power users? What about having n×n desktops on
+your screen? What about having two panels? What about
+vertically&#x2F;horizontally minimizing windows? What about having more than
+just one window on a desktop and actually seeing the ones out of focus?
+What about having have a panel that is auto-hidden. What about chioce?&lt;&#x2F;p&gt;
+&lt;p&gt;I know they claim to have a new philosophy that too many options confuse
+the user. But again – who do they think is using Gnome? Those who come
+from Gnome 2 two have no problem with complicated technology – they are
+using Linux! Those how may start using Linux might like the new look but
+might eventually want to do more with it than what it can now? I realize
+there is a gnome-tweak-tool, but that does not nearly cover what you
+should expect.&lt;&#x2F;p&gt;
+&lt;p&gt;Dear Gnome Designers, I know you put a lot of thought into Gnome 3 and
+have a sound explanation for every change you make but how about this:
+You ship Gnome 3 looking just the way it does now but you don’t make it
+mandatory to keep it that way. The magic word in your case would be
+‘Sane Defaults’. I’d like to be able to profit from GTK3 and the better
+system integration and performance but I would also want use my computer
+the way I liked to again. That was the original reason I switched to
+Linux.&lt;&#x2F;p&gt;
+&lt;p&gt; &lt;&#x2F;p&gt;
+&lt;p&gt;&lt;strong&gt;Update&lt;&#x2F;strong&gt;:&lt;&#x2F;p&gt;
+&lt;p&gt;I forgot to actually publish this post. So this is not so up to date any
+longer :S&lt;&#x2F;p&gt;
+</content>
+	</entry>
+	<entry xml:lang="en">
+		<title>Android Fridge</title>
+		<published>2011-11-02T00:00:00+00:00</published>
+		<updated>2011-11-02T00:00:00+00:00</updated>
+		<link rel="alternate" href="https://www.hoodie.de/blog/android-fridge/" type="text/html"/>
+		<id>https://www.hoodie.de/blog/android-fridge/</id>
+		<content type="html">&lt;p&gt;&lt;a href=&quot;{{ site.image_folder }}&#x2F;fridge.png &quot;&gt;&lt;img class=&quot;alignright size-medium wp-image-366&quot; style=&quot;vertical-align:top;&quot; title=&quot;fridge&quot; src=&quot;{{site.image_folder}}&#x2F;fridge-265x300.png&quot; alt=&quot;&quot; width=&quot;200&quot; height=&quot;227&quot; &#x2F;&gt;&lt;&#x2F;a&gt;Momentan habe ich jetzt mit meinem Kommilitonen Felix ein Projekt für &amp;#8220;App development for ubiquitous systems&amp;#8221; am Start das einem helfen soll herauszufinden, was man mit dem momentanen Inhalt seines Kühlschranks alles anfangen kann.&lt;&#x2F;p&gt;
+&lt;p&gt;Das ganze heißt dann Droid Fridge und diese Woche sollen wir die ersten Mockups einreichen. Wenn ich schon mal kreative sein darf, dann will ich auch mit Inkscape malen dürfen. Ich hoffe wir bekommen mindestens den Preis für das schönste Icon.&lt;&#x2F;p&gt;
+</content>
+	</entry>
+	<entry xml:lang="en">
+		<title>Evolution of a hoodie</title>
+		<published>2011-10-10T00:00:00+00:00</published>
+		<updated>2011-10-10T00:00:00+00:00</updated>
+		<link rel="alternate" href="https://www.hoodie.de/blog/evolution-of-a-hoodie/" type="text/html"/>
+		<id>https://www.hoodie.de/blog/evolution-of-a-hoodie/</id>
+		<content type="html">&lt;p&gt;Ich hab mal ein wenig mit einem potenziellen hoodie logo herumgespielt,
+bin aber etwas vom Weg abgekommen.
+&lt;img src=&quot;&#x2F;images&#x2F;hoodie.svg&quot; alt=&quot;hoodie.svg&quot; &#x2F;&gt;&lt;&#x2F;p&gt;
+&lt;p&gt;Bezeichnen wir das ganze also eher als eine Art Studie :D&lt;&#x2F;p&gt;
+</content>
+	</entry>
+	<entry xml:lang="en">
+		<title>Ordner als Podcast?</title>
+		<published>2011-10-07T00:00:00+00:00</published>
+		<updated>2011-10-07T00:00:00+00:00</updated>
+		<link rel="alternate" href="https://www.hoodie.de/blog/ordner-als-podcast/" type="text/html"/>
+		<id>https://www.hoodie.de/blog/ordner-als-podcast/</id>
+		<content type="html">&lt;p&gt;Ja, das geht!&lt;&#x2F;p&gt;
+&lt;p&gt;Ich war es irgendwie Leid, mir Videos die ich einmal schaun will auf mein Handy zu schieben. FTP Clients, SSH Clients und so weiter für Android machen alle keinen guten Eindruck und einen Server möchte ich schon gar nicht auf meinem Telefon haben. Und für einmal gucken extra das Ding via USB einhängen ist auch zu viel.&lt;&#x2F;p&gt;
+&lt;p&gt;Da schieb ich doch lieber die Datei auf meinem heimischen Webserver und dank &lt;a title=&quot;DirCaster&quot; href=&quot;https:&#x2F;&#x2F;github.com&#x2F;hoodie&#x2F;DirCaster&quot;&gt;DirCaster&lt;&#x2F;a&gt; wird aus dem Verzeichnis ein Podcast. Somit kann ich die Datei ratz fatz einfach mal so streamen. Geil!&lt;&#x2F;p&gt;
+</content>
+	</entry>
+	<entry xml:lang="en">
+		<title>now this looks familiar ?¿?</title>
+		<published>2011-09-11T00:00:00+00:00</published>
+		<updated>2011-09-11T00:00:00+00:00</updated>
+		<link rel="alternate" href="https://www.hoodie.de/blog/now-this-looks-familiar/" type="text/html"/>
+		<id>https://www.hoodie.de/blog/now-this-looks-familiar/</id>
+		<content type="html">&lt;p&gt;Lot&amp;#8217;s has happend during the last few months. I&amp;#8217;ve been working on a couple of smaller projects, some of which I am going to talk about in this and in the comming posts. Since I&amp;#8217;m not much of an expert in any area but instead keep on trying out new things, trying to get to know as many technologies as I can.&lt;&#x2F;p&gt;
+&lt;p&gt;On of my first little fun projects using python was a tiny script that created svg images with randomly saturated vertical stripes of one color. At the time was inspired by one single wallpaper I found somewhere on opendesktop.org.&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;img class=&quot;alignleft&quot; src=&quot;data:image&#x2F;svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiIHN0YW5kYWxvbmU9Im5vIj8+CiAgICA8IS0tCiAgICAgIGJhc2Vjb2xvcjojMjM0QTg1OwogICAgICBiYWNrZ3JvdW5kOiMwMDAwMDA7CiAgICAgIHNxdWVlemU6NTA7CiAgICAgIHNwYWNpbmc6MDsKICAgICAgd2lkdGg6MTAyNDsKICAgICAgaGVpZ2h0OjYwMDsKICAgICAgcmVjdHdpZHRoOjE4OwogICAgLS0+CiAgICA8c3ZnCiAgICAgICB4bWxuczpzdmc9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIgogICAgICAgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIgogICAgICAgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiCiAgICAgICB2ZXJzaW9uPSIxLjAiCiAgICAgICB3aWR0aD0iMTAyNCIKICAgICAgIGhlaWdodD0iNjAwIgogICAgICAgaWQ9InN0cmlwZXMiPgoKICAgIDxyYWRpYWxHcmFkaWVudAogICAgICAgY3g9IjUxMiIKICAgICAgIGN5PSIzMDAiCiAgICAgICByPSI1MTIiCiAgICAgICBmeD0iNTEyIgogICAgICAgZnk9IjMwMCIKICAgICAgIGlkPSJyYWRpYWxncmFkaWVudCIKICAgICAgIHhsaW5rOmhyZWY9IiNmYWRlX291dCIKICAgICAgIGdyYWRpZW50VW5pdHM9InVzZXJTcGFjZU9uVXNlIgogICAgICAgZ3JhZGllbnRUcmFuc2Zvcm09Im1hdHJpeCgxLDAsMCwwLjU4NTkzNzUsMCwxMjQuMjE4NzUpIiAvPgogICAgICAgICA8ZGVmcwogICAgIGlkPSJncmFkaWVudGRlZnMiPgogICAgPGxpbmVhckdyYWRpZW50CiAgICAgICB4MT0iMCIKICAgICAgIHkxPSI5NDAiCiAgICAgICB4Mj0iMCIKICAgICAgIHkyPSIwIgogICAgICAgaWQ9ImxpbmVhcmdyYWRpZW50IgogICAgICAgeGxpbms6aHJlZj0iI2ZhZGVfaW4iCiAgICAgICBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgLz4KICAgIDxsaW5lYXJHcmFkaWVudCBpZD0iZmFkZV9pbiI+CiAgICAgIDxzdG9wCiAgICAgICAgIGlkPSJzdG9wMzE1OCIKICAgICAgICAgc3R5bGU9InN0b3AtY29sb3I6IzAwMDAwMDtzdG9wLW9wYWNpdHk6MSIKICAgICAgICAgb2Zmc2V0PSIwIiAvPgogICAgICA8c3RvcAogICAgICAgICBpZD0ic3RvcDMxNjAiCiAgICAgICAgIHN0eWxlPSJzdG9wLWNvbG9yOiMwMDAwMDA7c3RvcC1vcGFjaXR5OjAiCiAgICAgICAgIG9mZnNldD0iMSIgLz4KICAgIDwvbGluZWFyR3JhZGllbnQ+CiAgICA8bGluZWFyR3JhZGllbnQgaWQ9ImZhZGVfb3V0Ij4KICAgICAgPHN0b3AKICAgICAgICAgaWQ9InN0b3AzMTU4IgogICAgICAgICBzdHlsZT0ic3RvcC1jb2xvcjojMDAwMDAwO3N0b3Atb3BhY2l0eTowIgogICAgICAgICBvZmZzZXQ9IjAiIC8+CiAgICAgIDxzdG9wCiAgICAgICAgIGlkPSJzdG9wMzE2MCIKICAgICAgICAgc3R5bGU9InN0b3AtY29sb3I6IzAwMDAwMDtzdG9wLW9wYWNpdHk6MSIKICAgICAgICAgb2Zmc2V0PSIxIiAvPgogICAgPC9saW5lYXJHcmFkaWVudD4KICA8L2RlZnM+ICAgICAgPHJlY3QKICAgICAgICAgd2lkdGg9IjEwMjQiCiAgICAgICAgIGhlaWdodD0iNjAwIgogICAgICAgICB4PSIwIgogICAgICAgICB5PSIwIgogICAgICAgICBpZD0iYmciCiAgICAgICAgIHN0eWxlPSJmaWxsOiMwMDAwMDA7b3BhY2l0eToxO2ZpbGwtb3BhY2l0eToxO3N0cm9rZTpub25lO3N0cm9rZS13aWR0aDowO3N0cm9rZS1kYXNob2Zmc2V0OjA7c3Ryb2tlLW9wYWNpdHk6MSIgLz4gICA8ZyBpZD0iYWxsc3RyaXBlcyI+CiAgICAKICAgICAgICA8cmVjdAogICAgICAgICAgIHdpZHRoPSIxOSIKICAgICAgICAgICBoZWlnaHQ9IjYwMCIKICAgICAgICAgICB4PSIwLjAiCiAgICAgICAgICAgeT0iMCIKICAgICAgICAgICBpZD0icmVjdDAuMCIKICAgICAgICAgICBzdHlsZT0iZmlsbDojNWQ4NGJmOwlvcGFjaXR5OjE7ZmlsbC1vcGFjaXR5OjE7c3Ryb2tlOm5vbmU7c3Ryb2tlLXdpZHRoOjA7c3Ryb2tlLWRhc2hvZmZzZXQ6MDtzdHJva2Utb3BhY2l0eToxIiAvPiAgCiAgICAgICAgPHJlY3QKICAgICAgICAgICB3aWR0aD0iMTkiCiAgICAgICAgICAgaGVpZ2h0PSI2MDAiCiAgICAgICAgICAgeD0iMTguMCIKICAgICAgICAgICB5PSIwIgogICAgICAgICAgIGlkPSJyZWN0MS4wIgogICAgICAgICAgIHN0eWxlPSJmaWxsOiM0OTcwYWI7CW9wYWNpdHk6MTtmaWxsLW9wYWNpdHk6MTtzdHJva2U6bm9uZTtzdHJva2Utd2lkdGg6MDtzdHJva2UtZGFzaG9mZnNldDowO3N0cm9rZS1vcGFjaXR5OjEiIC8+ICAKICAgICAgICA8cmVjdAogICAgICAgICAgIHdpZHRoPSIxOSIKICAgICAgICAgICBoZWlnaHQ9IjYwMCIKICAgICAgICAgICB4PSIzNi4wIgogICAgICAgICAgIHk9IjAiCiAgICAgICAgICAgaWQ9InJlY3QyLjAiCiAgICAgICAgICAgc3R5bGU9ImZpbGw6IzM1NWM5NzsJb3BhY2l0eToxO2ZpbGwtb3BhY2l0eToxO3N0cm9rZTpub25lO3N0cm9rZS13aWR0aDowO3N0cm9rZS1kYXNob2Zmc2V0OjA7c3Ryb2tlLW9wYWNpdHk6MSIgLz4gIAogICAgICAgIDxyZWN0CiAgICAgICAgICAgd2lkdGg9IjE5IgogICAgICAgICAgIGhlaWdodD0iNjAwIgogICAgICAgICAgIHg9IjU0LjAiCiAgICAgICAgICAgeT0iMCIKICAgICAgICAgICBpZD0icmVjdDMuMCIKICAgICAgICAgICBzdHlsZT0iZmlsbDojNWE4MWJjOwlvcGFjaXR5OjE7ZmlsbC1vcGFjaXR5OjE7c3Ryb2tlOm5vbmU7c3Ryb2tlLXdpZHRoOjA7c3Ryb2tlLWRhc2hvZmZzZXQ6MDtzdHJva2Utb3BhY2l0eToxIiAvPiAgCiAgICAgICAgPHJlY3QKICAgICAgICAgICB3aWR0aD0iMTkiCiAgICAgICAgICAgaGVpZ2h0PSI2MDAiCiAgICAgICAgICAgeD0iNzIuMCIKICAgICAgICAgICB5PSIwIgogICAgICAgICAgIGlkPSJyZWN0NC4wIgogICAgICAgICAgIHN0eWxlPSJmaWxsOiM0MjY5YTQ7CW9wYWNpdHk6MTtmaWxsLW9wYWNpdHk6MTtzdHJva2U6bm9uZTtzdHJva2Utd2lkdGg6MDtzdHJva2UtZGFzaG9mZnNldDowO3N0cm9rZS1vcGFjaXR5OjEiIC8+ICAKICAgICAgICA8cmVjdAogICAgICAgICAgIHdpZHRoPSIxOSIKICAgICAgICAgICBoZWlnaHQ9IjYwMCIKICAgICAgICAgICB4PSI5MC4wIgogICAgICAgICAgIHk9IjAiCiAgICAgICAgICAgaWQ9InJlY3Q1LjAiCiAgICAgICAgICAgc3R5bGU9ImZpbGw6IzM2NWQ5ODsJb3BhY2l0eToxO2ZpbGwtb3BhY2l0eToxO3N0cm9rZTpub25lO3N0cm9rZS13aWR0aDowO3N0cm9rZS1kYXNob2Zmc2V0OjA7c3Ryb2tlLW9wYWNpdHk6MSIgLz4gIAogICAgICAgIDxyZWN0CiAgICAgICAgICAgd2lkdGg9IjE5IgogICAgICAgICAgIGhlaWdodD0iNjAwIgogICAgICAgICAgIHg9IjEwOC4wIgogICAgICAgICAgIHk9IjAiCiAgICAgICAgICAgaWQ9InJlY3Q2LjAiCiAgICAgICAgICAgc3R5bGU9ImZpbGw6IzZhOTFjYzsJb3BhY2l0eToxO2ZpbGwtb3BhY2l0eToxO3N0cm9rZTpub25lO3N0cm9rZS13aWR0aDowO3N0cm9rZS1kYXNob2Zmc2V0OjA7c3Ryb2tlLW9wYWNpdHk6MSIgLz4gIAogICAgICAgIDxyZWN0CiAgICAgICAgICAgd2lkdGg9IjE5IgogICAgICAgICAgIGhlaWdodD0iNjAwIgogICAgICAgICAgIHg9IjEyNi4wIgogICAgICAgICAgIHk9IjAiCiAgICAgICAgICAgaWQ9InJlY3Q3LjAiCiAgICAgICAgICAgc3R5bGU9ImZpbGw6IzU4N2ZiYTsJb3BhY2l0eToxO2ZpbGwtb3BhY2l0eToxO3N0cm9rZTpub25lO3N0cm9rZS13aWR0aDowO3N0cm9rZS1kYXNob2Zmc2V0OjA7c3Ryb2tlLW9wYWNpdHk6MSIgLz4gIAogICAgICAgIDxyZWN0CiAgICAgICAgICAgd2lkdGg9IjE5IgogICAgICAgICAgIGhlaWdodD0iNjAwIgogICAgICAgICAgIHg9IjE0NC4wIgogICAgICAgICAgIHk9IjAiCiAgICAgICAgICAgaWQ9InJlY3Q4LjAiCiAgICAgICAgICAgc3R5bGU9ImZpbGw6IzQyNjlhNDsJb3BhY2l0eToxO2ZpbGwtb3BhY2l0eToxO3N0cm9rZTpub25lO3N0cm9rZS13aWR0aDowO3N0cm9rZS1kYXNob2Zmc2V0OjA7c3Ryb2tlLW9wYWNpdHk6MSIgLz4gIAogICAgICAgIDxyZWN0CiAgICAgICAgICAgd2lkdGg9IjE5IgogICAgICAgICAgIGhlaWdodD0iNjAwIgogICAgICAgICAgIHg9IjE2Mi4wIgogICAgICAgICAgIHk9IjAiCiAgICAgICAgICAgaWQ9InJlY3Q5LjAiCiAgICAgICAgICAgc3R5bGU9ImZpbGw6IzYwODdjMjsJb3BhY2l0eToxO2ZpbGwtb3BhY2l0eToxO3N0cm9rZTpub25lO3N0cm9rZS13aWR0aDowO3N0cm9rZS1kYXNob2Zmc2V0OjA7c3Ryb2tlLW9wYWNpdHk6MSIgLz4gIAogICAgICAgIDxyZWN0CiAgICAgICAgICAgd2lkdGg9IjE5IgogICAgICAgICAgIGhlaWdodD0iNjAwIgogICAgICAgICAgIHg9IjE4MC4wIgogICAgICAgICAgIHk9IjAiCiAgICAgICAgICAgaWQ9InJlY3QxMC4wIgogICAgICAgICAgIHN0eWxlPSJmaWxsOiM1Mjc5YjQ7CW9wYWNpdHk6MTtmaWxsLW9wYWNpdHk6MTtzdHJva2U6bm9uZTtzdHJva2Utd2lkdGg6MDtzdHJva2UtZGFzaG9mZnNldDowO3N0cm9rZS1vcGFjaXR5OjEiIC8+ICAKICAgICAgICA8cmVjdAogICAgICAgICAgIHdpZHRoPSIxOSIKICAgICAgICAgICBoZWlnaHQ9IjYwMCIKICAgICAgICAgICB4PSIxOTguMCIKICAgICAgICAgICB5PSIwIgogICAgICAgICAgIGlkPSJyZWN0MTEuMCIKICAgICAgICAgICBzdHlsZT0iZmlsbDojNTU3Y2I3OwlvcGFjaXR5OjE7ZmlsbC1vcGFjaXR5OjE7c3Ryb2tlOm5vbmU7c3Ryb2tlLXdpZHRoOjA7c3Ryb2tlLWRhc2hvZmZzZXQ6MDtzdHJva2Utb3BhY2l0eToxIiAvPiAgCiAgICAgICAgPHJlY3QKICAgICAgICAgICB3aWR0aD0iMTkiCiAgICAgICAgICAgaGVpZ2h0PSI2MDAiCiAgICAgICAgICAgeD0iMjE2LjAiCiAgICAgICAgICAgeT0iMCIKICAgICAgICAgICBpZD0icmVjdDEyLjAiCiAgICAgICAgICAgc3R5bGU9ImZpbGw6IzYyODljNDsJb3BhY2l0eToxO2ZpbGwtb3BhY2l0eToxO3N0cm9rZTpub25lO3N0cm9rZS13aWR0aDowO3N0cm9rZS1kYXNob2Zmc2V0OjA7c3Ryb2tlLW9wYWNpdHk6MSIgLz4gIAogICAgICAgIDxyZWN0CiAgICAgICAgICAgd2lkdGg9IjE5IgogICAgICAgICAgIGhlaWdodD0iNjAwIgogICAgICAgICAgIHg9IjIzNC4wIgogICAgICAgICAgIHk9IjAiCiAgICAgICAgICAgaWQ9InJlY3QxMy4wIgogICAgICAgICAgIHN0eWxlPSJmaWxsOiMzZDY0OWY7CW9wYWNpdHk6MTtmaWxsLW9wYWNpdHk6MTtzdHJva2U6bm9uZTtzdHJva2Utd2lkdGg6MDtzdHJva2UtZGFzaG9mZnNldDowO3N0cm9rZS1vcGFjaXR5OjEiIC8+ICAKICAgICAgICA8cmVjdAogICAgICAgICAgIHdpZHRoPSIxOSIKICAgICAgICAgICBoZWlnaHQ9IjYwMCIKICAgICAgICAgICB4PSIyNTIuMCIKICAgICAgICAgICB5PSIwIgogICAgICAgICAgIGlkPSJyZWN0MTQuMCIKICAgICAgICAgICBzdHlsZT0iZmlsbDojNTc3ZWI5OwlvcGFjaXR5OjE7ZmlsbC1vcGFjaXR5OjE7c3Ryb2tlOm5vbmU7c3Ryb2tlLXdpZHRoOjA7c3Ryb2tlLWRhc2hvZmZzZXQ6MDtzdHJva2Utb3BhY2l0eToxIiAvPiAgCiAgICAgICAgPHJlY3QKICAgICAgICAgICB3aWR0aD0iMTkiCiAgICAgICAgICAgaGVpZ2h0PSI2MDAiCiAgICAgICAgICAgeD0iMjcwLjAiCiAgICAgICAgICAgeT0iMCIKICAgICAgICAgICBpZD0icmVjdDE1LjAiCiAgICAgICAgICAgc3R5bGU9ImZpbGw6IzM3NWU5OTsJb3BhY2l0eToxO2ZpbGwtb3BhY2l0eToxO3N0cm9rZTpub25lO3N0cm9rZS13aWR0aDowO3N0cm9rZS1kYXNob2Zmc2V0OjA7c3Ryb2tlLW9wYWNpdHk6MSIgLz4gIAogICAgICAgIDxyZWN0CiAgICAgICAgICAgd2lkdGg9IjE5IgogICAgICAgICAgIGhlaWdodD0iNjAwIgogICAgICAgICAgIHg9IjI4OC4wIgogICAgICAgICAgIHk9IjAiCiAgICAgICAgICAgaWQ9InJlY3QxNi4wIgogICAgICAgICAgIHN0eWxlPSJmaWxsOiMzYTYxOWM7CW9wYWNpdHk6MTtmaWxsLW9wYWNpdHk6MTtzdHJva2U6bm9uZTtzdHJva2Utd2lkdGg6MDtzdHJva2UtZGFzaG9mZnNldDowO3N0cm9rZS1vcGFjaXR5OjEiIC8+ICAKICAgICAgICA8cmVjdAogICAgICAgICAgIHdpZHRoPSIxOSIKICAgICAgICAgICBoZWlnaHQ9IjYwMCIKICAgICAgICAgICB4PSIzMDYuMCIKICAgICAgICAgICB5PSIwIgogICAgICAgICAgIGlkPSJyZWN0MTcuMCIKICAgICAgICAgICBzdHlsZT0iZmlsbDojM2I2MjlkOwlvcGFjaXR5OjE7ZmlsbC1vcGFjaXR5OjE7c3Ryb2tlOm5vbmU7c3Ryb2tlLXdpZHRoOjA7c3Ryb2tlLWRhc2hvZmZzZXQ6MDtzdHJva2Utb3BhY2l0eToxIiAvPiAgCiAgICAgICAgPHJlY3QKICAgICAgICAgICB3aWR0aD0iMTkiCiAgICAgICAgICAgaGVpZ2h0PSI2MDAiCiAgICAgICAgICAgeD0iMzI0LjAiCiAgICAgICAgICAgeT0iMCIKICAgICAgICAgICBpZD0icmVjdDE4LjAiCiAgICAgICAgICAgc3R5bGU9ImZpbGw6IzM1NWM5NzsJb3BhY2l0eToxO2ZpbGwtb3BhY2l0eToxO3N0cm9rZTpub25lO3N0cm9rZS13aWR0aDowO3N0cm9rZS1kYXNob2Zmc2V0OjA7c3Ryb2tlLW9wYWNpdHk6MSIgLz4gIAogICAgICAgIDxyZWN0CiAgICAgICAgICAgd2lkdGg9IjE5IgogICAgICAgICAgIGhlaWdodD0iNjAwIgogICAgICAgICAgIHg9IjM0Mi4wIgogICAgICAgICAgIHk9IjAiCiAgICAgICAgICAgaWQ9InJlY3QxOS4wIgogICAgICAgICAgIHN0eWxlPSJmaWxsOiMzMjU5OTQ7CW9wYWNpdHk6MTtmaWxsLW9wYWNpdHk6MTtzdHJva2U6bm9uZTtzdHJva2Utd2lkdGg6MDtzdHJva2UtZGFzaG9mZnNldDowO3N0cm9rZS1vcGFjaXR5OjEiIC8+ICAKICAgICAgICA8cmVjdAogICAgICAgICAgIHdpZHRoPSIxOSIKICAgICAgICAgICBoZWlnaHQ9IjYwMCIKICAgICAgICAgICB4PSIzNjAuMCIKICAgICAgICAgICB5PSIwIgogICAgICAgICAgIGlkPSJyZWN0MjAuMCIKICAgICAgICAgICBzdHlsZT0iZmlsbDojM2Q2NDlmOwlvcGFjaXR5OjE7ZmlsbC1vcGFjaXR5OjE7c3Ryb2tlOm5vbmU7c3Ryb2tlLXdpZHRoOjA7c3Ryb2tlLWRhc2hvZmZzZXQ6MDtzdHJva2Utb3BhY2l0eToxIiAvPiAgCiAgICAgICAgPHJlY3QKICAgICAgICAgICB3aWR0aD0iMTkiCiAgICAgICAgICAgaGVpZ2h0PSI2MDAiCiAgICAgICAgICAgeD0iMzc4LjAiCiAgICAgICAgICAgeT0iMCIKICAgICAgICAgICBpZD0icmVjdDIxLjAiCiAgICAgICAgICAgc3R5bGU9ImZpbGw6IzNjNjM5ZTsJb3BhY2l0eToxO2ZpbGwtb3BhY2l0eToxO3N0cm9rZTpub25lO3N0cm9rZS13aWR0aDowO3N0cm9rZS1kYXNob2Zmc2V0OjA7c3Ryb2tlLW9wYWNpdHk6MSIgLz4gIAogICAgICAgIDxyZWN0CiAgICAgICAgICAgd2lkdGg9IjE5IgogICAgICAgICAgIGhlaWdodD0iNjAwIgogICAgICAgICAgIHg9IjM5Ni4wIgogICAgICAgICAgIHk9IjAiCiAgICAgICAgICAgaWQ9InJlY3QyMi4wIgogICAgICAgICAgIHN0eWxlPSJmaWxsOiM0MDY3YTI7CW9wYWNpdHk6MTtmaWxsLW9wYWNpdHk6MTtzdHJva2U6bm9uZTtzdHJva2Utd2lkdGg6MDtzdHJva2UtZGFzaG9mZnNldDowO3N0cm9rZS1vcGFjaXR5OjEiIC8+ICAKICAgICAgICA8cmVjdAogICAgICAgICAgIHdpZHRoPSIxOSIKICAgICAgICAgICBoZWlnaHQ9IjYwMCIKICAgICAgICAgICB4PSI0MTQuMCIKICAgICAgICAgICB5PSIwIgogICAgICAgICAgIGlkPSJyZWN0MjMuMCIKICAgICAgICAgICBzdHlsZT0iZmlsbDojNGI3MmFkOwlvcGFjaXR5OjE7ZmlsbC1vcGFjaXR5OjE7c3Ryb2tlOm5vbmU7c3Ryb2tlLXdpZHRoOjA7c3Ryb2tlLWRhc2hvZmZzZXQ6MDtzdHJva2Utb3BhY2l0eToxIiAvPiAgCiAgICAgICAgPHJlY3QKICAgICAgICAgICB3aWR0aD0iMTkiCiAgICAgICAgICAgaGVpZ2h0PSI2MDAiCiAgICAgICAgICAgeD0iNDMyLjAiCiAgICAgICAgICAgeT0iMCIKICAgICAgICAgICBpZD0icmVjdDI0LjAiCiAgICAgICAgICAgc3R5bGU9ImZpbGw6IzM2NWQ5ODsJb3BhY2l0eToxO2ZpbGwtb3BhY2l0eToxO3N0cm9rZTpub25lO3N0cm9rZS13aWR0aDowO3N0cm9rZS1kYXNob2Zmc2V0OjA7c3Ryb2tlLW9wYWNpdHk6MSIgLz4gIAogICAgICAgIDxyZWN0CiAgICAgICAgICAgd2lkdGg9IjE5IgogICAgICAgICAgIGhlaWdodD0iNjAwIgogICAgICAgICAgIHg9IjQ1MC4wIgogICAgICAgICAgIHk9IjAiCiAgICAgICAgICAgaWQ9InJlY3QyNS4wIgogICAgICAgICAgIHN0eWxlPSJmaWxsOiM1ZTg1YzA7CW9wYWNpdHk6MTtmaWxsLW9wYWNpdHk6MTtzdHJva2U6bm9uZTtzdHJva2Utd2lkdGg6MDtzdHJva2UtZGFzaG9mZnNldDowO3N0cm9rZS1vcGFjaXR5OjEiIC8+ICAKICAgICAgICA8cmVjdAogICAgICAgICAgIHdpZHRoPSIxOSIKICAgICAgICAgICBoZWlnaHQ9IjYwMCIKICAgICAgICAgICB4PSI0NjguMCIKICAgICAgICAgICB5PSIwIgogICAgICAgICAgIGlkPSJyZWN0MjYuMCIKICAgICAgICAgICBzdHlsZT0iZmlsbDojNTA3N2IyOwlvcGFjaXR5OjE7ZmlsbC1vcGFjaXR5OjE7c3Ryb2tlOm5vbmU7c3Ryb2tlLXdpZHRoOjA7c3Ryb2tlLWRhc2hvZmZzZXQ6MDtzdHJva2Utb3BhY2l0eToxIiAvPiAgCiAgICAgICAgPHJlY3QKICAgICAgICAgICB3aWR0aD0iMTkiCiAgICAgICAgICAgaGVpZ2h0PSI2MDAiCiAgICAgICAgICAgeD0iNDg2LjAiCiAgICAgICAgICAgeT0iMCIKICAgICAgICAgICBpZD0icmVjdDI3LjAiCiAgICAgICAgICAgc3R5bGU9ImZpbGw6IzRhNzFhYzsJb3BhY2l0eToxO2ZpbGwtb3BhY2l0eToxO3N0cm9rZTpub25lO3N0cm9rZS13aWR0aDowO3N0cm9rZS1kYXNob2Zmc2V0OjA7c3Ryb2tlLW9wYWNpdHk6MSIgLz4gIAogICAgICAgIDxyZWN0CiAgICAgICAgICAgd2lkdGg9IjE5IgogICAgICAgICAgIGhlaWdodD0iNjAwIgogICAgICAgICAgIHg9IjUwNC4wIgogICAgICAgICAgIHk9IjAiCiAgICAgICAgICAgaWQ9InJlY3QyOC4wIgogICAgICAgICAgIHN0eWxlPSJmaWxsOiM0NjZkYTg7CW9wYWNpdHk6MTtmaWxsLW9wYWNpdHk6MTtzdHJva2U6bm9uZTtzdHJva2Utd2lkdGg6MDtzdHJva2UtZGFzaG9mZnNldDowO3N0cm9rZS1vcGFjaXR5OjEiIC8+ICAKICAgICAgICA8cmVjdAogICAgICAgICAgIHdpZHRoPSIxOSIKICAgICAgICAgICBoZWlnaHQ9IjYwMCIKICAgICAgICAgICB4PSI1MjIuMCIKICAgICAgICAgICB5PSIwIgogICAgICAgICAgIGlkPSJyZWN0MjkuMCIKICAgICAgICAgICBzdHlsZT0iZmlsbDojNDM2YWE1OwlvcGFjaXR5OjE7ZmlsbC1vcGFjaXR5OjE7c3Ryb2tlOm5vbmU7c3Ryb2tlLXdpZHRoOjA7c3Ryb2tlLWRhc2hvZmZzZXQ6MDtzdHJva2Utb3BhY2l0eToxIiAvPiAgCiAgICAgICAgPHJlY3QKICAgICAgICAgICB3aWR0aD0iMTkiCiAgICAgICAgICAgaGVpZ2h0PSI2MDAiCiAgICAgICAgICAgeD0iNTQwLjAiCiAgICAgICAgICAgeT0iMCIKICAgICAgICAgICBpZD0icmVjdDMwLjAiCiAgICAgICAgICAgc3R5bGU9ImZpbGw6IzQ2NmRhODsJb3BhY2l0eToxO2ZpbGwtb3BhY2l0eToxO3N0cm9rZTpub25lO3N0cm9rZS13aWR0aDowO3N0cm9rZS1kYXNob2Zmc2V0OjA7c3Ryb2tlLW9wYWNpdHk6MSIgLz4gIAogICAgICAgIDxyZWN0CiAgICAgICAgICAgd2lkdGg9IjE5IgogICAgICAgICAgIGhlaWdodD0iNjAwIgogICAgICAgICAgIHg9IjU1OC4wIgogICAgICAgICAgIHk9IjAiCiAgICAgICAgICAgaWQ9InJlY3QzMS4wIgogICAgICAgICAgIHN0eWxlPSJmaWxsOiMzYTYxOWM7CW9wYWNpdHk6MTtmaWxsLW9wYWNpdHk6MTtzdHJva2U6bm9uZTtzdHJva2Utd2lkdGg6MDtzdHJva2UtZGFzaG9mZnNldDowO3N0cm9rZS1vcGFjaXR5OjEiIC8+ICAKICAgICAgICA8cmVjdAogICAgICAgICAgIHdpZHRoPSIxOSIKICAgICAgICAgICBoZWlnaHQ9IjYwMCIKICAgICAgICAgICB4PSI1NzYuMCIKICAgICAgICAgICB5PSIwIgogICAgICAgICAgIGlkPSJyZWN0MzIuMCIKICAgICAgICAgICBzdHlsZT0iZmlsbDojNjE4OGMzOwlvcGFjaXR5OjE7ZmlsbC1vcGFjaXR5OjE7c3Ryb2tlOm5vbmU7c3Ryb2tlLXdpZHRoOjA7c3Ryb2tlLWRhc2hvZmZzZXQ6MDtzdHJva2Utb3BhY2l0eToxIiAvPiAgCiAgICAgICAgPHJlY3QKICAgICAgICAgICB3aWR0aD0iMTkiCiAgICAgICAgICAgaGVpZ2h0PSI2MDAiCiAgICAgICAgICAgeD0iNTk0LjAiCiAgICAgICAgICAgeT0iMCIKICAgICAgICAgICBpZD0icmVjdDMzLjAiCiAgICAgICAgICAgc3R5bGU9ImZpbGw6IzVmODZjMTsJb3BhY2l0eToxO2ZpbGwtb3BhY2l0eToxO3N0cm9rZTpub25lO3N0cm9rZS13aWR0aDowO3N0cm9rZS1kYXNob2Zmc2V0OjA7c3Ryb2tlLW9wYWNpdHk6MSIgLz4gIAogICAgICAgIDxyZWN0CiAgICAgICAgICAgd2lkdGg9IjE5IgogICAgICAgICAgIGhlaWdodD0iNjAwIgogICAgICAgICAgIHg9IjYxMi4wIgogICAgICAgICAgIHk9IjAiCiAgICAgICAgICAgaWQ9InJlY3QzNC4wIgogICAgICAgICAgIHN0eWxlPSJmaWxsOiM2OTkwY2I7CW9wYWNpdHk6MTtmaWxsLW9wYWNpdHk6MTtzdHJva2U6bm9uZTtzdHJva2Utd2lkdGg6MDtzdHJva2UtZGFzaG9mZnNldDowO3N0cm9rZS1vcGFjaXR5OjEiIC8+ICAKICAgICAgICA8cmVjdAogICAgICAgICAgIHdpZHRoPSIxOSIKICAgICAgICAgICBoZWlnaHQ9IjYwMCIKICAgICAgICAgICB4PSI2MzAuMCIKICAgICAgICAgICB5PSIwIgogICAgICAgICAgIGlkPSJyZWN0MzUuMCIKICAgICAgICAgICBzdHlsZT0iZmlsbDojNWE4MWJjOwlvcGFjaXR5OjE7ZmlsbC1vcGFjaXR5OjE7c3Ryb2tlOm5vbmU7c3Ryb2tlLXdpZHRoOjA7c3Ryb2tlLWRhc2hvZmZzZXQ6MDtzdHJva2Utb3BhY2l0eToxIiAvPiAgCiAgICAgICAgPHJlY3QKICAgICAgICAgICB3aWR0aD0iMTkiCiAgICAgICAgICAgaGVpZ2h0PSI2MDAiCiAgICAgICAgICAgeD0iNjQ4LjAiCiAgICAgICAgICAgeT0iMCIKICAgICAgICAgICBpZD0icmVjdDM2LjAiCiAgICAgICAgICAgc3R5bGU9ImZpbGw6IzNjNjM5ZTsJb3BhY2l0eToxO2ZpbGwtb3BhY2l0eToxO3N0cm9rZTpub25lO3N0cm9rZS13aWR0aDowO3N0cm9rZS1kYXNob2Zmc2V0OjA7c3Ryb2tlLW9wYWNpdHk6MSIgLz4gIAogICAgICAgIDxyZWN0CiAgICAgICAgICAgd2lkdGg9IjE5IgogICAgICAgICAgIGhlaWdodD0iNjAwIgogICAgICAgICAgIHg9IjY2Ni4wIgogICAgICAgICAgIHk9IjAiCiAgICAgICAgICAgaWQ9InJlY3QzNy4wIgogICAgICAgICAgIHN0eWxlPSJmaWxsOiM1NDdiYjY7CW9wYWNpdHk6MTtmaWxsLW9wYWNpdHk6MTtzdHJva2U6bm9uZTtzdHJva2Utd2lkdGg6MDtzdHJva2UtZGFzaG9mZnNldDowO3N0cm9rZS1vcGFjaXR5OjEiIC8+ICAKICAgICAgICA8cmVjdAogICAgICAgICAgIHdpZHRoPSIxOSIKICAgICAgICAgICBoZWlnaHQ9IjYwMCIKICAgICAgICAgICB4PSI2ODQuMCIKICAgICAgICAgICB5PSIwIgogICAgICAgICAgIGlkPSJyZWN0MzguMCIKICAgICAgICAgICBzdHlsZT0iZmlsbDojMzk2MDliOwlvcGFjaXR5OjE7ZmlsbC1vcGFjaXR5OjE7c3Ryb2tlOm5vbmU7c3Ryb2tlLXdpZHRoOjA7c3Ryb2tlLWRhc2hvZmZzZXQ6MDtzdHJva2Utb3BhY2l0eToxIiAvPiAgCiAgICAgICAgPHJlY3QKICAgICAgICAgICB3aWR0aD0iMTkiCiAgICAgICAgICAgaGVpZ2h0PSI2MDAiCiAgICAgICAgICAgeD0iNzAyLjAiCiAgICAgICAgICAgeT0iMCIKICAgICAgICAgICBpZD0icmVjdDM5LjAiCiAgICAgICAgICAgc3R5bGU9ImZpbGw6IzRkNzRhZjsJb3BhY2l0eToxO2ZpbGwtb3BhY2l0eToxO3N0cm9rZTpub25lO3N0cm9rZS13aWR0aDowO3N0cm9rZS1kYXNob2Zmc2V0OjA7c3Ryb2tlLW9wYWNpdHk6MSIgLz4gIAogICAgICAgIDxyZWN0CiAgICAgICAgICAgd2lkdGg9IjE5IgogICAgICAgICAgIGhlaWdodD0iNjAwIgogICAgICAgICAgIHg9IjcyMC4wIgogICAgICAgICAgIHk9IjAiCiAgICAgICAgICAgaWQ9InJlY3Q0MC4wIgogICAgICAgICAgIHN0eWxlPSJmaWxsOiMzNDViOTY7CW9wYWNpdHk6MTtmaWxsLW9wYWNpdHk6MTtzdHJva2U6bm9uZTtzdHJva2Utd2lkdGg6MDtzdHJva2UtZGFzaG9mZnNldDowO3N0cm9rZS1vcGFjaXR5OjEiIC8+ICAKICAgICAgICA8cmVjdAogICAgICAgICAgIHdpZHRoPSIxOSIKICAgICAgICAgICBoZWlnaHQ9IjYwMCIKICAgICAgICAgICB4PSI3MzguMCIKICAgICAgICAgICB5PSIwIgogICAgICAgICAgIGlkPSJyZWN0NDEuMCIKICAgICAgICAgICBzdHlsZT0iZmlsbDojNWQ4NGJmOwlvcGFjaXR5OjE7ZmlsbC1vcGFjaXR5OjE7c3Ryb2tlOm5vbmU7c3Ryb2tlLXdpZHRoOjA7c3Ryb2tlLWRhc2hvZmZzZXQ6MDtzdHJva2Utb3BhY2l0eToxIiAvPiAgCiAgICAgICAgPHJlY3QKICAgICAgICAgICB3aWR0aD0iMTkiCiAgICAgICAgICAgaGVpZ2h0PSI2MDAiCiAgICAgICAgICAgeD0iNzU2LjAiCiAgICAgICAgICAgeT0iMCIKICAgICAgICAgICBpZD0icmVjdDQyLjAiCiAgICAgICAgICAgc3R5bGU9ImZpbGw6IzQ3NmVhOTsJb3BhY2l0eToxO2ZpbGwtb3BhY2l0eToxO3N0cm9rZTpub25lO3N0cm9rZS13aWR0aDowO3N0cm9rZS1kYXNob2Zmc2V0OjA7c3Ryb2tlLW9wYWNpdHk6MSIgLz4gIAogICAgICAgIDxyZWN0CiAgICAgICAgICAgd2lkdGg9IjE5IgogICAgICAgICAgIGhlaWdodD0iNjAwIgogICAgICAgICAgIHg9Ijc3NC4wIgogICAgICAgICAgIHk9IjAiCiAgICAgICAgICAgaWQ9InJlY3Q0My4wIgogICAgICAgICAgIHN0eWxlPSJmaWxsOiM1Zjg2YzE7CW9wYWNpdHk6MTtmaWxsLW9wYWNpdHk6MTtzdHJva2U6bm9uZTtzdHJva2Utd2lkdGg6MDtzdHJva2UtZGFzaG9mZnNldDowO3N0cm9rZS1vcGFjaXR5OjEiIC8+ICAKICAgICAgICA8cmVjdAogICAgICAgICAgIHdpZHRoPSIxOSIKICAgICAgICAgICBoZWlnaHQ9IjYwMCIKICAgICAgICAgICB4PSI3OTIuMCIKICAgICAgICAgICB5PSIwIgogICAgICAgICAgIGlkPSJyZWN0NDQuMCIKICAgICAgICAgICBzdHlsZT0iZmlsbDojNDE2OGEzOwlvcGFjaXR5OjE7ZmlsbC1vcGFjaXR5OjE7c3Ryb2tlOm5vbmU7c3Ryb2tlLXdpZHRoOjA7c3Ryb2tlLWRhc2hvZmZzZXQ6MDtzdHJva2Utb3BhY2l0eToxIiAvPiAgCiAgICAgICAgPHJlY3QKICAgICAgICAgICB3aWR0aD0iMTkiCiAgICAgICAgICAgaGVpZ2h0PSI2MDAiCiAgICAgICAgICAgeD0iODEwLjAiCiAgICAgICAgICAgeT0iMCIKICAgICAgICAgICBpZD0icmVjdDQ1LjAiCiAgICAgICAgICAgc3R5bGU9ImZpbGw6IzU4N2ZiYTsJb3BhY2l0eToxO2ZpbGwtb3BhY2l0eToxO3N0cm9rZTpub25lO3N0cm9rZS13aWR0aDowO3N0cm9rZS1kYXNob2Zmc2V0OjA7c3Ryb2tlLW9wYWNpdHk6MSIgLz4gIAogICAgICAgIDxyZWN0CiAgICAgICAgICAgd2lkdGg9IjE5IgogICAgICAgICAgIGhlaWdodD0iNjAwIgogICAgICAgICAgIHg9IjgyOC4wIgogICAgICAgICAgIHk9IjAiCiAgICAgICAgICAgaWQ9InJlY3Q0Ni4wIgogICAgICAgICAgIHN0eWxlPSJmaWxsOiMzNDViOTY7CW9wYWNpdHk6MTtmaWxsLW9wYWNpdHk6MTtzdHJva2U6bm9uZTtzdHJva2Utd2lkdGg6MDtzdHJva2UtZGFzaG9mZnNldDowO3N0cm9rZS1vcGFjaXR5OjEiIC8+ICAKICAgICAgICA8cmVjdAogICAgICAgICAgIHdpZHRoPSIxOSIKICAgICAgICAgICBoZWlnaHQ9IjYwMCIKICAgICAgICAgICB4PSI4NDYuMCIKICAgICAgICAgICB5PSIwIgogICAgICAgICAgIGlkPSJyZWN0NDcuMCIKICAgICAgICAgICBzdHlsZT0iZmlsbDojMzU1Yzk3OwlvcGFjaXR5OjE7ZmlsbC1vcGFjaXR5OjE7c3Ryb2tlOm5vbmU7c3Ryb2tlLXdpZHRoOjA7c3Ryb2tlLWRhc2hvZmZzZXQ6MDtzdHJva2Utb3BhY2l0eToxIiAvPiAgCiAgICAgICAgPHJlY3QKICAgICAgICAgICB3aWR0aD0iMTkiCiAgICAgICAgICAgaGVpZ2h0PSI2MDAiCiAgICAgICAgICAgeD0iODY0LjAiCiAgICAgICAgICAgeT0iMCIKICAgICAgICAgICBpZD0icmVjdDQ4LjAiCiAgICAgICAgICAgc3R5bGU9ImZpbGw6IzNjNjM5ZTsJb3BhY2l0eToxO2ZpbGwtb3BhY2l0eToxO3N0cm9rZTpub25lO3N0cm9rZS13aWR0aDowO3N0cm9rZS1kYXNob2Zmc2V0OjA7c3Ryb2tlLW9wYWNpdHk6MSIgLz4gIAogICAgICAgIDxyZWN0CiAgICAgICAgICAgd2lkdGg9IjE5IgogICAgICAgICAgIGhlaWdodD0iNjAwIgogICAgICAgICAgIHg9Ijg4Mi4wIgogICAgICAgICAgIHk9IjAiCiAgICAgICAgICAgaWQ9InJlY3Q0OS4wIgogICAgICAgICAgIHN0eWxlPSJmaWxsOiM1ZDg0YmY7CW9wYWNpdHk6MTtmaWxsLW9wYWNpdHk6MTtzdHJva2U6bm9uZTtzdHJva2Utd2lkdGg6MDtzdHJva2UtZGFzaG9mZnNldDowO3N0cm9rZS1vcGFjaXR5OjEiIC8+ICAKICAgICAgICA8cmVjdAogICAgICAgICAgIHdpZHRoPSIxOSIKICAgICAgICAgICBoZWlnaHQ9IjYwMCIKICAgICAgICAgICB4PSI5MDAuMCIKICAgICAgICAgICB5PSIwIgogICAgICAgICAgIGlkPSJyZWN0NTAuMCIKICAgICAgICAgICBzdHlsZT0iZmlsbDojNTk4MGJiOwlvcGFjaXR5OjE7ZmlsbC1vcGFjaXR5OjE7c3Ryb2tlOm5vbmU7c3Ryb2tlLXdpZHRoOjA7c3Ryb2tlLWRhc2hvZmZzZXQ6MDtzdHJva2Utb3BhY2l0eToxIiAvPiAgCiAgICAgICAgPHJlY3QKICAgICAgICAgICB3aWR0aD0iMTkiCiAgICAgICAgICAgaGVpZ2h0PSI2MDAiCiAgICAgICAgICAgeD0iOTE4LjAiCiAgICAgICAgICAgeT0iMCIKICAgICAgICAgICBpZD0icmVjdDUxLjAiCiAgICAgICAgICAgc3R5bGU9ImZpbGw6IzQzNmFhNTsJb3BhY2l0eToxO2ZpbGwtb3BhY2l0eToxO3N0cm9rZTpub25lO3N0cm9rZS13aWR0aDowO3N0cm9rZS1kYXNob2Zmc2V0OjA7c3Ryb2tlLW9wYWNpdHk6MSIgLz4gIAogICAgICAgIDxyZWN0CiAgICAgICAgICAgd2lkdGg9IjE5IgogICAgICAgICAgIGhlaWdodD0iNjAwIgogICAgICAgICAgIHg9IjkzNi4wIgogICAgICAgICAgIHk9IjAiCiAgICAgICAgICAgaWQ9InJlY3Q1Mi4wIgogICAgICAgICAgIHN0eWxlPSJmaWxsOiMzNDViOTY7CW9wYWNpdHk6MTtmaWxsLW9wYWNpdHk6MTtzdHJva2U6bm9uZTtzdHJva2Utd2lkdGg6MDtzdHJva2UtZGFzaG9mZnNldDowO3N0cm9rZS1vcGFjaXR5OjEiIC8+ICAKICAgICAgICA8cmVjdAogICAgICAgICAgIHdpZHRoPSIxOSIKICAgICAgICAgICBoZWlnaHQ9IjYwMCIKICAgICAgICAgICB4PSI5NTQuMCIKICAgICAgICAgICB5PSIwIgogICAgICAgICAgIGlkPSJyZWN0NTMuMCIKICAgICAgICAgICBzdHlsZT0iZmlsbDojNGE3MWFjOwlvcGFjaXR5OjE7ZmlsbC1vcGFjaXR5OjE7c3Ryb2tlOm5vbmU7c3Ryb2tlLXdpZHRoOjA7c3Ryb2tlLWRhc2hvZmZzZXQ6MDtzdHJva2Utb3BhY2l0eToxIiAvPiAgCiAgICAgICAgPHJlY3QKICAgICAgICAgICB3aWR0aD0iMTkiCiAgICAgICAgICAgaGVpZ2h0PSI2MDAiCiAgICAgICAgICAgeD0iOTcyLjAiCiAgICAgICAgICAgeT0iMCIKICAgICAgICAgICBpZD0icmVjdDU0LjAiCiAgICAgICAgICAgc3R5bGU9ImZpbGw6IzQ3NmVhOTsJb3BhY2l0eToxO2ZpbGwtb3BhY2l0eToxO3N0cm9rZTpub25lO3N0cm9rZS13aWR0aDowO3N0cm9rZS1kYXNob2Zmc2V0OjA7c3Ryb2tlLW9wYWNpdHk6MSIgLz4gIAogICAgICAgIDxyZWN0CiAgICAgICAgICAgd2lkdGg9IjE5IgogICAgICAgICAgIGhlaWdodD0iNjAwIgogICAgICAgICAgIHg9Ijk5MC4wIgogICAgICAgICAgIHk9IjAiCiAgICAgICAgICAgaWQ9InJlY3Q1NS4wIgogICAgICAgICAgIHN0eWxlPSJmaWxsOiMzMjU5OTQ7CW9wYWNpdHk6MTtmaWxsLW9wYWNpdHk6MTtzdHJva2U6bm9uZTtzdHJva2Utd2lkdGg6MDtzdHJva2UtZGFzaG9mZnNldDowO3N0cm9rZS1vcGFjaXR5OjEiIC8+ICAKICAgICAgICA8cmVjdAogICAgICAgICAgIHdpZHRoPSIxOSIKICAgICAgICAgICBoZWlnaHQ9IjYwMCIKICAgICAgICAgICB4PSIxMDA4LjAiCiAgICAgICAgICAgeT0iMCIKICAgICAgICAgICBpZD0icmVjdDU2LjAiCiAgICAgICAgICAgc3R5bGU9ImZpbGw6IzRlNzViMDsJb3BhY2l0eToxO2ZpbGwtb3BhY2l0eToxO3N0cm9rZTpub25lO3N0cm9rZS13aWR0aDowO3N0cm9rZS1kYXNob2Zmc2V0OjA7c3Ryb2tlLW9wYWNpdHk6MSIgLz4gIAogICAgPC9nPiAgPHJlY3QKICAgICAgICAgd2lkdGg9IjEwMjQiCiAgICAgICAgIGhlaWdodD0iNjAwIgogICAgICAgICB4PSIwIgogICAgICAgICB5PSIwIgogICAgICAgICBpZD0ic2hhZG93IgogICAgICAgICBzdHlsZT0iZmlsbDp1cmwoI3JhZGlhbGdyYWRpZW50KTtmaWxsLW9wYWNpdHk6MC42O3N0cm9rZTpub25lOyIgLz4KCiA8L3N2Zz4gCg==&quot; alt=&quot;&quot; width=&quot;138&quot; height=&quot;80&quot; &#x2F;&gt;&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;a href=&quot;&#x2F;images&#x2F;uploads&#x2F;2011&#x2F;09&#x2F;Z23628.jpg&quot;&gt;&lt;img class=&quot;alignright size-medium wp-image-352&quot; title=&quot;Z23628&quot; src=&quot;&#x2F;images&#x2F;uploads&#x2F;2011&#x2F;09&#x2F;Z23628-300x187.jpg&quot; alt=&quot;&quot; width=&quot;146&quot; height=&quot;91&quot; &#x2F;&gt;&lt;&#x2F;a&gt;Appearently the Idea cought on, because the gnome people gave their latest version Gnome3 a very similar standard wallpaper. To the left you see the one my little script, to the right you see the one on the gnome desktop. Or was it the other way around?&lt;&#x2F;p&gt;
+&lt;p&gt;I&amp;#8217;m gonna put this up on github in the next couple of days.&lt;&#x2F;p&gt;
+&lt;p&gt;I also started playing around with ruby ( I admit, this has not all just during the last few months) . Two projects were significant. The first was the &lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;hoodie&#x2F;xxrb&quot;&gt;xxrb&lt;&#x2F;a&gt;, a little extensible xmpp bot I had running on this server for a while and which told you the upcomming trams in the area of Dresden. The second one was a ruby on rails application I worked on as a university project with Lars Beier. The Second part of the same project was supposed to be based on javascript &amp;#8211; which gave me the chance to get more familiar with coffeescript &amp;#8211; yay&lt;&#x2F;p&gt;
+&lt;p&gt;My most productive project does not actually have a name. I have to write a lot of invoices for my student Café and got tired of filling out the same openoffice template over and over again. So I wrote a little ruby script that reads yaml files and fills out a latex template I carefully build. Latex can really be a pain in the behind. I&amp;#8217;ll try to make it available on github but I&amp;#8217;ll have to generalize it first because at the moment it contains a lot of static content that has to do with my specific case.&lt;&#x2F;p&gt;
+&lt;p&gt;I&amp;#8217;m gonna get more specific on some of these and one other project I&amp;#8217;m working on at the moment, just wanted to get a quick round up. It was nice talking to y&amp;#8217;all again. Read you later.&lt;&#x2F;p&gt;
+</content>
+	</entry>
+	<entry xml:lang="en">
+		<title>einmal zum Exmatrikulationsamt bitte</title>
+		<published>2011-05-12T00:00:00+00:00</published>
+		<updated>2011-05-12T00:00:00+00:00</updated>
+		<link rel="alternate" href="https://www.hoodie.de/blog/einmal-zum-exmatrikulationsamt-bitte/" type="text/html"/>
+		<id>https://www.hoodie.de/blog/einmal-zum-exmatrikulationsamt-bitte/</id>
+		<content type="html">&lt;p&gt;An dieser Stelle ein herzliches Danke Schön an meinen Kumpel Lars, der mich letzte Woche gefragt hat, ob ich nicht bei der Nachtwanderung als Fotograf für die &lt;a href=&quot;http:&#x2F;&#x2F;www.exmatrikulationsamt.de&#x2F;&quot;&gt;exma&lt;&#x2F;a&gt; unterwegs sein möchte. Ich hab natürlich prompt zugesagt und kam darauf hin um sonst in die Clubs und hatte echt nen geilen Abend.&lt;&#x2F;p&gt;
+&lt;p&gt;Heute Schau ich nach meinen Fotos auf der Seite nach und trage mich spaßeshalber bei der Verlosung um freien Eintritt in das Dominic Miller Konzert ein und wieder promit krieg ich die Email, dass ich auf der Gästeliste stehe.&lt;&#x2F;p&gt;
+&lt;p&gt;*freu* &amp;#8211; aber auf der anderen Seite ist es schade, dass sich keine Sau für Dominic Miller interessieren zu scheint.&lt;&#x2F;p&gt;
+</content>
+	</entry>
+	<entry xml:lang="en">
+		<title>Undo Ubuntu Scrollbars</title>
+		<published>2011-05-02T00:00:00+00:00</published>
+		<updated>2011-05-02T00:00:00+00:00</updated>
+		<link rel="alternate" href="https://www.hoodie.de/blog/undo-ubuntu-scrollbars/" type="text/html"/>
+		<id>https://www.hoodie.de/blog/undo-ubuntu-scrollbars/</id>
+		<content type="html">&lt;p&gt;Neue &lt;span class=&quot;ubuntu&quot;&gt;Ubuntu&lt;&#x2F;span&gt; Versionen sind immer etwas feines, mindestens weil man endlich wieder neue Software bekommt. Schade ist immer nur, dass einem gewisse Interface Änderungen aufgezwungen werden. Unity oder Gnome3 muss man ja nicht mal benutzen, aber wenn auf einmal die Fensterknöpfe links sind oder die Scrollbars weg, dann möchte man doch eingreifen können.&lt;&#x2F;p&gt;
+&lt;p&gt;Das letzte mal hatte ich schon eine &lt;a title=&quot;I’m so Lucid&quot; href=&quot;&#x2F;2010&#x2F;05&#x2F;01&#x2F;im-so-lucid&#x2F;&quot;&gt;Lösung zu dem Fensterknopfproblem gefunden&lt;&#x2F;a&gt;. Diesmal:&lt;&#x2F;p&gt;
+&lt;pre class=&quot;brush:bash&quot;&gt;sudo apt-get remove overlay-scrollbar
+sudo bash
+echo &quot;export LIBOVERLAY_SCROLLBAR=0&quot; &amp;gt; &#x2F;etc&#x2F;X11&#x2F;Xsession.d&#x2F;80-disableoverlayscrollbars&lt;&#x2F;pre&gt;
+&lt;p&gt;Das sollte dafür sorgen, dass wir wieder alte Scrollbars bekommen.&lt;br &#x2F;&gt;
+Vielen Dank an &lt;a href=&quot;http:&#x2F;&#x2F;everflux.de&#x2F;ubuntu-natty-scrollbars-in-gnome-classic-1815&#x2F;&quot;&gt;everflux.de&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+</content>
+	</entry>
+	<entry xml:lang="en">
+		<title>Leipzigs Mangel an Kultur</title>
+		<published>2011-04-03T00:00:00+00:00</published>
+		<updated>2011-04-03T00:00:00+00:00</updated>
+		<link rel="alternate" href="https://www.hoodie.de/blog/leipzigs-mangel-an-kultur/" type="text/html"/>
+		<id>https://www.hoodie.de/blog/leipzigs-mangel-an-kultur/</id>
+		<content type="html">&lt;p&gt;Die Bahn hat gestern mal wieder dafür gesorgt, dass ich mal wieder eine wunderschöne knappe Stunde in der Leipziger Innenstadt verbringen konnte. Ich dachte ich geh mal zu CoffeeCulture und musste feststellen, dass es da jetzt indisch gibt. Schade! Geh ich also weiter zu der anderen Filiale Richtung Augustusplatz — doch da gibt es jetzt auch nix mehr.&lt;&#x2F;p&gt;
+&lt;p&gt;Scheint wohl für Starbucks funktioniert zu haben, sich in beiden Fällen genau gegenüber zu platzieren. Immer hin sind die Mädels bei Starbucks total freundlich, haben mir in beiden Fällen ganz freundlich den Weg zu der noch verbliebenen CoffeeCulture Filiale beschrieben.&lt;&#x2F;p&gt;
+</content>
+	</entry>
+	<entry xml:lang="en">
+		<title>erste Schritte in Ruby</title>
+		<published>2011-04-01T00:00:00+00:00</published>
+		<updated>2011-04-01T00:00:00+00:00</updated>
+		<link rel="alternate" href="https://www.hoodie.de/blog/erste-schritte-in-ruby/" type="text/html"/>
+		<id>https://www.hoodie.de/blog/erste-schritte-in-ruby/</id>
+		<content type="html">&lt;p&gt;Da ich in den letzten Wochen sehr viel Zeit in Zügen verbracht habe, hatte ich sehr viel Gelegenheit, mir sehr viele ausgaben von &lt;a href=&quot;http:&#x2F;&#x2F;c3d2.de&#x2F;podcast.html&quot;&gt;Pentacast&lt;&#x2F;a&gt; und&lt;a href=&quot;http:&#x2F;&#x2F;chaosradio.ccc.de&#x2F;chaosradio_express.html&quot;&gt; Chaos Radio Express&lt;&#x2F;a&gt; anzuhören.&lt;&#x2F;p&gt;
+&lt;p&gt;Besonders &lt;a href=&quot;http:&#x2F;&#x2F;c3d2.de&#x2F;news&#x2F;pentacast-1-jabber.html&quot;&gt;Pentacast Nº1&lt;&#x2F;a&gt; über jabber war sehr aufschlussreich, zumal ich mich schon seit längerem für dieses Protokoll sehr interessiere. Ursprünglich wollte ich etwas in python machen, doch nachdem ich mal einen Nachmittag lang in xmpppy, pyxmpp und twisted reingeschaut hatte — und keines davon wirklich geeignet schien entschied ich mich für xmpp4r.&lt;&#x2F;p&gt;
+&lt;p&gt;So lernte ich also mal eben etwas Ruby. Das Projekt was aus meinen ersten Versuchen mit Ruby entstand war ein kleiner Jabberbot namens &lt;a title=&quot;XXRB at github&quot; href=&quot;https:&#x2F;&#x2F;github.com&#x2F;hoodie&#x2F;xxrb&#x2F;&quot;&gt;xxrb&lt;&#x2F;a&gt; (extensible XMPP ruby bot). Teile davon entstanden im Zug &lt;img src=&quot;&#x2F;smilies&#x2F;icon_smile.gif&quot; alt=&quot;:D&quot; class=&quot;wp-smiley&quot; style=&quot;height: 1em; max-height: 1em;&quot; &#x2F;&gt;&lt;&#x2F;p&gt;
+&lt;p&gt;Der bot selbst kann in seiner Standardausführung nicht viel, er bietet ein Commandline interface und kann sich mit einem xmpp Server verbinden. Was macht ihn nun so extensible?&lt;&#x2F;p&gt;
+&lt;pre class=&quot;brush:ruby&quot;&gt;# Original greeting function
+xmpp_hello = RbCmd.new(:hello, .xmpp)
+def xmpp_hello.action
+	if @args
+		result = &quot;I&#x27;m not actually &quot; + @args + &quot; but his evil twin&quot;
+	else
+		result = &quot;hello yourself&quot;
+	end
+end
+def xmpp_hello.help
+	result = &#x27;&quot;hello&quot; is only the first of many cool features&#x27;
+end
+&lt;p&gt;bot = Xxrb.new
+bot.add_cmd(xmpp_hello)&lt;&#x2F;pre&gt;&lt;&#x2F;p&gt;
+&lt;p&gt;Nachdem man den Bot initialisiert hat kann man ihm neue Commands beibringen indem man ihm RbCmd Objekte übergibt. Diese enthalten zwei Methoden: action und help. Action wird ausgeführt wenn man wie hier im Beispiel &amp;#8220;hello&amp;#8221; eingibt und Help wenn man &amp;#8220;help hello&amp;#8221; eingibt. Das zweite Symbol im Konstruktor bezeichnet ob der Befehl über Comandline oder Xmpp erwartet wird. Innerhalb der action stehen zudem @args, @jid des Benutzers (in cli des Bots selbst)  und @bot zur Verfügung.&lt;&#x2F;p&gt;
+&lt;p&gt;Bislang kann mein Bot nur Haltestelleninfos zu Dresdner Straßenbahnen und Bussen zurück geben. Eine Testversion läuft auf dvb(ät)hoodie.de .&lt;&#x2F;p&gt;
+&lt;p&gt;Da ich bereits etwas Erfahrung mit pyGTK sammeln konnte und die RubyGTK Schnittstelle sich nicht viel anders verhält, habe ich nun mit den Arbeiten an einem grafischen Tool begonnen. Da ich mit dem Funktionsumfang von Pidgin in Puncto Jabber noch nie zu Frieden war und bei Psi leider auch nicht viel passiert, habe ich mich daher entschlossen an einem eigenen Jabberclient zu arbeiten. Er wird wohl nach irgendwas zwischen Pidgin und Psi aussehen und in Ruby geschrieben sein. Da man mit Ruby ja auch in einem gewissem Rahmen Funktional programmieren kann dachte ich an ein Scripting interface. Benutzer können bestimmten events (zB ein Kontakt kommt online) eigene Aktionen in Form von Ruby hinzufügen und ausführen. Interessant ist auch Konversationen die man mit zwei Personen Parallel führt automatisch zu einem MUC zusammen zu fassen.&lt;&#x2F;p&gt;
+&lt;p&gt;Jabber ist ja auch das Standard ChatProtokoll von facebook, daher würde ich auch einen bestimmten &amp;#8220;Stalkermode&amp;#8221; einbauen, mit dem man immer sofort die Statusupdates einer bestimmter Person &amp;#8220;like&amp;#8221;t oder sich für seine Exfreunding unsichtbar macht und deren gespräche mitliest.&lt;&#x2F;p&gt;
+&lt;p&gt;Wie ihr seht steckt noch viel Potential in der Materie, ich habe also viel zu tun. Wenn ich mit etwas ranhalte sollte ich allerdings schon in etwa einer Woche den ersten Milestone vorstellen können, also seid gespannt.&lt;&#x2F;p&gt;
+</content>
+	</entry>
+	<entry xml:lang="en">
+		<title>Wiwiwiwi</title>
+		<published>2011-03-23T00:00:00+00:00</published>
+		<updated>2011-03-23T00:00:00+00:00</updated>
+		<link rel="alternate" href="https://www.hoodie.de/blog/wiwiwiwi/" type="text/html"/>
+		<id>https://www.hoodie.de/blog/wiwiwiwi/</id>
+		<content type="html">&lt;p&gt;Ach Leute, das Leben mit Internet ist schon hart. Ich kann verstehen, dass der ein oder andere da manchmal etwas überfordert ist. Tatsächlich scheint Opal es manchen Studenten so schwer zu machen, dass sie schon zu Vitamin B greifen wollen: Geld&lt;&#x2F;p&gt;
+&lt;blockquote&gt;&lt;p&gt;Hallo Hendrik,&lt;&#x2F;p&gt;
+&lt;p&gt;M. hat mich auf dich verwiesen, dass du beim Einschreiben in Kurse programmiertechnisch helfen kannst.&lt;&#x2F;p&gt;
+&lt;p&gt;Ich schildere dir mal kurz mein ANliegen, vielleicht kannst du mir ja helfen:&lt;&#x2F;p&gt;
+&lt;p&gt;Ich möchte mich im OPAL am 4. April in einen ziemlich engen Kurs einschreiben. Kannst du dafür ein Programm o.ä. erstellen, damit ich da rein komme?&lt;br &#x2F;&gt;
+Würde natürlich auch Aufwandsentschädigung geben.&lt;&#x2F;p&gt;
+&lt;p&gt;Sag mir bitte Bescheid, ob du da eine Chance zum Verbessern gegenüber dem allgemeinen Vorgehen beim Einschreiben in die OPAL-Kurse siehst.&lt;&#x2F;p&gt;
+&lt;p&gt;VG P.&lt;&#x2F;p&gt;&lt;&#x2F;blockquote&gt;
+&lt;p&gt;Meine Antwort:&lt;&#x2F;p&gt;
+&lt;blockquote&gt;&lt;p&gt;
+Hallo P.,&lt;br &#x2F;&gt;
+ich weiss nicht, was M. dir da erzählt hat und ich will dich auch nicht in Verlegenheit bringen, aber du bist da glaub ich etwas auf dem Holzweg.&lt;br &#x2F;&gt;
+Opal mag eine eklige Oberfläche haben, aber ein weiteres Programm was dir deine Einschreibung abnimmt wird es nicht geben. Zumindest stände das Aufwand-Nutzen Verhältnis nicht auf deiner Seite.&lt;&#x2F;p&gt;
+&lt;p&gt;Mein Tipp: sei rechtzeitig online. F5 ist dein Freund und wenn du noch ein wenig im Netz suchst findest du bis zum 4.April auch noch ein paar Tricks mit denen du eventuell deinen Browser ein wenig fixer machen kannst. Auf jeden fall brauchst du keinen Informatiker anzuheuern, um dich in Opal in einen Kurs einzuschreiben. Ich drücke dir die Daumen, das kriegst du bestimmt hin. Sollte es nichts desto trotz nicht mit deiner Einschreibung klappen, gibt wird er ja sicherlich nicht zum letzten mal angeboten.&lt;&#x2F;p&gt;
+&lt;p&gt;mfg&lt;br &#x2F;&gt;
+Hendrik &lt;&#x2F;p&gt;&lt;&#x2F;blockquote&gt;
+</content>
+	</entry>
+	<entry xml:lang="en">
+		<title>Psi password recovery</title>
+		<published>2011-03-11T00:00:00+00:00</published>
+		<updated>2011-03-11T00:00:00+00:00</updated>
+		<link rel="alternate" href="https://www.hoodie.de/blog/psi-password-recovery/" type="text/html"/>
+		<id>https://www.hoodie.de/blog/psi-password-recovery/</id>
+		<content type="html">&lt;p&gt;Heute wollte ich mal &lt;a href=&quot;http:&#x2F;&#x2F;swift.im&#x2F;&quot;&gt;SWIFT&lt;&#x2F;a&gt; ausprobieren und da bemerkte ich, dass ich mein Passwort vergessen hatte. Ich erinnerte mich, dass ich mal ein script gefunden hatte, welches die Passwörter aus der Psi account.xml decodiert. Es hat echt ne Weile gedauert, bis ich das Ding wieder gefunden hatte.&lt;&#x2F;p&gt;
+&lt;p&gt;Damit andere nicht so lange danach suchen müssen, &lt;a href=&quot;http:&#x2F;&#x2F;blogmal.42.org&#x2F;rev-eng&#x2F;psi-password.story&quot;&gt;hier ist das perl script &lt;&#x2F;a&gt;und hier was ich daraus gemacht habe:&lt;&#x2F;p&gt;
+&lt;pre class=&quot;brush:bash&quot;&gt;#!&#x2F;bin&#x2F;bash
+n=0
+grep -E &#x27;(password|^...\([^&amp;lt;]*\).*|\1|g&quot; -e &quot;s|.*\([^&amp;lt;]*\).*|\1|g&quot; | while read line;
+do
+	if [ $n -eq 0  ]
+		then
+			jid=$line
+			n=1
+		else
+			pw=$line
+			n=0
+			echo $jid
+			perl -le &#x27;($jid,$pw)=@ARGV;$pw=~s&#x2F;..(..)&#x2F;chr hex$1&#x2F;ge; print substr($pw^$jid,0,length$pw)&#x27; $jid $pw
+	fi
+done
+&lt;&#x2F;pre&gt;
+</content>
+	</entry>
+	<entry xml:lang="en">
+		<title>ich weiss ich weiss…</title>
+		<published>2011-03-04T00:00:00+00:00</published>
+		<updated>2011-03-04T00:00:00+00:00</updated>
+		<link rel="alternate" href="https://www.hoodie.de/blog/ich-weiss-ich-weiss/" type="text/html"/>
+		<id>https://www.hoodie.de/blog/ich-weiss-ich-weiss/</id>
+		<content type="html">&lt;p&gt;&amp;#8230; ich hab in der letzten Zeit etwas viel über oberflächliches geschrieben. Deshalb verliere ich jetzt kein Wort darüber, was ich hier gerade gemacht habe.&lt;&#x2F;p&gt;
+</content>
+	</entry>
+	<entry xml:lang="en">
+		<title>Kaffeesatz überall</title>
+		<published>2011-02-09T00:00:00+00:00</published>
+		<updated>2011-02-09T00:00:00+00:00</updated>
+		<link rel="alternate" href="https://www.hoodie.de/blog/kaffeesatz-uberall/" type="text/html"/>
+		<id>https://www.hoodie.de/blog/kaffeesatz-uberall/</id>
+		<content type="html">&lt;p&gt;Wow, die Welt der Typographie ist ja soo klein. Gerade noch entdecke ich die Schriftart &lt;span class=&quot;kaffeesatz&quot;&gt;Kaffeesatz&lt;&#x2F;span&gt; für mich und verwende sie (zumindest zwischenzeitlich) auf meinem Blog,  da entdecke ich sie im öffentlichen Raum wieder. Auf einigen Plakaten in der Stadt findet man gerade das Charakteristische &lt;span class=&quot;kaffeesatz&quot;&gt;k&lt;&#x2F;span&gt; wieder. &lt;a href=&quot;http:&#x2F;&#x2F;www.yanone.de&#x2F;&quot;&gt;Yanone&lt;&#x2F;a&gt; ist offensichtlich unter Typographen recht beliebt, zumal die Schriftart frei ist.&lt;br &#x2F;&gt;
+Das auffälligste Beispiel ist vielleicht  die Unicum, welche ihre Titelseite ausschließlich mit Kaffeesatz gestalten scheint, zu sehen auch in &lt;a href=&quot;http:&#x2F;&#x2F;unicum.de&#x2F;evo&#x2F;UNICUMde&#x2F;uni&#x2F;UNICUMhidden&#x2F;UNICUM-Februar-2011&quot;&gt;ihrer Februarausgabe&lt;&#x2F;a&gt;, mit ihrem jedoch leider recht anspruchslosen Titel:&lt;br &#x2F;&gt;
+&lt;span class=&quot;kaffeesatz&quot;&gt;&lt;strong&gt;Trendy Mandy&lt;&#x2F;strong&gt; Was wirklich hip ist, und wer dahinter steckt.&lt;&#x2F;span&gt;&lt;&#x2F;p&gt;
+&lt;p&gt;Was zeigt uns das? Ein Auge für Typographie zahlt sich aus.&lt;&#x2F;p&gt;
+</content>
+	</entry>
+	<entry xml:lang="en">
+		<title>Da gibt’s noch was anderes?</title>
+		<published>2011-02-01T00:00:00+00:00</published>
+		<updated>2011-02-01T00:00:00+00:00</updated>
+		<link rel="alternate" href="https://www.hoodie.de/blog/da-gibt-s-noch-was-anderes/" type="text/html"/>
+		<id>https://www.hoodie.de/blog/da-gibt-s-noch-was-anderes/</id>
+		<content type="html">&lt;p&gt;Sehr gerne würde ich behaupten, ich sei entsetzt gewesen, doch irgendwie war ich doch nicht überrascht, als ich meiner Mitbewohnerin neulich von WolframAlpha erzählte und sie meinte: &amp;#8220;Das klingt gut, muss ich mal googlen!&amp;#8221; &amp;#8220;Wieso googlen? Geh doch einfach hin und schau&amp;#8217;s dir an.&amp;#8221; &amp;#8211; &amp;#8220;Na aber ich kenn doch die Adresse gar nicht?&amp;#8221; &amp;#8211; &amp;#8220;Versuch doch einfach &amp;#8216;Wolframalpha&amp;#8217; &amp;#8230; punkt com&amp;#8221; &amp;#8211; &amp;#8220;Ja stimmt&amp;#8221;.&lt;&#x2F;p&gt;
+&lt;p&gt;Das ist die Internetgeneration, frei im Geist, unabhängig vom gedruckten Wort und den alten Medien durch Wikipedia und Wikileaks, sie startet Volksaufstände über facebook, bringt Diktatoren und Despoten zu fall und ist doch absolut hörig. Selbst technikbegabte Freunde von mir haben gehen &amp;#8220;ins Internet&amp;#8221; und geben www.irgendwas.de in das Suchfeld der Google Startseite ein.&lt;&#x2F;p&gt;
+&lt;p&gt;Sicherlich, google findet was man sucht, das haben zu Zeiten als google raus kam yahoo, altavista, abacho und fireball auch, und tun sie auch noch heute. Warum sind dann alle so abhängig von google? Selbst in ganz normalen Gesprächen lautet die Antwort auf eine unbequem komplizierte Frage &amp;#8220;Ach &amp;#8211; google&amp;#8217;s doch einfach!&amp;#8221;.&lt;&#x2F;p&gt;
+&lt;p&gt;Google ist nicht schlecht, doch seine Omnipräsenz ist genauso wenig auf Überlegenheit begründet wie die von Microsoft Windows. Sie haben Geld, sie sind erreichbar und deshalb einfach zu benutzen. Google ist Standartsuche bei 95% der ausgelieferten Browser. Genau wie bei Windows. Warum soll ich mich nach alternativen Umschauen, wenn das offensichtlichste schon installiert ist?&lt;&#x2F;p&gt;
+&lt;p&gt;Weil es gute Alternativen gibt! Ich bin kein Freund von Werbung, ich möchte eher ein wenig zum Nachdenken anregen. &lt;span id=&quot;more-241&quot;&gt;&lt;&#x2F;span&gt;&lt;&#x2F;p&gt;
+&lt;p&gt;Laut ecosia verursacht  eine Suchabfrage bei Google 0,2g CO2 Ausstoß. Und seit einiger Zeit wird ja mit jeder Tastatureingabe in das Suchfeld eine kleine Suche für sich ausgeführt. Es heißt ein Großteil des gesamten Internetverkehrs ist ausschließlich Spam. Wie viel Prozent des Traffics fallen wohl auf unnötige GoogleSuchen? Andere Suchmaschinen die mit weniger Geldauskommen müssen, daher weniger Rechenzentren haben und dadurch weniger Energie verbrauchen haben auch coole features.&lt;&#x2F;p&gt;
+&lt;h3&gt;Suchmaschinen&lt;&#x2F;h3&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;duckduckgo.com&quot;&gt;Duckduckgo&lt;&#x2F;a&gt; zum Beispiel. Seit einigen Monaten meine weapon of choice. Die kleine Maschine ist recht klever gebaut und vollkommen frei von Werbung. Sie haben sich auf die Fahnen geschrieben und speichert dementsprechend keine Personenbezogenen Daten. Da das jeder erzählen kann mach ich das hier nicht zum Hauptkriterium. Die häufigsten fragen beantwortet ddg selbst, indem es bei verschiedenen Datenquellen nachschaut und als sogenannte ZeroClickInfo einbindet, dazu gehören Wikipedia Einträge, Songtexte oder das &lt;a title=&quot;Weather in Dresden&quot; href=&quot;https:&#x2F;&#x2F;duckduckgo.com&#x2F;?q=weather+dresden&quot;&gt;Wetter&lt;&#x2F;a&gt;. Besonders cool sind die sogenannten !bangs, das sind zusätzliche Befehle die man eingeben kann. So sucht man mit !w bei wikipedia, mit !cc nach creative commons Inhalten oder mit !Flickr bei, na ihr wisst schon.&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;a href=&quot;http:&#x2F;&#x2F;ecosia.org&quot;&gt;Ecosia&lt;&#x2F;a&gt; habe ich oben bereits Zitiert. Diese Suche basiert auf Bing. Zwar können Sie sagen, wieviel CO2 Google freisetzt, doch von sich selbst wissen sie das nicht, da Sie die Server von Bing mit nutzen. Dafür investieren sie aber für jede Suche die Leute über ecosia.org durchführen ein paar cent in Projecte, die der Umwelt wieder zu gute kommen.&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;a title=&quot;ixquick&quot; href=&quot;https:&#x2F;&#x2F;eu.ixquick.com&#x2F;&quot;&gt;Ixquick&lt;&#x2F;a&gt; wurde mit dem Europäischen Datenschutz-Gütesiegel ausgezeichnet. Warum sie das bekommen haben kann man auf ihrer Seite recht ausgiebig Nachlesen. Ixquick ist eine sogenannte Metasuchmaschine. Genau wie &lt;a href=&quot;http:&#x2F;&#x2F;metager2.de&quot;&gt;metager2&lt;&#x2F;a&gt; sucht man über sie eigentlich gleichzeitig auf mehreren anderen Suchmaschinen und bekommt daraus die besten Ergebnisse geliefert. Wie die CO2-Bilanz dieser Seiten allerdings aussieht weiss ich nicht. verteiltes Suchen auf gleich mehreren Suchmaschinen wird nicht sonderlich gut für die Umwelt sein.&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;ssl.scroogle.org&#x2F;&quot;&gt;Scroogle&lt;&#x2F;a&gt;! Nicht die erste, längst nicht die letzte, aber auf jeden Fall die direkteste Form Google den Stinkfinger zu zeigen. Bei Google suchen ohne sich allerdings mit dem Ansehen von Werbung oder dem hinterlassen von Daten dafür auch nur im geringsten erkenntlich zu zeigen.&lt;&#x2F;p&gt;
+&lt;p&gt;Wem das alles noch nicht reicht, der findet mehr auf der Seite des Vereins &lt;a href=&quot;http:&#x2F;&#x2F;www.suma-ev.de&#x2F;&quot;&gt;SUMA-ev&lt;&#x2F;a&gt; die sich sehr für größere Vielfalt beim Suchen einsetzen.&lt;a href=&quot;http:&#x2F;&#x2F;www.newmediajournal.us&#x2F;daily_columns&#x2F;anti-google_search_engine_index.htm&quot;&gt;&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;h3&gt;und noch vieles mehr&lt;&#x2F;h3&gt;
+&lt;p&gt;Doch gibt es auch andere praktische Funktionen von Google, die man auch noch anderswo findet. Email ist das trivialste beispiel, doch wusstet ihr, dass man in Openstreetmap auch komfortable suchen kann? &lt;a href=&quot;http:&#x2F;&#x2F;www.openstreetbrowser.org&#x2F;&quot;&gt;Openstreetbrowser&lt;&#x2F;a&gt; bietet die Möglichkeit in seiner umgebung nach Läden oder Arztpraxen zu suchen, werbefrei. &lt;a href=&quot;http:&#x2F;&#x2F;openrouteservice.org&#x2F;&quot;&gt;Open rout Service&lt;&#x2F;a&gt; ist eine Entwicklung der Uni Bonn.&lt;&#x2F;p&gt;
+&lt;p&gt;Alternativen zum &amp;#8220;Googlen&amp;#8221; müssen auch nicht unbedingt mehr  Suchmaschinen sein. Meiner Mitbewohnerin habe ich versucht schmackhaft zu machen, wer wenig im web unterwegs ist  und nur ein handvoll Seiten besucht könnte anstatt die Namen der Seiten  wie &amp;#8220;f***book&amp;#8221; als Suchbegriff einzugeben sich sich einfach mal die  Mühe machen und 3 bis 4 Zeichen mehr eingeben, denn der Zweck von  Domains ist es ja eigentlich, dass wir NICHT wie bei Telefonnummern einen großen Index fragen müssen wo wir was finden. Oder Bookmarks, oder die Browser History. Klar, das ist jetzt zu banal, aber es gibt genug Gelegenheiten in denen wir einfach zu Faul sind.&lt;&#x2F;p&gt;
+&lt;p&gt;Meistens wenn wir nach etwas Suchen finden wir, dass der erste Treffer bei fast jeder Suchmaschine Wikipedia ist. Deshalb habe ich mir keyword search bookmarks eingerichtet. Bei Firefox einfach einen bookmark anlegen der zB auf http:&#x2F;&#x2F;dict.leo.org&#x2F;frde?lp=frde&amp;amp;search=%s verweist und ihm das key word &amp;#8220;leo&amp;#8221; geben. Danach kann man in die Adressleiste eingeben &amp;#8220;&lt;a href=&quot;http:&#x2F;&#x2F;dict.leo.org&#x2F;ende?lp=ende&amp;amp;search=suche&quot;&gt;Leo suche&lt;&#x2F;a&gt;&amp;#8221; und findet ohne auch nur einmal eine Suchmaschine zu belästigen.&lt;&#x2F;p&gt;
+&lt;div id=&quot;_mcePaste&quot; style=&quot;position: absolute; left: -10000px; top: 316px; width: 1px; height: 1px; overflow: hidden; line-height: 42.75px;&quot;&gt;http:&#x2F;&#x2F;www.suma-ev.de&#x2F;&lt;&#x2F;div&gt;
+</content>
+	</entry>
+	<entry xml:lang="en">
+		<title>wo bin ich (update)</title>
+		<published>2011-01-19T00:00:00+00:00</published>
+		<updated>2011-01-19T00:00:00+00:00</updated>
+		<link rel="alternate" href="https://www.hoodie.de/blog/wo-bin-ich-update/" type="text/html"/>
+		<id>https://www.hoodie.de/blog/wo-bin-ich-update/</id>
+		<content type="html">&lt;p&gt;Die erste Runde hat begonnen. Wo habe ich dieses Bild aufgenommen?&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;a href=&quot;&#x2F;images&#x2F;uploads&#x2F;2011&#x2F;01&#x2F;unirama.jpg&quot;&gt;&lt;img class=&quot;size-medium wp-image-234 alignnone&quot; title=&quot;unirama&quot; src=&quot;&#x2F;images&#x2F;uploads&#x2F;2011&#x2F;01&#x2F;unirama-300x143.jpg&quot; alt=&quot;&quot; width=&quot;300&quot; height=&quot;143&quot; &#x2F;&gt;&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;strong&gt;UPDATE&lt;&#x2F;strong&gt;:&lt;&#x2F;p&gt;
+&lt;p&gt;Vielen Dank für die rege Beteiligung. Ich hab die Kommentare erst öffentlich geschaltet nach dem sich einige Leute gemeldet haben, einfach damit alle die gleiche Chance haben. Natürlich wird das nicht das letzte Mal gewesen sein, dass ich so etwas gemacht habe, ich habe noch mehr Bilder.&lt;&#x2F;p&gt;
+</content>
+	</entry>
+	<entry xml:lang="en">
+		<title>jetzt is’es raus</title>
+		<published>2011-01-18T00:00:00+00:00</published>
+		<updated>2011-01-18T00:00:00+00:00</updated>
+		<link rel="alternate" href="https://www.hoodie.de/blog/jetzt-is-es-raus/" type="text/html"/>
+		<id>https://www.hoodie.de/blog/jetzt-is-es-raus/</id>
+		<content type="html">&lt;p&gt;Hey, das Unwort des Jahres 2010 lautet &amp;#8220;alternativlos&amp;#8221;, wer hätte das gedacht. Nach dem das Wort des Jahres schon &amp;#8220;Wutbürger&amp;#8221; war, was sollte da noch kommen? Alternativlos.&lt;&#x2F;p&gt;
+&lt;p&gt;Wahnsinn! Echt! In Leipzig verunglücken Straßenbahnen, einer nach der anderen, in Australien werden Krokodile und Haie in die Städte gespült und in Deutschland wird alternativlos zum Unwort des Jahres gewählt. Sonst noch irgendwas sinnloses? Deutschland hat schon wieder gegen Spanien verloren, im Handball oder so. Ach und in Dresden wird das Hochwasser doch nicht zu Alarmstufe 4 führen.&lt;&#x2F;p&gt;
+&lt;p&gt;Ach scheiße Leute! ALTERNATIVLOS!!! Warum?&lt;&#x2F;p&gt;
+&lt;p&gt;Ein Schwarzer Tag für die Nachrichtenlandschaft.&lt;&#x2F;p&gt;
+</content>
+	</entry>
+	<entry xml:lang="en">
+		<title>erst spam, dann spim, was nun?</title>
+		<published>2011-01-10T00:00:00+00:00</published>
+		<updated>2011-01-10T00:00:00+00:00</updated>
+		<link rel="alternate" href="https://www.hoodie.de/blog/erst-spam-dann-spim-was-nun/" type="text/html"/>
+		<id>https://www.hoodie.de/blog/erst-spam-dann-spim-was-nun/</id>
+		<content type="html">&lt;p&gt;Das altbekannte Konzept von SPAM kennt sicherlich jeder, da flattern einem Emails ins Postfach die sich durch sehr kreative orth0|graph-ische Ver stüm melungen auszeichnen. Die fragen einen meistens ob man mit den räumlichen oder zeitlichen Ausmaßen seines Fortpflanzungsorgans zufrieden ist und oder ob man gegebenenfalls etwas daran zu ändern gedänkt vor zu haben usw&amp;#8230; Wer immer noch keinen bayessches Filter in seinem Emailclient hat sollte mittlerweile selbst die Automatismen entwickelt haben diese sofort unbewusst zu löschen &amp;#8211; Punkt um:  es stört sich fast niemand mehr daran.&lt;&#x2F;p&gt;
+&lt;p&gt;Die nächste Form der Internetbelästigung ist auch nur noch recht wenigen fremd&amp;#8230; längst nicht so fremd, wie die alten bekannten aus Russland die einen auf einmal via ICQ als Freunde wieder entdecken, nach ach so langer zeit um mal wieder miteinander zu chatten&amp;#8230; SPIM! Meine Antwort auf diese lautet in form einer Denial-Message in gebrochenem Russisch meist : &amp;#8220;Fackow!!&amp;#8221;&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;a href=&quot;&#x2F;images&#x2F;uploads&#x2F;2011&#x2F;01&#x2F;2671415929_a583006117_t.jpg&quot;&gt;&lt;img class=&quot;size-full wp-image-201 alignleft&quot; title=&quot;default-avatar-profileremix&quot; src=&quot;&#x2F;images&#x2F;uploads&#x2F;2011&#x2F;01&#x2F;2671415929_a583006117_t.jpg&quot; alt=&quot;&quot; width=&quot;96&quot; height=&quot;96&quot; &#x2F;&gt;&lt;&#x2F;a&gt;Nun benutzen allerdings Email wirklich nur noch die Leute die im Businessleben stehen oder über 40Jahre alt sind &amp;#8211; und auch ICQ ist nicht das ultimative Mittel um ungewollte Werbung über das Web zu verbreiten. Die Sp{a|i}mmer müssen also wieder mit der Zeit gehen, ein neues und verbreiteteres Medium ausnutzen. Viele Leute haben bei Twitter oder Identi.ca achtlos oder gutgläubig die Funktion aktiviert automatisch anderen Leuten zu folgen die auch ihnen Folgen. Ich selbst habe das nicht, nur nehme ich an, dass es wohl so sein muss, denn meine Beiträge bei identi.ca verfolgt seit heute eine Firma, deren Namen ich jetzt nicht preisgebe (das hätten die wohl gerne) die Boote oder sowas baut oder verkauft. Haben leider auf ihrem Account nicht viel zu sagen, außer jeden einzelnen Link auf ihrer Website zu twittern oder denten. Damit dass ich das herausgefunden habe, habe ich bereits mehr Interesse an dieser obskuren Firma bewiesen als sie an mir als &amp;#8220;potentiellen Neukunden&amp;#8221;, denn wie ich sehe folgen sie auch fast allen Leuten die auch ich auf meiner Liste habe, es scheint sich also um nix als einen bot zu handeln der sich durch identi.ca crawlt und Leuten folgt.&lt;&#x2F;p&gt;
+&lt;p&gt;Nicht Spam, nicht Spim &amp;#8211; das Wort der Woche ist der Begriff für diese Form der Internetwerbung. Wie wollen wir es nennen?&lt;&#x2F;p&gt;
+</content>
+	</entry>
+	<entry xml:lang="en">
+		<title>Vollkorn, KaffeeSatz und Vera</title>
+		<published>2011-01-09T00:00:00+00:00</published>
+		<updated>2011-01-09T00:00:00+00:00</updated>
+		<link rel="alternate" href="https://www.hoodie.de/blog/vollkorn-kaffeesatz-und-vera/" type="text/html"/>
+		<id>https://www.hoodie.de/blog/vollkorn-kaffeesatz-und-vera/</id>
+		<content type="html">&lt;p&gt;Ach wie schön, dass aktuelle Browser endlich die Funktion unterstützen, eigene Schriftarten via CSS einzubinden. Medieninformatiker der ich bin,  hat es mir schon längere Zeit unter den Fingern gebrannt und so habe ich endlich einmal einen kleinen Katalog an freien Schriften zusammen gestellt, verglichen und mich für &lt;a href=&quot;http:&#x2F;&#x2F;www.fontsquirrel.com&#x2F;fonts&#x2F;Vollkorn&quot;&gt;Vollkorn&lt;&#x2F;a&gt;, &lt;a href=&quot;http:&#x2F;&#x2F;www.yanone.de&#x2F;typedesign&#x2F;kaffeesatz&#x2F;&quot;&gt;KaffeeSatz&lt;&#x2F;a&gt; und &lt;a href=&quot;http:&#x2F;&#x2F;www.fontsquirrel.com&#x2F;fonts&#x2F;Bitstream-Vera-Sans&quot;&gt;VeraSans&lt;&#x2F;a&gt; entschieden. Jaja, ich weiß, sieht fast genau so aus wie vorher. Das ist auch der Zweck, denn längst nicht alle System haben die gleichen Schriftarten installiert und so musste ich feststellen, dass das Design auf unterschiedlichen Betriebssystemen komplett anders wirkte &amp;#8211; das ist jetzt gefixt &lt;img src=&quot;&#x2F;images&#x2F;smilies&#x2F;icon_smile.gif&quot; alt=&quot;:D&quot; class=&quot;wp-smiley&quot; style=&quot;height: 1em; max-height: 1em;&quot; &#x2F;&gt;&lt;&#x2F;p&gt;
+&lt;p&gt;Dazu noch ein wenig die Zeilenabstände und relativen Schriftgrößen geändert und schon sieht alles viel lesbarer aus.&lt;&#x2F;p&gt;
+&lt;p&gt;Ich kann jedem jedem Blogger, Webdesigner oder Hobbyisten nur dazu raten das selbe zu tun. Man sollte allerdings  in jedem Fall darauf achten auch Standard Typen als alternative anzugeben und nicht die zu aber witzige Schriftarten zu wählen (Stichwort: Augenkrebsgefahr).&lt;&#x2F;p&gt;
+&lt;div id=&quot;_mcePaste&quot; style=&quot;position: absolute; left: -10000px; top: 0px; width: 1px; height: 1px; overflow: hidden;&quot;&gt;http:&#x2F;&#x2F;www.fontsquirrel.com&#x2F;fonts&#x2F;Bitstream-Vera-Sans&lt;&#x2F;div&gt;
+</content>
+	</entry>
+	<entry xml:lang="en">
+		<title>umzug, die letzte</title>
+		<published>2011-01-05T00:00:00+00:00</published>
+		<updated>2011-01-05T00:00:00+00:00</updated>
+		<link rel="alternate" href="https://www.hoodie.de/blog/umzug-die-letzte/" type="text/html"/>
+		<id>https://www.hoodie.de/blog/umzug-die-letzte/</id>
+		<content type="html">&lt;p&gt;Ja, sicherlich ist der unterschied für den Außenstehenden marginal, dennoch bin ich reichlich froh es endlich hintermich gebracht zu haben. Hoodie.de ist jetzt mein &amp;#8211; mein ganz allein, also fast.&lt;&#x2F;p&gt;
+&lt;p&gt;Was heißt das genau? Ich kann endlich wieder öfter schreiben, mehr Bilder, mehr Inhalt &amp;#8211; vielleicht sogar mehr Seiten&amp;#8230;&lt;&#x2F;p&gt;
+&lt;p&gt;Mal schau&amp;#8217;n was so passiert.&lt;&#x2F;p&gt;
+</content>
+	</entry>
+	<entry xml:lang="en">
+		<title>82Millionen BigBrothers endlich online</title>
+		<published>2010-11-18T00:00:00+00:00</published>
+		<updated>2010-11-18T00:00:00+00:00</updated>
+		<link rel="alternate" href="https://www.hoodie.de/blog/82millionen-bigbrothers-endlich-online/" type="text/html"/>
+		<id>https://www.hoodie.de/blog/82millionen-bigbrothers-endlich-online/</id>
+		<content type="html">&lt;p&gt;Ich mache echt ungern Werbung aber ihr habt es sicherlich auch schon auf heise.de oder sonst wo gelesen, jetzt sind eure Häuser online. Glücklicherweise mein Kaff immer noch nicht, aber das ist nur eine Frage der Zeit.&lt;a href=&quot;&#x2F;images&#x2F;uploads&#x2F;2011&#x2F;01&#x2F;133308993_8ea8b375f5_o.jpg&quot;&gt;&lt;img class=&quot;alignright size-thumbnail wp-image-190&quot; title=&quot;133308993_8ea8b375f5_o&quot; src=&quot;&#x2F;images&#x2F;uploads&#x2F;2011&#x2F;01&#x2F;133308993_8ea8b375f5_o-150x150.jpg&quot; alt=&quot;&quot; width=&quot;150&quot; height=&quot;150&quot; &#x2F;&gt;&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;p&gt;Trotzdem habe ich schon das erste nicht unkenntlich gemachte Gesicht und das erste fast lesbare Kennzeichen in Leipzig gefunden, zu meiner Erleichterung aber auch eine ganze Reihe vernebelter Häuser von privatsphärebewussten Menschen. Das nenne ich stillen Protest Warum haben sich eigentlich keine Vereine gegründet, die einfach jedem das anmelden dieser Formalitäten abnehmen? Es hätte dazu geführt, dass mehr Leute sich trauen zu protestieren.&lt;&#x2F;p&gt;
+</content>
+	</entry>
+	<entry xml:lang="en">
+		<title>umbaupause</title>
+		<published>2010-10-20T00:00:00+00:00</published>
+		<updated>2010-10-20T00:00:00+00:00</updated>
+		<link rel="alternate" href="https://www.hoodie.de/blog/umbaupause/" type="text/html"/>
+		<id>https://www.hoodie.de/blog/umbaupause/</id>
+		<content type="html">&lt;p&gt;Wenn geplante Ereignisse auf sich warten lassen entsteht Langeweile. So ist das mit meiner Domain auch &amp;#8211; sie lässt auf sich warten.&lt;&#x2F;p&gt;
+&lt;p&gt;Und was macht man wenn einem Langweilig ist, man wird kreativ. Hier hab ich mal ein wenig mit Inkscape gebastelt, das muss ich mal veröffentlichen. So sehen die Tassen bei uns im ASCII aus.&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;a href=&quot;&#x2F;images&#x2F;uploads&#x2F;2010&#x2F;10&#x2F;tasse.png&quot;&gt;&lt;img class=&quot;alignright size-medium wp-image-177&quot; title=&quot;tasse&quot; src=&quot;&#x2F;images&#x2F;uploads&#x2F;2010&#x2F;10&#x2F;tasse-300x300.png&quot; alt=&quot;&quot; width=&quot;300&quot; height=&quot;300&quot; &#x2F;&gt;&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+</content>
+	</entry>
+	<entry xml:lang="en">
+		<title>umzug</title>
+		<published>2010-09-13T00:00:00+00:00</published>
+		<updated>2010-09-13T00:00:00+00:00</updated>
+		<link rel="alternate" href="https://www.hoodie.de/blog/umzug/" type="text/html"/>
+		<id>https://www.hoodie.de/blog/umzug/</id>
+		<content type="html">&lt;p&gt;Ich plane ja schon längere Zeit diesen blog mit Sack und Pack auf einen anderen Server zu berschieben. Das steht jetzt auch an. Ich habe schon alles eingerichtet und gemirrort und warte im prinzip nur noch darauf, dass der Anbieter die Domain hoodie.de auf die neue IP verweisst. Alles was hier vor diesem Eintrag passiert ist habe ich kopiert.&lt;&#x2F;p&gt;
+&lt;p&gt;Das hier ist also noch der alte Server&amp;#8230;&lt;&#x2F;p&gt;
+</content>
+	</entry>
+	<entry xml:lang="en">
+		<title>catching up</title>
+		<published>2010-09-03T00:00:00+00:00</published>
+		<updated>2010-09-03T00:00:00+00:00</updated>
+		<link rel="alternate" href="https://www.hoodie.de/blog/catching-up/" type="text/html"/>
+		<id>https://www.hoodie.de/blog/catching-up/</id>
+		<content type="html">&lt;p&gt;Wow, Chrome 6 unterstützt autoverfolständigung von Formularen.&lt;&#x2F;p&gt;
+&lt;p&gt;Ein kleines RoundUp:&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;Chrome 3 bringt eine Tab-Übersicht und Multifunktions-Eingabeleiste&lt;&#x2F;li&gt;
+&lt;li&gt;Chrome 4 hatte Googles übersetzungsfunktion eingebaut, unterstütze cookie und popup Sperren&lt;&#x2F;li&gt;
+&lt;li&gt;Chrome 5 hatte detailiertere Einstellungen&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;p&gt;Versuchen die die Geschichte und Entwicklung der anderen Browser in den letzten 10Jahren in der gleichen Reihenfolge nach zu empfinden? Früher war eine Versionsnummer weiter ja mal ein signifikante Revolution, aber bei Chrome ist das recht absurd, das sind alles Features die jeder andere Browser schon vor Jahren hatte. Und denen hat man nicht jedesmal eine eigene Version gewidmet.&lt;&#x2F;p&gt;
+&lt;p&gt;Die Versionen 7,8,9 und 10 sollen alle ja noch dieses Jahr rauskommen. Gelungen ist der Marketing-Gag ja schon, denn man denkt insgeheim ja doch jedesmal : &amp;#8220;Bow, da muss noch so viel mehr Neu dran sein!&amp;#8221; und eine neue Versionsnummer alle paar Monate schafft immer wieder Aufmerksamkeit und Interesse. Aber Google schafft es doch sicherlich auch einfach einen Browser mit allen Features zu bauen, als 5 innerhalb von einem Jahr raus zu bringen.&lt;&#x2F;p&gt;
+&lt;p&gt;Braucht da wer mehr Aufmerksamkeit?&lt;&#x2F;p&gt;
+</content>
+	</entry>
+	<entry xml:lang="en">
+		<title>bye bye 75w</title>
+		<published>2010-09-01T00:00:00+00:00</published>
+		<updated>2010-09-01T00:00:00+00:00</updated>
+		<link rel="alternate" href="https://www.hoodie.de/blog/bye-bye-75w/" type="text/html"/>
+		<id>https://www.hoodie.de/blog/bye-bye-75w/</id>
+		<content type="html">&lt;p&gt;Jetzt werden die 75Watt Glühbirnen abgeschafft. Wieder einen Schritt näher an der umweltschonenden, Quecksilberhaltigen, nicht entsorgbaren Stromsparbirne.&lt;&#x2F;p&gt;
+&lt;p&gt;Die alten Wolframfäden verschwenden Energie, immerhin verbraten sie 95% des Stroms direkt in Hitze. So eine Verschwendung. Doch eigentlich geht diese Energie doch gar nicht verloren. So lange man sie nicht im Freien Strahlen lässt heizt man damit doch seine Wohnung und spart damit an den noch viel ineffizienteren Heizkörpern.&lt;&#x2F;p&gt;
+&lt;p&gt;Naja, jetzt haben wir bald überall Lampen, die in ihrer Produktion soviel Energie mehr verbrauchen wie sie in ihrer Lebenszeit sparen aber dafür ein hässliches List produzieren und trotzdem noch nicht so effizient sind wie LEDs.&lt;&#x2F;p&gt;
+&lt;p&gt;Danke liebe EU.&lt;&#x2F;p&gt;
+</content>
+	</entry>
+	<entry xml:lang="en">
+		<title>this is it – flash is dead</title>
+		<published>2010-07-29T00:00:00+00:00</published>
+		<updated>2010-07-29T00:00:00+00:00</updated>
+		<link rel="alternate" href="https://www.hoodie.de/blog/this-is-it-flash-is-dead/" type="text/html"/>
+		<id>https://www.hoodie.de/blog/this-is-it-flash-is-dead/</id>
+		<content type="html">&lt;p&gt;Es ist vorbei mit Flash. Ab Firefox 4 gibt es endlich einen Browser, bei dem man HTML, Vektor-Grafiken, CSS3 effekte, Video&#x2F;Audio und Canvas-Grafiken in &lt;a href=&quot;http:&#x2F;&#x2F;hacks.mozilla.org&#x2F;2010&#x2F;07&#x2F;firefox4-beta2&#x2F;&quot;&gt;ein Dokument&lt;&#x2F;a&gt; schreiben kann. Ab da an gibt es im prinzip keinerlei Funktionalität mehr, die Flash dem Browser voraus hat. Warum hat das eigentlich so lange gedauert?&lt;&#x2F;p&gt;
+&lt;p&gt;PS: der Titel sollte keine Anspielung an bestimmte Personen sein, die jetzt auch nicht &lt;a href=&quot;http:&#x2F;&#x2F;www.golem.de&#x2F;1007&#x2F;76802.html&quot;&gt;mehr in Plants vs. Zombies &lt;&#x2F;a&gt;vorkommen dürfen &lt;img src=&quot;&#x2F;images&#x2F;smilies&#x2F;icon_smile.gif&quot; alt=&quot;:D&quot; class=&quot;wp-smiley&quot; style=&quot;height: 1em; max-height: 1em;&quot; &#x2F;&gt;&lt;&#x2F;p&gt;
+</content>
+	</entry>
+	<entry xml:lang="en">
+		<title>…und ich komm nicht dran.</title>
+		<published>2010-07-27T00:00:00+00:00</published>
+		<updated>2010-07-27T00:00:00+00:00</updated>
+		<link rel="alternate" href="https://www.hoodie.de/blog/und-ich-komm-nicht-dran/" type="text/html"/>
+		<id>https://www.hoodie.de/blog/und-ich-komm-nicht-dran/</id>
+		<content type="html">&lt;p&gt;So viel schöne Musik &amp;#8230;&lt;&#x2F;p&gt;
+&lt;p&gt;Die Slub hat eine riesige, wenn auch chaotische CD Sammlung in der ich immer mal wieder geiles Zeugs finde. Ich glaube gerade die Tatsache, dass es chaotisch und unsortiert ist macht den Reiz aus, man weiß nie was man findet und man kann auch nur Stöbern, wenn man etwas bestimmtes sucht ist man aufgeschmissen. Jetzt hab ich gerade mal wieder ein paar Stunden in der SLUB zugebracht und nun hätte ich mal Bock durch die Musik zu grasen, doch ich kann gar nix mehr mitnehmen, denn die Ausleihe macht schon 22:00Uhr zu. Welch eine Gemeinheit, morgen find ich die CDs doch nicht mehr wieder.&lt;&#x2F;p&gt;
+&lt;p&gt;Da bleibt einem nur eins übrig: Musik raussuchen, Musik irgendwo in der SLUB verstecken (Versteck merken) und am nächsten Tag Musik ausleihen.&lt;&#x2F;p&gt;
+&lt;p&gt;Leider fiel mir gestern das Versteck von der Mackie Messer Compilation nicht mehr ein &lt;em&gt;(Just Mackie Messer 1&amp;amp;2, gut 30mal ein Lied von unterschiedlichen Künstlern)&lt;&#x2F;em&gt;. Jetzt schwimmt hier irgendwo ein Haifisch mit zähnen im Gesicht in der SLUB herum&lt;&#x2F;p&gt;
+</content>
+	</entry>
+	<entry xml:lang="en">
+		<title>ein Jahr ist vergangen…</title>
+		<published>2010-07-22T00:00:00+00:00</published>
+		<updated>2010-07-22T00:00:00+00:00</updated>
+		<link rel="alternate" href="https://www.hoodie.de/blog/ein-jahr-ist-vergangen/" type="text/html"/>
+		<id>https://www.hoodie.de/blog/ein-jahr-ist-vergangen/</id>
+		<content type="html">&lt;p&gt;&amp;#8230; und was ist seit dem alles passiert?&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;object classid=&quot;clsid:d27cdb6e-ae6d-11cf-96b8-444553540000&quot; width=&quot;480&quot; height=&quot;385&quot; codebase=&quot;http:&#x2F;&#x2F;download.macromedia.com&#x2F;pub&#x2F;shockwave&#x2F;cabs&#x2F;flash&#x2F;swflash.cab#version=6,0,40,0&quot;&gt;&lt;param name=&quot;allowFullScreen&quot; value=&quot;true&quot; &#x2F;&gt;&lt;param name=&quot;allowscriptaccess&quot; value=&quot;always&quot; &#x2F;&gt;&lt;param name=&quot;src&quot; value=&quot;http:&#x2F;&#x2F;www.youtube.com&#x2F;v&#x2F;upqxbqbVhec&amp;amp;hl=en_US&amp;amp;fs=1&quot; &#x2F;&gt;&lt;param name=&quot;allowfullscreen&quot; value=&quot;true&quot; &#x2F;&gt;&lt;embed type=&quot;application&#x2F;x-shockwave-flash&quot; width=&quot;480&quot; height=&quot;385&quot; src=&quot;http:&#x2F;&#x2F;www.youtube.com&#x2F;v&#x2F;upqxbqbVhec&amp;amp;hl=en_US&amp;amp;fs=1&quot; allowscriptaccess=&quot;always&quot; allowfullscreen=&quot;true&quot;&gt;&lt;&#x2F;embed&gt;&lt;&#x2F;object&gt;&lt;&#x2F;p&gt;
+</content>
+	</entry>
+	<entry xml:lang="en">
+		<title>too similar to be a coincident</title>
+		<published>2010-07-20T00:00:00+00:00</published>
+		<updated>2010-07-20T00:00:00+00:00</updated>
+		<link rel="alternate" href="https://www.hoodie.de/blog/too-similar-to-be-a-coincident/" type="text/html"/>
+		<id>https://www.hoodie.de/blog/too-similar-to-be-a-coincident/</id>
+		<content type="html">&lt;p&gt;Oh foobar2000! Today pledge I thee my uttermost affection. You might be the most brilliantly designed example of an audio player and yet &amp;#8211; there is but a fatal flaw about you. You only come on win&lt;a href=&quot;&#x2F;images&#x2F;uploads&#x2F;2010&#x2F;07&#x2F;deadbeef1.png&quot;&gt;&lt;img class=&quot;alignleft size-thumbnail wp-image-140&quot; title=&quot;deadbeef1&quot; src=&quot;&#x2F;images&#x2F;uploads&#x2F;2010&#x2F;07&#x2F;deadbeef1-150x150.png&quot; alt=&quot;&quot; width=&quot;231&quot; height=&quot;231&quot; &#x2F;&gt;&lt;&#x2F;a&gt;dows.&lt;&#x2F;p&gt;
+&lt;p&gt;For quite a while I&amp;#8217;ve been seeking out alternatives and finally settled with Amarok. Amarok has lost quite a few features due to its being rewritten but its catching up again. Still, there is hardly anything in the linuxworld that is like foobar2000 &amp;#8211; unless you count foobar2000 itself, running on wine.&lt;&#x2F;p&gt;
+&lt;p&gt;At least so I thought, till I stumbled upon a project with the name of deadbeef. It is still very young, hardly year. And it is still very simple. Let me sum up some of its features:&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;playback of all important audio formats and streams&lt;&#x2F;li&gt;
+&lt;li&gt;editing of all kinds of meta-tag formats&lt;&#x2F;li&gt;
+&lt;li&gt;very foobarlike look&lt;&#x2F;li&gt;
+&lt;li&gt;very foobarlike playlist search&lt;&#x2F;li&gt;
+&lt;li&gt;very foobarlike sorting&lt;&#x2F;li&gt;
+&lt;li&gt;gapless playback&lt;&#x2F;li&gt;
+&lt;li&gt;last.fm scrobbling&lt;&#x2F;li&gt;
+&lt;li&gt;very foobarlike playlist tabs&lt;&#x2F;li&gt;
+&lt;li&gt;tag editor (also very much like in foobar)&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;p&gt;and I could go on.&lt;&#x2F;p&gt;
+&lt;p&gt;Even better is the fact that this player seams to be an absolute light weight. It takes less then a second to start and uses hardly more then 9mb of memory.&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;a href=&quot;&#x2F;images&#x2F;uploads&#x2F;2010&#x2F;07&#x2F;deadbeef2.png&quot;&gt;&lt;img class=&quot;alignright size-thumbnail wp-image-141&quot; title=&quot;deadbeef2&quot; src=&quot;&#x2F;images&#x2F;uploads&#x2F;2010&#x2F;07&#x2F;deadbeef2-150x150.png&quot; alt=&quot;&quot; width=&quot;201&quot; height=&quot;201&quot; &#x2F;&gt;&lt;&#x2F;a&gt;So is this the ffl &amp;#8211; the foobar2000 for linux &amp;#8211; that millions of music lovers have been waiting for? In my opinion this player has the potential to achieve awesomeness. But it has still a long way in front of it. For one there are still a lot of features missing that foobar2000 is famous for and I don&amp;#8217;t even know whether or not the people behind deadbeef plan on implementing them. These include :&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;a sophisticated mass-tagger (including scripts)&lt;&#x2F;li&gt;
+&lt;li&gt;a database + search&lt;&#x2F;li&gt;
+&lt;li&gt;replaygain scanning&lt;&#x2F;li&gt;
+&lt;li&gt;converting&lt;&#x2F;li&gt;
+&lt;li&gt;and last and probably hardest &amp;#8211; a modular interface allowing for maximum configurability&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;p&gt;Ok, I admit those are quite a few high expectations I raise.&lt;&#x2F;p&gt;
+&lt;p&gt;What do you think about? Does deadbeef look like a candidate for the next big thing? Do you think there are going to be more foobarish features? Or do other players already fill the gap?&lt;&#x2F;p&gt;
+</content>
+	</entry>
+	<entry xml:lang="en">
+		<title>Python Stapler</title>
+		<published>2010-07-18T00:00:00+00:00</published>
+		<updated>2010-07-18T00:00:00+00:00</updated>
+		<link rel="alternate" href="https://www.hoodie.de/blog/python-stapler/" type="text/html"/>
+		<id>https://www.hoodie.de/blog/python-stapler/</id>
+		<content type="html">&lt;p&gt;Was mich am meisten an Archlinux nervt ist dass gerade für die x64 Variante viele Pakete nicht vorhanden sind.&lt;&#x2F;p&gt;
+&lt;p&gt;Zum Beispiel PDFtk. Damit kann man schnell viele kleine Sachen mit PDFs machen. Das wichtigste Feature ist allerdings, viele PDFs zu einer zusammenfassen zu können (besonders wichtig bei Uni-Skripten).&lt;&#x2F;p&gt;
+&lt;p&gt;Um so schöner ist, dass ich jetzt eine kleine leichte alternative dafür gefunden habe, den &lt;a href=&quot;http:&#x2F;&#x2F;github.com&#x2F;hellerbarde&#x2F;stapler&quot;&gt;Stapler&lt;&#x2F;a&gt;, ein kleines cooles Pythonscript.&lt;&#x2F;p&gt;
+&lt;p&gt;Wer es sich das ganze über AUR auf Arch installieren will, das PKGBUILD script clonet sich das script direkt von github -&amp;gt; cool&amp;#8230;&lt;&#x2F;p&gt;
+</content>
+	</entry>
+	<entry xml:lang="en">
+		<title>wieder sehr cinematisch</title>
+		<published>2010-07-16T00:00:00+00:00</published>
+		<updated>2010-07-16T00:00:00+00:00</updated>
+		<link rel="alternate" href="https://www.hoodie.de/blog/wieder-sehr-cinematisch/" type="text/html"/>
+		<id>https://www.hoodie.de/blog/wieder-sehr-cinematisch/</id>
+		<content type="html">&lt;p&gt;Hey, The Cinematic Orchestra ist wieder da,&lt;&#x2F;p&gt;
+&lt;blockquote cite=&quot;nofatclips&quot;&gt;&lt;p&gt;&lt;video width=&quot;400&quot; src=&quot;http:&#x2F;&#x2F;nofatclips.com&#x2F;02010&#x2F;07&#x2F;01&#x2F;blind-martens&#x2F;The%20Cinematic%20Orchestra%20-%20Lilac%20Wine.ogv&quot; controls&gt;lilac wine &amp;#8211; the cinematic orchestra&lt;&#x2F;video&gt;
+&lt;&#x2F;p&gt;&lt;&#x2F;blockquote&gt;
+&lt;p&gt;&lt;a href=&quot;http:&#x2F;&#x2F;dekku.nofatclips.com&#x2F;&quot;&gt;&lt;em&gt;quelle : nofatclips&lt;&#x2F;em&gt;&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+</content>
+	</entry>
+	<entry xml:lang="en">
+		<title>everyday life security</title>
+		<published>2010-07-15T00:00:00+00:00</published>
+		<updated>2010-07-15T00:00:00+00:00</updated>
+		<link rel="alternate" href="https://www.hoodie.de/blog/everyday-life-security/" type="text/html"/>
+		<id>https://www.hoodie.de/blog/everyday-life-security/</id>
+		<content type="html">&lt;p&gt;Bugs in Software suchen, Sicherheitslücken Aufdecken, Passwörter Knacken, all diese kleinen Freuden sollen nicht nur Computerleuten vorbehalten sein. Auch Otto Normalverbraucher, der technisch unversierten Art, kann durch kleine Tests in seinem Umfeld zur allgemeinen Datensicherheit seiner Mitmenschen beitragen.&lt;&#x2F;p&gt;
+&lt;p&gt;Zum Beispiel indem man testet, ob sich der Vermieter die Mühe gemacht, in einem Wohnhaus mit n Parteien den n Briefkästen auch n Verschiedene Schlösser zu geben. Bei mir im Wohnheim ist das leider nicht der Fall. Der Hausmeister hat nur eine begrenzte Anzahl Schlüssel &amp;lt; Mieterzahl und irgendein obskures System nachdem er die Schlüssel den Zimmern zuteilt.&lt;&#x2F;p&gt;
+&lt;p&gt;In meinem Briefkasten findet man allerdings nur Partyflyer. Wenn die mir mal fehlen, dann weiß ich heute schon wer dafür infrage kommt.&lt;&#x2F;p&gt;
+</content>
+	</entry>
+	<entry xml:lang="en">
+		<title>wdw – es kommt wieder</title>
+		<published>2010-06-29T00:00:00+00:00</published>
+		<updated>2010-06-29T00:00:00+00:00</updated>
+		<link rel="alternate" href="https://www.hoodie.de/blog/wdw-es-kommt-wieder/" type="text/html"/>
+		<id>https://www.hoodie.de/blog/wdw-es-kommt-wieder/</id>
+		<content type="html">&lt;p&gt;Das Wort der Woche ist ja wohl bis zum nächsten Deutschlandspiel der fast schon Schmerzhafte Begriff &amp;#8220;Wembley-Tor&amp;#8221;. Es kommt mir momentan fast vor wie eine persönliche Fehde wenn jemand mir erzählt &amp;#8220;&amp;#8230;endlich gab es in der Sache Gerechtigkeit &amp;#8211; nach  44Jahren&amp;#8230;&amp;#8221;.&lt;br &#x2F;&gt;
+Etwas anderes was mich irgendwie schon seit Wochen verfolgt sind EYPOs. Liegt das an der Wirtschafstkriese (OMG er hat das Wort benutzt) oder war einfach vor kurzem eine Busladung griechischer Reisender in Dresden, die mal so richtig auf dicke Hose gemacht haben?&lt;&#x2F;p&gt;
+</content>
+	</entry>
+	<entry xml:lang="en">
+		<title>bitte recht freundlich 2</title>
+		<published>2010-06-14T00:00:00+00:00</published>
+		<updated>2010-06-14T00:00:00+00:00</updated>
+		<link rel="alternate" href="https://www.hoodie.de/blog/bitte-recht-freundlich-2/" type="text/html"/>
+		<id>https://www.hoodie.de/blog/bitte-recht-freundlich-2/</id>
+		<content type="html">&lt;p&gt;Will mich die DVB verarschen? Mir wurde versprochen, ich wäre der letzte gewesen, der mit einer Tatra bahn gefahren ist und nu? Die Dinger fahren immer noch. Irgendwie hat da was noch nicht geklappt mit den neuen Straßenbahnen. Ob jetzt in der Zeitung ein neuer letzter Termin für die Tatras stehen wird?&lt;&#x2F;p&gt;
+</content>
+	</entry>
+	<entry xml:lang="en">
+		<title>Wer steht hier Modell?</title>
+		<published>2010-06-08T00:00:00+00:00</published>
+		<updated>2010-06-08T00:00:00+00:00</updated>
+		<link rel="alternate" href="https://www.hoodie.de/blog/wer-steht-hier-modell/" type="text/html"/>
+		<id>https://www.hoodie.de/blog/wer-steht-hier-modell/</id>
+		<content type="html">&lt;p&gt;Als das GTK-Theme die Fensterleiste und Menüleiste Farblich miteinander verschmolzen war ich noch hoch erfreut. Als es dann in Ambience und Radience umbenannt wurde und wie Wallpapers Lila wurden haben wir uns alle noch nix dabei gedacht. Als dann au&lt;a href=&quot;&#x2F;images&#x2F;uploads&#x2F;2010&#x2F;06&#x2F;Canadian-Lynx-Wallpaper.jpg&quot;&gt;&lt;img class=&quot;size-thumbnail wp-image-97 alignleft&quot; style=&quot;margin: 3px;&quot; title=&quot;Canadian-Lynx-Wallpaper&quot; src=&quot;&#x2F;images&#x2F;uploads&#x2F;2010&#x2F;06&#x2F;Canadian-Lynx-Wallpaper-e1275984607594-138x150.jpg&quot; alt=&quot;&quot; width=&quot;138&quot; height=&quot;150&quot; &#x2F;&gt;&lt;&#x2F;a&gt;f vielfachen Wunsch einer einzelnen Person die Knöpfe der Fensterdekoration nach links gerutscht sind hat das schon argwöhnisches Stirnrunzeln hervorgerufen. Zudem sind viele Funktionen im aktuellen Ubuntu auch gar nicht mehr über Kontextmenü, sondern seltsamerweise über Linksklick zu erreichen.&lt;img class=&quot;alignright&quot; title=&quot;Cairo Dock&quot; src=&quot;http:&#x2F;&#x2F;wiki.ubuntuusers.de&#x2F;_image?target=Cairo-Dock%2FHumanity-Dock&quot; alt=&quot;&quot; width=&quot;245&quot; height=&quot;79&quot; &#x2F;&gt;&lt;br &#x2F;&gt;
+Aktuellen Nachrichten zufolge soll in der nächsten Version 10.10 auch noch der Doppelklick dran glauben.&lt;br &#x2F;&gt;
+Kommt als nächstes ein Cairo-Dock in der Standartinstallation? So langsam stell ich mir die Frage, ist Mark Shuttleworth ein heimlicher Appleanhänger?&lt;&#x2F;p&gt;
+</content>
+	</entry>
+	<entry xml:lang="en">
+		<title>Rockbox Saved the World again</title>
+		<published>2010-06-05T00:00:00+00:00</published>
+		<updated>2010-06-05T00:00:00+00:00</updated>
+		<link rel="alternate" href="https://www.hoodie.de/blog/rockbox-saved-the-world-again/" type="text/html"/>
+		<id>https://www.hoodie.de/blog/rockbox-saved-the-world-again/</id>
+		<content type="html">&lt;p&gt;After the unfortunate incident when my beloved iRiver h320 dropped out of my pocket and its harddrive spun its last spin I needed to find a replacement soon. Quickly my eyes fell upon the Sansa Clip+. Its small, plays OGG Vorbis and with an additional 7.4gb microSD Card even comes within a 3Gb reach of the original size of my iRivers 18GB.&lt;br &#x2F;&gt;
+But after only a few hours I had to discover that there is a major flaw in the system. Nothing serious really. It only tends to FREEZE UP loading its POINTLESS media library for NO GOOD REASON when I put certain .ogg files on it. At least that&amp;#8217;s what I believe causes the problem, for no one around the webs seems to have found the reason or even a fix for this problem. I spend an entire night on trying to find out which of my musicfiles couses the freezing up but there was just no clue.&lt;&#x2F;p&gt;
+&lt;p&gt;So I tried to put Rockbox on it and I got to admit &amp;#8211; it still does not really solve the problem. Because the port to this device does not support USB yet &amp;#8211; meaning that you would have to start the original firmware to connect. Which means that the player would have to be able to start in the first place.&lt;&#x2F;p&gt;
+&lt;p&gt;Apparently the glitch does not occur when I have no .ogg files on the player but .oga files &lt;img src=&quot;&#x2F;images&#x2F;smilies&#x2F;icon_eek.gif&quot; alt=&quot;:&#x2F;&quot; class=&quot;wp-smiley&quot; style=&quot;height: 1em; max-height: 1em;&quot; &#x2F;&gt; so I hope I can keep on using the player like this until either the rockbox people fix the usb support in an upcoming version or &amp;#8230; the replacement harddrive for my iriver I ordered in Hongkong finally arrives.&lt;&#x2F;p&gt;
+&lt;p&gt;Anyhow &amp;#8230; there are no good portable audio players out there at the moment &amp;#8211; what a sad sad world we live in.&lt;&#x2F;p&gt;
+&lt;p&gt;PS: can I start a petition that we stop saying &amp;#8220;mp3player&amp;#8221; &amp;#8211; because mp3 is soo dead in 2010. Some people only talk of iPods, I like the term &lt;abbr title=&quot;anything but an iPod&quot;&gt;abi&lt;&#x2F;abbr&gt; but really what all of them are is a &lt;abbr title=&quot;portable audio player&quot;&gt;PAP&lt;&#x2F;abbr&gt;. Just for the record.&lt;&#x2F;p&gt;
+</content>
+	</entry>
+	<entry xml:lang="en">
+		<title>bitte recht freundlich</title>
+		<published>2010-05-29T00:00:00+00:00</published>
+		<updated>2010-05-29T00:00:00+00:00</updated>
+		<link rel="alternate" href="https://www.hoodie.de/blog/bitte-recht-freundlich/" type="text/html"/>
+		<id>https://www.hoodie.de/blog/bitte-recht-freundlich/</id>
+		<content type="html">&lt;p&gt;Da heute laut SZ zum letzten mal in Dresden die alten Tatra-Straßenbahn auf den Schienen unterwegs war, hab ich mal spontan ne kleine Runde mit der 9 gedreht &amp;#8211; einmal von meiner Wohnungstür bis Prohlis, zurück, weiter nach Kaditz und wieder Heim.&lt;br &#x2F;&gt;
+Dabei hab ich nicht nur mal wieder ein paar neue ecken von Dresden gesehen, welche mich sowohl erfreut wie auch irritiert haben &amp;#8211; und etwas Zeit und Ruhe zum lesen gehabt.&lt;br &#x2F;&gt;
+Nein &amp;#8211; ich bin auch fotografiert worden. Als Fahrgast der Straßenbahn, welche heute nach 41Jahren Dienst offensichtlich endlich ihren großen Durchbruch erlebt hat, denn der gesamtem Weg, von einer Endhaltestelle zur anderen war gesäumt mit Dresdner Straßenbahnfans und ihren Kameras, welche offensichtlich nur auf die Gelegenheit gewartet haben ihren Frauen mal wieder eine Ausrede liefern zu können, warum sie &amp;#8220;das teure Ding gegauft ham&amp;#8221;. Sogar Fans mit 2703 T-Shirts waren unterwegs.&lt;&#x2F;p&gt;
+&lt;p&gt;Ach so &amp;#8211; heute Abend ist ja Eurovision de la grand prix chansongcontest &amp;#8211; im Zuge dessen wurde ich auf diese Spannende Analyse unseres musikalischen Beitrages hingewiesen, sehr sehenswert:&lt;a href=&quot;http:&#x2F;&#x2F;www.youtube.com&#x2F;watch?v=6aN65E1naoU&quot;&gt;http:&#x2F;&#x2F;www.youtube.com&#x2F;watch?v=6aN65E1naoU&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+</content>
+	</entry>
+	<entry xml:lang="en">
+		<title>Akra dabakra – oder so ähnlich</title>
+		<published>2010-05-26T00:00:00+00:00</published>
+		<updated>2010-05-26T00:00:00+00:00</updated>
+		<link rel="alternate" href="https://www.hoodie.de/blog/akra-dabakra-oder-so-ahnlich/" type="text/html"/>
+		<id>https://www.hoodie.de/blog/akra-dabakra-oder-so-ahnlich/</id>
+		<content type="html">&lt;p&gt;Wozu denn scripte schreiben? Ich liebe es, wenn ein Befehl seine eigene Subsprache mit bringen.&lt;br &#x2F;&gt;
+Hatte mir schon nen kleinen 5 Zeiler in Bash gebaut, da erfahr ich, dass es noch kürzer geht:&lt;&#x2F;p&gt;
+&lt;pre data-lang=&quot;bash&quot; class=&quot;language-bash &quot;&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;find original&amp;#x2F; \( -type d -exec mkdir -p ziel&amp;#x2F;{}  \; \) -o \( -type f -exec ln {} ziel&amp;#x2F;{}  \; \)
+&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+</content>
+	</entry>
+	<entry xml:lang="en">
+		<title>S.O.j.A inc.</title>
+		<published>2010-05-17T00:00:00+00:00</published>
+		<updated>2010-05-17T00:00:00+00:00</updated>
+		<link rel="alternate" href="https://www.hoodie.de/blog/soja-inc/" type="text/html"/>
+		<id>https://www.hoodie.de/blog/soja-inc/</id>
+		<content type="html">&lt;p&gt;Die Bewegung hat Dresden erreicht. Heute hat die Sojaindustrie mir wieder einmal das Leben schwer gemacht. Ausgerechnet an meinem anstrengendsten Tag, mit immerhin 3 aufeinander folgenden Seminaren übernehmen Veganer die neue Mensa. Es gibt Attilas Spaghetti Bolognese mit Tofu, Back Camembert mit Mango-Dip und sogar die Abteilung “Schnitzel &amp;amp; Co.” ist heute mit einem dilettantischen Aufkleber in “Gemüse &amp;amp; Co.” umgewandelt worden.&lt;&#x2F;p&gt;
+&lt;p&gt;Das würde mich ja alles nicht so jucken, wenn ich nicht heute auf meinem Energieminimum krauchen würde.
+Hier stehen 3 Stände mit Flyern und sogar eine Improvisierte Tofu-Hotdog-Küche vor dem Haupteingang. Und das alles um ein paar Bohnen mehr zu verkaufen. Veganismus ist eine Erfindung der Sojaindustrie so wie der Valentinstag eine Erfindung holländischer Blumenmagnate ist.&lt;&#x2F;p&gt;
+&lt;p&gt;Wusstet ihr, dass in Afrika Wälder gerodet werden um Europas steigenden Bedarf an Sojaprodukten zu decken?
+Ich persönlich hab mich bei Fit&amp;amp;Vital angestellt und mir ein Schlemmerfilet geholt. Immerhin werden für Fisch nicht Afrikanischen Bauern die Weide- und Ackerflächen weggenommen, wie für Erdbeeren oder Soja oder …. oh oh! TOMATEN!!! Da war eine Tomatensouce drauf.&lt;&#x2F;p&gt;
+&lt;p&gt;Wie mach ich das nur wieder gut? Ich muss mir sofort noch ein Patenkind kaufen um mein Gewissen zu beruhigen.&lt;&#x2F;p&gt;
+&lt;p&gt;Guten Appetit 😄&lt;&#x2F;p&gt;
+</content>
+	</entry>
+	<entry xml:lang="en">
+		<title>nicht mehr unisono – call and response bitte</title>
+		<published>2010-05-11T00:00:00+00:00</published>
+		<updated>2010-05-11T00:00:00+00:00</updated>
+		<link rel="alternate" href="https://www.hoodie.de/blog/nicht-mehr-unisono-call-and-response-bitte/" type="text/html"/>
+		<id>https://www.hoodie.de/blog/nicht-mehr-unisono-call-and-response-bitte/</id>
+		<content type="html">&lt;p&gt;Angefangen hat alles mit meinem Umstieg auf &lt;a href=&quot;http:&#x2F;&#x2F;www.archlinux.org&quot;&gt;Archlinux&lt;&#x2F;a&gt; vor einigen Wochen. Wenn einer &lt;a title=&quot;unison&quot; href=&quot;http:&#x2F;&#x2F;www.cis.upenn.edu&#x2F;~bcpierce&#x2F;unison&#x2F;&quot;&gt;Unison&lt;&#x2F;a&gt; 2.32.52 auf Hardy Heron zum laufen kriegen sollte, oder unison 2.27.57 für Arch kompiliert kriegt, freu ich mich über jede Zuschrift.&lt;&#x2F;p&gt;
+&lt;p&gt;Zumindest sind beide Versionen inkompatibel zueinander. Wer immer noch nicht weiß wovon ich rede, Unison ist ein eigentlich recht komfortables Werkzeug um Verzeichnisse (besonders zwischen mehreren Rechnern) zu synchronisieren und das in beide Richtungen. Ich hatte es mir bis lang so eingerichtet, dass ich gewisse Verzeichnisse, u.A. gnote-profile, workspace, Kalender und Adressbuch, auf meinen Lieblings-Uniserver &lt;em&gt;ganymed&lt;&#x2F;em&gt; hoch geladen habe. Somit konnte ich meinen Laptop und meinen PC jederzeit Synchronisieren, ohne zwangsläufig beide gleichzeitig anhaben zu müssen. Dazu muss allerdings auf auf dem Server ein Unison laufen, und da fängt das Problem an und hört schon wieder auf.&lt;&#x2F;p&gt;
+&lt;p&gt;Intern arbeitet Unison mit Rsync, welches an sich ja schon sehr mächtig ist, jedoch nur zum synchronisieren in eine Richtung gedacht ist, also mit einer festen Quelle und einem festen Ziel. Dateien die nicht in der Quelle vorkommen werden aus dem Ziel gelöscht. Unison hat in diesem Falle vermittelt und dabei die Aktualität der Dateien in mit einbezogen. Dieses Feature vermisse ich besonders bei meiner 3 Punkte Synchronisierung.&lt;&#x2F;p&gt;
+&lt;p&gt;Da ich allerdings in den letzten Wochen auch mehr mit dem source code management tool &lt;a href=&quot;http:&#x2F;&#x2F;git-scm.com&#x2F;&quot;&gt;git&lt;&#x2F;a&gt; zu tun hatte kam ich auf die Idee, wenn ich schon nicht hin und her Synchronisieren kann, dann muss ich halt vorher mein lokales System updaten, wie man das bei jedem guten Softwareprojekt auch macht. Dazu hab ich mir ein kleines Bash Skript gebaut, welches genau das mittels rsync macht.&lt;br &#x2F;&gt;
+&lt;&#x2F;p&gt;
+&lt;pre data-lang=&quot;bash&quot; class=&quot;language-bash &quot;&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;#!&amp;#x2F;bin&amp;#x2F;bash
+
+root1=&amp;#x2F;home&amp;#x2F;username&amp;#x2F;pfad
+root2=username@server:&amp;#x2F;pfad
+
+paths[0]=&amp;#x27;.mozilla&amp;#x2F;&amp;#x27;
+paths[1]=&amp;#x27;Bilder&amp;#x2F;&amp;#x27;
+
+attributes=&amp;#x27;acvzpue ssh --delete&amp;#x27;
+checkpush(){
+	for path in ${paths[*]} ;
+	do rsync -n${attributes} ${root1}${path} ${root2}&amp;#x2F;${path} | grep delet
+	done;
+}
+checkpull(){
+	for path in ${paths[*]} ;
+	do rsync -n${attributes} ${root2}${path} ${root1}&amp;#x2F;${path} | grep delet
+	done;
+}
+pull(){
+	for path in ${paths[*]} ;
+	do
+		if [ -d ${root1}${path} ] || [ -f ${root1}${path} ];
+		then
+			echo -en &amp;quot;\e[1;32mpull\t\t\e[00;37m${root1}\e[01;37m${path}\t\e[01;31m&amp;lt; - \e[00;37m${root2}\e[01;37m${path}\n\e[00;37m&amp;quot;;
+			rsync -${attributes} ${root2}${path} ${root1}&amp;#x2F;${path};
+		else
+			echo -en &amp;quot;\e[1;41m${root1}${path} existiert nicht\n\e[00;37m\e[00;40m&amp;quot;
+		fi
+	done;
+}
+push(){
+	for path in ${paths[*]} ;
+	do
+		if [ -d ${root1}${path} ] || [ -f ${root1}${path} ];
+		then
+			echo -en &amp;quot;\e[1;32mpush\t\t\e[00;37m${root1}\e[01;37m${path}\t\e[01;31m-&amp;gt; \e[00;37m${root2}\e[01;37m${path}\n\e[00;37m&amp;quot;;
+			rsync -${attributes} ${root1}${path} ${root2}&amp;#x2F;${path};
+		else
+			echo -en &amp;quot;\e[1;41m${root1}${path} existiert nicht\n\e[00;37m\e[00;40m&amp;quot;
+		fi
+	done;
+}
+
+case $1 in
+pull)
+	checkpull
+	echo -n &amp;quot;Proceed with pulling?  [Y&amp;#x2F;n]&amp;quot;
+	read descision
+
+	case &amp;quot;$descision&amp;quot; in
+		Yes|yes|Y|y|&amp;quot;&amp;quot;)
+		pull;;
+		No|no|N|n) echo &amp;quot;Cancel.&amp;quot;
+		           exit 1  ;;
+		*) echo &amp;quot;Unknown Parameter&amp;quot; ;;
+	esac;;
+
+push)
+	checkpush
+	echo -n &amp;quot;Proceed with pushing? [Y&amp;#x2F;n]&amp;quot;
+	read descision
+
+	case &amp;quot;$descision&amp;quot; in
+		Yes|yes|Y|y|&amp;quot;&amp;quot;)
+		push;;
+		No|no|N|n) echo &amp;quot;Cancel.&amp;quot;
+		           exit 1  ;;
+		*) echo &amp;quot;Unknown Parameter&amp;quot; ;;
+	esac;;
+spush)
+	push;;
+spull)
+	pull;;
+f)
+	check= checkpush
+	if [ check == 1 ] ;
+		then echo &amp;quot;ja&amp;quot;
+	fi
+;;
+	
+*)
+	echo &amp;quot;Ohhh Nooo!!!&amp;quot;;;
+esac
+&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;Probiert&amp;#8217;s mal aus. Hat noch wer Vorschläge?&lt;&#x2F;p&gt;
+</content>
+	</entry>
+	<entry xml:lang="en">
+		<title>TUD Folders for everyone</title>
+		<published>2010-05-04T00:00:00+00:00</published>
+		<updated>2010-05-04T00:00:00+00:00</updated>
+		<link rel="alternate" href="https://www.hoodie.de/blog/tud-folders-for-everyone/" type="text/html"/>
+		<id>https://www.hoodie.de/blog/tud-folders-for-everyone/</id>
+		<content type="html">&lt;p&gt;Für meinen Eigenbedarf hab ich einst das TU-Dresden Logo auf&lt;&#x2F;p&gt;
+&lt;p&gt;Folder Icons gepappt. Schon damals hat mich Gilbert gebeten die Icons mal zu Bloggen.&lt;&#x2F;p&gt;
+&lt;div id=&quot;attachment_70&quot; style=&quot;width: 80px&quot; class=&quot;wp-caption alignleft&quot;&gt;&lt;a href=&quot;&#x2F;images&#x2F;uploads&#x2F;2010&#x2F;05&#x2F;oxygen-tud-folder.png&quot;&gt;&lt;img class=&quot;size-thumbnail wp-image-70 &quot; title=&quot;oxygen-tud-folder&quot; src=&quot;&#x2F;images&#x2F;uploads&#x2F;2010&#x2F;05&#x2F;oxygen-tud-folder-150x150.png&quot; alt=&quot;&quot; width=&quot;70&quot; height=&quot;70&quot; &#x2F;&gt;&lt;&#x2F;a&gt;&lt;p class=&quot;wp-caption-text&quot;&gt;KDE Oxigen&lt;&#x2F;p&gt;&lt;&#x2F;div&gt;
+&lt;div id=&quot;attachment_66&quot; style=&quot;width: 74px&quot; class=&quot;wp-caption alignleft&quot;&gt;&lt;a href=&quot;&#x2F;images&#x2F;uploads&#x2F;2010&#x2F;05&#x2F;humanity-folder-tud.png&quot;&gt;&lt;img class=&quot;size-full wp-image-66 &quot; title=&quot;humanity-folder-tud&quot; src=&quot;&#x2F;images&#x2F;uploads&#x2F;2010&#x2F;05&#x2F;humanity-folder-tud.png&quot; alt=&quot;&quot; width=&quot;64&quot; height=&quot;64&quot; &#x2F;&gt;&lt;&#x2F;a&gt;&lt;p class=&quot;wp-caption-text&quot;&gt;Ubuntu 9.10 Humanity&lt;&#x2F;p&gt;&lt;&#x2F;div&gt;
+&lt;div id=&quot;attachment_67&quot; style=&quot;width: 74px&quot; class=&quot;wp-caption alignleft&quot;&gt;&lt;a href=&quot;&#x2F;images&#x2F;uploads&#x2F;2010&#x2F;05&#x2F;new-humanity-folder-tud.png&quot;&gt;&lt;img class=&quot;size-full wp-image-67&quot; title=&quot;new-humanity-folder-tud&quot; src=&quot;&#x2F;images&#x2F;uploads&#x2F;2010&#x2F;05&#x2F;new-humanity-folder-tud.png&quot; alt=&quot;&quot; width=&quot;64&quot; height=&quot;64&quot; &#x2F;&gt;&lt;&#x2F;a&gt;&lt;p class=&quot;wp-caption-text&quot;&gt;Ubuntu 10.04 Humanity&lt;&#x2F;p&gt;&lt;&#x2F;div&gt;
+&lt;div id=&quot;attachment_61&quot; style=&quot;width: 74px&quot; class=&quot;wp-caption alignleft&quot;&gt;&lt;img class=&quot;size-full wp-image-61 &quot; title=&quot;dust-tud-folder&quot; src=&quot;&#x2F;images&#x2F;uploads&#x2F;2010&#x2F;05&#x2F;dust-tud-folder.png&quot; alt=&quot;&quot; width=&quot;64&quot; height=&quot;64&quot; &#x2F;&gt;&lt;p class=&quot;wp-caption-text&quot;&gt;Gnome-Colors-Dust&lt;&#x2F;p&gt;&lt;&#x2F;div&gt;
+&lt;p&gt;&lt;a href=&quot;&#x2F;images&#x2F;uploads&#x2F;2010&#x2F;05&#x2F;new-humanity-folder-tud.png&quot;&gt;&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;p&gt;Wer selbst TUD-Icons erstellt hat kann ja mal ein Kommentar verfassen in dem er seine Icons verlinkt.&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;strong&gt;Update&lt;&#x2F;strong&gt;&lt;&#x2F;p&gt;
+&lt;p&gt;Hier die &lt;a href=&quot;&#x2F;images&#x2F;uploads&#x2F;2010&#x2F;05&#x2F;tud-folder-icons.tar.gz&quot;&gt;SVGs&lt;br &#x2F;&gt;
+&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+</content>
+	</entry>
+	<entry xml:lang="en">
+		<title>I’m so Lucid</title>
+		<published>2010-05-01T00:00:00+00:00</published>
+		<updated>2010-05-01T00:00:00+00:00</updated>
+		<link rel="alternate" href="https://www.hoodie.de/blog/im-so-lucid/" type="text/html"/>
+		<id>https://www.hoodie.de/blog/im-so-lucid/</id>
+		<content type="html">&lt;p&gt;&lt;code class=&quot;brush:shell&quot;&gt;gconftool-2 -s &#x2F;apps&#x2F;metacity&#x2F;general&#x2F;button_layout --type=string &quot;menu:minimize,maximize,close&quot; &lt;&#x2F;code&gt;&lt;br &#x2F;&gt;
+Diese Zeile Code steht hier zu allererst, weil es das erste sein sollte was man ausführt sobald man auf Lucid Lynx aktualisiert hat, zumindest hab ich das gerade gemacht. Was auch immer sich der gute Mark sich dabei gedacht hat? Who Knows.&lt;&#x2F;p&gt;
+&lt;p&gt;Zumindest bin ich mit meiner Entscheidung auf meinem Laptop bei Ubuntu zu bleiben ganz zufrieden. So kann man sich hin und wieder noch freuen wenn es mal eine neue Version gibt. Zwar ist hier das meiste im Vergleich zu meinem PC mit Archlinux schon wieder veraltet, doch ist bei Ubuntu immerhin das Artwork hier und da etwas aufgepeppt.&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;strong&gt;Update&lt;&#x2F;strong&gt;&lt;br &#x2F;&gt;
+Irgendwie hab ich schon seit gestern das Problem, dass ich mein Panel nicht bearbeitet kann seit dem ich auf Lucid umgestiegen bin. Ging ursprünglich davon aus, dass es etwas mit der Verschlüsselung meines Home-Dirs zu tun hat, dass das System nicht reinschreiben kann, doch offensichtlich hat es das Problem schon zu launchpad zum &lt;a href=&quot;https:&#x2F;&#x2F;bugs.launchpad.net&#x2F;ubuntu&#x2F;+source&#x2F;gnome-panel&#x2F;+bug&#x2F;519583&quot;&gt;bug&lt;&#x2F;a&gt; geschafft.&lt;&#x2F;p&gt;
+</content>
+	</entry>
+	<entry xml:lang="en">
+		<title>Spielzeuge für Softwareentwickler</title>
+		<published>2010-04-28T00:00:00+00:00</published>
+		<updated>2010-04-28T00:00:00+00:00</updated>
+		<link rel="alternate" href="https://www.hoodie.de/blog/spielzeuge-fur-softwareentwickler/" type="text/html"/>
+		<id>https://www.hoodie.de/blog/spielzeuge-fur-softwareentwickler/</id>
+		<content type="html">&lt;p&gt;Eigentlich wollte ich darüber berichten, dass es eine neue Version von Opera gibt und ich im Zuge dessen festgestellt habe, dass diese Leute sich die Mühe machen, fur 14 Linux Distributionen einen Build herauszubringen. Doch leider hat sich herausgestellt, dass das nicht stimmt, denn zum Beispiel die Version fur Arch ist einfach ein tar mit den Binaries. Das hätte echt auch unter die Rubrik &amp;#8220;weitere&amp;#8221; gehört tz tz tz&lt;&#x2F;p&gt;
+&lt;p&gt;Wieder aufgemuntert hat mich dieser Fund auf dem blog von &lt;a href=&quot;http:&#x2F;&#x2F;el-tramo.be&#x2F;&quot;&gt;Remko Tronçon&lt;&#x2F;a&gt;, einem der Entwickler von &lt;a title=&quot;psi jabber client&quot; href=&quot;http:&#x2F;&#x2F;www.psi-im.org&quot;&gt;PSI&lt;&#x2F;a&gt;. Er arbeitet jetzt schon seit etwa einem Jahr zusammen mit  an &lt;a href=&quot;http:&#x2F;&#x2F;www.kismith.co.uk&#x2F;&quot;&gt;Kevin Smith&lt;&#x2F;a&gt; an einem neuen Jabber Client namens &lt;a href=&quot;http:&#x2F;&#x2F;swift.im&quot;&gt;Swift&lt;&#x2F;a&gt;. Um Gerüchten entgegen zu halten, die Entwicklung würde stagnieren, veröffentlichte er diese Video.&lt;&#x2F;p&gt;
+&lt;iframe width=&quot;560&quot; height=&quot;315&quot; src=&quot;https:&#x2F;&#x2F;www.youtube.com&#x2F;embed&#x2F;sLw92fs0B6I&quot; frameborder=&quot;0&quot; allowfullscreen&gt;&lt;&#x2F;iframe&gt;
+&lt;p&gt;Es wurde mit &lt;a href=&quot;http:&#x2F;&#x2F;code.google.com&#x2F;p&#x2F;gource&#x2F;&quot;&gt;Gource&lt;&#x2F;a&gt; erstellt und zeigt die zeitliche Entwicklung des Codes innerhalb eines Git-Repositories. Wie geil.&lt;&#x2F;p&gt;
+</content>
+	</entry>
+	<entry xml:lang="en">
+		<title>Welche Produkte brauche ich denn nun?</title>
+		<published>2010-04-27T00:00:00+00:00</published>
+		<updated>2010-04-27T00:00:00+00:00</updated>
+		<link rel="alternate" href="https://www.hoodie.de/blog/welche-produkte-brauche-ich-denn-nun/" type="text/html"/>
+		<id>https://www.hoodie.de/blog/welche-produkte-brauche-ich-denn-nun/</id>
+		<content type="html">&lt;p&gt;Laut Apple soll das iPad ja die viel beschworene Lücke zwischen Laptop und Smartphone schließen. Doch ist diese Lücke damit wirklich gefüllt? Kann ein iPad wirklich allen Anforderungen standhalten, die man im täglichen Gebrauch an es stellt?&lt;&#x2F;p&gt;
+&lt;p&gt;Eher bräuchte man noch ein Gerät mehr, ein Netbook zum Beispiel, welches vor allem die Möglichkeit bietet unterwegs schnell und bequem auch größere Mengen Text zu tippen.&lt;&#x2F;p&gt;
+&lt;p&gt;Als Nächstes sollte man vielleicht nicht vergessen, dass auch Smartphones längst nicht für jeden Einsatz zu gebrauchen sind, oft genug kommt es vor, dass auch Smartphonebesitzer noch ein altes Handy mitnehmen, wenn sie in Situationen kommen, bei denen sie Ihren Schatz gefährdet sehen. Also nimmt der gut vernetzte Mensch von heute auch noch ein Netbook und ein Handy mit.&lt;&#x2F;p&gt;
+&lt;p&gt;Doch was ist, wenn man mal auf eine LAN eingeladen ist, ich rede hier mal nicht von grafiksparsamen Spielen wie Starcraft oder Warcraft, sondern so Prügel wie Call of Duty Modern Warfare 2. Und jetzt begeben wir uns noch in die Situation eines armen Studenten, der weder ein Auto hat, noch sich von seinen Eltern fahren lassen kann. Jetzt braucht man unbedingt einen spieletauglichen 17&amp;#8243; Laptop, den man auch mal im Rucksack mitnehmen kann und der trotzdem unser ästhetetisches Verlangen nach &amp;#8220;geiler Graphik&amp;#8221; nicht unbefriedigt lässt. Man investiere vielleicht 1500€ &amp;#8211; zack &amp;#8211; wieder eine Lücke geschlossen.&lt;&#x2F;p&gt;
+&lt;p&gt;Jetzt können wir also auch in extremen Situationen telefonieren ohne uns Sorgen machen zu müssen, dass unser iPhone oder Android  zu Schaden kommt, können unterwegs und im Wohnzimmer bequem Surfen und Bücher in Vollfarbe lesen auf dem iPad, müssen auch in der Straßenbahn nicht darauf verzichten, am SWT Projekt weiterzuhacken auf dem Netbook, können in der Uni mitschreiben und Skripte lesen auf dem Notebook, auch mit öffentlichen Verkehrsmitteln zur LAN ohne auf Graphik verzichten zu müssen mit dem 17 Zoller und zu Hause steht (rein aus Pietätsgründen) noch ein PC oder Mac.&lt;&#x2F;p&gt;
+&lt;p&gt;Nur um auf Nummer sicher zu gehen sollte man sich jetzt vielleicht noch ein &lt;abbr title=&quot;Network-attached storage&quot;&gt;NAS&lt;&#x2F;abbr&gt; anschaffen, um die Lücke zwischen Cloud und Heimnetzwerk zu schließen.&lt;&#x2F;p&gt;
+&lt;p&gt;Jetzt sollten wir aber wirklich alles haben &amp;#8211; oder?&lt;&#x2F;p&gt;
+&lt;p&gt;Naja, mit den Ersparnissen könnte es jetzt eng werden.&lt;&#x2F;p&gt;
+</content>
+	</entry>
+	<entry xml:lang="en">
+		<title>Get Born Again</title>
+		<published>2010-04-25T00:00:00+00:00</published>
+		<updated>2010-04-25T00:00:00+00:00</updated>
+		<link rel="alternate" href="https://www.hoodie.de/blog/get-born-again/" type="text/html"/>
+		<id>https://www.hoodie.de/blog/get-born-again/</id>
+		<content type="html">&lt;p&gt;Lange lange ist es her, da hat der Hendrik mal was geblogt, der letzte Eintrag war im August 2009 und dass ich davor mal regelmäßig was geschrieben hätte kann man auch nicht wirklich belaubten.&lt;&#x2F;p&gt;
+&lt;p&gt;Das wird sich jetzt ändern. Etwa eine Woche habe ich jetzt an einem neuen Design für hoodie.de gearbeitet und momentan bin ich immer noch dran dies und das ein wenig schöner zu gestalten. Ich habe nicht  alte posts und links raus geschmissen, nein, ich fange diesen blog komplett von vorne an.&lt;&#x2F;p&gt;
+&lt;p&gt;Dies ist also mein erster Eintrag. Von jetzt an wird es hier um Themen aus meiner direkten Arbeitsumgebung gehen, kleine und große Projekte. Ich bin gespannt.&lt;&#x2F;p&gt;
+</content>
+	</entry>
+	<entry xml:lang="en">
+		<title>Mocca Stripes</title>
+		<published>2010-04-25T00:00:00+00:00</published>
+		<updated>2010-04-25T00:00:00+00:00</updated>
+		<link rel="alternate" href="https://www.hoodie.de/blog/mocca-stripes/" type="text/html"/>
+		<id>https://www.hoodie.de/blog/mocca-stripes/</id>
+		<content type="html">&lt;p&gt;&lt;em&gt;Mocca stripes&lt;&#x2F;em&gt; ist der Name des WordPress Themas welches ich anlässlich des reboots von hoodie.de gestaltet habe.&lt;&#x2F;p&gt;
+&lt;p&gt;Insidern sollte auffallen dass ich hierbei wieder das automatisch generierte Streifenmuster verwende, welches ich bereits als Wallpaper vorgestellt habe. Wert habe ich darauf gelegt, dass die Struktur moeglichst flexibel bleibt, dass heisst text ist noch bei sehr kleinen aufloesungen gut lesbar. Der Inhalt befindet sich in einem boundry und wird nicht weiter als etwa 1000 px gestreckt obwohl die horizontalen Streifen bis an den Rand des Browsers weiterlaufen.&lt;&#x2F;p&gt;
+&lt;p&gt;Sidebar und Footer koennen wie bei jedem guten WordPresstheme um Widgets erweitert werden. Mein Lieblingsfeature allerdings ist die scrobbler-liste im footer &amp;#8211; da steht also, was ich so gerade an Musik hoer :D, Mein naechstes Ziel ist es dieses Feature in ein Widget auszulagern.&lt;&#x2F;p&gt;
+</content>
+	</entry>
+</feed>

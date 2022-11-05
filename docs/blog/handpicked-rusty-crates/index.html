@@ -11,7 +11,7 @@
         <title> hoodie blog </title>
 
 
-        <link rel="alternate" type="application/rss+xml" title="RSS" href="https:&#x2F;&#x2F;www.hoodie.de&#x2F;rss.xml">
+        <link rel="alternate" type="application/rss+xml" title="RSS" href="https://www.hoodie.de/rss.xml">
         <!--  css -->
         <link rel="stylesheet"  href="https:&#x2F;&#x2F;www.hoodie.de/fonts.css" >
         <link rel="stylesheet"  href="https:&#x2F;&#x2F;www.hoodie.de/hoodie.css" >
@@ -132,48 +132,47 @@ Yes, I'm <a href="https://twitter.com/hoodie_de/status/725838737146535936">still
 One of which is built-in dictionary literals.
 While languages like <a href="https://swift.org/">swift</a> <a href="http://www.tuicool.com/articles/yA7v6rA">have</a> these, in Rust you can help yourself with either <a href="https://crates.io/crates/maplit">maplit</a> or <a href="https://crates.io/crates/collect-mac">collect-mac</a>.</p>
 <p><a href="https://crates.io/crates/maplit">Maplit</a> offers a set of macros similar to Rust's built-in <code>vec![]</code> so you can write stuff like this:</p>
-<pre style="background-color:#ffffff;">
-<span style="color:#8959a8;">let</span><span style="color:#4d4d4c;"> employees </span><span style="color:#3e999f;">= </span><span style="color:#4d4d4c;">hashmap!{
-    </span><span style="color:#718c00;">&quot;employees&quot; </span><span style="color:#3e999f;">=&gt; </span><span style="color:#4d4d4c;">hashmap! {
-        </span><span style="color:#718c00;">&quot;employee  1&quot; </span><span style="color:#3e999f;">=&gt; </span><span style="color:#4d4d4c;">hashmap![</span><span style="color:#718c00;">&quot;attribute&quot; </span><span style="color:#3e999f;">=&gt; </span><span style="color:#718c00;">&quot;value&quot;</span><span style="color:#4d4d4c;">],
-        </span><span style="color:#718c00;">&quot;employee  2&quot; </span><span style="color:#3e999f;">=&gt; </span><span style="color:#4d4d4c;">hashmap![</span><span style="color:#718c00;">&quot;attribute&quot; </span><span style="color:#3e999f;">=&gt; </span><span style="color:#718c00;">&quot;value&quot;</span><span style="color:#4d4d4c;">],
-        </span><span style="color:#718c00;">&quot;employee  3&quot; </span><span style="color:#3e999f;">=&gt; </span><span style="color:#4d4d4c;">hashmap![</span><span style="color:#718c00;">&quot;attribute&quot; </span><span style="color:#3e999f;">=&gt; </span><span style="color:#718c00;">&quot;value&quot;</span><span style="color:#4d4d4c;">],
-        </span><span style="color:#718c00;">&quot;employee  4&quot; </span><span style="color:#3e999f;">=&gt; </span><span style="color:#4d4d4c;">hashmap![</span><span style="color:#718c00;">&quot;attribute&quot; </span><span style="color:#3e999f;">=&gt; </span><span style="color:#718c00;">&quot;value&quot;</span><span style="color:#4d4d4c;">],
-        </span><span style="color:#718c00;">&quot;employee  5&quot; </span><span style="color:#3e999f;">=&gt; </span><span style="color:#4d4d4c;">hashmap![</span><span style="color:#718c00;">&quot;attribute&quot; </span><span style="color:#3e999f;">=&gt; </span><span style="color:#718c00;">&quot;value&quot;</span><span style="color:#4d4d4c;">],
-        </span><span style="color:#718c00;">&quot;employee  6&quot; </span><span style="color:#3e999f;">=&gt; </span><span style="color:#4d4d4c;">hashmap![</span><span style="color:#718c00;">&quot;attribute&quot; </span><span style="color:#3e999f;">=&gt; </span><span style="color:#718c00;">&quot;value&quot;</span><span style="color:#4d4d4c;">],
-        </span><span style="color:#718c00;">&quot;employee  7&quot; </span><span style="color:#3e999f;">=&gt; </span><span style="color:#4d4d4c;">hashmap![</span><span style="color:#718c00;">&quot;attribute&quot; </span><span style="color:#3e999f;">=&gt; </span><span style="color:#718c00;">&quot;value&quot;</span><span style="color:#4d4d4c;">],
-        </span><span style="color:#718c00;">&quot;employee  8&quot; </span><span style="color:#3e999f;">=&gt; </span><span style="color:#4d4d4c;">hashmap![</span><span style="color:#718c00;">&quot;attribute&quot; </span><span style="color:#3e999f;">=&gt; </span><span style="color:#718c00;">&quot;value&quot;</span><span style="color:#4d4d4c;">],
-        </span><span style="color:#718c00;">&quot;employee  9&quot; </span><span style="color:#3e999f;">=&gt; </span><span style="color:#4d4d4c;">hashmap![</span><span style="color:#718c00;">&quot;attribute&quot; </span><span style="color:#3e999f;">=&gt; </span><span style="color:#718c00;">&quot;value&quot;</span><span style="color:#4d4d4c;">],
-        </span><span style="color:#718c00;">&quot;employee 10&quot; </span><span style="color:#3e999f;">=&gt; </span><span style="color:#4d4d4c;">hashmap![</span><span style="color:#718c00;">&quot;attribute&quot; </span><span style="color:#3e999f;">=&gt; </span><span style="color:#718c00;">&quot;value&quot;</span><span style="color:#4d4d4c;">],
-        </span><span style="color:#718c00;">&quot;employee 11&quot; </span><span style="color:#3e999f;">=&gt; </span><span style="color:#4d4d4c;">hashmap![</span><span style="color:#718c00;">&quot;attribute&quot; </span><span style="color:#3e999f;">=&gt; </span><span style="color:#718c00;">&quot;value&quot;</span><span style="color:#4d4d4c;">],
-        </span><span style="color:#718c00;">&quot;employee 12&quot; </span><span style="color:#3e999f;">=&gt; </span><span style="color:#4d4d4c;">hashmap![</span><span style="color:#718c00;">&quot;attribute&quot; </span><span style="color:#3e999f;">=&gt; </span><span style="color:#718c00;">&quot;value&quot;</span><span style="color:#4d4d4c;">],
-        </span><span style="color:#718c00;">&quot;employee 13&quot; </span><span style="color:#3e999f;">=&gt; </span><span style="color:#4d4d4c;">hashmap![</span><span style="color:#718c00;">&quot;attribute&quot; </span><span style="color:#3e999f;">=&gt; </span><span style="color:#718c00;">&quot;value&quot;</span><span style="color:#4d4d4c;">],
-        </span><span style="color:#718c00;">&quot;employee 14&quot; </span><span style="color:#3e999f;">=&gt; </span><span style="color:#4d4d4c;">hashmap![</span><span style="color:#718c00;">&quot;attribute&quot; </span><span style="color:#3e999f;">=&gt; </span><span style="color:#718c00;">&quot;value&quot;</span><span style="color:#4d4d4c;">],
-        </span><span style="color:#718c00;">&quot;employee 15&quot; </span><span style="color:#3e999f;">=&gt; </span><span style="color:#4d4d4c;">hashmap![</span><span style="color:#718c00;">&quot;attribute&quot; </span><span style="color:#3e999f;">=&gt; </span><span style="color:#718c00;">&quot;value&quot;</span><span style="color:#4d4d4c;">],
-        </span><span style="color:#718c00;">&quot;employee 16&quot; </span><span style="color:#3e999f;">=&gt; </span><span style="color:#4d4d4c;">hashmap![</span><span style="color:#718c00;">&quot;attribute&quot; </span><span style="color:#3e999f;">=&gt; </span><span style="color:#718c00;">&quot;value&quot;</span><span style="color:#4d4d4c;">],
-        </span><span style="color:#718c00;">&quot;employee 17&quot; </span><span style="color:#3e999f;">=&gt; </span><span style="color:#4d4d4c;">hashmap![</span><span style="color:#718c00;">&quot;attribute&quot; </span><span style="color:#3e999f;">=&gt; </span><span style="color:#718c00;">&quot;value&quot;</span><span style="color:#4d4d4c;">],
-        </span><span style="color:#718c00;">&quot;employee 18&quot; </span><span style="color:#3e999f;">=&gt; </span><span style="color:#4d4d4c;">hashmap![</span><span style="color:#718c00;">&quot;attribute&quot; </span><span style="color:#3e999f;">=&gt; </span><span style="color:#718c00;">&quot;value&quot;</span><span style="color:#4d4d4c;">],
-        </span><span style="color:#718c00;">&quot;employee 19&quot; </span><span style="color:#3e999f;">=&gt; </span><span style="color:#4d4d4c;">hashmap![</span><span style="color:#718c00;">&quot;attribute&quot; </span><span style="color:#3e999f;">=&gt; </span><span style="color:#718c00;">&quot;value&quot;</span><span style="color:#4d4d4c;">],
-        </span><span style="color:#718c00;">&quot;employee 20&quot; </span><span style="color:#3e999f;">=&gt; </span><span style="color:#4d4d4c;">hashmap![</span><span style="color:#718c00;">&quot;attribute&quot; </span><span style="color:#3e999f;">=&gt; </span><span style="color:#718c00;">&quot;value&quot;</span><span style="color:#4d4d4c;">],
+<pre data-lang="rust" class="language-rust "><code class="language-rust" data-lang="rust">let employees = hashmap!{
+    &quot;employees&quot; =&gt; hashmap! {
+        &quot;employee  1&quot; =&gt; hashmap![&quot;attribute&quot; =&gt; &quot;value&quot;],
+        &quot;employee  2&quot; =&gt; hashmap![&quot;attribute&quot; =&gt; &quot;value&quot;],
+        &quot;employee  3&quot; =&gt; hashmap![&quot;attribute&quot; =&gt; &quot;value&quot;],
+        &quot;employee  4&quot; =&gt; hashmap![&quot;attribute&quot; =&gt; &quot;value&quot;],
+        &quot;employee  5&quot; =&gt; hashmap![&quot;attribute&quot; =&gt; &quot;value&quot;],
+        &quot;employee  6&quot; =&gt; hashmap![&quot;attribute&quot; =&gt; &quot;value&quot;],
+        &quot;employee  7&quot; =&gt; hashmap![&quot;attribute&quot; =&gt; &quot;value&quot;],
+        &quot;employee  8&quot; =&gt; hashmap![&quot;attribute&quot; =&gt; &quot;value&quot;],
+        &quot;employee  9&quot; =&gt; hashmap![&quot;attribute&quot; =&gt; &quot;value&quot;],
+        &quot;employee 10&quot; =&gt; hashmap![&quot;attribute&quot; =&gt; &quot;value&quot;],
+        &quot;employee 11&quot; =&gt; hashmap![&quot;attribute&quot; =&gt; &quot;value&quot;],
+        &quot;employee 12&quot; =&gt; hashmap![&quot;attribute&quot; =&gt; &quot;value&quot;],
+        &quot;employee 13&quot; =&gt; hashmap![&quot;attribute&quot; =&gt; &quot;value&quot;],
+        &quot;employee 14&quot; =&gt; hashmap![&quot;attribute&quot; =&gt; &quot;value&quot;],
+        &quot;employee 15&quot; =&gt; hashmap![&quot;attribute&quot; =&gt; &quot;value&quot;],
+        &quot;employee 16&quot; =&gt; hashmap![&quot;attribute&quot; =&gt; &quot;value&quot;],
+        &quot;employee 17&quot; =&gt; hashmap![&quot;attribute&quot; =&gt; &quot;value&quot;],
+        &quot;employee 18&quot; =&gt; hashmap![&quot;attribute&quot; =&gt; &quot;value&quot;],
+        &quot;employee 19&quot; =&gt; hashmap![&quot;attribute&quot; =&gt; &quot;value&quot;],
+        &quot;employee 20&quot; =&gt; hashmap![&quot;attribute&quot; =&gt; &quot;value&quot;],
     }
 };
-</span></pre>
+</code></pre>
 <p>These little macros let you almost forget, they are not part of the stdlib.</p>
 <h2 id="multimap"><a href="https://crates.io/crates/multimap">multimap</a></h2>
 <p>Another crate that provides functionality,
 which should actually be built-in.
 Brian Anderson compiled a <a href="https://github.com/brson/stdx">list of crates</a> that feel like they should have been part of the std.</p>
-<pre style="background-color:#ffffff;">
-<span style="color:#8959a8;">let mut</span><span style="color:#4d4d4c;"> map </span><span style="color:#3e999f;">= </span><span style="color:#4d4d4c;">MultiMap::new();
+<pre data-lang="rust" class="language-rust "><code class="language-rust" data-lang="rust">let mut map = MultiMap::new();
 
-map.</span><span style="color:#4271ae;">insert</span><span style="color:#4d4d4c;">(</span><span style="color:#718c00;">&quot;key1&quot;</span><span style="color:#4d4d4c;">, </span><span style="color:#f5871f;">42</span><span style="color:#4d4d4c;">);
-map.</span><span style="color:#4271ae;">insert</span><span style="color:#4d4d4c;">(</span><span style="color:#718c00;">&quot;key1&quot;</span><span style="color:#4d4d4c;">, </span><span style="color:#f5871f;">1337</span><span style="color:#4d4d4c;">);
-map.</span><span style="color:#4271ae;">insert</span><span style="color:#4d4d4c;">(</span><span style="color:#718c00;">&quot;key2&quot;</span><span style="color:#4d4d4c;">, </span><span style="color:#f5871f;">2332</span><span style="color:#4d4d4c;">);
+map.insert(&quot;key1&quot;, 42);
+map.insert(&quot;key1&quot;, 1337);
+map.insert(&quot;key2&quot;, 2332);
 
-assert_eq!(map[</span><span style="color:#718c00;">&quot;key1&quot;</span><span style="color:#4d4d4c;">], </span><span style="color:#f5871f;">42</span><span style="color:#4d4d4c;">);
-assert_eq!(map.</span><span style="color:#4271ae;">get</span><span style="color:#4d4d4c;">(</span><span style="color:#718c00;">&quot;key1&quot;</span><span style="color:#4d4d4c;">), </span><span style="color:#c99e00;">Some</span><span style="color:#4d4d4c;">(</span><span style="color:#3e999f;">&amp;</span><span style="color:#f5871f;">42</span><span style="color:#4d4d4c;">));
-assert_eq!(map.</span><span style="color:#4271ae;">get_vec</span><span style="color:#4d4d4c;">(</span><span style="color:#718c00;">&quot;key1&quot;</span><span style="color:#4d4d4c;">), </span><span style="color:#c99e00;">Some</span><span style="color:#4d4d4c;">(</span><span style="color:#3e999f;">&amp;</span><span style="color:#4d4d4c;">vec![</span><span style="color:#f5871f;">42</span><span style="color:#4d4d4c;">, </span><span style="color:#f5871f;">1337</span><span style="color:#4d4d4c;">]));
-</span></pre><h2 id="command-line-argument-parser">command line argument parser</h2>
+assert_eq!(map[&quot;key1&quot;], 42);
+assert_eq!(map.get(&quot;key1&quot;), Some(&amp;42));
+assert_eq!(map.get_vec(&quot;key1&quot;), Some(&amp;vec![42, 1337]));
+</code></pre>
+<h2 id="command-line-argument-parser">command line argument parser</h2>
 <p>Aka: <a href="https://crates.io/crates/clap">clap</a>.
 I started rewriting a command line application I had originally written in Ruby.
 There I had used <a href="http://whatisthor.com/">Thor</a> to configure the commands.
@@ -213,24 +212,23 @@ Datetime has the faster string parser :D</p>
 <h2 id="prettytable"><a href="https://crates.io/crates/prettytable">prettytable</a></h2>
 <p>When you wanna print complex data onto the terminal, use this.
 It is quite fast and its API is really nice.</p>
-<pre style="background-color:#ffffff;">
-<span style="color:#8959a8;">let</span><span style="color:#4d4d4c;"> table </span><span style="color:#3e999f;">= </span><span style="color:#4d4d4c;">table!([</span><span style="color:#718c00;">&quot;ABC&quot;</span><span style="color:#4d4d4c;">,     </span><span style="color:#718c00;">&quot;DEFG&quot;</span><span style="color:#4d4d4c;">, </span><span style="color:#718c00;">&quot;HIJKLMN&quot;</span><span style="color:#4d4d4c;">],
-                   [</span><span style="color:#718c00;">&quot;foobar&quot;</span><span style="color:#4d4d4c;">,  </span><span style="color:#718c00;">&quot;bar&quot;</span><span style="color:#4d4d4c;">,  </span><span style="color:#718c00;">&quot;foo&quot;</span><span style="color:#4d4d4c;">],
-                   [</span><span style="color:#718c00;">&quot;foobar2&quot;</span><span style="color:#4d4d4c;">, </span><span style="color:#718c00;">&quot;bar2&quot;</span><span style="color:#4d4d4c;">, </span><span style="color:#718c00;">&quot;foo2&quot;</span><span style="color:#4d4d4c;">]
+<pre data-lang="rust" class="language-rust "><code class="language-rust" data-lang="rust">let table = table!([&quot;ABC&quot;,     &quot;DEFG&quot;, &quot;HIJKLMN&quot;],
+                   [&quot;foobar&quot;,  &quot;bar&quot;,  &quot;foo&quot;],
+                   [&quot;foobar2&quot;, &quot;bar2&quot;, &quot;foo2&quot;]
                   );
-table.</span><span style="color:#4271ae;">printstd</span><span style="color:#4d4d4c;">();
-</span></pre><h2 id="simple-parallel-or-rayon"><a href="https://crates.io/crates/simple_parallel">simple_parallel</a> or <a href="https://crates.io/crates/rayon">rayon</a></h2>
+table.printstd();
+</code></pre>
+<h2 id="simple-parallel-or-rayon"><a href="https://crates.io/crates/simple_parallel">simple_parallel</a> or <a href="https://crates.io/crates/rayon">rayon</a></h2>
 <p>While I haven't played around with either of these yet, I so want to.
 Essentially either of them is capable of turning an ordinary iterator into a multithreaded parallel iterator.</p>
 <p>Rayon:</p>
-<pre style="background-color:#ffffff;">
-<span style="color:#8959a8;">use </span><span style="color:#4d4d4c;">rayon::prelude::</span><span style="color:#3e999f;">*</span><span style="color:#4d4d4c;">;
-</span><span style="color:#8959a8;">fn </span><span style="color:#4271ae;">sum_of_squares</span><span style="color:#4d4d4c;">(</span><span style="color:#f5871f;">input</span><span style="color:#4d4d4c;">: </span><span style="color:#3e999f;">&amp;</span><span style="color:#4d4d4c;">[</span><span style="color:#8959a8;">i32</span><span style="color:#4d4d4c;">]) -&gt; </span><span style="color:#8959a8;">i32 </span><span style="color:#4d4d4c;">{
-    input.</span><span style="color:#4271ae;">par_iter</span><span style="color:#4d4d4c;">()
-         .</span><span style="color:#4271ae;">map</span><span style="color:#4d4d4c;">(|</span><span style="color:#3e999f;">&amp;</span><span style="color:#f5871f;">i</span><span style="color:#4d4d4c;">| i </span><span style="color:#3e999f;">*</span><span style="color:#4d4d4c;"> i)
-         .</span><span style="color:#4271ae;">sum</span><span style="color:#4d4d4c;">()
+<pre data-lang="rust" class="language-rust "><code class="language-rust" data-lang="rust">use rayon::prelude::*;
+fn sum_of_squares(input: &amp;[i32]) -&gt; i32 {
+    input.par_iter()
+         .map(|&amp;i| i * i)
+         .sum()
 }
-</span></pre>
+</code></pre>
 <p>AMAZING</p>
 <h2 id="image"><a href="https://crates.io/crates/image">image</a></h2>
 <p>Images is a nice collection of native Rust libraries to encode and decode bmp, gif, ico, jpeg, png, ppm, tga, tiff and webp.

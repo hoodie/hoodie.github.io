@@ -11,7 +11,7 @@
         <title> hoodie blog </title>
 
 
-        <link rel="alternate" type="application/rss+xml" title="RSS" href="https:&#x2F;&#x2F;www.hoodie.de&#x2F;rss.xml">
+        <link rel="alternate" type="application/rss+xml" title="RSS" href="https://www.hoodie.de/rss.xml">
         <!--  css -->
         <link rel="stylesheet"  href="https:&#x2F;&#x2F;www.hoodie.de/fonts.css" >
         <link rel="stylesheet"  href="https:&#x2F;&#x2F;www.hoodie.de/hoodie.css" >
@@ -123,9 +123,9 @@
       </header>
       <p>Wozu denn scripte schreiben? Ich liebe es, wenn ein Befehl seine eigene Subsprache mit bringen.<br />
 Hatte mir schon nen kleinen 5 Zeiler in Bash gebaut, da erfahr ich, dass es noch kürzer geht:</p>
-<pre style="background-color:#ffffff;">
-<span style="color:#c82829;">find</span><span style="color:#4271ae;"> original/ </span><span style="color:#f5871f;">\( -type</span><span style="color:#4271ae;"> d</span><span style="color:#f5871f;"> -exec</span><span style="color:#4271ae;"> mkdir</span><span style="color:#f5871f;"> -p</span><span style="color:#4271ae;"> ziel/{}  </span><span style="color:#f5871f;">\; \) -o \( -type</span><span style="color:#4271ae;"> f</span><span style="color:#f5871f;"> -exec</span><span style="color:#4271ae;"> ln {} ziel/{}  </span><span style="color:#f5871f;">\; \)
-</span></pre>
+<pre data-lang="bash" class="language-bash "><code class="language-bash" data-lang="bash">find original&#x2F; \( -type d -exec mkdir -p ziel&#x2F;{}  \; \) -o \( -type f -exec ln {} ziel&#x2F;{}  \; \)
+</code></pre>
+
       
   </article>
 </section>
