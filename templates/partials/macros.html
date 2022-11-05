@@ -13,6 +13,15 @@
         </a>
     </li>
     {% endif %}
+    {% if extra.mastodon%}
+    <li>
+        <a href="https://{{extra.mastodon}}" rel="me" target="_blank" title="{{extra.mastodon}}">
+            <i class="fab fa-mastodon" ></i>
+            <span> @{{extra.mastodon}} </span>
+
+        </a>
+    </li>
+    {% endif %}
     {% if extra.twitter %}
     <li>
         <a href="https://twitter.com/{{extra.twitter}}" target="_blank" title="twitter/{{extra.twitter}}">

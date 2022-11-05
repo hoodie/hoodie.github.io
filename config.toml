@@ -25,6 +25,7 @@ generate_tags_pages = true
 [extra]
 # Put all your custom variables here
 twitter = "hoodie_de"
+mastodon = "chaos.social/@hoodie"
 github = "hoodie"
 podcast_url= "http://akronymisier.bar"
 podcast_name= "akronymisier.bar"
